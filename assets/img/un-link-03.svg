@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70.553" height="70.555" viewBox="0 0 70.553 70.555">
+  <g id="Group_198" data-name="Group 198" transform="translate(-157.116 -195.215)">
+    <rect id="Rectangle_38" data-name="Rectangle 38" width="70.553" height="70.555" rx="5" transform="translate(157.116 195.215)" fill="#4c8e32"/>
+    <path id="Path_75" data-name="Path 75" d="M165.147,213.811c2.414,0,3.463-1.281,3.463-3.253v-2.1a2.187,2.187,0,0,0-1.763-2.414,2.274,2.274,0,0,0,1.636-2.308V202.5c0-2.013-.965-3.25-3.167-3.25-2.478,0-3.337,1.468-3.337,3.566v1.258h2.183v-1.447c0-.882.272-1.386,1.028-1.386s1.027.5,1.027,1.28v1.533c0,.756-.5,1.152-1.278,1.152h-.9v1.827h1.008c.838,0,1.172.4,1.172,1.152v2.351c0,.754-.335,1.28-1.07,1.28-.816,0-1.111-.546-1.111-1.386V208.4h-2.182v1.867c0,2.161.861,3.546,3.293,3.546" transform="translate(2.037 1.735)" fill="#fff"/>
+    <path id="Path_76" data-name="Path 76" d="M201.947,227.133a3.314,3.314,0,0,0-3.2-3.593c-.964,0-2.128,1.055-2.761,1.706-.629-.651-1.717-1.709-2.682-1.709a3.376,3.376,0,0,0-3.282,3.6,3.628,3.628,0,0,0,1.025,2.541l4.946,4.955,4.937-4.947,0,0a3.639,3.639,0,0,0,1.025-2.544" transform="translate(14.144 12.175)" fill="#fff"/>
+    <path id="Path_77" data-name="Path 77" d="M191.526,246.9a.32.32,0,0,1-.051,0,.807.807,0,0,1-.749-.672L188.212,231.6l-3.8,7.055a.813.813,0,0,1-1.52-.27l-1.614-11.292-2.956,6.639a.812.812,0,0,1-.742.482H166.089a.812.812,0,1,1,0-1.624h10.959l3.889-8.734a.811.811,0,0,1,1.544.216l1.667,11.645,3.753-6.959a.812.812,0,0,1,1.514.247l2.325,13.55,8.481-28.163a.812.812,0,0,1,1.51-.119l4.46,9.249a.811.811,0,1,1-1.461.7l-3.556-7.367L192.3,246.323a.813.813,0,0,1-.776.578" transform="translate(3.507 7.993)" fill="#fff"/>
+    <text id="SAÚDE_" data-name="SAÚDE " transform="translate(177.057 205.742)" fill="#fff" font-size="7" font-family="BebasNeue-Regular, Bebas Neue"><tspan x="0" y="0">SAÚDE </tspan></text>
+    <text id="E" transform="translate(194.885 204.742)" fill="#fff" font-size="6" font-family="BebasNeue-Regular, Bebas Neue"><tspan x="0" y="0">E</tspan></text>
+    <text id="BEM-ESTAR" transform="translate(177.057 214.069)" fill="#fff" font-size="7" font-family="BebasNeue-Regular, Bebas Neue"><tspan x="0" y="0">BEM-ESTAR</tspan></text>
+  </g>
+</svg>
