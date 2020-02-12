@@ -122,6 +122,15 @@ table td {
   list-style-type: disc;
   list-style-position: inside;
 }
+
+#body-content article ul li a, #body-content article ul li ul li a {
+  display: contents;
+  text-transform: inherit;
+  font-size: 100%;
+  font: inherit;
+  
+}
+
 #body-content article ul li ul {
   width: 100%;
   line-height: 1.9em;
@@ -130,10 +139,8 @@ table td {
   list-style-type: disc;
   list-style-position: inside;
 }
-#body-content article ul li ul li {
-  list-style-type: circle;
-  list-style-position: inside
-}
+
+
 #body-content article img {
   width: 100%;
 }
@@ -167,7 +174,7 @@ a:active {
   color: #000
 }
 a:visited {
-  color: #623578;
+  color: /*#623578*/ #a642d7;
 }
 a.know-more-icon {
   color: white !important;
@@ -616,7 +623,7 @@ ul#menu_login_register li, ul#menu_languages li {
 ul#menu_login_register li a, ul#menu_languages li a {
   padding-right: 0;
   color: #0857FF;
-  padding-top: 6px;
+  padding-top: 7px;
   padding-bottom: 7px;
 }
 ul#menu_login_register span, ul#menu_languages span {
@@ -626,21 +633,44 @@ ul#menu_login_register span, ul#menu_languages span {
   
 }
 
-ul#menu_login_register span, ul#menu_languages li a#portuguese { 
-
+ul#menu_login_register span, ul#menu_languages li a.current_language, ul#menu_login_register li a#register { 
+background: transparent url("../img/lang-divider.svg") no-repeat center right;
+padding: 0;
+height: auto;  
+padding-right: 4px;
+margin-right: 4px;
 }
 
-ul#menu_login_register span, ul#menu_languages li a#portuguese:after, a#register:after {
-  content: "|";
+
+ul#menu_languages li:last-child a.current_language { 
+background-image: none !important;
+}
+
+ul#menu_languages, ul#menu_login_register {
+  padding: 0;
+    height: auto;   
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+ul#menu_login_register {
+  margin: 0 0 0 25px;
+  
+}
+
+ul#menu_languages li a.differentLang {
+    height: auto;
+   /* padding: 0;*/
 }
 
 ul#menu_login_register li a#login_image {
-  padding-right: 30px;
-  padding-left: 0px;
-  background: transparent url(../img/login.svg) no-repeat right 2.5px;
-  background-size: 23px;
-  color: #000;
-  display: flex;
+padding-right: 30px;
+padding-left: 0px;
+background: transparent url(../img/login.svg) no-repeat right 3.5px;
+background-size: 23px;
+color: #000;
+display: flex;
 }
 
 ul#menu_languages li a {
@@ -652,17 +682,12 @@ ul#menu_actions li a#register {
   margin-left: 13px;
   display: flex;
 }
-ul#menu_login_register li a#english {
-  padding-left: 0px;
-}
-ul#menu_languages li a#portuguese {
-  color: #ccc;
-}
 
 /* search form */
 form {}
 form#search-form {
   width: 73%;
+  position: relative;
 }
 form#search-form input[type="search"] {
   background-color: transparent;
@@ -736,8 +761,8 @@ form#banner-search-form input[type="search"] {
 form#search-form input[type="submit"] {
   position: absolute;
   z-index: 1;
-  top: 3px;
-  right: 248px;
+  top: 3.5px;
+  right: 8px;
   background: transparent url(../img/magnifier.svg) no-repeat right center;
   width: 25px;
   border: none;

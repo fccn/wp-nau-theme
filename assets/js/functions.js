@@ -15,3 +15,17 @@ function closeNav() {
   document.getElementById("close-menu-arrow").style.cssText = "display:none;";
 }
 // ends menu opening and closing button for menu: hamburger
+
+// starts language pointer events
+function changePTLangColor() {
+  document.getElementById("portuguese").style.cssText = "color:#ccc !important";
+  document.getElementById("english").style.cssText = "color:#0857FF !important";
+}
+function changeENLangColor() {
+  document.getElementById("english").style.cssText = "color:#CCC !important";
+  document.getElementById("portuguese").style.cssText = "color:#0857FF !important";
+}
+// ends menu opening and closing button for menu: hamburger
+
+
+
