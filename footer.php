@@ -4,7 +4,7 @@
     <h3>Links</h3>
     <!-- starts quick links -->
     
-    <div id="quicklinks">
+    <div id="quick-links-section">
     
 
 <?php
@@ -48,16 +48,14 @@ wp_nav_menu(array(
     <!-- starts social media -->
     <ul>
     <li class="footer-links-structure">
-    <ul id="social-media">
-      <li>
-        <h5>Social Media</h5><br><br>
-      </li>
+    <ul id="social-media">      
+      <li><h5>Social Media</h5><br><br></li>      
       <li><a href="index.php"><img src="assets/img/twitter.svg" alt="twitter logo" title="Share on Twitter"></a></li>
       <li><a href="#"><img src="assets/img/linkedin.svg" alt="Linkedin logo" title="Share on Linkedin"></a></li>
       <li><a href="#"><img src="assets/img/facebook.svg" alt="Facebook logo" title="Share on Facebook"></a></li>
       <li><a href="#"><img src="assets/img/instagram.svg" alt="Instagram logo" title="Share on Instagram"></a></li>
       <li><a href="#"><img src="assets/img/more-share.svg" alt="Share list" title="Share list"></a></li>
-      <li id="openedx-logo"><a href="https://open.edx.org/" target="_blank"><img src="assets/img/openedx.svg" alt="Powered by openedX" title="Visit openedX website"></a></li>
+      <li id="openedx-logo"><a href="https://open.edx.org/" target="_blank"><img src="assets/img/openedx.svg" alt="Powered by openedX" title="Visit openedX website"></a></li>      
     </ul>
     </li>
     </ul>      
@@ -66,7 +64,7 @@ wp_nav_menu(array(
   </section>
   <!-- ends footer links -->   
   <!-- starts corporate entities -->
-  <section id="quick-links">
+  <section id="entities-quick-links">
     <h3>Entidades</h3>
     <ul>
       <li><a href="https://nau.edu.pt"><img src="assets/img/nau_sempre_aprender.svg" alt="Logo NAU" title="NAU - Sempre a Aprender"></a><br><br>

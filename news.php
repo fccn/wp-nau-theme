@@ -98,9 +98,4 @@ include_once("includes/header.php")?>
 <!-- ends homepage body content --> 
 
 <!-- starts homepage footer -->
-<?php include_once("includes/footer.php")?>
-<!-- ends homepage footer -->
-<!-- ends main container -->
-</div>
-</body>
-</html>
+<?php get_footer(); ?>
