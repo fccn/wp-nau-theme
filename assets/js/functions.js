@@ -28,4 +28,11 @@ function changeENLangColor() {
 // ends menu opening and closing button for menu: hamburger
 
 
+// starts image carrousel
+function rightArrow() {
+  document.getElementsById("container-ul").style.cssText = "right:200px !important;1px solid red";
+}
+// ends menu opening and closing button for menu: hamburger
+
+
 

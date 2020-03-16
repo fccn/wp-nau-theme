@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="49.353" height="49.354" viewBox="0 0 49.353 49.354">
+  <g id="Group_8" data-name="Group 8" transform="translate(-444.529 -195.104)">
+    <rect id="Rectangle_8" data-name="Rectangle 8" width="49.353" height="49.354" transform="translate(444.529 195.104)" fill="#8f0b34"/>
+    <path id="Path_49" data-name="Path 49" d="M452.446,206.932c0,.6-.221,1.028-.822,1.028s-.808-.426-.808-1.028v-1.615c0-.6.221-1.026.808-1.026s.822.425.822,1.026Zm-1.571-5.5c0-.6.206-.956.749-.956s.763.353.763.956v.674c0,.6-.206.955-.763.955s-.749-.353-.749-.955Zm3.244,5.327V205.67a1.969,1.969,0,0,0-1.116-2,1.752,1.752,0,0,0,.97-1.732v-.411a2.335,2.335,0,1,0-4.668,0v.411a1.769,1.769,0,0,0,.938,1.732,1.961,1.961,0,0,0-1.1,2v1.086a2.489,2.489,0,1,0,4.976,0" fill="#fff"/>
+    <path id="Path_50" data-name="Path 50" d="M478.57,219.385l-5.016,4.771a.833.833,0,0,0-.287.717v13.374a.287.287,0,0,0,.287.286h5.181a.286.286,0,0,0,.286-.286V219.5c0-.156-.124-.445-.451-.119" fill="#fff"/>
+    <path id="Path_51" data-name="Path 51" d="M464.119,225.6l-5.017,4.771a.832.832,0,0,0-.286.717v7.157a.288.288,0,0,0,.286.286h5.182a.287.287,0,0,0,.286-.286V225.721c0-.158-.125-.446-.451-.119" fill="#fff"/>
+    <path id="Path_52" data-name="Path 52" d="M480.85,213.6a.139.139,0,0,0-.042-.108.151.151,0,0,0-.093-.041h-.028l-.04,0-3.842.866-.069.007a.16.16,0,0,0-.076.04.147.147,0,0,0,0,.206l.044.044.878.877-8.7,8.7-4.019-4.02a.118.118,0,0,0-.165,0l-1.091,1.091h0l-6.445,6.444a.117.117,0,0,0,0,.163l1.094,1.092a.112.112,0,0,0,.162,0l6.364-6.362,2.915,2.917.01.014,1.091,1.089a.113.113,0,0,0,.163,0l9.879-9.878.921.922a.146.146,0,0,0,.205,0,.143.143,0,0,0,.042-.1v-.011l.845-3.921Z" fill="#fff"/>
+    <path id="Path_53" data-name="Path 53" d="M471.373,226.439l-2.427,2.447a.115.115,0,0,1-.156-.006l-2.2-2.24c-.4-.4-.489-.077-.489.081v11.526a.286.286,0,0,0,.285.286h5.182a.287.287,0,0,0,.286-.286V226.53c0-.158-.125-.448-.481-.091" fill="#fff"/>
+    <text id="TRABALHO_DEcente" data-name="TRABALHO DEcente" transform="translate(457.008 202.627)" fill="#fff" font-size="5.554" font-family="BebasNeue-Regular, Bebas Neue"><tspan x="0" y="0">TRABALHO DEcente</tspan></text>
+    <text id="E_CRESCIMENTO" data-name="E CRESCIMENTO" transform="translate(456.725 207.871)" fill="#fff" font-size="5.554" font-family="BebasNeue-Regular, Bebas Neue"><tspan x="0" y="0">E CRESCIMENTO</tspan></text>
+    <text id="ECONóMICO" transform="translate(456.725 213.026)" fill="#fff" font-size="5.554" font-family="BebasNeue-Regular, Bebas Neue"><tspan x="0" y="0">ECONóMICO</tspan></text>
+  </g>
+</svg>
