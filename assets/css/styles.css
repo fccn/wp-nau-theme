@@ -34,7 +34,7 @@ h2 {
   text-align: left;
   font-family: Roboto !important;
   font-weight: 500;
-  font-size: 30px;
+  font-size: /*30px*/22px;
   font: normal !important;
   letter-spacing: 0.3px;
   color: #060606;
@@ -77,10 +77,12 @@ p {
   line-height: 1.4em;
 }
 body.secondary-pages p {
-  padding: 0px 0px 20px 0px;
+  /*padding: 0px 20px 20px 0px;*/
+  padding: 0px 10px 20px 0px;
 }
 body.secondary-pages h3 {
   height: inherit;
+  padding-bottom: 10px
 }
 q {
   text-align: left;
@@ -138,7 +140,12 @@ table td {
   padding: 20px 10px;
   border: 1px solid #999;
 }
-#body-content article h2 {
+#body-content article h2, #home-content h2 {
+  padding: 0px 0 20px 0;
+  list-style-type: disc;
+  list-style-position: inside;
+  line-height: normal;
+} {
   padding: 0px 0 20px 0;
   list-style-type: disc;
   list-style-position: inside;
@@ -156,6 +163,17 @@ table td {
   list-style-type: disc;
   list-style-position: inside;
 }
+
+body#institution #body-content article ul{
+display: flex;
+    width: 33.3%;
+    line-height: /*1.9em*/ 1.6em;
+    padding: 0px 0 20px 0px;
+    text-indent: 20px;   
+    outline: 1px solid red;
+    list-style-type: none;   
+}
+
 #body-content article ul li a {
   display: contents;
   text-transform: inherit;
@@ -261,8 +279,9 @@ div#main-container {
   border-radius: 10px;
 }
 div#home-content {
-  padding: 40px /*50px*/ 30px 50px 50px;
+  padding: 40px 40px 50px 50px;  
 }
+
 div#home-content section {
   display: flex;
   flex-direction: row;
@@ -273,7 +292,7 @@ div#home-content section {
 }
 div#home-content section ul {
   position: relative;
-  margin-right: 20px;
+  margin-right: /*20px*/ 12px;
   width: 23%;
   min-width: 273px;
   height: auto;
@@ -283,6 +302,22 @@ div#home-content section ul {
   border-radius: 5px 5px 20px 20px;
   opacity: 1;
 }
+
+div#home-content div.courses-wrap {
+    display: contents;
+    padding: 0;
+    margin: 0;  
+}
+
+.secondary-pages div#home-content {
+    padding: 40px 0px 50px 50px;
+    display:flex;
+}
+
+.secondary-pages #entities-nau {
+display: none
+}
+
 div#home-content section#highlighted-courses ul {
   position: relative;
   flex-grow: 1;
@@ -296,7 +331,7 @@ div#home-content section#highlighted-courses ul {
   border-radius: 5px 5px 20px 20px;
   opacity: 1;
 }
-body#homepage section#rolling-courses ul.card {
+body#homepage section#rolling-courses div.card, body#homepage section#rolling-courses ul.card {
   position: relative;
   flex-grow: 1;
   width: 23%;
@@ -304,18 +339,18 @@ body#homepage section#rolling-courses ul.card {
   min-width: 273px;
   height: auto;
 }
-ul#entidades-nau-logos {
+ul#entities-nau-logos {
   width: 100% !important;
   padding: 40px;
   justify-content: space-between;
   align-items: center;
   display: flex;
 }
-ul#entidades-nau-logos img {
+ul#entities-nau-logos img {
   max-width: 100% !important;
   width: 215px
 }
-ul#entidades-nau-logos li:nth-child(2) img {
+ul#entities-nau-logos li:nth-child(2) img {
   padding: 0 20px !important;
 }
 div#home-content section#highlighted-courses {
@@ -350,8 +385,21 @@ div#home-content section#highlighted-courses ul li:nth-child(3) {
   width: -webkit-fill-available;
   justify-content: space-between;
 }
+
+body.secondary-pages div#home-content section#highlighted-courses ul li:nth-child(3) {
+  width: -webkit-fill-available;
+  width: -moz-available;
+  padding: 0px 20px 0px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: -webkit-fill-available;
+  justify-content: space-between;
+  height: 75px;
+  padding-bottom: 50px;
+}
 div#home-content section#highlighted-courses ul li:nth-child(3) p {
-  font-size: 12px
+  font-size: 13px
 }
 div#home-content section#highlighted-courses ul.card li:nth-child(4) {
   padding: 0px 20px 17px 20px;
@@ -393,7 +441,9 @@ div#home-content section#highlighted-courses ul.card li img.clear-other-video-ic
 }
 .rolling-courses-card li:nth-child(2) {
   display: flex;
+  width: max-content;
   width: -webkit-fill-available;
+  width: -moz-available;
   flex-flow: nowrap;
   justify-content: space-between;
   margin-top: 20px;
@@ -435,6 +485,7 @@ div#home-content section#highlighted-courses ul.card li img.clear-other-video-ic
 }
 div#branding-top-nav {
   position: /*relative*/ fixed;
+  top:0;
   z-index: 3;
   margin: 0 auto;
   width: 100%;
@@ -559,12 +610,14 @@ body#institution div#home-slider {
   position: relative;
   width: 100%;
   height: auto;
-  background: transparent url(../img/banner-03.png) no-repeat top left;
+  background: transparent url(../img/banner-03.png) no-repeat 0 -74px;
+  background-size: cover;
 }
 body#institution div#home-slider div#nau-shape {
-  background: transparent url(../img/banner-nau-shape-pink.svg) no-repeat 0 0;
-  height: 458px;
+  background: transparent url("../img/banner-nau-shape-half-pink.svg") no-repeat 0 0;
+  height: /*458px*/226px;
   padding-left: 50px;
+  background-size: contain;
 }
 #secondary-course-logo {
   margin-left: -7px;
@@ -662,7 +715,7 @@ body#secondary div#home-slider .video-know-more-icons {
 body#homepage ul.card .aside-rating-star {
   display: flex;
   flex-wrap: wrap;
-  width: 56% !important;
+  width: 51% !important;
   justify-content: flex-end;
 }
 body#homepage ul.banner-changing-slider {
@@ -688,7 +741,9 @@ ul.card div .number-of-participants {
 }
 ul.card div img.rating-star {
   padding-right: 7px !important;
-  width: 10.5% !important;
+  /*width: 10.5% !important;*/
+  width: 12.5% !important;
+  padding-bottom: 3px;
 }
 ul.card div img:nth-child(5) {
   padding-right: 0 !important;
@@ -796,11 +851,11 @@ div#home-slider h1 {
 }
 body#secondary div#home-slider h1, body#institution div#home-slider h1, body#news div#home-slider h1 {
   text-align: left;
-  padding-top: 54px;
+  padding-top: 58px;
   font: Medium 41px /*/47px*/ Roboto;
   letter-spacing: 0.41px;
   color: #000000;
-  font-size: 38px;
+  font-size: /*38px*/30px;
   font-weight: 500;
   width: 454px;
   text-transform: capitalize;
@@ -1144,9 +1199,25 @@ body#homepage #rolling-course-c {
 body#homepage #rolling-course-d {
   background-color: #EB9E52;
 }
+
+.entities-wrap {
+display: flex;
+width: 100%
+}
+
 /* starts aside */
+body#institution aside {
+  width: 25% !important;
+  min-width: 312px;
+  margin-top: 0px;
+  padding: 50px;
+  background: transparent linear-gradient(180deg, #EEEEEE 0%, #F5F5F5 100%) 0% 0% no-repeat padding-box;
+  border-radius: 20px 0px 0px 20px;
+  opacity: 1;
+}
+
 aside {
-  width: 75%;
+  width: 25%;
   min-width: 312px;
   margin-top: 50px;
   padding: 50px;
@@ -1501,6 +1572,10 @@ footer #entities-quick-links img {
 footer section h3 {
   text-indent: -99999px
 }
+
+footer #quick-links-section ul li:nth-child(1), footer #quick-links-section ul li:nth-child(2) {
+padding-bottom: 20px;
+}
 footer span#copyright {
   text-align: center;
   font: Regular 10px /*/18px*/ Roboto;
@@ -1519,22 +1594,37 @@ footer span#copyright {
   div#home-content section#highlighted-courses ul, div#home-content section#rolling-courses ul, body#homepage section#rolling-courses ul.card {
    margin: 0 0px 17px 0;
   }
+ 
 }
-@media screen and (min-width : 595px) and (max-width : 767px) {
-  div#home-content section#highlighted-courses ul:nth-child(odd) {
-    margin: 0 0px 17px 0;
+
+@media screen and (max-width : 594px) {
+  div#home-content section#highlighted-courses ul.card:nth-child(odd), div#home-content section#rolling-courses ul.card:nth-child(odd), div#home-content section#highlighted-courses ul.card:nth-child(even), div#home-content section#rolling-courses ul.card:nth-child(even) {
+    margin: 0 0px 13px 0;
   }
   body#homepage section#rolling-courses ul.card:nth-child(odd) {
     position: relative;
     flex-grow: 1;
     width: 23%;
-    margin: 0 0px 17px 0;
+    margin: 0 0px 13px 0;
     min-width: 273px;
-    height: auto;
+    height: auto;    
+}
 }
 
-}
 
+@media screen and (min-width : 595px) and (max-width : 768px) {
+  div#home-content section#highlighted-courses ul.card:nth-child(odd) {
+    margin: 0 0px 13px 0;
+  }
+  body#homepage section#rolling-courses ul.card:nth-child(odd) {
+    position: relative;
+    flex-grow: 1;
+    width: 23%;
+    margin: 0 0px 13px 0;
+    min-width: 273px;
+    height: auto;    
+}
+}
 
 @media screen and (max-width : 768px) {
   div#home-content {
@@ -1545,8 +1635,13 @@ footer span#copyright {
     text-align: center;
     padding: 80px 0 0 0;
     margin: 0;
-    font-size: 40px !important;
+    font-size: 40px;
   }
+  
+  body.scondary-pages div#home-slider h1 {  
+    font-size: 30px;
+  }
+  
   div#home-slider div#nau-shape {
     padding-left: 0
   }
@@ -1594,6 +1689,7 @@ footer span#copyright {
     width: 50%;
     display: grid;
 }
+
 footer #entities-quick-links ul {
     background-color: white;
     padding: 50px 0px 50px 0px;
@@ -1626,16 +1722,33 @@ footer span#copyright {
     margin-left: 50px;
     margin-top: 26px;
     display: initial;
+}
+div#home-content section#highlighted-courses ul.card, body#homepage section#rolling-courses ul.card {
+    margin: 0 0px 13px 13px;
+   }
+   
+div#home-slider p {
+    text-align: center;
+    font-size: 18;
+  }
+}
 
+@media screen and (min-width: 769px) and (max-width: 960px){
+body#homepage div#home-slider h1 {
+    text-align: center;
+    padding: 75px 0 0 0;
+    margin: 0;
+    font-size: 65px !important;
+   }
 }
-}
+
 @media screen and (min-width : 960px) and (min-width : 1024px) {
-
 menu.container {display: none !important}
-
-
 }
 
+@media screen and (max-width: 1076px ) {
+/**/
+}
 
 @media screen and (max-width : 960px) {
 
@@ -1667,6 +1780,13 @@ footer #entities-quick-links ul {
     text-decoration: none;
     color: #074CE1;
   }
+  body#homepage div#home-slider h1 {
+    text-align: center;
+    padding: 75px 0 0 0;
+    margin: 0;
+    font-size: 42px
+  }
+  
   div#home-slider h1 {
     text-align: center;
     padding: 75px 0 0 0;
@@ -1682,6 +1802,7 @@ footer #entities-quick-links ul {
   }
   div#home-slider p {
     text-align: center;
+    font-size:18px;
   }
   div#menu-container {
     position: absolute;
