@@ -11,3 +11,83 @@
 /* =Theme customization starts here
 ------------------------------------------------------- */
 
+h1 {
+    font-size: 2em;
+    font-family: Roboto;
+    margin-bottom: 1em;
+}
+
+
+#secondary-course-logo {    
+    background: white;
+    padding: 9px;    
+    border-radius:      3px;    
+    -moz-border-radius: 3px;    
+    max-width:100px;
+    max-height:100px;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    
+}
+
+#body-content article h2, #home-content h2 {
+    padding: 0px 0 20px 0;
+    list-style-type: disc;
+    list-style-position: inside;
+    line-height: normal;
+    width: 100%;    
+}
+
+#body-content article h2, #home-content h2::before { 
+  content: "| ";
+  color: #0958FE;
+}
+
+pre {
+    font-family: Consolas,monospace
+}
+
+article {
+    padding: 50px;
+    width: 100%;
+    background: #F5F5F5;
+}
+
+
+.facebook-share-button{
+    display: inline-block;            
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    background-size: 100% 100%; /* ou 'contain' */
+    background-image: url(assets/img/facebook.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+aside .share-and-start-course ul li, .share-and-start-course ul li, aside .share-and-start-course ul li a {
+    padding-right: 50px !important;
+}
+
+ul#entities-nau-logos img {
+    max-height: 80px;
+    width: auto;
+} 
+
+ul#entities-nau-logos li {
+    margin-left: 20px;    
+    margin-right: 20px;    
+}
+
+ul.result-set {
+   
+}
+
+li.result {
+   list-style-type: none; 
+}
+
+li.result .image {
+   width: 250px;
+}

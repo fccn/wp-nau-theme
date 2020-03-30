@@ -1,3 +1,16 @@
+<?
+
+  $entity = get_custom_value("nau-id");
+  
+  $courses = nau_get_pages("courses", ["owner" => $entity]);
+?>
+
+<pre>
+<?  
+  print_r($courses);
+?>
+</pre>
+
   <section id=="entity-courses">  
     <h3>Cursos <a href="">INA</a></h3>
     <!-- starts curso em destaque #1 -->

@@ -1,6 +1,12 @@
+  <?php
+    global $course_list_title;
+    
+    $title = explode("|", $course_list_title);
+  ?>   
   <!-- starts cursos a decorrer -->
   <section id="rolling-courses">
-    <h2 class="explore-all-courses"><span class="heading-blue-bar">|</span>Cursos <span class="normal-font-weight">a decorrer</span> <span class="heading-blue-bar">|</span><a href="#" title="Explorar todos os cursos"><span class="normal-font-weight explore-all-courses-font">Explorar todos os cursos</span></a></h2>
+    <h2 class="explore-all-courses"><?=$title[0]?> <span class="normal-font-weight"><?=$title[1]?></span> 
+    <span class="heading-blue-bar">|</span><a href="#" title="Explorar todos os cursos"><span class="normal-font-weight explore-all-courses-font"><?=_("Explore all courses")?></span></a></h2>
     <!-- starts curso a decorrer #1 -->
     <div class="courses-wrap">
     <ul id="rolling-course-a" class="rolling-courses-card card">

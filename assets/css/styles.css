@@ -350,9 +350,6 @@ ul#entities-nau-logos img {
   max-width: 100% !important;
   width: 215px
 }
-ul#entities-nau-logos li:nth-child(2) img {
-  padding: 0 20px !important;
-}
 div#home-content section#highlighted-courses {
   width: 100%;
   /*height: 527px;
@@ -484,7 +481,7 @@ div#home-content section#highlighted-courses ul.card li img.clear-other-video-ic
   font-size: 12px
 }
 div#branding-top-nav {
-  position: /*relative*/ fixed;
+  position: relative /*fixed*/;
   top:0;
   z-index: 3;
   margin: 0 auto;
@@ -582,7 +579,7 @@ section#flexible-content-area {
   width: 100%;
   height: auto;
   max-width: 1280px;
-  margin: 65px auto 0 auto;
+  margin: /*65px*/0 auto 0 auto;
 }
 body#secondary div#home-slider {
   position: relative;
@@ -590,11 +587,27 @@ body#secondary div#home-slider {
   height: auto;
   background: transparent url(../img/banner-02.png) no-repeat top left;
 }
-body#secondary div#home-slider div#nau-shape {
+body#secondary div#home-slider div#nau-shape  {
   background: transparent url(../img/banner-nau-shape-white.svg) no-repeat 0 0;
-  height: 456px;
+  height: 408px;
   padding-left: 50px;
 }
+
+body#secondary div#text-banner {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: transparent url(../img/banner-03.png) no-repeat 0 -74px;
+  background-size: cover;
+}
+
+body#secondary div#text-banner div#nau-shape {
+  background: rgba(128, 128, 128, 0.1) url("../img/banner-nau-watermark.svg") no-repeat 0 0;
+  height: /*458px*/226px;
+  padding-left: 50px;
+  background-size: contain;
+}
+
 body#news div#home-slider {
   position: relative;
   width: 100%;
@@ -614,7 +627,7 @@ body#institution div#home-slider {
   background-size: cover;
 }
 body#institution div#home-slider div#nau-shape {
-  background: transparent url("../img/banner-nau-shape-half-pink.svg") no-repeat 0 0;
+  background: transparent url("../img/banner-nau-shape-red.svg") no-repeat 0 0;  
   height: /*458px*/226px;
   padding-left: 50px;
   background-size: contain;
@@ -624,6 +637,7 @@ body#institution div#home-slider div#nau-shape {
   margin-top: 54px;
   font-size: 41px;
   font-weight: 500;
+   margin-right: 14px;
 }
 div#home-slider {
   position: relative;
@@ -663,7 +677,7 @@ body#homepage div#home-slider .video-know-more-icons {
   align-items: flex-end;
   flex-wrap: wrap;
   padding: 0;
-  margin: 0;
+  margin: 0; 
 }
 /* STARTS ICONS *****************************/
 div#home-slider .video-know-more-icons {
@@ -707,7 +721,7 @@ body#secondary div#home-slider .video-know-more-icons {
   flex-wrap: wrap;
   padding: 0;
   margin: 0;
-  margin-left: 142px;
+  margin-left: 112px;
   display: flex;
   width: 335px;
   height: auto;
@@ -840,6 +854,7 @@ body#secondary div#home-slider a:hover .icon-video-circle {
 /* starts know more icon */
 /* ends know more icon */
 /* ENDS ICONS *****************************/
+
 div#home-slider h1 {
   text-align: left;
   font: Bold 55px/48px Roboto;
@@ -849,7 +864,18 @@ div#home-slider h1 {
   padding-top: 76px;
   line-height: inherit;
 }
-body#secondary div#home-slider h1, body#institution div#home-slider h1, body#news div#home-slider h1 {
+
+body.secondary-pages div#home-slider h1 {  
+text-align: left;
+    font: 500 33px/48px Roboto;
+    letter-spacing: -1.1px;
+    padding-top: 64px;
+    line-height: inherit;
+    color: black;
+    width: /*46%*/500px;
+    text-transform: capitalize;
+}
+body#institution div#home-slider h1, body#news div#home-slider h1 {
   text-align: left;
   padding-top: 58px;
   font: Medium 41px /*/47px*/ Roboto;
@@ -857,7 +883,7 @@ body#secondary div#home-slider h1, body#institution div#home-slider h1, body#new
   color: #000000;
   font-size: /*38px*/30px;
   font-weight: 500;
-  width: 454px;
+  width: 660px;
   text-transform: capitalize;
   line-height: 1.15em;
   display: flex;
@@ -1004,20 +1030,20 @@ ul#menu_login_register span, ul#menu_languages span {
   display: flex;
   padding: 0 4px;
 }
-ul#menu_login_register span, ul#menu_login_register li a#register {
+ul#menu_login_register span, ul#menu_login_register li:first-child a {
   background: transparent url("../img/lang-divider.svg") no-repeat center right;
   padding: 0;
   height: auto;
-  padding-right: 4px;
-  margin-right: 4px;
+  padding-right: 5px;
+  margin-right: 5px;
   color: #000;
 }
 ul#menu_languages li {
   background: transparent url("../img/lang-divider.svg") no-repeat center right;
   height: auto;
   padding: 0;
-  padding-right: 4px;
-  margin-right: 4px;
+  padding-right: 5px;
+  margin-right: 5px;
 }
 ul#menu_languages li.current_language {
   color: #CCC;
@@ -1036,22 +1062,27 @@ ul#menu_languages, ul#menu_login_register {
 ul#menu_login_register {
   margin: 0 0 0 17px;
 }
+
+ul#menu_login_register li {
+  text-align: right;  
+}
 ul#menu_languages li a.differentLang {
   height: auto;
   /* padding: 0;*/
 }
-ul#menu_login_register li a#login_image {
+ul#menu_login_register li:last-child a {
   padding-right: 30px;
   padding-left: 0px;
-  background: transparent url(../img/login.svg) no-repeat 44px 4.5px;
+  background: transparent url(../img/login.svg) no-repeat center right;
   background-size: 23px;
   color: #000;
   display: flex;
+  text-align: right
 }
 ul#menu_languages li a {
   display: flex;
 }
-ul#menu_actions li a#register {
+ul#menu_actions li:nth-child(1) a {
   padding-right: 0;
   margin-left: 13px;
   display: flex;
@@ -1587,14 +1618,14 @@ footer span#copyright {
   margin-top: 26px;
   display: block;
 }
+
 /*********************************/
 /********* MEDIA QUERIES *********/
 /*********************************/
 @media screen and (max-width : 594px) {
   div#home-content section#highlighted-courses ul, div#home-content section#rolling-courses ul, body#homepage section#rolling-courses ul.card {
    margin: 0 0px 17px 0;
-  }
- 
+  } 
 }
 
 @media screen and (max-width : 594px) {
@@ -1610,8 +1641,6 @@ footer span#copyright {
     height: auto;    
 }
 }
-
-
 @media screen and (min-width : 595px) and (max-width : 768px) {
   div#home-content section#highlighted-courses ul.card:nth-child(odd) {
     margin: 0 0px 13px 0;
@@ -1665,10 +1694,22 @@ footer span#copyright {
   background-color:#ebebeb;
   }
   
+  body.secondary-pages div#home-slider .aside-rating-star {
+    display: none;
+}
+svg#video-icon {
+    width: 34px;
+    display: none;
+}
+.know-more-icon {display: none}
+
+div#home-slider .aside-course-status {
+    display: none;   
+}
   
-  div#home-slider div#nau-shape {
+  div#home-slider div#nau-shape  {
     background-size: cover;
-    height: 277px;
+    height: 276px !important;
   }
     
   div#home-content section ul {
@@ -1787,6 +1828,11 @@ footer #entities-quick-links ul {
     font-size: 42px
   }
   
+    body.secondary-pages div#home-slider h1 {
+    text-align: left;       
+  }
+  
+  
   div#home-slider h1 {
     text-align: center;
     padding: 75px 0 0 0;
@@ -1798,7 +1844,7 @@ footer #entities-quick-links ul {
     margin: 0 auto;
   }
   div#home-slider div#nau-shape {
-    padding-left: 0
+    padding-left: 50px;
   }
   div#home-slider p {
     text-align: center;
@@ -1881,7 +1927,7 @@ footer #entities-quick-links ul {
   ul#menu_actions li a#login_image {
     margin-right: 0px;
   }
-  ul#menu_actions li a#register {
+  ul#menu_actions li:first-child a {
     margin-left: 0px;
   }
   div#languages-actions-container {

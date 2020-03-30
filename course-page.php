@@ -1,4 +1,9 @@
 <?php /* Template Name: Course About Page */ ?>
+<?php 
+  $nauPageID = "secondary";
+  $nauBodyClass = "class='secondary-pages'";
+  get_header(); 
+?>
 
 <?php get_header(); ?>
 

@@ -21,7 +21,6 @@ function nau_theme_setup() {
     
     register_nav_menu('main', 'Top Bar Menu');
     register_nav_menu('footer', 'Footer Menu');
-    register_nav_menu('language', 'Languange Selection Menu');
     register_nav_menu('access', 'NAU Access Menu');
 }
 
@@ -46,53 +45,131 @@ function wpb_list_child_pages() {
 add_shortcode('wpb_childpages', 'wpb_list_child_pages');
 
 
-function nau_list_pages($category = "", $atts = array()) { 
+function nau_get_pages($category = "", $atts = array()) { 
+
   extract(shortcode_atts(array(
     'filter' => ''
     ), $atts));
 
   $args = array('post_type' => 'page', "posts_per_page" => -1, "category" => $category);
-  
+        
   if ($filter != "") {
        $args["tag_slug__in"] = explode(" ", $filter);
   }
-    
-  $the_query = new WP_Query($args);
 
-  $s = "XX ($filter) <p>";
-  $s .= "Last SQL-Query: {$the_query->request}";
-  
-  if ( $the_query->have_posts() ) {
-    $s .= '<ul>';
-    while ( $the_query->have_posts() ) {
-        $the_query->the_post();
-        $s .= '<li><a href="' . esc_url( get_permalink()) . '">' . get_the_title() . '</a></li>';
-    }
-    $s .= '</ul>';
-} else {
-    // no posts found
+  $query = new WP_Query($args);
+
+  $list  = [];
+
+  foreach($query->posts as $post) {
+    $list[] = $post->to_array();    
   }
-    
   
-  $s .= "</p>XX";
-    
-  return $s;
+  return $list;
 }
 
-function nau_list_entities($atts = array()) { 
-   return nau_list_pages("entidade", $atts);
+function nau_get_posts($category = "", $atts = array()) { 
+
+  extract(shortcode_atts(array(
+    'filter' => ''
+    ), $atts));
+
+  $args = array('post_type' => 'post', "posts_per_page" => -1, "category" => $category);
+        
+  if ($filter != "") {
+       $args["tag_slug__in"] = explode(" ", $filter);
+  }
+
+  $query = new WP_Query($args);
+
+  $list  = [];
+
+  foreach($query->posts as $post) {
+    $list[] = $post->to_array();    
+  }
+  
+  return $list;
 }
+
+
+function make_link_list($array_of_pages) {
+    $s = "";
+    if (count($array_of_pages) > 0) {
+        $s .= "<ul>";
+        foreach($array_of_pages as $page) {             
+          $s .= '<li><a href="' . get_permalink($page["ID"]) . '">' . $page["post_title"] . '</a></li>';          
+        }
+        $s .= "</ul>";
+    } else {
+        $s .= _("None found");// no posts found
+    }
+    return $s;
+}
+
+function nau_list_entities($atts = array()) {
+   return make_link_list(nau_get_pages("entidade", $atts));
+} 
 
 add_shortcode('nau_list_entities', 'nau_list_entities');
 
 function nau_list_courses($atts = array()) { 
-   return nau_list_pages("curso", $atts);
+   return make_link_list(nau_get_pages("curso", $atts));
 }
 
-add_shortcode('nau_list_courses', 'nau_list_entities');
+add_shortcode('nau_list_courses', 'nau_list_courses');
 
+
+function nau_list_news($atts = array()) { 
+   return make_link_list(nau_get_posts("noticia", $atts));
+}
+
+
+function get_custom_value($key, $default = "", $page = -1) {
+
+  if ($page < 0) {
+    $page = get_the_ID();
+  }
+    
+  $values = get_post_custom_values($key, $page);
+
+  if ($values == null) {
+    return $default;
+  }
+
+  return $values[0]; // Returns First Value of array    
+}
+  
+  
 # teste
 
 
+
+function nau_list_tags($page = -1) {
+    if ($page < 0) {
+        $page = get_the_ID();
+    }
+    
+    $tags = get_the_tags($page);
+
+    if (!$tags) return "";
+    
+    $s = "<span id='tags'>";
+    foreach($tags as $tag) {
+      $s .= "<a href='/" . $tag->slug . "'>" . $tag->name . "</span>";
+    } 
+    $s .= "</span>";
+
+    return $s;
+}
+
+/*
+function nau_register_query_vars( $vars ) {    
+    $vars[] = 'search';
+    $vars[] = 'title';
+    $vars[] = 'entity';
+    return $vars;
+}
+add_filter( 'query_vars', 'nau_register_query_vars' );
+*/
 
 ?>

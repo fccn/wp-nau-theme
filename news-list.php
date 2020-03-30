@@ -1,4 +1,4 @@
-<?php /* Template Name: General Text Page */ ?>
+<?php /* Template Name: News List */ ?>
 
 <?php 
   $nauPageID = "secondary";
@@ -60,6 +60,8 @@ L351.2,579.3"/>
   <h1><?= get_post_field('post_title', $pageID) ?></h1>
   
   <?= do_shortcode(get_post_field('post_content', $pageID)) ?>
+  
+  <?=nau_list_news()?>
 
 
 <?php 
@@ -73,7 +75,4 @@ L351.2,579.3"/>
 <?php
   get_template_part( "global", "footer" );
 ?>
-
-</div>
-
 <?php get_footer(); ?>
