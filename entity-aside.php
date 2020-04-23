@@ -9,7 +9,7 @@
     <iframe class="un-icons" src="https://www.youtube-nocookie.com/embed/<?=get_custom_value("youtube")?>" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
     
     <ul class="course-related-links">
-        <li id="explore-all-courses" class="course-details right-arrow"><a href="#" target="_self">Explorar todos os cursos</a></li>
+        <li id="explore-all-courses" class="course-details right-arrow"><a href="/<?=get_option("nau_slug_courses_page")?>" target="_self"><?=__("Explore all courses")?></a></li>
 
         <?php
         
@@ -44,7 +44,7 @@
 
       <li class="share-and-start-course">
         <ul>
-          <li class="share-course"><a href="" id="facebook-share-btt" rel="nofollow" target="_blank" class=""><?=_("Share")?>  </a></li>                    
+          <li class="share-course"><a href="" id="facebook-share-btt" rel="nofollow" target="_blank" class=""><?=__("Share")?>  </a></li>                    
         </ul>
       </li>
     

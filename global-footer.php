@@ -46,17 +46,21 @@ class NAU_Walker_Footer_Nav_Menu extends Walker_Nav_Menu {
               
         ?>
 
+        <?
+          $social_media = get_option( 'wpseo_social' )
+        ?>
+
         <!-- starts social media -->
         <ul>
         <li class="footer-links-structure">
         <ul id="social-media">      
-          <li><h5>Social Media</h5><br><br></li>      
-          <li><a href="#"><img src="assets/img/twitter.svg" alt="twitter logo" title="Share on Twitter"></a></li>
-          <li><a href="#"><img src="assets/img/linkedin.svg" alt="Linkedin logo" title="Share on Linkedin"></a></li>
-          <li><a href="" id="facebook-share-btt" rel="nofollow" target="_blank" class=""><img src="assets/img/facebook.svg" alt="Facebook logo" title="Share on Facebook"></a></li>
-          <li><a href="#"><img src="assets/img/instagram.svg" alt="Instagram logo" title="Share on Instagram"></a></li>
-          <li><a href="#"><img src="assets/img/more-share.svg" alt="Share list" title="Share list"></a></li>
-          <li id="openedx-logo"><a href="https://open.edx.org/" target="_blank"><img src="assets/img/openedx.svg" alt="Powered by openedX" title="<?=_("Visit openedX website")?>"></a></li>      
+          <li><h5><?=__("Social Media")?></h5><br><br></li>      
+          <li><a href="<?=$social_media["twitter_site"]?>"><img src="assets/img/twitter.svg" alt="twitter logo" title="<?=__("Share on Twitter")?>"></a></li>
+          <li><a href="<?=$social_media["linkedin_url"]?>"><img src="assets/img/linkedin.svg" alt="Linkedin logo" title="<?=__("Share on Linkedin")?>"></a></li>
+          <li><a href="<?=$social_media["facebook_site"]?>" id="facebook-share-btt" rel="nofollow" target="_blank" title="<?=__("Share on Facebook")?>" class=""><img src="assets/img/facebook.svg" alt="Facebook logo" title="Share on Facebook"></a></li>
+          <li><a href="<?=$social_media["instagram_url"]?>"><img src="assets/img/instagram.svg" alt="Instagram logo" title="<?=__("Share on Instagram")?>"></a></li>
+          <li><a href="<?=$social_media["wikipedia_url"]?>"><img src="assets/img/more-share.svg" alt="Share list" title="Share list"></a></li>
+          <li id="openedx-logo"><a href="https://open.edx.org/" target="_blank"><img src="assets/img/openedx.svg" alt="Powered by OpenEdX" title="<?=__("Visit OpenEdX website")?>"></a></li>      
         </ul>
         </li>
         </ul>      
@@ -68,13 +72,17 @@ class NAU_Walker_Footer_Nav_Menu extends Walker_Nav_Menu {
       <section id="entities-quick-links">        
         <ul>
           <li><a href="https://nau.edu.pt"><img src="assets/img/nau_sempre_aprender.svg" alt="Logo NAU" title="NAU - Sempre a Aprender"></a><br><br>
-          <span id="copyright" >&copy; <?php echo date("Y")?> - FCT|FCCN. All rights reserved.</span>
+          <span id="copyright" >&copy; <?php echo date("Y")?> - FCT|FCCN. <?=__("All rights reserved.")?></span>
           </li>
           <li><a href="https://www.fccn.pt/financiamento-projeto-nau/"><img src="<?=get_template_directory_uri()?>/assets/img/co-financed.png" alt="Logos: Compete, Portugal 2020 e União Europeia - Fundo Europeu de Desenvolvimento Regional"  title="Compete 2020, Portugal 2020 e União Europeia - Fundo Europeu de Desenvolvimento Regional"></a></li>
-          <li><a href="https://www.incode2030.gov.pt/" target="_blank"><img src="assets/img/incode.png" alt="Portugal - INcode2030" title="Visit INcode2030 website"></a></li>  
+          <li><a href="https://www.incode2030.gov.pt/" target="_blank"><img src="assets/img/incode.png" alt="Portugal - INcode2030" title="<?=__("Visit INcode2030 website")?>"></a></li>  
         </ul>
       </section>
       <!-- ends corporate entities --> 
     </footer>
 
+    <div class="video_modal">
+       <button class="video_modal_close" onClick="closeVideo();">x</button>
+       <div id="videoPlayer"></div>
+    </div>
 

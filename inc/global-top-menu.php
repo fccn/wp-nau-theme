@@ -75,14 +75,14 @@ class NAU_Walker_Access_Menu extends Walker_Nav_Menu {
 <div id="main-container">
 
   <div id="branding-top-nav">
-    <a id="open-menu-arrow" href="javascript:void()" onclick="openNav()" title="<?=_("Open")?>">&#9776;</a>  
+    <a id="open-menu-arrow" href="javascript:void()" onclick="openNav()" title="<?=__("Open")?>">&#9776;</a>  
     <a href="<?=get_site_url()?>"><img id="logo" width="190" src="assets/img/nau_sempre_aprender.svg" alt="NAU logo"></a> 
 
     <!-- starts menu container -->
     <div id="menu-container">
 
       <!-- starts top nav menu -->
-      <a id="close-menu-arrow" href="javascript:void()" onclick="closeNav()" title="<?=_("Close")?>">&#10005;</a>
+      <a id="close-menu-arrow" href="javascript:void()" onclick="closeNav()" title="<?=__("Close")?>">&#10005;</a>
       <div class="nav-icon"></div>
       <?php 
           wp_nav_menu(array(
@@ -99,7 +99,7 @@ class NAU_Walker_Access_Menu extends Walker_Nav_Menu {
   
           <!-- starts top nav search bar -->          
           <form id="search-form" action="<?php echo home_url(); ?>" role="search" method="get">
-            <input id="s" name="s" type="search" placeholder="<?=_("Search courses...")?>" value="<?=get_search_query()?>">
+            <input id="s" name="s" type="search" placeholder="<?=__("Search courses...")?>" value="<?=get_search_query()?>">
             <input name="submit-search" type="submit">
           </form>
           <!-- ends top nav search bar -->

@@ -1,11 +1,13 @@
 /*
- Theme Name:     NAU Theme
- Theme URI:      https://gitlab.fccn.pt/RRibeiro/wp-nau-theme
- Description:    NAU Theme
- Author:         NAU - Rui Ribeiro
- Author URI:     https://gitlab.fccn.pt/u/RRibeiro 
- Version:        0.0.1
-*/
+ * Theme Name:     NAU Theme
+ * Theme URI:      https://gitlab.fccn.pt/RRibeiro/wp-nau-theme
+ * Description:    NAU Theme
+ * Author:         NAU - Rui Ribeiro
+ * Author URI:     https://gitlab.fccn.pt/u/RRibeiro 
+ * Version:        0.0.2
+ * Text Domain:    nau-theme
+ * Domain Path:    /languages
+ */
  
  
 /* =Theme customization starts here
@@ -14,15 +16,19 @@
 h1 {
     font-size: 2em;
     font-family: Roboto;
-    margin-bottom: 1em;
+    margin-bottom: 1em;	
 }
 
+body.secondary-pages h1 {
+	font-weight: 500;
+	padding-bottom: 20px;
+}
 
 #secondary-course-logo {    
     background: white;
     padding: 9px;    
-    border-radius:      3px;    
-    -moz-border-radius: 3px;    
+    border-radius: 3px;    
+    -moz-border-radius:3px;    
     max-width:100px;
     max-height:100px;
     width: 100px;
@@ -32,16 +38,18 @@ h1 {
 }
 
 #body-content article h2, #home-content h2 {
-    padding: 0px 0 20px 0;
+    padding: 0px 0 20px 0 !important;
     list-style-type: disc;
     list-style-position: inside;
     line-height: normal;
     width: 100%;    
 }
 
-#body-content article h2, #home-content h2::before { 
-  content: "| ";
+#body-content article h2, #home-content h2::before, h2::before { 
+  /*content: "| ";*/
   color: #0958FE;
+  font-weight: 400;
+  font-size: 19px;
 }
 
 pre {
@@ -49,11 +57,10 @@ pre {
 }
 
 article {
-    padding: 50px;
+    padding: 20px 0px 0 0px;
     width: 100%;
     background: #F5F5F5;
 }
-
 
 .facebook-share-button{
     display: inline-block;            
@@ -66,13 +73,18 @@ article {
     background-position: center;
 }
 
-aside .share-and-start-course ul li, .share-and-start-course ul li, aside .share-and-start-course ul li a {
+.share-and-start-course ul li, aside .share-and-start-course ul li a {
     padding-right: 50px !important;
 }
 
+aside .share-and-start-course ul li {
+    padding-right: 0px !important;
+}
+
 ul#entities-nau-logos img {
-    max-height: 80px;
+    max-height: 33px;
     width: auto;
+    padding: 20px 0;
 } 
 
 ul#entities-nau-logos li {
@@ -91,3 +103,161 @@ li.result {
 li.result .image {
    width: 250px;
 }
+
+
+
+.video_modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate3d( -50%, -50%, 0 );
+    display: none;
+    z-index: 5;
+    width: 640px;
+    height: 480px;    
+}
+
+.video_modal #videoPlayer {
+    max-width: 100%;
+}
+
+.video_modal .video_modal_close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: none;
+}
+
+.video_modal:hover .video_modal_close {
+    display: block;    
+}
+
+.modal-open {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;    
+}
+
+.modal-open:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-open .video_modal {
+    display: block;
+}
+
+.nau-logo-filter {
+  background: transparent url(assets/img/banner-nau-shape.svg) no-repeat 0 0;
+  height: 550px;
+  padding-left: 50px;
+}
+
+.nau-slide-content {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+
+.homepage-slider {
+    width:1600px;
+    height:550px;
+}
+
+.homepage-slide-item-not {
+    -webkit-box-shadow:inset 0px 0px 0px 10px #f00;
+    -moz-box-shadow:inset 0px 0px 0px 10px #f00;
+    box-shadow:inset 0px 0px 0px 10px #f00;    
+}
+
+
+
+
+body#homepage div#home-slider .homepage-slide-item div.nau-slider-label {
+  margin-left: 100px;
+}
+
+body#homepage div#home-slider .homepage-slide-item .nau-slider-label h1 {
+  text-align: left;
+  font: Bold 55px/48px Roboto;
+  letter-spacing: -1.1px;
+  color: #fff;
+  text-transform: uppercase;
+  padding-top: 76px;
+  line-height: inherit;
+}
+
+body#homepage div#home-slider .homepage-slide-item .nau-slider-label h1 span {
+  font-weight: 100;
+}
+
+body#homepage div#home-slider .homepage-slide-item .nau-slider-label p {
+  text-align: left;
+  font-family: roboto;
+  font-weight: 100;
+  font-size: 22px;
+  letter-spacing: -0.45px;
+  color: #fff;  
+  line-height: normal;
+  padding-top: 5px
+}
+
+  
+body#homepage div#home-slider .homepage-slide-actions .video-know-more-icons {
+    height: 379px;
+    margin-left: 73px;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    padding-left: 100px;
+    padding-top: 0px;
+}
+
+/* jssor slider loading skin spin css */
+                
+.jssorl-spin img {
+ animation-name: jssorl-spin;
+ animation-duration: 1.6s;
+ animation-iteration-count: infinite;
+ animation-timing-function: linear;
+ }
+
+        @keyframes jssorl-spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        /*jssor slider bullet skin 132 css*/
+        .jssorb132 {position:absolute;}
+        .jssorb132 .i {position:absolute;cursor:pointer;}
+        .jssorb132 .i .b {fill:#fff;fill-opacity:0.8;stroke:#000;stroke-width:1600;stroke-miterlimit:10;stroke-opacity:0.7;}
+        .jssorb132 .i:hover .b {fill:#000;fill-opacity:.7;stroke:#fff;stroke-width:2000;stroke-opacity:0.8;}
+        .jssorb132 .iav .b {fill:#000;stroke:#fff;stroke-width:2400;fill-opacity:0.8;stroke-opacity:1;}
+        .jssorb132 .i.idn {opacity:0.3;}
+
+        .jssora051 {display:block;position:absolute;cursor:pointer;}
+        .jssora051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
+        .jssora051:hover {opacity:.8;}
+        .jssora051.jssora051dn {opacity:.5;}
+        .jssora051.jssora051ds {opacity:.3;pointer-events:none;}
+
+

@@ -1,0 +1,165 @@
+# Portuguese translations for PACKAGE package.
+# Copyright (C) 2020 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# root <rui.ribeiro@fccn.pt>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-08 15:05+0100\n"
+"PO-Revision-Date: 2020-04-08 11:06+0100\n"
+"Last-Translator: root <rui.ribeiro@fccn.pt>\n"
+"Language-Team: Portuguese\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3\n"
+
+#: courses-cards.php:92 homepage-running-courses.php:73
+msgid "+Info"
+msgstr "+Info"
+
+#: global-footer.php:75
+msgid "All rights reserved."
+msgstr "Todos os direitos reservados."
+
+#: course_list.php:12
+msgid "All|courses"
+msgstr "Todos|cursos"
+
+#: courses-cards.php:67 homepage-running-courses.php:50
+msgid "Certificate"
+msgstr "Certificado"
+
+#: inc/global-top-menu.php:85
+msgid "Close"
+msgstr "Fechar"
+
+#: home.php:23
+msgid "Courses|Highlighted"
+msgstr "Cursos|Destacados"
+
+#: home.php:29
+msgid "Courses|Running"
+msgstr "Cursos|Disponíveis"
+
+#: entity.php:74
+msgid "Courses|running"
+msgstr ""
+
+#: home.php:35
+msgid "Entity|Founders"
+msgstr "Entidades|Fundadores"
+
+#: homepage-running-courses.php:13
+msgid "Explore all courses"
+msgstr "Explore todos os cursos"
+
+#: inc/slider/item-course.php:73 inc/slider/item-entity.php:81
+msgid "Know +"
+msgstr "Saber +"
+
+#: courses-cards.php:92
+msgid "Learn more about this course"
+msgstr "Saiba mais sobre o contorno do curso"
+
+#: ______single.php:33
+msgid "Next"
+msgstr "Próximo"
+
+#: ______single.php:34
+msgid "Next post:"
+msgstr "Próximo artigo:"
+
+#: functions.php:122
+msgid "None found"
+msgstr "Nenhum encontrado"
+
+#: inc/global-top-menu.php:78
+msgid "Open"
+msgstr "Abrir"
+
+#: courses-cards.php:83 course-page.php:93 homepage-running-courses.php:63
+msgid "Participants"
+msgstr "Participantes"
+
+#: ______single.php:36
+msgid "Previous"
+msgstr "Anterior"
+
+#: ______single.php:37
+msgid "Previous post:"
+msgstr "Artigo anterior:"
+
+#: inc/slider/item-news.php:82
+msgid "Read More"
+msgstr "Lêr Mais"
+
+#: homepage-running-courses.php:13
+msgid "Running Courses"
+msgstr "Cursos Disponíveis"
+
+#: inc/slider/item-search.php:35 homepage-banner.php:15
+msgid "Search Courses"
+msgstr "Pesquisar Cursos"
+
+#: inc/global-top-menu.php:102
+msgid "Search courses..."
+msgstr "Pesquisar Cursos..."
+
+#: courses-cards.php:89
+msgid "See a video about this course"
+msgstr "Veja um vídeo sobre este curso"
+
+#: inc/slider/item-course.php:53 inc/slider/item-news.php:60
+#: inc/slider/item-entity.php:62 courses-cards.php:88 course-page.php:100
+#: homepage-running-courses.php:68
+msgid "See video"
+msgstr "Ver vídeo"
+
+#: entity-aside.php:47
+msgid "Share"
+msgstr "Partilhar"
+
+#: global-footer.php:60
+msgid "Share on Facebook"
+msgstr "Partilhar no Facebook"
+
+#: global-footer.php:61
+msgid "Share on Instagram"
+msgstr "Partilhar no Instagram"
+
+#: global-footer.php:59
+msgid "Share on Linkedin"
+msgstr "Compartilhar no Linkedin"
+
+#: global-footer.php:58
+msgid "Share on Twitter"
+msgstr "Partilhar no Twitter"
+
+#: global-footer.php:57
+msgid "Social Media"
+msgstr "Redes Sociais"
+
+#: courses-cards.php:93 homepage-running-courses.php:74
+msgid "Start"
+msgstr "Início"
+
+#: courses-cards.php:93 homepage-running-courses.php:74
+msgid "Start Course"
+msgstr "Iniciar Curso"
+
+#: global-footer.php:78
+msgid "Visit INcode2030 website"
+msgstr "Visitar o site INcode.2030"
+
+#: global-footer.php:63
+msgid "Visit OpenEdX website"
+msgstr "Visitar site OpenEdX"
+
+#: homepage-running-courses.php:73
+msgid "know more about this course"
+msgstr "saber mais sobre este curso"

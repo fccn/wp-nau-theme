@@ -12,7 +12,7 @@
     <!-- starts banner search bar -->
     <div id="banner-search-form-container">      
       <form id="banner-search-form" action="<?php echo home_url(); ?>" role="search" method="get">
-        <input id="s" name="s" type="search" placeholder="<?=_("Search Courses")?>" value="<?=get_search_query()?>">        
+        <input id="s" name="s" type="search" placeholder="<?=__("Search Courses")?>" value="<?=get_search_query()?>">        
         <input name="submit-search" type="submit">
       </form>
     </div>

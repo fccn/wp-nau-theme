@@ -1,69 +1,49 @@
   <?php
     global $course_list_title;
+    global $courses;
     
     $title = explode("|", $course_list_title);
+    
+    $all_courses_url = get_field("all-courses");
+    
   ?>   
-  <!-- starts cursos a decorrer -->
-  <section id="rolling-courses">
-    <h2 class="explore-all-courses"><?=$title[0]?> <span class="normal-font-weight"><?=$title[1]?></span> 
-    <span class="heading-blue-bar">|</span><a href="#" title="Explorar todos os cursos"><span class="normal-font-weight explore-all-courses-font"><?=_("Explore all courses")?></span></a></h2>
+  
+<!-- starts rolling courses -->
+<section id="rolling-courses">
+    <h2 class="explore-all-courses"><?=__("Running Courses")?><span class="heading-blue-bar">|</span><a href="<?=$all_courses_url?>" title="Explorar todos os cursos"><span class="normal-font-weight explore-all-courses-font"><?=__("Explore all courses")?></span></a></h2>
     <!-- starts curso a decorrer #1 -->
     <div class="courses-wrap">
-    <ul id="rolling-course-a" class="rolling-courses-card card">
+    
+    <? foreach ($courses as $coursePage) { 
+     
+         $course = load_course($coursePage);
+    ?>
+    
+    <ul id="rolling-course-b" class="rolling-courses-card card" style="background-color: <?=$course["card-color"]?>">
       <li>
-        <h3>Introducing China in English<br>
-          <span class="aside-institution"><a href="#" class="banner-entity" title="Know more about this entity">XuetangX</a></span></h3>
-        <p class="course-level"><span>&euro;200 </span> | Certificado</p>
-        <p><span>In&iacute;cio </span> 27 Mar | 2020</p>
-        <div class="aside-rating-star"> <img onclick="someFunctionHere()" class="rating-star" src="assets/img/rating-star-white.svg" alt="course rating star"> <img onclick="someFunctionHere()" class="rating-star" src="assets/img/rating-star-white.svg" alt="course rating star"> <img onclick="someFunctionHere()" class="rating-star" src="assets/img/rating-star-white.svg" alt="course rating star"> <img onclick="someFunctionHere()" class="rating-star" src="assets/img/rating-star-white.svg" alt="course rating star"> <img onclick="someFunctionHere()" class="rating-star" src="assets/img/rating-star-white-light.svg" alt="course rating star">
-          <p class="number-of-participants">1300 Participantes</p>
-        </div>
+        <h3><?=$course["name"]?><br>
+          <span class="aside-institution"><a href="<?=$course["entity_url"]?>" class="banner-entity" title="Know more about this entity"><?=$course["sigla"]?></a></span></h3>
+        <p class="course-level"><span><?=$course["price"]?> </span> | <?=__("Certificate")?></p>
+        <p><?=$course["meta"]?></p>
+        <!--
+        <div class="aside-rating-star">
+          <?=stars($course["stars"])?>
+        </div>  
+        -->
       </li>
-      <li><a class="see-video-icon" href="#" title="Course presentation video"> <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-white-outline.svg" alt="Course presentation video button"> <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-blue.svg" alt="Course presentation video button"> </a> <a class="know-more-icon" href="#" title="know more about this course">Saber +</a> <a class="start-course-icon" href="#" title="Start course">Iniciar</a> </li>
-    </ul>
-    <!-- ends curso a decorrer #1 --> 
-    <!-- starts curso a decorrer #2 -->
-    <ul id="rolling-course-b" class="rolling-courses-card card">
       <li>
-        <h3>Réaliser des vidéos pro avec son smartphone<br>
-          <span class="aside-institution"><a href="#" class="banner-entity" title="Know more about this entity">Gobelins</a></span></h3>
-        <p class="course-level"><span>&euro;200 </span> | Certificado</p>
-        <p><span>In&iacute;cio </span> 27 Mar | 2020</p>
-        <div class="aside-rating-star"> <img onclick="someFunctionHere()" class="rating-star" src="assets/img/rating-star-white.svg" alt="course rating star"> <img onclick="someFunctionHere()" class="rating-star" src="assets/img/rating-star-white.svg" alt="course rating star"> <img onclick="someFunctionHere()" class="rating-star" src="assets/img/rating-star-white.svg" alt="course rating star"> <img onclick="someFunctionHere()" class="rating-star" src="assets/img/rating-star-white.svg" alt="course rating star"> <img onclick="someFunctionHere()" class="rating-star" src="assets/img/rating-star-white-light.svg" alt="course rating star">
-          <p class="number-of-participants">1300 Participantes</p>
-        </div>
-      </li>
-      <li><a class="see-video-icon" href="#" title="Course presentation video"> <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-white-outline.svg" alt="Course presentation video button"> <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-blue.svg" alt="Course presentation video button"> </a> <a class="know-more-icon" href="#" title="know more about this course">Saber +</a> <a class="start-course-icon" href="#" title="Start course">Iniciar</a> </li>
+        <? if ($course["video"]) { ?>
+        <a class="see-video-icon" onClick='openYoutubeVideoIFrame(this);' data-vars='{ "id" : "<?=$course["video"]?>" }' title="<?=__("See video")?>">
+          <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-white-outline.svg" alt="Course presentation video button"> 
+          <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-blue.svg" alt="Course presentation video button"> 
+        </a>
+        <? } ?>
+        <a class="know-more-icon" href="<?=$course["course_about_url"]?>" title="<?=__("know more about this course")?>"><?=__("+Info")?></a> 
+        <?php          
+          print (do_shortcode('[edunext_enroll_button course_id="' . $course["course-id"] . '"]'));
+        ?>
     </ul>
-    <!-- ends curso a decorrer #2 --> 
-    <!-- starts curso a decorrer #3 -->
-    <ul id="rolling-course-c" class="rolling-courses-card card">
-      <li>
-        <h3>RGPD para Implementadores na Administração Pública<br>
-          <span class="aside-institution"><a href="#" class="banner-entity" title="Know more about this entity">INA</a></span></h3>
-        <p class="course-level"><span>&euro;200 </span> | Certificado</p>
-        <p><span>In&iacute;cio </span> 27 Mar | 2020</p>
-        <div class="aside-rating-star"> <img onclick="someFunctionHere()" class="rating-star" src="assets/img/rating-star-white.svg" alt="course rating star"> <img onclick="someFunctionHere()" class="rating-star" src="assets/img/rating-star-white.svg" alt="course rating star"> <img onclick="someFunctionHere()" class="rating-star" src="assets/img/rating-star-white.svg" alt="course rating star"> <img onclick="someFunctionHere()" class="rating-star" src="assets/img/rating-star-white.svg" alt="course rating star"> <img onclick="someFunctionHere()" class="rating-star" src="assets/img/rating-star-white-light.svg" alt="course rating star">
-          <p class="number-of-participants">1300 Participantes</p>
-        </div>
-      </li>
-      <li><a class="see-video-icon" href="#" title="Course presentation video"> <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-white-outline.svg" alt="Course presentation video button"> <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-blue.svg" alt="Course presentation video button"> </a> <a class="know-more-icon" href="#" title="know more about this course">Saber +</a> <a class="start-course-icon" href="#" title="Start course">Iniciar</a> </li>
-    </ul>
-    <!-- ends curso a decorrer #3 --> 
-    <!-- starts curso a decorrer #4 -->
-    <ul id="rolling-course-d" class="rolling-courses-card card">
-      <li>
-        <h3>Modéliser en 3D avec FreeCAD<br>
-          <span class="aside-institution"><a href="#" class="banner-entity" title="Know more about this entity">IMT</a></span></h3>
-        <p class="course-level"><span>&euro;200 </span> | Certificado</p>
-        <p><span>In&iacute;cio </span> 27 Mar | 2020</p>
-        <div class="aside-rating-star"> <img onclick="someFunctionHere()" class="rating-star" src="assets/img/rating-star-white.svg" alt="course rating star"> <img onclick="someFunctionHere()" class="rating-star" src="assets/img/rating-star-white.svg" alt="course rating star"> <img onclick="someFunctionHere()" class="rating-star" src="assets/img/rating-star-white.svg" alt="course rating star"> <img onclick="someFunctionHere()" class="rating-star" src="assets/img/rating-star-white.svg" alt="course rating star"> <img onclick="someFunctionHere()" class="rating-star" src="assets/img/rating-star-white-light.svg" alt="course rating star">
-          <p class="number-of-participants">1300 Participantes</p>
-        </div>
-      </li>
-      <li><a class="see-video-icon" href="#" title="Course presentation video"> <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-white-outline.svg" alt="Course presentation video button"> <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-blue.svg" alt="Course presentation video button"> </a> <a class="know-more-icon" href="#" title="know more about this course">Saber +</a> <a class="start-course-icon" href="#" title="Start course">Iniciar</a> </li>
-    </ul>
-    <!-- ends curso a decorrer #4 --> 
+    <?php } ?>
+    
     </div>
   </section>
-  <!-- ends cursos a decorrer --> 

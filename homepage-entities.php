@@ -13,9 +13,9 @@
       <?php 
         foreach($entities as $entity) {
             
-        $logo = get_custom_value("logo", "", $entity["ID"]);
+        $logo = get_custom_value("logo", "", $entity->ID);
       ?>        
-      <li><a href="<?=get_permalink($entity["ID"])?>"><img src="<?=$logo?>" alt="<?=$entity["post_title"]?>" title="<?=$entity["post_title"]?>"></a></li>      
+      <li><a href="<?=get_permalink($entity)?>"><img src="<?=$logo?>" alt="<?=$entity->post_title?>" title="<?=$entity->post_title?>"></a></li>      
       <?php  
         }
       ?>
