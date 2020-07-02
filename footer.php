@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("facebook-share-btt").href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(window.location.href);
 }, false);
 </script>
+<? include "inc/cookie-bar.php"; ?>
 <?php wp_footer(); ?>
 </body>
 </html>

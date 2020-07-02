@@ -1,13 +1,3 @@
-<?
-    if ($image == "") {
-      $image = "assets/img/sustainability-onu-circle.svg";
-    }
-  
-    $colorVal = hexdec($color);
-    $red = 0xFF & ($colorVal >> 0x10);
-    $green = 0xFF & ($colorVal >> 0x8);
-    $blue = 0xFF & $colorVal;
-?>
 <style>
 #un-slider::before {
   position: absolute;
@@ -16,9 +6,10 @@
   background-size: 400px 400px;
   background-repeat: no-repeat;
   top: 0; left: 0;
-  width: 100%; height: 100%;	
-  filter: opacity(45%);  
+  width: 100%; height: 100%;  
   background-image: url(assets/img/sustainability-onu-circle.svg);	
+  filter: hue-rotate(<?=$hue?>deg) opacity(<?=$opacity?>) grayscale(<?=$grayscale?>); 
+  -webkit-filter: hue-rotate(<?=$hue?>deg) opacity(<?=$opacity?>) grayscale(<?=$grayscale?>); 
 }
 
 #un-slider {
@@ -31,7 +22,6 @@
 #un-slider #slider-objects {		
 	padding: 50px;
 	min-height: 52px;
-	background-color: rgba(<?=255-$red?>, <?=255-$green?>, <?=255-$blue?>,<?=$opacity?>);
 }
 
 

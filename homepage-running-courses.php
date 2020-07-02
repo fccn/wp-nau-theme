@@ -10,7 +10,7 @@
   
 <!-- starts rolling courses -->
 <section id="rolling-courses">
-    <h2 class="explore-all-courses"><?=__("Running Courses")?><span class="heading-blue-bar">|</span><a href="<?=$all_courses_url?>" title="Explorar todos os cursos"><span class="normal-font-weight explore-all-courses-font"><?=__("Explore all courses")?></span></a></h2>
+    <h2 class="explore-all-courses"><?=nau_trans("Running Courses")?><span class="heading-blue-bar">|</span><a href="<?=$all_courses_url?>" title="Explorar todos os cursos"><span class="normal-font-weight explore-all-courses-font"><?=nau_trans("Explore all courses")?></span><span class="explore-other-courses"></a></a></h2>
     <!-- starts curso a decorrer #1 -->
     <div class="courses-wrap">
     
@@ -19,30 +19,26 @@
          $course = load_course($coursePage);
     ?>
     
-    <ul id="rolling-course-b" class="rolling-courses-card card" style="background-color: <?=$course["card-color"]?>">
-      <li>
+    <div class="rolling-courses-card card <?=$course["card_width"]?>-card-width" style="background-color: <?=$course["card-color"]?>">
+      <div class="card-content">
         <h3><?=$course["name"]?><br>
-          <span class="aside-institution"><a href="<?=$course["entity_url"]?>" class="banner-entity" title="Know more about this entity"><?=$course["sigla"]?></a></span></h3>
-        <p class="course-level"><span><?=$course["price"]?> </span> | <?=__("Certificate")?></p>
-        <p><?=$course["meta"]?></p>
-        <!--
-        <div class="aside-rating-star">
-          <?=stars($course["stars"])?>
-        </div>  
-        -->
-      </li>
-      <li>
+          <span><a href="<?=$course["entity_url"]?>" class="banner-entity" title="<?=nau_trans("Know more about this entity")?>"><?=$course["sigla"]?></a></span>
+        </h3>
+        <div class="certificate float-right"><span><?=$course["price"]?> </span> | <?=nau_trans("Certificate")?></div>
+      </div>
+      <div class="course-actions">
         <? if ($course["video"]) { ?>
-        <a class="see-video-icon" onClick='openYoutubeVideoIFrame(this);' data-vars='{ "id" : "<?=$course["video"]?>" }' title="<?=__("See video")?>">
+        <a class="see-video-icon" onClick='openYoutubeVideoIFrame(this);' data-vars='{ "id" : "<?=$course["video"]?>" }' title="<?=nau_trans("See video")?>">
           <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-white-outline.svg" alt="Course presentation video button"> 
           <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-blue.svg" alt="Course presentation video button"> 
         </a>
         <? } ?>
-        <a class="know-more-icon" href="<?=$course["course_about_url"]?>" title="<?=__("know more about this course")?>"><?=__("+Info")?></a> 
+        <a class="know-more-icon" href="<?=$course["course_about_url"]?>" title="<?=nau_trans("know more about this course")?>"><?=nau_trans("+Info")?></a> 
         <?php          
           print (do_shortcode('[edunext_enroll_button course_id="' . $course["course-id"] . '"]'));
         ?>
-    </ul>
+      </div>
+    </div>
     <?php } ?>
     
     </div>

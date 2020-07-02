@@ -1,1 +1,1 @@
-<? /* null banner */
+<? /* null banner */ ?>

@@ -12,6 +12,7 @@
 
     <!-- starts google fonts links -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+
     <!-- ends google fonts links --> 
 
     <!-- starts JS funtions --> 
@@ -35,7 +36,7 @@
     <? } ?>
     
     <? $facebook_pixel_id = get_option('nau_facebook_pixel'); ?>
-    <? if ($facebook_pixel_id != "") { ?>
+    <? if (($facebook_pixel_id != "") && 0) { ?>
         <!-- Facebook Pixel Code -->
         <script>
           !function(f,b,e,v,n,t,s)
@@ -55,5 +56,16 @@
         </noscript>
         <!-- End Facebook Pixel Code -->
     <? } ?>
+
+    <? $jira_widget_key = get_option('nau_confluence_widget_key') ?>
+    <? if ($jira_widget_key != "") {?>
+      <script data-jsd-embedded data-key="<?=$jira_widget_key?>" data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
+    <? } ?>
+    
+    <? $nau_extra_js = get_option('nau_extra_js') ?>
+    <? if($nau_extra_js) {
+       echo $nau_extra_js;  
+    }
+    ?>
 
 </head>

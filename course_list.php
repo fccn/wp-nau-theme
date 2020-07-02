@@ -9,7 +9,7 @@
 <!-- COURSE_LIST -->
 <div id="home-content">
 <?php   
-  $course_list_title = __("All|courses");
+  $course_list_title = nau_trans("All|courses");
   get_template_part( "courses", "list" );
 ?>
 </div>

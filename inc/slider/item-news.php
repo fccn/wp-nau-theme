@@ -30,24 +30,25 @@ Array
   $link = $item["news"];
   $back_image = $article["image"];
   $headline = ($item["primary-line"]!=""?$item["primary-line"]:$article["name"]);
-  $text = ($item["secondary-line"]!=""?$item["secondary-line"]:$article["tagline"]);
+  $text = ($item["secondary-line"]!=""?$item["secondary-line"]:"");
   $opacity = $item["opacity"];
   $hue_rotate = $item["hue"];
   $back_color = $item["back-color"];
   
+  $text = str_replace("{sinopsys}", $article["small_description"], $text);
+  
 ?>  
 <!-- SLIDE - ITEM - NEWS -->
   
-            <div style="background-color:<?=$back_color?>;">  
+            <div class="homepage-slider-news" style="background-color:<?=$back_color?>;">  
               <?php if ($link != "") { ?><a href="<?=$link?>"><?php } ?>
                   <div class="homepage-slide-item <?=$item["template"]?>">
                     <img data-u="image" data-src="<?=$article["image"]?>" />                
                     <div class="nau-logo-filter" style="filter: hue-rotate(<?=$hue_rotate?>deg) opacity(<?=$opacity?>);"></div>
                     <div class="nau-slide-content">
                       <div class="nau-slider-label">
-                        <h1><?=$headline?></h1>
-                        <h2><?=$text?></h2>
-                        <p><?=$article["small_description"]?></p>
+                        <h1><?=$headline?></h1>                        
+                        <p><?=$text?></p>
                       </div>
                     </div>                    
                   </div>
@@ -57,7 +58,7 @@ Array
                <? if ($article["youtube"] != "") { ?>
                     <div class="video-know-more-icons"> 
                         <!-- starts video icon -->                     
-                        <a class="see-video-icon" href="#" onClick='openYoutubeVideoIFrame(this);' data-vars='{ "id" : "<?=$article["video"]?>" }' title="<?=__("See video")?>">
+                        <a class="see-video-icon" href="#" onClick='openYoutubeVideoIFrame(this);' data-vars='{ "id" : "<?=$article["video"]?>" }' title="<?=nau_trans("See video")?>">
                             <svg version="1.1" id="video-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 34 34" style="enable-background:new 0 0 34 34;" xml:space="preserve">
                               <g>
@@ -79,7 +80,7 @@ Array
                     <div class="action-know-more">
                         <!-- starts know more icon -->
                         <? if ($link != "") { ?>
-                        <a class="know-more-icon" href="<?=$link?>"><?=__("Read More")?></a> 
+                        <a class="know-more-icon" href="<?=$link?>"><?=nau_trans("Read More")?></a> 
                         <? } ?>
                     </div>                    
               </div>               

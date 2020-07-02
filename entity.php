@@ -1,10 +1,15 @@
 <?php /* Template Name: Entity Page */ ?>
 <?php 
   $nauPageID = "institution";
-  $nauBodyClass = "class='secondary-pages'";
+  $nauBodyClass = "class='secondary-pages entity'";
   
   $entity = load_entity($post);
-  [$color, $opacity, $hue, $image] = get_page_fields();  
+  [$color, $opacity, $hue, $grayscale, $image, $header] = get_page_fields();  
+  
+  if ($color == null) $color = "#000000";
+  if ($opacity == null) $opacity = 0.1;
+  if ($grayscale == null) $grayscale = 0.1;
+  if ($header == null) $header = "nau";
 
   get_header(); 
 ?>
@@ -13,17 +18,23 @@
 
 <style>
 #home-slider .slider-mask {
-  filter: hue-rotate(<?=$hue?>deg) opacity(1) grayscale(<?=$opacity?>); 
+  filter: hue-rotate(<?=$hue?>deg) opacity(<?=$opacity?>) grayscale(<?=$grayscale?>); 
+  -webkit-filter: hue-rotate(<?=$hue?>deg) opacity(<?=$opacity?>) grayscale(<?=$grayscale?>);
 }
 
-#home-slider h1 {
+
+
+body#institution div#home-slider h1 {
   color: <?=$color?>; 
 }
 
-body#institution div#home-slider {
-    background: url("<?=$entity['url_image']?>")    
-}
-
+body#institution div#home-slider {        
+        background: url("<?=$image?>") no-repeat !important;
+        background-size: cover !important;
+        background-repeat: no-repeat  !important;
+        background-position: 50% 50% !important;
+    }
+    
 </style>
 
 <section id="flexible-content-area">
@@ -33,7 +44,11 @@ body#institution div#home-slider {
       <h1><?=$entity["name"]?></h1> 
       <div class="slider-sigla"><a href="<?=$entity["website"]?>"><?=$entity["sigla"]?></a></div>
     </div>
+    <? if ($header == "nau") { ?>
     <img src="assets/img/banner-shape-long-blue.svg" class="slider-mask">  
+    <? } else { ?>
+    <img src="assets/img/banner-shape-long-navy-blue.svg" class="slider-mask">  
+    <? } ?>
   </div>
 </section>
 
@@ -52,7 +67,7 @@ body#institution div#home-slider {
             $slug = $entity["sigla"];
           }
           if ($slug != "") {
-            $course_list_title = __("Courses|running");
+            $course_list_title = nau_trans("Courses|running");
             $courses = nau_entity_courses($post);
             get_template_part( "courses", "cards" );
             
@@ -61,7 +76,7 @@ body#institution div#home-slider {
         </div>        
         </section>
         <?
-          get_template_part( "entity", "aside");    
+          include("entity-aside.php");
         ?>
         
     

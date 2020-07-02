@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-08 15:10+0100\n"
+"POT-Creation-Date: 2020-05-09 17:06+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,32 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: courses-cards.php:92 homepage-running-courses.php:73
+#: courses-cards.php:57 entities-cards.php:59 homepage-running-courses.php:41
+#: languages/strings.php:27
 msgid "+Info"
 msgstr ""
 
-#: global-footer.php:75
+#: search.php:15
+msgid "About to Start"
+msgstr ""
+
+#: functions.php:605 search.php:17
+msgid "About to end"
+msgstr ""
+
+#: functions.php:595 languages/strings.php:36
+msgid "About to start"
+msgstr ""
+
+#: inc/cookie-bar.php:12 languages/strings.php:18
+msgid "Accept"
+msgstr ""
+
+#: inc/galeria_un.php:14 languages/strings.php:45
+msgid "Affordable and clean energy"
+msgstr ""
+
+#: global-footer.php:75 languages/strings.php:16
 msgid "All rights reserved."
 msgstr ""
 
@@ -29,136 +50,322 @@ msgstr ""
 msgid "All|courses"
 msgstr ""
 
-#: courses-cards.php:67 homepage-running-courses.php:50
+#: courses-cards.php:32 homepage-running-courses.php:26
+#: languages/strings.php:23
 msgid "Certificate"
 msgstr ""
 
-#: inc/global-top-menu.php:85
+#: inc/galeria_un.php:13 languages/strings.php:44
+msgid "Clean water and sanitation"
+msgstr ""
+
+#: functions.php:705 languages/strings.php:56
+msgid "Clear Cookie"
+msgstr ""
+
+#: inc/galeria_un.php:20 languages/strings.php:51
+msgid "Climate action"
+msgstr ""
+
+#: inc/global-top-menu.php:85 languages/strings.php:3
 msgid "Close"
 msgstr ""
 
-#: home.php:23
+#: search.php:176
+msgid "Content type:"
+msgstr ""
+
+#: search.php:10
+msgid "Courses"
+msgstr ""
+
+#: home.php:34 languages/strings.php:22
 msgid "Courses|Highlighted"
 msgstr ""
 
-#: home.php:29
+#: home.php:40 languages/strings.php:29
 msgid "Courses|Running"
 msgstr ""
 
-#: entity.php:74
+#: entity.php:56 languages/strings.php:60
 msgid "Courses|running"
 msgstr ""
 
-#: home.php:35
+#: inc/galeria_un.php:15 languages/strings.php:46
+msgid "Decent work and economic growth"
+msgstr ""
+
+#: search.php:16
+msgid "Ended"
+msgstr ""
+
+#: search.php:9
+msgid "Entities"
+msgstr ""
+
+#: home.php:46 languages/strings.php:33
 msgid "Entity|Founders"
 msgstr ""
 
-#: homepage-running-courses.php:13
+#: languages/strings.php:25
+msgid "Everyone"
+msgstr ""
+
+#: entity-aside.php:19 homepage-running-courses.php:13 languages/strings.php:31
 msgid "Explore all courses"
 msgstr ""
 
-#: inc/slider/item-course.php:73 inc/slider/item-entity.php:81
+#: functions.php:610
+msgid "Finished"
+msgstr ""
+
+#: functions.php:526 languages/strings.php:28
+msgid "Free"
+msgstr ""
+
+#: inc/galeria_un.php:12 languages/strings.php:43
+msgid "Gender equality"
+msgstr ""
+
+#: inc/galeria_un.php:10 languages/strings.php:41
+msgid "Good health and well-being"
+msgstr ""
+
+#: inc/galeria_un.php:16 languages/strings.php:47
+msgid "Industry, innovation and infrastructure"
+msgstr ""
+
+#: languages/strings.php:24
+msgid "Instructor Paced"
+msgstr ""
+
+#: functions.php:582 languages/strings.php:37
+msgid "Instructor paced"
+msgstr ""
+
+#: search.php:13
+msgid "Invitation Only"
+msgstr ""
+
+#: functions.php:583 languages/strings.php:59
+msgid "Invitation only"
+msgstr ""
+
+#: inc/slider/item-course.php:64 inc/slider/item-entity.php:67
+#: languages/strings.php:20
 msgid "Know +"
 msgstr ""
 
-#: courses-cards.php:92
+#: course-page.php:60 languages/strings.php:5
+msgid "Know more about this entity"
+msgstr ""
+
+#: courses-cards.php:57 languages/strings.php:26
 msgid "Learn more about this course"
 msgstr ""
 
-#: ______single.php:33
-msgid "Next"
+#: entities-cards.php:59 languages/strings.php:58
+msgid "Learn more about this entity"
 msgstr ""
 
-#: ______single.php:34
-msgid "Next post:"
+#: inc/galeria_un.php:21 languages/strings.php:52
+msgid "Life below water"
 msgstr ""
 
-#: functions.php:122
+#: inc/galeria_un.php:22 languages/strings.php:53
+msgid "Life on land"
+msgstr ""
+
+#. $nauBodyClass = "class='secondary-pages'";
+#: inc/news-list.php:4 search.php:8
+msgid "News"
+msgstr ""
+
+#: inc/galeria_un.php:7 languages/strings.php:38
+msgid "No goal"
+msgstr ""
+
+#: inc/galeria_un.php:8 languages/strings.php:39
+msgid "No poverty"
+msgstr ""
+
+#: functions.php:234
 msgid "None found"
 msgstr ""
 
-#: inc/global-top-menu.php:78
+#: languages/strings.php:38
+msgid "Not to translate"
+msgstr ""
+
+#. There are Itens!
+#: inc/global-top-menu.php:78 functions.php:618 search.php:12
+#: languages/strings.php:2
 msgid "Open"
 msgstr ""
 
-#: courses-cards.php:83 course-page.php:93 homepage-running-courses.php:63
+#: functions.php:583 languages/strings.php:35
+msgid "Open to everyone"
+msgstr ""
+
+#: search.php:7
+msgid "Pages"
+msgstr ""
+
+#: courses-cards.php:49 course-page.php:61 course-page.php:116
+#: languages/strings.php:6
 msgid "Participants"
 msgstr ""
 
-#: ______single.php:36
-msgid "Previous"
+#: inc/galeria_un.php:24 languages/strings.php:55
+msgid "Partnerships for the goals"
 msgstr ""
 
-#: ______single.php:37
-msgid "Previous post:"
+#: inc/galeria_un.php:23 languages/strings.php:54
+msgid "Peace, justice and strong institutions"
 msgstr ""
 
-#: inc/slider/item-news.php:82
+#: inc/galeria_un.php:11 languages/strings.php:42
+msgid "Quality education"
+msgstr ""
+
+#. start main loop
+#: inc/slider/item-news.php:83 inc/news-list.php:26 index.php:91
+#: languages/strings.php:21
 msgid "Read More"
 msgstr ""
 
-#: homepage-running-courses.php:13
+#: inc/galeria_un.php:17 languages/strings.php:48
+msgid "Reduced inequalities"
+msgstr ""
+
+#: inc/galeria_un.php:19 languages/strings.php:50
+msgid "Responsible consuption"
+msgstr ""
+
+#: functions.php:600
+msgid "Running"
+msgstr ""
+
+#: homepage-running-courses.php:13 languages/strings.php:30
 msgid "Running Courses"
 msgstr ""
 
-#: inc/slider/item-search.php:35 homepage-banner.php:15
+#: functions.php:590
+msgid "Scheduled to start"
+msgstr ""
+
+#: search.php:172
+msgid "Search"
+msgstr ""
+
+#: search.php:168
+msgid "Search ..."
+msgstr ""
+
+#: inc/slider/item-search.php:37 homepage-banner.php:15
+#: languages/strings.php:19
 msgid "Search Courses"
 msgstr ""
 
-#: inc/global-top-menu.php:102
+#: inc/global-top-menu.php:102 languages/strings.php:4
 msgid "Search courses..."
 msgstr ""
 
-#: courses-cards.php:89
+#: search.php:166 search.php:170
+msgid "Search for:"
+msgstr ""
+
+#: search.php:146
+msgid "Search results"
+msgstr ""
+
+#: search.php:162
+msgid "Search tool"
+msgstr ""
+
+#: courses-cards.php:54
 msgid "See a video about this course"
 msgstr ""
 
-#: inc/slider/item-course.php:53 inc/slider/item-news.php:60
-#: inc/slider/item-entity.php:62 courses-cards.php:88 course-page.php:100
-#: homepage-running-courses.php:68
+#: entities-cards.php:56 languages/strings.php:57
+msgid "See a video about this entity"
+msgstr ""
+
+#: inc/slider/item-course.php:58 inc/slider/item-news.php:61
+#: inc/slider/item-entity.php:62 courses-cards.php:53 entities-cards.php:55
+#: course-page.php:70 course-page.php:131 homepage-running-courses.php:36
+#: languages/strings.php:7
 msgid "See video"
 msgstr ""
 
-#: entity-aside.php:47
+#: functions.php:582 languages/strings.php:34
+msgid "Self paced"
+msgstr ""
+
+#: entity-aside.php:76 course-page.php:192 languages/strings.php:9
 msgid "Share"
 msgstr ""
 
-#: global-footer.php:60
+#: global-footer.php:60 languages/strings.php:13
 msgid "Share on Facebook"
 msgstr ""
 
-#: global-footer.php:61
+#: global-footer.php:61 languages/strings.php:14
 msgid "Share on Instagram"
 msgstr ""
 
-#: global-footer.php:59
+#: global-footer.php:59 languages/strings.php:12
 msgid "Share on Linkedin"
 msgstr ""
 
-#: global-footer.php:58
+#: global-footer.php:58 languages/strings.php:11
 msgid "Share on Twitter"
 msgstr ""
 
-#: global-footer.php:57
+#: search.php:180
+msgid "Show courses that are:"
+msgstr ""
+
+#: global-footer.php:57 languages/strings.php:10
 msgid "Social Media"
 msgstr ""
 
-#: courses-cards.php:93 homepage-running-courses.php:74
-msgid "Start"
+#: search.php:14
+msgid "Started"
 msgstr ""
 
-#: courses-cards.php:93 homepage-running-courses.php:74
-msgid "Start Course"
+#: inc/galeria_un.php:18 languages/strings.php:49
+msgid "Sustainable cities and communities"
 msgstr ""
 
-#: global-footer.php:78
+#: course-page.php:126 languages/strings.php:8
+msgid "Tags"
+msgstr ""
+
+#: inc/cookie-bar.php:6 languages/strings.php:61
+msgid "This site uses cookies (update this message on NAU Theme Options)!"
+msgstr ""
+
+#: global-footer.php:78 languages/strings.php:17
 msgid "Visit INcode2030 website"
 msgstr ""
 
-#: global-footer.php:63
+#: global-footer.php:63 languages/strings.php:15
 msgid "Visit OpenEdX website"
 msgstr ""
 
-#: homepage-running-courses.php:73
+#: inc/galeria_un.php:9 languages/strings.php:40
+msgid "Zero hunger"
+msgstr ""
+
+#: search.php:94
+msgid "for search string:"
+msgstr ""
+
+#: homepage-running-courses.php:41 languages/strings.php:32
 msgid "know more about this course"
+msgstr ""
+
+#: search.php:94
+msgid "results"
 msgstr ""

@@ -1,7 +1,8 @@
 <?php
 
-define( 'WP_DEBUG', true );
-define( 'WP_DEBUG_DISPLAY', true );
+define("NAU_THEME_DEBUG", true );
+
+define("NAU_LOCAL_SASS", false );
 
 $stage_mode = (get_option('nau_environment') == "stage"); 
 
@@ -9,9 +10,6 @@ require_once('inc/acf-conf.php');
 require_once('inc/admin.php');
 
 remove_action('template_redirect', 'redirect_canonical');
-
-
-$theme_root = get_template_directory_uri();
 
 function nau_post_thumbnails() {
     add_theme_support( 'post-thumbnails' );
@@ -24,14 +22,51 @@ function nau_load_theme_textdomain() {
 add_action('after_setup_theme', 'nau_load_theme_textdomain' );
 
 
-function nau_theme_enqueue_styles() {
-    wp_enqueue_style('reset-style', get_template_directory_uri() . '/assets/css/reset.css', array(), '1.0.0', 'all');
-    wp_enqueue_style('styles-style', get_template_directory_uri() . '/assets/css/styles.css', array(), '1.0.0', 'all');
-    wp_enqueue_style('style-style', get_template_directory_uri() . '/style.css', array(), '1.0.0', 'all');
-    wp_enqueue_script('script_functions', get_template_directory_uri() . '/assets/js/functions.js', array(), '1.0.0', true);
-    wp_enqueue_script('menu_slider', get_template_directory_uri() . '/assets/js/menu_slider_and_other_operations.js', array(), '1.0.0', true);    
+function nau_trans($message) 
+{    
+    if (NAU_THEME_DEBUG == true) {
+        $filename = get_template_directory() . '/languages/strings.php';
+        $lines = file($filename);
+        $found = false;
+        foreach($lines as $line) {
+            if (strstr(chop($line), "nau_trans(\"$message\");")) {
+              $found = true;
+              break;
+            }
+        }
+        if (!$found) {
+          $lines[] = "nau_trans(\"$message\");\n";
+          file_put_contents($filename, implode("", $lines));
+        }
+    }
+    
+    return __($message, "nau-theme");
 }
 
+
+function nau_theme_enqueue_styles() {
+    wp_enqueue_script( 'jquery-ui-widget' );
+    wp_enqueue_script( 'jquery-ui-mouse' );
+    wp_enqueue_script( 'jquery-ui-accordion' );
+    wp_enqueue_script( 'jquery-ui-autocomplete' );
+    wp_enqueue_script( 'jquery-ui-slider' );
+
+    wp_enqueue_style('reset-style', get_template_directory_uri() . '/assets/base_css/reset.css', array(), '1.0.0', 'all');
+    
+    if ((NAU_LOCAL_SASS == true) && (wp_get_current_user()->user_login=="racr")) {      
+      wp_enqueue_style('styles-style', get_template_directory_uri() . '/assets/css/styles.css', array(), '1.0.0', 'all');
+    } else {    
+      wp_enqueue_style('styles-style', get_template_directory_uri() . '/assets/base_css/base_styles.css', array(), '1.0.0', 'all');
+    }
+    
+    wp_enqueue_style('style-style', get_template_directory_uri() . '/style.css', array(), '1.0.0', 'all');
+    wp_enqueue_script('script_functions', get_template_directory_uri() . '/assets/js/functions.js', array(), '1.0.0', true);
+    wp_enqueue_script('menu_slider', get_template_directory_uri() . '/assets/js/menu_slider_and_other_operations.js', array(), '1.0.0', true);
+    wp_enqueue_script('cookie_bar', get_template_directory_uri() . '/assets/js/cookie-bar.js', array('jquery', 'jquery-ui-core'), '1.0.0', true);
+    wp_enqueue_style('materials-font-style', get_template_directory_uri() . '/assets/font/material-icons.css', array(), '1.0.0', 'all');
+}
+
+# add_action( 'wp_enqueue_styles', 'nau_theme_enqueue_styles' );
 add_action( 'wp_enqueue_scripts', 'nau_theme_enqueue_styles' );
 
 function nau_theme_setup() {
@@ -64,14 +99,27 @@ function nau_include($atts = array()) {
 add_shortcode('nau_include', 'nau_include');
 
 
-function nau_list_child_pages() { 
+function nau_list_child_pages($atts = array()) { 
  
   global $post; 
+  
+  extract(shortcode_atts(array(
+    'child_of' => ''
+  ), $atts));
+  
  
-  if ( is_page() && $post->post_parent )
-    $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->post_parent . '&echo=0' );
-  else
-    $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->ID . '&echo=0' );
+   if ($child_of != "") {
+       
+     $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $child_of . '&echo=0' );
+     
+   } else {
+       
+     if ( is_page() && $post->post_parent )
+       $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->post_parent . '&echo=0' );
+     else
+       $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->ID . '&echo=0' );
+
+   }
  
   if ( $childpages ) { 
     $string = '<ul>' . $childpages . '</ul>';
@@ -80,10 +128,10 @@ function nau_list_child_pages() {
   return $string; 
 }
  
-add_shortcode('nau_childpages', 'nau_list_child_pages');
+add_shortcode('nau_list_child_pages', 'nau_list_child_pages');
 
 
-function nau_get_pages($category = "", $atts = array()) { 
+function _nau_get_pages($category = "", $atts = array()) { 
 
   extract(shortcode_atts(array(
     'filter' => ''
@@ -98,7 +146,7 @@ function nau_get_pages($category = "", $atts = array()) {
   );
         
   if ($filter != "") {
-       $args["tag_slug__in"] = explode(" ", $filter);       
+       $args["tag_slug__in"] = explode(" ", $filter);
   }
 
   $query = new WP_Query($args);
@@ -133,7 +181,12 @@ function nau_entity_courses($entityPage) {
     return nau_get_posts("curso", array(), array('nau-organization'=>$entityPage->ID));
 }
 
-function nau_get_posts($category = "", $atts = array(), $fields = array()) { 
+function nau_get_posts($category = "", $atts = array(), $fields = array(), $showall = 0) { 
+
+  if (($category=="curso") && (!$showall)) {
+      # $fields[] = array('nau_lms_course_catalog_visibility' => 'both');
+      $fields["nau_lms_course_catalog_visibility"] = 'both';
+  }
 
   extract(shortcode_atts(array(
     'filter' => ''
@@ -158,23 +211,29 @@ function nau_get_posts($category = "", $atts = array(), $fields = array()) {
   if ($fields) {
 
       foreach($query->posts as $post) {
+        $cnt = count($fields);
+        
         foreach($fields as $field_name => $test_value) {
-            $value = get_field($field_name, $post->ID);
+            $value = get_field($field_name, $post->ID);            
             if ($value == $test_value) {
-              $list[] = $post->to_array();
-              break;
+                $cnt--;
+                if ($cnt == 0) {
+                      $list[] = $post;
+                      break;
+                }
             }
         }
       }
   } else {
     foreach($query->posts as $post) {
-      $list[] = $post->to_array();
+      $list[] = $post;
     }
   }
   
   
   return $list;
 }
+
 
 
 function make_link_list($array_of_pages) {
@@ -186,19 +245,19 @@ function make_link_list($array_of_pages) {
         }
         $s .= "</ul>";
     } else {
-        $s .= __("None found");// no posts found
+        $s .= nau_trans("None found", "nau-theme");// no posts found
     }
     return $s;
 }
 
 function nau_entities_list($atts = array()) {   
-   return make_link_list(nau_get_pages("entidade", $atts));
+   return make_link_list(nau_get_posts("entidade", $atts));
 } 
 
 add_shortcode('nau_entities_list', 'nau_entities_list');
 
 function nau_courses_list($atts = array()) {    
-   return make_link_list(nau_get_pages("curso", $atts));
+   return make_link_list(nau_get_posts("curso", $atts));
 }
 
 add_shortcode('nau_courses_list', 'nau_courses_list');
@@ -206,7 +265,7 @@ add_shortcode('nau_courses_list', 'nau_courses_list');
 
 function nau_courses_gallery($atts = array()) { 
    global $courses;
-   $courses = nau_get_pages("curso", $atts);
+   $courses = nau_get_posts("curso", $atts);
    ob_start();
    get_template_part( "courses", "cards" );
    $value = ob_get_contents();
@@ -230,7 +289,7 @@ function nau_theme_gallery() {
 add_shortcode('nau_theme_gallery', 'nau_theme_gallery');
 
 
-function html_list_pages($pages, $fields, $extra_fields) {
+function html_list_courses($courses, $fields, $extra_fields, $keys) {
     $html = "<table>";
     $html .= "<tr>";
     foreach($fields as $k => $v) {
@@ -239,8 +298,11 @@ function html_list_pages($pages, $fields, $extra_fields) {
     foreach($extra_fields as $k => $v) {
         $html .= "<th>" . $v . "</th>";
     }
+    foreach($keys as $k => $v) {
+        $html .= "<th>" . $v . "</th>";
+    }
     $html .= "</tr>";    
-    foreach($pages as $page) {
+    foreach($courses as $course) {
       $html .= "<tr>";
       foreach($fields as $k => $v) {
           
@@ -248,27 +310,27 @@ function html_list_pages($pages, $fields, $extra_fields) {
         $c = "";
         
         if ($k == "ID") {
-            $l .= "<a href='" . get_permalink($page) . "'>" . $page->ID . "</a> ";
-            $l .= "<a href='/wp-admin/post.php?post=" . $page->ID . "&action=edit'>(E)</a>";
+            $l .= "<a href='" . get_permalink($course) . "'>" . $course->ID . "</a> ";
+            $l .= "<a href='/wp-admin/post.php?post=" . $course->ID . "&action=edit'>(E)</a>";
         } else
         if ($k == "post_title") {
-            $l .= $page->post_title;
+            $l .= $course->post_title;
         } else
         if ($k == "post_status") {
-            $l .= get_post_statuses()[$page->post_status];
-            $c = 'class="page_state_' . $page->post_status . '"';
+            $l .= get_post_statuses()[$course->post_status];
+            $c = 'class="page_state_' . $course->post_status . '"';
         } else
         if ($k == "modified_time") {
-            $l .= get_the_modified_time('Y-m-d h:i:s',$page->ID);
+            $l .= get_the_modified_time('Y-m-d h:i:s',$course->ID);
         } else {
-            $l .= get_field($k, $page->ID);
+            $l .= get_field($k, $course->ID);
         }
         
         $html .= "<td $c>" . $l . "</td>";
       }
       foreach($extra_fields as $k => $v) {
           
-        $l = get_field($k, $page->ID);
+        $l = get_field($k, $course->ID);
         if ($k == "nau_lms_course_id") {
             $url = "https://lms.stage.nau.fccn.pt/courses/" . $l . "/about";
             $l = "<a href='" . $url . "'>" . $l . "</a>";
@@ -285,12 +347,18 @@ function html_list_pages($pages, $fields, $extra_fields) {
         } 
         
         if ($k == "_tags") {            
-            $l = nau_list_tags($page->ID);
+            $l = nau_list_tags($course->ID);
         } 
           
         $html .= "<td>" . $l . "</td>";
       }
-      # $html .= "<td>" . var_export($page) . "</td>";
+      
+      $c = load_course($course);
+      foreach($keys as $k => $v) {
+        $l = $c[$k];
+        $html .= "<td>" . $l . "</td>";
+      }
+      # $html .= "<td>" . var_export($course) . "</td>";
       $html .= "</tr>";    
     }
     $html .= "</table>";
@@ -300,16 +368,15 @@ function html_list_pages($pages, $fields, $extra_fields) {
 
 function nau_list_courses_extended($atts = array()) { 
    global $courses;
-   $courses = nau_get_pages("curso", $atts);
+   $courses = nau_get_posts("curso", $atts, null, True);
 
    $value = "<h3>Lista de Cursos</h3>";
-   $value .= html_list_pages($courses, 
+   $value .= html_list_courses($courses, 
      [
        'ID' => 'ID',
        'post_title' => 'Título',
        'post_status' => 'Estado Página',
-       'modified_time' => 'Ultima Atualização',
-       
+       'modified_time' => 'Ultima Atualização',       
      ], 
      [
        'nau-organization' => 'Entidade', 
@@ -318,7 +385,12 @@ function nau_list_courses_extended($atts = array()) {
        'nau_lms_course_enrollments' => 'Participantes', 
        'nau_lms_course_certificates' => 'Certificates',
        '_tags' => 'Tags',
-       'update-overview' => 'Auto-update'
+       'update-overview' => 'Auto-update',
+       'nau_lms_course_catalog_visibility' => 'Visibility',       
+     ],
+     [
+       'start_date' => 'Inicio',
+       'end_date' => 'Fim',
      ]);
 
    return $value;
@@ -330,7 +402,7 @@ add_shortcode('nau_list_courses_extended', 'nau_list_courses_extended');
 
 function nau_entities_gallery($atts = array()) { 
    global $entities;
-   $entities = nau_get_pages("entidade", $atts);
+   $entities = nau_get_posts("entidade", $atts);
    ob_start();
    get_template_part( "entities", "cards" );
    $value = ob_get_contents();
@@ -367,7 +439,7 @@ function get_custom_value($key, $default = "", $page = -1) {
 
 
 
-function nau_list_tags($page = -1) {
+function nau_list_tags($page = -1, $only_tags = False) {
     if ($page < 0) {
         $page = get_the_ID();
     }
@@ -377,11 +449,13 @@ function nau_list_tags($page = -1) {
     
     $s = "";
     
-    if ($entity)
-      $s .= "<a class='bubble entity' href='" . get_permalink($entity) . "'>" . get_field('sigla', $entity) . "</a>";
+    if ($entity && !only_tags)
+      $s .= "<a class='bubble entity' href='" . get_permalink($entity) . "'>" . get_field('sigla', $entity) . "</a> ";
   
     foreach($tags as $tag) {
-      $s .= "<a class='bubble tag' href='" . get_term_link($tag->term_id) . "'>" . $tag->name . "</a>";
+        if ($tag->slug != "highlight") {
+            $s .= "<a class='bubble tag' href='" . get_term_link($tag->term_id) . "'>" . $tag->name . "</a> ";
+        }
     }     
 
     return $s;
@@ -432,14 +506,12 @@ function stars($stars) {
 
 function load_course($coursePage) {
 
+  global $stage_mode;
+
   if (gettype($coursePage) == "array") {
       $coursePage = get_page($coursePage["ID"]);
   }
   
-  $entityPage = get_page(get_field("nau-organization", $coursePage->ID));
-  
-  $entity = load_entity($entityPage);
-
 // print(var_dump(get_fields($entity->ID)));
   
   $course_id = get_field('course-id-prod', $coursePage->ID);
@@ -467,21 +539,22 @@ function load_course($coursePage) {
 
   $cost = get_field("cost", $coursePage->ID);
   if ($cost == "" || $cost == "0") {
-      $cost = __("Free");
+      $cost = nau_trans("Free");
   }
+
 
   $course = [
     "id" => $coursePage->ID,
     "course-id" => $course_id,
     "course-id-simple" => $course_id_simple,
+    "card_width" => get_field("card_width", $coursePage->ID),
+    "card_image_fit" => get_field("image_fit", $coursePage->ID),
     "card-color" => get_field("card-color", $coursePage->ID),
-    "name" => $coursePage->post_title,
-    "entity" => $entity,     
+    "name" => $coursePage->post_title,    
     "course_about_url" => get_permalink($coursePage->ID),
     "course_enroll_url" => get_permalink($coursePage->ID),
-    "tagline" => get_field('tagline'),
-    "effort" => get_field("nau_lms_course_effort", $coursePage->ID), 
-    "logo" => $logo, 
+    "tagline" => get_field('tagline', $coursePage->ID),
+    "effort" => get_field("nau_course_extra_about_effort", $coursePage->ID),
     "image" => $image,    
     "stars" => get_field("stars", $coursePage->ID), 
     "price" => $cost,    
@@ -489,16 +562,83 @@ function load_course($coursePage) {
     "certificates" => get_field("nau_lms_course_certificates", $coursePage->ID),
     "un-sustentability" => get_field("un-sustentability", $coursePage->ID),
     "small-description" => get_field("nau_lms_course_short_description", $coursePage->ID),
-    "start" => get_field("nau_lms_course_start", $coursePage->ID),
+    
+    "end" => get_field("nau_lms_course_end", $coursePage->ID),
     "youtube" => $youtube,
+    
+    "course_number" => get_field("nau_lms_course_number", $coursePage->ID),
+              
+    # "start" => get_field("nau_lms_course_start", $coursePage->ID),
+    "enrollment_start" => IXR_Date2Date(get_field("nau_course_enrollment_enrollment_start", $coursePage->ID)), # - data hora -> data
+    "enrollment_end" => IXR_Date2Date(get_field("nau_course_enrollment_enrollment_end", $coursePage->ID)), # - data hora -> data
+
+    "start_date" => substr(get_field("nau_course_enrollment_course_start", $coursePage->ID), 0, 10), # - data hora -> data
+    "end_date" => substr(get_field("nau_course_enrollment_course_end", $coursePage->ID), 0, 10), # - data hora -> data
+
+    "start_type" => get_field("nau_lms_course_start_type", $coursePage->ID), # - timestamp/?
+    # "pacing" => get_field("nau_lms_course_pacing", $coursePage->ID), # - self/?
+    
+    "invitation_only" => get_field("nau_lms_course_invitation_only", $coursePage->ID), # -> 0/1
+
+    "staff_only" => get_field("nau_lms_course_visible_to_staff_only", $coursePage->ID), # -> 0/1
+    "catalog_visibility" => get_field("nau_lms_course_catalog_visibility", $coursePage->ID), # -> none/both/about
+    "pace_mode" => get_field("nau_lms_course_self_paced", $coursePage->ID), # - 0/1
+    
+    "certificate_type" => get_field("certificate_type", $coursePage->ID), # - hidden / none / gold / silver / bronze    
+    
+    "status" => get_course_status($coursePage->ID),
+
   ];
 
+  $course["debug"] = get_post_custom($post_id);
 
+  $entityPage = get_page(get_field("nau-organization", $coursePage->ID));
+  
+  $course["entity"] = load_entity($entityPage);
+  $course["pace_mode_label"] = ($course["pace_mode"]=="1"?nau_trans("Self paced"):nau_trans("Instructor paced"));
+  $course["invitation_mode_label"] = ($course["invitation_only"]=="1"?nau_trans("Invitation only"):nau_trans("Open to everyone"));
+  $course["status_label"] = nau_trans($course["status"]);
+  
+  # $days_to_start = date_diff($course["start_date"], time());
+  # $days_to_end = date_diff($course["end_date"], time());
+  
+  $days_to_start = 5;
+  $days_to_end = 255;
+  
+  if ($days_to_start >= 7) {
+      $course["date_status_label"] = nau_trans("Scheduled to start");
+      $course["date_status_date"] = $course["start_date"];
+  }
+  
+  if ($days_to_start < 7) {
+      $course["date_status_label"] = nau_trans("About to start");
+      $course["date_status_date"] = $course["start_date"];
+  }
+  
+  if (($days_to_start < 0) && ($days_to_end > 7)) {
+      $course["date_status_label"] = nau_trans("Running");
+      $course["date_status_date"] = $course["start_date"];
+  }
+  
+  if (($days_to_start < 0) && ($days_to_end < 7)) {
+      $course["date_status_label"] = nau_trans("About to end");
+      $course["date_status_date"] = $course["end_date"];
+  }
+  
+  if ($days_to_end < 0) {
+      $course["date_status_label"] = nau_trans("Finished");
+      $course["date_status_date"] = $course["end_date"];
+  }
+  
   return $course;
 }
 
-function load_entity($entityPage) {
+function get_course_status($coursePage) {
+    return _("Open");
+}
 
+function load_entity($entityPage) {
+  
   if (gettype($entityPage) == "array") {
       $entityPage = get_page($entityPage["ID"]);
   }
@@ -507,9 +647,7 @@ function load_entity($entityPage) {
   if( has_post_thumbnail() ) {
     $image_url = get_the_post_thumbnail_url();
   }; 
-    
-  
-    
+
   $square_logo_image = get_field('square-logo', $entityPage->ID); 
   $logo_image = get_field('logo', $entityPage->ID); # URL
 
@@ -526,6 +664,7 @@ function load_entity($entityPage) {
     "sigla" => get_field("sigla", $entityPage->ID),
     "slug" => get_field("slug", $entityPage->ID),
     "website" => get_field("website", $entityPage->ID),
+    "video" => get_field("youtube", $entityPage->ID),
     "url_image" => $image_url,
     "url" => get_permalink($entityPage)
   ];
@@ -560,9 +699,52 @@ function get_page_fields() {
   $color = get_field('color', $obj); 
   $hue = get_field('hue', $obj); 
   $opacity = get_field('opacity', $obj); 
+  $grayscale = get_field('grayscale', $obj); 
   $url = get_field('image', $obj);
 
-  return [$color, $opacity, $hue, $url, $header];
+  if( $url == "") {
+    if ( has_post_thumbnail($obj) ) {
+      $url = get_the_post_thumbnail_url($obj);
+    } else {
+      $url = "assets/img/banner-01.jpg";
+    };
+  }; 
+
+  return [$color, $opacity, $hue, $grayscale, $url, $header];
 }
 
-?>
+
+
+function nau_cookie_clear($atts = array()) { 
+
+    extract(shortcode_atts(array(
+    'class' => 'btn'
+    ), $atts));
+
+    return '<span id="cookie-reset"><a id="clearCookie" class="' . $class . '">' . nau_trans("Clear Cookie", "nau-theme") . '</a></span>';
+}
+
+add_shortcode('nau_cookie_clear', 'nau_cookie_clear');
+
+function nau_cookie_date_set($atts = array()) { 
+
+    return '<span id="nau_cookie_date_set"></span>';
+}
+
+add_shortcode('nau_cookie_date_set', 'nau_cookie_date_set');
+
+
+function nau_enroll_button($course) {
+  print (do_shortcode('[edunext_enroll_button course_id="' . $course["course-id"] . '"]'));
+}
+
+function certificate($course) {
+    
+   if ($course["certificate_type"] != "hidden") {       
+        print("<span class='certificate-badge " . $course["certificate_type"] . "'></span>");
+   }
+}
+
+function IXR_Date2Date($el) {
+  return($el);
+}

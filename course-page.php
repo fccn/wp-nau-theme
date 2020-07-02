@@ -1,16 +1,25 @@
 <?php /* Template Name: Course About Page */ ?>
 <?php 
   $nauPageID = "secondary";
-  $nauBodyClass = "class='secondary-pages'";
-  
+  $nauBodyClass = "class='secondary-pages course'";
+    
   $course = load_course($post);
+
+  /* Final Fallback! */
+  if (($course["catalog_visibility"]=="none") && (!current_user_can('administrator'))) {
+    $new_page = get_option('nau_slug_courses_page');
+    header('Location: /' . $new_page);
+  }
+  
+  [$color, $opacity, $hue, $grayscale, $url, $header] = get_page_fields();  
+  
+  $banner_image = $course["image"];
+  if ($url != "") {
+    $banner_image = $url;   
+  }
   
   $entity = $course["entity"];
-    
   $link = $item["course"];
-  $opacity = $item["opacity"];
-  $hue_rotate = $item["hue"];
-  $back_color = $item["back-color"];
   
   get_header(); 
 ?>
@@ -21,13 +30,13 @@
 
 <style>
 body#secondary div#home-slider {
-    background: url("<?=$course["image"]?>");
-    object-fit: cover;    
+    background: url("<?=$banner_image?>");
+    object-fit: cover;
 }    
 
 div#home-slider.course .slider-mask {
-  filter: hue-rotate(<?=$hue?>deg) opacity(1) grayscale(<?=$opacity?>); 
-  -webkit-filter: grayscale(<?=$opacity?>) opacity(0.8) hue-rotate(<?=$hue?>deg);
+  filter: hue-rotate(<?=$hue?>deg) opacity(<?=$opacity?>) grayscale(<?=$grayscale?>); 
+  -webkit-filter: hue-rotate(<?=$hue?>deg) opacity(<?=$opacity?>) grayscale(<?=$grayscale?>);
 }
 
 div#home-slider #slider-objects h1 {
@@ -45,20 +54,22 @@ div#home-slider #slider-objects h1 {
       <a href="<?=$entity["url"]?>">
         <img id="secondary-course-logo" src="<?=$entity["square_logo"]?>" alt="<?=$entity["sigla"]?>">
       </a>
-      <h1><?=$course["name"]?></h1>
-      <div id="course-id"><?=$course["course-id"]?></div>
-      <!-- starts video and know more icons, rating and certficate status -->
-      <div class="video-know-more-icons">
-        <a href="<?=$entity["url"]?>" class="banner-entity" title="Know more about this entity"><?=$entity["sigla"]?></a><br>      
-        <!--<?=stars($course["stars"])?>-->
-        <span id="number-of-participants"><?=$course["participants"]?> <?=__("Participants")?></span>
+      <h1><?=$course["name"]?></h1>      
+      <a href="<?=$entity["url"]?>" class="banner-entity" title="<?=nau_trans("Know more about this entity")?>"><?=$entity["sigla"]?></a>        
+      
+      <ul class="course-quick-meta">      
+        <li class="date-status-label"><?=$course["date_status_label"]?></li>
+        <!-- <li class="number-of-participants"><?=$course["participants"]?> <?=nau_trans("Participants")?></li> -->
+        <li class="price"><?=$course["price"]?></li> 
+        <li class="enrollment-type"><?=$course["invitation_mode_label"]?></li>
+        <li class="course-type"><?=$course["pace_mode_label"]?></li>
+      </ul>
         
-        <ul class="aside-course-status">
-          <li id="course-status" class="aside-course-state"><span>Aberto</span> em perman&ecirc;ncia</li>
-          <li class="price-and-certificate-options"><span class="aside-course-price"><?=$course["cost"]?></span> | <span class="aside-certificate-options">Certificado</span></li>
-        </ul>
+      <!-- starts video and know more icons, rating and certficate status -->
+      <div class="video-know-more-icons">        
+        
         <!-- starts video icon -->         
-        <a class="see-video-icon" onClick='openYoutubeVideoIFrame(this);' data-vars='{ "id" : "<?=$course["youtube"]?>" }' title="<?=__("See video")?>">
+        <a class="see-video-icon" onClick='openYoutubeVideoIFrame(this);' data-vars='{ "id" : "<?=$course["youtube"]?>" }' title="<?=nau_trans("See video")?>">
           <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-white.svg">
         </a> 
         <!-- starts know more icon, rating and certficate status -->         
@@ -69,14 +80,24 @@ div#home-slider #slider-objects h1 {
       </div>
     </div>
     <img src="assets/img/banner-shape-long-blue.svg" class="slider-mask">
+
+    <?if ($course["un-sustentability"] != 0) { ?>
+      <a href="/nacoes-unidas/#<?=$course["un-sustentability"]?>">
+        <div id="un-icon" class="over-banner sustainability-onu-badge sustainability-onu-color-<?=$course["un-sustentability"]?>"> 
+           <img class="un-icons" src="assets/img/sustainability-onu-<?=$course["un-sustentability"]?>.svg" alt="">
+        </div>
+      </a>
+    <? } ?>
   </div>
   <!-- ends carrousel of banners --> 
+
 </section>
+
+
 <!-- starts homepage body content -->
-<div id="body-content"> 
-  
+<div id="body-content">   
   <!-- starts article -->
-  <article>    
+  <article class="course-synopse">
     <?php
     
         // Start the loop.
@@ -99,47 +120,85 @@ div#home-slider #slider-objects h1 {
   <!-- ends article --> 
   
   <!-- starts aside course info -->
-  <aside>
+  <aside>        
     <h3><span class="blue-vertical-line">| </span><?=$course["name"]?></h3>
     <ul class="aside-price-and-certificate-options">
-      <li class="aside-institution"><a href="<?=$entity["url"]?>" class="banner-entity" title="Know more about this entity"><?=$entity["sigla"]?></a></li>
-      <li class="price-and-certificate-options"><span class="aside-course-price"><?=$course["cost"]?></span> | <span class="aside-certificate-options">Certificado</span></li>
+      <li class="top-aside-institution"><a href="<?=$entity["url"]?>"><?=$entity["sigla"]?></a></li>
     </ul>
-    <!--<?=stars($course["stars"])?>-->
-    <span id="number-of-participants"><?=$course["participants"]?> <?=__("Participants")?></span>
-    <span id="course-status" class="aside-course-state"><span>Aberto</span> em perman&ecirc;ncia</span>
-        
-    <?if ($course["un-sustentability"] != 0) { ?>
-      <img class="un-icons" src="assets/img/sustainability-onu-<?=$course["un-sustentability"]?>.svg" alt="">
-    <? } ?>
-    
-    <iframe class="un-icons" src="https://www.youtube-nocookie.com/embed/<?=$course["youtube"]?>"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!---
+    <ul>
+      <li class="price-and-certificate-options"><span class="aside-course-price"><?=$course["price"]?></span><? certificate($course); ?></li>
+    </ul>
+    <ul class="aside-course-quick-meta">
+      <li class="date-status-label"><?=$course["date_status_label"]?></li>
+      <li class="number-of-participants"><?=$course["participants"]?> <?=nau_trans("Participants")?></li>        
+      <li class="price"><?=$course["price"]?></li> 
+      <li class="enrollment-type"><?=$course["invitation_mode_label"]?></li>
+      <li class="course-type"><?=$course["pace_mode_label"]?></li>
+    </ul>
+    --->
 
+        
+    
+    
+  <!--  
+  <h3><span class="blue-vertical-line">| </span><?=nau_trans("Tags")?></h3>
+  <span class="tags">
+  <?=nau_list_tags(null, True)?>
+  </span>
+  -->
+  
+    <div id="course-video-thumbnail">
+      <a onClick='openYoutubeVideoIFrame(this);' data-vars='{ "id" : "<?=$course["youtube"]?>" }' title="<?=nau_trans("See video")?>">
+        <img src="https://i.ytimg.com/vi_webp/<?=$course["youtube"]?>/default.webp">
+      </a> 
+    </div>
 
     <ul class="course-related-links">
-
         <?php
         
-        $li_html = '';
+        $li_html = "";
         
         $linhas = explode("\n", get_custom_value("meta"));
         foreach ($linhas  as $linha ) {        
           if ($linha <> "") {
             list($id, $label, $action) = explode("|", $linha);
             
+            $cnt = preg_match("/{([a-z_A-Z0-9]*)}/", $label, $matches);
+            
+            
+            if ($cnt == 1) {
+                
+                # Tries course already loaded data
+                $v = $course[$matches[1]];                
+                if (!$v) {
+                    # No data prepared, try post field
+                    $v = get_field($matches[1], $post->ID);
+                }
+                
+                $label = str_replace("{" . $matches[1] . "}", $v, $label);
+            }
+            
+            if (substr($id, 0, 10) == "materials-") {
+                $icon = substr($id, 10);                
+                if ($action == "")
+                  $li_html .= "<li id='$id' class='course-details x-material-icons'><i class='material-icons aside-icons'>$icon</i><span>$label</span></li>";
+                else
+                  $li_html .= "<li id='$id' class='course-details material-right-arrow x-material-icons'><a href='$action' target='_self'><i class='material-icons aside-icons'>$icon</i><span>$label</span></a></li>";
+            } else
             if ($id == "contact-telephone") {
-                $li_html .= "<li id='$id' class='course-details right-arrow'><a href='tel:$action' target='_self'>$label</a></li>";
+                $li_html .= "<li id='$id' class='$id course-details right-arrow'><a href='tel:$action' target='_self'>$label</a></li>";
             } else 
             if ($id =="contact-email") {
-                $li_html .= "<li id='$id' class='course-details right-arrow'><a href='mailto:$action' target='_self'>$label</a></li>";
+                $li_html .= "<li id='$id' class='$id course-details right-arrow'><a class='no-capitalize' href='mailto:$action' target='_self'>$label</a></li>";
             } else 
             if ($id == "contact-website") {
-                $li_html .= "<li c class='course-details right-arrow'><a href='$action' target='_blank'>$label</a></li>";
+                $li_html .= "<li id='$id' class='$id course-details right-arrow'><a class='no-capitalize' href='$action' target='_blank'>$label</a></li>";
             } else {
                 if ($action != "") {
-                  $li_html .= "<li c class='course-details right-arrow'><a href='$action' target='_blank'>$label</a></li>";
+                  $li_html .= "<li class='$id course-details right-arrow'><a href='$action' target='_blank'>$label</a></li>";
                 } else {
-                  $li_html .= "<li id='$id' class='course-details right-arrow'>$label</li>";
+                  $li_html .= "<li id='$id' class='$id course-details no-capitalize'>$label</li>";
                 }
             }
           }
@@ -149,19 +208,10 @@ div#home-slider #slider-objects h1 {
             
         ?>
 
-    
-      <li id="course-code" class="course-details"><a href="#" target="_self">C&oacute;digo do curso<span class="aside-course-details">URM 101</span></a></li>
-      <li id="starting-date" class="course-details"><a href="#" target="_self">In&iacute;cio do curso <span class="aside-course-details">22.01.2020</span></a></li>
-      <li id="estimated-effort" class="course-details"><a href="#" target="_self">Esfor&ccedil;o estimado<span class="aside-course-details">3 horas</span></a></li>
-      <li id="explore-courses" class="course-details right-arrow"><a href="#" target="_self">Cursos relacionados</a></li>
-      <li id="explore-all-courses" class="course-details right-arrow"><a href="#" target="_self">Explorar todos os cursos</a></li>
-      <li id="contact-email" class="course-details right-arrow"><a href="#" target="_self">E-mail</a></li>
-      <li id="contact-website" class="course-details right-arrow"><a href="#" target="_self">Website</a></li>
-      <li id="contact-telephone" class="course-details right-arrow"><a href="tel:+3512145678978" target="_self">+351 21 456 789 78</a></li>
       <li class="share-and-start-course">
-          <ul>
-              <li class="share-course"><a href="#">Partilhar</a></li>
-              <li class="start-course"><a href="#" class="know-more-icon">Iniciar</a></li>
+          <ul>              
+              <li class="share-course"><a href="" id="facebook-share-btt" rel="nofollow" target="_blank" class=""><?=nau_trans("Share")?>  </a></li>
+              <li class="start-course"><?php nau_enroll_button($course); ?></li>
           </ul>
       </li>
     </ul>
@@ -176,3 +226,4 @@ div#home-slider #slider-objects h1 {
 
 <!-- starts homepage footer -->
 <?php get_footer(); ?>
+

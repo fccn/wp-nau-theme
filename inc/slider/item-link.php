@@ -24,7 +24,7 @@ Array
 ?>  
 <!-- SLIDE - ITEM - LINK -->
 
-        <div style="background-color:<?=$back_color?>;">  
+        <div class="homepage-slider-link" style="background-color:<?=$back_color?>;">  
           <?php if ($link != "") { ?><a href="<?=$link?>"><?php } ?>
               <div class="homepage-slide-item <?=$item["template"]?>">
                 <img data-u="image" data-src="<?=$back_image?>" />                

@@ -44,6 +44,13 @@ function nau_display_news_page(){ ?>
 
 <?php }
 
+// Current News Page
+function nau_display_cookie_message(){ ?>
+	
+	<textarea name="nau_cookie_message" placeholder="Cookie Message" rows="10" cols="150"><?php echo get_option('nau_cookie_message'); ?></textarea>
+
+<?php }
+
 
 // Courses slug page
 function nau_display_slug_courses_page(){ ?>
@@ -69,6 +76,22 @@ function nau_display_facebook_pixel(){ ?>
 <?php }
 
 
+// Confluence Widget Code
+function nau_display_confluence_widget_key(){ ?>
+	
+	<input type="text" name="nau_confluence_widget_key" placeholder="Confluence Widget Key" value="<?php echo get_option('nau_confluence_widget_key'); ?>" size="35">
+
+<?php }
+
+
+// Javascript Header Code
+function nau_display_extra_js(){ ?>
+
+        <textarea name="nau_extra_js" placeholder="Extra Header Code" rows="10" cols="150"><?php echo get_option('nau_extra_js'); ?></textarea>
+
+
+<?php }
+
 /**
  *
  * Here you tell WP what to enqueue into the <form> area. You need:
@@ -81,20 +104,27 @@ function nau_display_facebook_pixel(){ ?>
 
 function nau_display_custom_info_fields(){
 
-	add_settings_section("section", "NAU Option", null, "theme-options");
+    add_settings_section("section", "NAU Option", null, "theme-options");
 
-	add_settings_field("nau_environment", "Enviroment", "nau_display_environment", "theme-options", "section");
-	add_settings_field("nau_news_page", "News Page", "nau_display_news_page", "theme-options", "section");
+    add_settings_field("nau_environment", "Enviroment", "nau_display_environment", "theme-options", "section");
+    add_settings_field("nau_news_page", "News Page", "nau_display_news_page", "theme-options", "section");
+    add_settings_field("nau_cookie_message", "Cookie Message (HTML)", "nau_display_cookie_message", "theme-options", "section");
     add_settings_field("nau_slug_courses_page", "Slug Courses Page", "nau_display_slug_courses_page", "theme-options", "section");
     add_settings_field("nau_google_gtag", "Google GTAG", "nau_display_google_gtag", "theme-options", "section");
     add_settings_field("nau_facebook_pixel", "Facebook Pixel ID", "nau_display_facebook_pixel", "theme-options", "section");
+    add_settings_field("nau_confluence_widget_key", "Confluence Widget Key", "nau_display_confluence_widget_key", "theme-options", "section");
+    add_settings_field("nau_extra_js", "Extra JS Code", "nau_display_extra_js", "theme-options", "section");
+    
     
 
-	register_setting("section", "nau_environment");
-	register_setting("section", "nau_news_page");
+    register_setting("section", "nau_environment");
+    register_setting("section", "nau_news_page");
+    register_setting("section", "nau_cookie_message");
     register_setting("section", "nau_slug_courses_page");
     register_setting("section", "nau_google_gtag");
     register_setting("section", "nau_facebook_pixel");
+    register_setting("section", "nau_confluence_widget_key");
+    register_setting("section", "nau_extra_js");
     
 }
 

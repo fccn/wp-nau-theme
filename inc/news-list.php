@@ -1,7 +1,7 @@
 <?php 
   $nauPageID = "secondary";
   # $nauBodyClass = "class='secondary-pages'";
-  $page_title = __("News");
+  $page_title = nau_trans("News");
   
   get_header(); 
   
@@ -23,7 +23,7 @@
       <?=do_shortcode(the_excerpt())?>
     </p>
     <a class="news_image_button" href="<?=get_permalink()?>">
-      <span class="button"><?=__("Read More")?></span>
+      <span class="button"><?=nau_trans("Read More")?></span>
     </a>
   </article>        
 

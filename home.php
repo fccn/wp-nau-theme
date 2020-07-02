@@ -31,20 +31,20 @@ else {
   print('<div id="home-content">');
 
   if (get_custom_value('homepage-highlight-courses', 0) == 1) {
-    $course_list_title = __("Courses|Highlighted", "nau-theme");
-    $courses = nau_get_pages("curso", ["filter" => "highlight"]);
+    $course_list_title = nau_trans("Courses|Highlighted");
+    $courses = nau_get_posts("curso", ["filter" => "highlight"]);
     get_template_part( "courses", "cards" );
   }
   
   if (get_custom_value('homepage-running-courses', 0) == 1) {
-    $course_list_title = __("Courses|Running", "nau-theme");
-    $courses = nau_get_pages("curso", ["filter" => "running-course"]);
+    $course_list_title = nau_trans("Courses|Running");
+    $courses = nau_get_posts("curso", ["filter" => "running-course"]);
     get_template_part( "homepage", "running-courses" );
   }
 
   if (get_custom_value('homepage-founder-entities', 0) == 1) {
-    $course_list_title = __("Entity|Founders", "nau-theme");
-    $entities = nau_get_pages("entidade", ["filter" => "fundador"]);  
+    $course_list_title = nau_trans("Entity|Founders");
+    $entities = nau_get_posts("entidade", ["filter" => "fundador"]);  
     get_template_part( "homepage", "entities" );
   }
 

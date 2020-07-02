@@ -1,10 +1,11 @@
 <?
 
-  [$color, $opacity, $hue, $image, $header] = get_page_fields();  
+  [$color, $opacity, $hue, $grayscale, $image, $header] = get_page_fields();  
   
-  if (!$color) $color = "#FFFFFF";
-  if (!$opacity) $opacity = 0.1;
-  if (!$header) $header = "nau";
+  if ($color == null) $color = "#000000";
+  if ($opacity == null) $opacity = 0.1;
+  if ($grayscale == null) $grayscale = 0.1;
+  if ($header == null) $header = "nau";
   
   
   if (!isset($page_title)) {

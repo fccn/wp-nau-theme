@@ -10,20 +10,10 @@
       return null;
   }
 
-
-  $nauPageID = "secondary";
-  $nauBodyClass = "class='secondary-pages'";
-  
-  defined( 'ABSPATH' ) or die( 'Request was blocked for security reasons!' );
-  $nauPageID = "secondary";
-  $nauBodyClass = "class='secondary-pages'";
-  
-  get_header(); 
-    
+  $mode = "list";  
   $page_title = "";
   $excerpt = "";
   
-  $mode = "list";
   
   if (is_tag()) {      
       $tag = get_queried_object();      
@@ -39,19 +29,42 @@
       $excerpt = $category->description;
   }
 
-  if ($page_title == "") {
+  if ($page_title == "") {        
+      /* Tries to find course! */
+      preg_match('/.*\/(.*)\/(.*)\/(.*)$/i', home_url($wp->request), $r);
+
+      if (($r[1] == "courses") && ($r[3] == "about")) {        
+        $args = array(
+            'course-id-prod'   => $r[2]            
+        );
+        $the_query = new WP_Query( $args );
+        
+        if ( $the_query->have_posts() ) {
+          $the_query->the_post();        
+          wp_redirect(get_permalink());
+        }
+      }
+      
+      /* Tries to find Tag! */
       preg_match('/.*\/(.*)\/(.*)$/i', home_url($wp->request), $r);
       if ($r[1] == "courses") {          
           $slug = $r[2];
           $term = _get_tag($slug);
           if ($term) {
               $mode = "list_course_card_by_slug";
-          }
+          }      
       }
-      
-      
   }
   
+  $nauPageID = "secondary";
+  $nauBodyClass = "class='secondary-pages'";
+  
+  defined( 'ABSPATH' ) or die( 'Request was blocked for security reasons!' );
+  $nauPageID = "secondary";
+  $nauBodyClass = "class='secondary-pages'";
+  
+  get_header(); 
+      
   include "inc/simple_header.php";
   
 ?>
@@ -88,7 +101,7 @@
       <?=do_shortcode(the_excerpt())?>
     </p>
     <a class="news_image_button" href="<?=get_permalink()?>">
-      <span class="button"><?=__("Read More")?></span>
+      <span class="button"><?=nau_trans("Read More")?></span>
     </a>
   </article>        
 

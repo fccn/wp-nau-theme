@@ -20,15 +20,17 @@ Array
   $opacity = $item["opacity"];
   $hue_rotate = $item["hue"];
   $back_color = $item["back-color"];
+  
+  $random_time = rand(0,5)*5;
 ?>  
 <!-- SLIDE - ITEM - VIDEO -->
 
-        <div style="background-color:<?=$back_color?>;">  
+        <div class="homepage-slider-video" style="background-color:<?=$back_color?>;">  
           <?php if ($link != "") { ?><a href="<?=$link?>"><?php } ?>
               <div class="homepage-slide-item <?=$item["template"]?>">
                 
                   <video class="slide-video" autoplay muted loop>
-                    <source src="<?=$video["url"]?>" type="video/mp4">
+                    <source src="<?=$video["url"]?>#t=<?=$random_time?>" type="video/mp4">
                   </video>
                 
                 <div class="nau-logo-filter" style="filter: hue-rotate(<?=$hue_rotate?>deg) opacity(<?=$opacity?>);"></div>

@@ -21,27 +21,29 @@ Array
   $opacity = $item["opacity"];
   $hue_rotate = $item["hue"];
   $back_color = $item["back-color"];
+  
+  $search_query = get_search_query();
 ?>  
 <!-- SLIDE - ITEM - SEARCH -->
 
 
-        <div style="background-color:<?=$back_color?>;">
+        <div class="homepage-slider-search" style="background-color:<?=$back_color?>;">
           <div class="homepage-slide-item <?=$item["template"]?>">
             <img data-u="image" data-src="<?=$back_image?>" />                
             <div class="nau-logo-filter" style="filter: hue-rotate(<?=$hue_rotate?>deg) opacity(<?=$opacity?>);"></div>
-              <div class="nau-slide-content">
-                <div id="banner-search-form-container">                  
-                   <form id="banner-search-form" action="<?php echo home_url(); ?>" role="search" method="get">
-                     <input id="s" name="s" type="search" placeholder="<?=__("Search Courses")?>" value="<?=get_search_query()?>">        
-                     <input name="submit-search" type="submit">
-                   </form>
-                </div>
-            
-                <div class="nau-slider-label">
-                  <h1><?=$headline?></h1>
-                 <p><?=$text?></p>
-                </div>
+            <div class="nau-slide-content">
+              <div id="banner-search-form-container">
+                 <form id="banner-search-form" action="<?php echo home_url(); ?>" role="search" method="get">
+                   <input id="s" name="s" type="search" placeholder="<?=nau_trans("Search Courses")?>" value="<?=$search_query?>">
+                   <input name="submit-search" type="submit">
+                 </form>
               </div>
+            
+              <div class="nau-slider-label">
+                <h1><?=$headline?></h1>
+               <p><?=$text?></p>
+              </div>
+            </div>
           </div>
         </div>
         
