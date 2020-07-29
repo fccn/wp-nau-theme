@@ -1,15 +1,16 @@
 <?php
 
-define("NAU_THEME_DEBUG", true );
-
-define("NAU_LOCAL_SASS", false );
-
 $stage_mode = (get_option('nau_environment') == "stage"); 
+
+define("NAU_THEME_DEBUG", $stage_mode );
 
 require_once('inc/acf-conf.php');
 require_once('inc/admin.php');
 
 remove_action('template_redirect', 'redirect_canonical');
+
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
 
 function nau_post_thumbnails() {
     add_theme_support( 'post-thumbnails' );
@@ -53,11 +54,7 @@ function nau_theme_enqueue_styles() {
 
     wp_enqueue_style('reset-style', get_template_directory_uri() . '/assets/base_css/reset.css', array(), '1.0.0', 'all');
     
-    if ((NAU_LOCAL_SASS == true) && (wp_get_current_user()->user_login=="racr")) {      
-      wp_enqueue_style('styles-style', get_template_directory_uri() . '/assets/css/styles.css', array(), '1.0.0', 'all');
-    } else {    
-      wp_enqueue_style('styles-style', get_template_directory_uri() . '/assets/base_css/base_styles.css', array(), '1.0.0', 'all');
-    }
+    wp_enqueue_style('styles-style', get_template_directory_uri() . '/assets/base_css/base_styles.css', array(), '1.0.0', 'all');
     
     wp_enqueue_style('style-style', get_template_directory_uri() . '/style.css', array(), '1.0.0', 'all');
     wp_enqueue_script('script_functions', get_template_directory_uri() . '/assets/js/functions.js', array(), '1.0.0', true);
@@ -349,14 +346,30 @@ function html_list_courses($courses, $fields, $extra_fields, $keys) {
         if ($k == "_tags") {            
             $l = nau_list_tags($course->ID);
         } 
+        
+        if ($k == "confluence_url") {            
+          if ($l != "") {
+             $l = "<a href='" . $l . "'><span class='material-icons'>info</span></a>";
+          }
+        } 
           
         $html .= "<td>" . $l . "</td>";
       }
       
       $c = load_course($course);
+      
       foreach($keys as $k => $v) {
-        $l = $c[$k];
-        $html .= "<td>" . $l . "</td>";
+        $class = "";
+        $l = $c[$k];        
+        if ($k == "date_status_label") {
+          $class = $c["date_status_class"];
+        }
+        
+        if ($class != "") {
+          $class = "class='$class'";
+        }
+        
+        $html .= "<td $class>" . $l . "</td>";
       }
       # $html .= "<td>" . var_export($course) . "</td>";
       $html .= "</tr>";    
@@ -376,21 +389,23 @@ function nau_list_courses_extended($atts = array()) {
        'ID' => 'ID',
        'post_title' => 'Título',
        'post_status' => 'Estado Página',
-       'modified_time' => 'Ultima Atualização',       
+       'modified_time' => 'Ultima Atualização',              
      ], 
      [
        'nau-organization' => 'Entidade', 
        'nau_lms_course_id' => 'STAGE', 
        'course-id-prod' => 'PROD', 
+       'confluence_url' => "info",
        'nau_lms_course_enrollments' => 'Participantes', 
        'nau_lms_course_certificates' => 'Certificates',
        '_tags' => 'Tags',
        'update-overview' => 'Auto-update',
-       'nau_lms_course_catalog_visibility' => 'Visibility',       
+       'nau_lms_course_catalog_visibility' => 'Visibility'       
      ],
      [
        'start_date' => 'Inicio',
        'end_date' => 'Fim',
+       'date_status_label' => 'status',       
      ]);
 
    return $value;
@@ -449,11 +464,11 @@ function nau_list_tags($page = -1, $only_tags = False) {
     
     $s = "";
     
-    if ($entity && !only_tags)
+    if ($entity && !$only_tags)
       $s .= "<a class='bubble entity' href='" . get_permalink($entity) . "'>" . get_field('sigla', $entity) . "</a> ";
   
     foreach($tags as $tag) {
-        if ($tag->slug != "highlight") {
+        if (($tag->slug != "highlight") && ($tag->slug != "running-course")) {
             $s .= "<a class='bubble tag' href='" . get_term_link($tag->term_id) . "'>" . $tag->name . "</a> ";
         }
     }     
@@ -501,7 +516,15 @@ function stars($stars) {
   } 
 }
 
+function days_to_today($date) {
 
+  $today = strtotime("now");
+  $date = strtotime($date);
+
+  $days = round(($date - $today) / (60 * 60 * 24));
+
+  return $days;  
+}
 
 
 function load_course($coursePage) {
@@ -563,12 +586,14 @@ function load_course($coursePage) {
     "un-sustentability" => get_field("un-sustentability", $coursePage->ID),
     "small-description" => get_field("nau_lms_course_short_description", $coursePage->ID),
     
-    "end" => get_field("nau_lms_course_end", $coursePage->ID),
+    /* "start" => IXR_Date2Date(get_field("nau_lms_course_start", $coursePage->ID)), */
+    /* "end"   => IXR_Date2Date(get_field("nau_lms_course_end",   $coursePage->ID)), */
+    
     "youtube" => $youtube,
     
     "course_number" => get_field("nau_lms_course_number", $coursePage->ID),
               
-    # "start" => get_field("nau_lms_course_start", $coursePage->ID),
+    
     "enrollment_start" => IXR_Date2Date(get_field("nau_course_enrollment_enrollment_start", $coursePage->ID)), # - data hora -> data
     "enrollment_end" => IXR_Date2Date(get_field("nau_course_enrollment_enrollment_end", $coursePage->ID)), # - data hora -> data
 
@@ -588,6 +613,8 @@ function load_course($coursePage) {
     
     "status" => get_course_status($coursePage->ID),
 
+    "confluence_url" => get_field("confluence_url", $coursePage->ID),
+
   ];
 
   $course["debug"] = get_post_custom($post_id);
@@ -599,35 +626,37 @@ function load_course($coursePage) {
   $course["invitation_mode_label"] = ($course["invitation_only"]=="1"?nau_trans("Invitation only"):nau_trans("Open to everyone"));
   $course["status_label"] = nau_trans($course["status"]);
   
-  # $days_to_start = date_diff($course["start_date"], time());
-  # $days_to_end = date_diff($course["end_date"], time());
-  
-  $days_to_start = 5;
-  $days_to_end = 255;
-  
+  $days_to_start = days_to_today($course["start_date"]);
+  $days_to_end = days_to_today($course["end_date"]);
+    
   if ($days_to_start >= 7) {
       $course["date_status_label"] = nau_trans("Scheduled to start");
       $course["date_status_date"] = $course["start_date"];
+      $course["date_status_class"] = "date_status_scheduled_to_start";
   }
   
   if ($days_to_start < 7) {
       $course["date_status_label"] = nau_trans("About to start");
       $course["date_status_date"] = $course["start_date"];
+      $course["date_status_class"] = "date_status_about_to_start";
   }
   
   if (($days_to_start < 0) && ($days_to_end > 7)) {
       $course["date_status_label"] = nau_trans("Running");
       $course["date_status_date"] = $course["start_date"];
+      $course["date_status_class"] = "date_status_running";
   }
   
   if (($days_to_start < 0) && ($days_to_end < 7)) {
       $course["date_status_label"] = nau_trans("About to end");
       $course["date_status_date"] = $course["end_date"];
+      $course["date_status_class"] = "date_status_about_to_end";
   }
   
   if ($days_to_end < 0) {
       $course["date_status_label"] = nau_trans("Finished");
       $course["date_status_date"] = $course["end_date"];
+      $course["date_status_class"] = "date_status_finished";
   }
   
   return $course;
@@ -666,7 +695,8 @@ function load_entity($entityPage) {
     "website" => get_field("website", $entityPage->ID),
     "video" => get_field("youtube", $entityPage->ID),
     "url_image" => $image_url,
-    "url" => get_permalink($entityPage)
+    "url" => get_permalink($entityPage),
+    "confluence_url" => get_field("confluence_url", $entityPage->ID)
   ];
 
   return $entity;

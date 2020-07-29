@@ -52,6 +52,14 @@ body#institution div#home-slider {
   </div>
 </section>
 
+<? if (current_user_can('edit_posts')) { ?>
+   <div class="nau_management">
+      <? if ($entity["confluence_url"] != "") { ?>
+       <a href="<?=$entity["confluence_url"]?>"><span class="material-icons">info</span></a>
+     <? } ?>
+   </div>
+<? } ?>
+
 <!-- starts homepage body content -->
 <div id="home-content">  
 

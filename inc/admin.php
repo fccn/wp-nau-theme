@@ -32,8 +32,12 @@ function nau_theme_settings_page(){
 
 // Current Environment
 function nau_display_environment(){ ?>
-	
-	<input type="text" name="nau_environment" placeholder="NAU Environment" value="<?php echo get_option('nau_environment'); ?>" size="35">
+
+    <select name="nau_environment" placeholder="NAU Environment">
+      <option value="dev" <? if (get_option('nau_environment') == "dev") echo "selected"; ?>>dev</option>
+      <option value="stage" <? if (get_option('nau_environment') == "stage") echo "selected"; ?>>stage</option>
+      <option value="prod" <? if (get_option('nau_environment') == "prod") echo "selected"; ?>>prod</option>
+    </select>
 
 <?php }
 

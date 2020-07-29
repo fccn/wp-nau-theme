@@ -81,7 +81,7 @@ div#home-slider #slider-objects h1 {
     </div>
     <img src="assets/img/banner-shape-long-blue.svg" class="slider-mask">
 
-    <?if ($course["un-sustentability"] != 0) { ?>
+    <?if (($course["un-sustentability"] != 0) && false) { /* UN Feature Disabled! */ ?> 
       <a href="/nacoes-unidas/#<?=$course["un-sustentability"]?>">
         <div id="un-icon" class="over-banner sustainability-onu-badge sustainability-onu-color-<?=$course["un-sustentability"]?>"> 
            <img class="un-icons" src="assets/img/sustainability-onu-<?=$course["un-sustentability"]?>.svg" alt="">
@@ -94,8 +94,17 @@ div#home-slider #slider-objects h1 {
 </section>
 
 
+<? if (current_user_can('edit_posts')) { ?>
+   <div class="nau_management">
+     <? if ($course["confluence_url"] != "") { ?>
+       <a href="<?=$course["confluence_url"]?>"><span class="material-icons">info</span></a>
+     <? } ?>
+   </div>
+<? } ?>
+   
 <!-- starts homepage body content -->
-<div id="body-content">   
+<div id="body-content">  
+ 
   <!-- starts article -->
   <article class="course-synopse">
     <?php
@@ -149,10 +158,17 @@ div#home-slider #slider-objects h1 {
   -->
   
     <div id="course-video-thumbnail">
+      <iframe width="100%" height="220"
+        src="https://www.youtube.com/embed/<?=$course["youtube"]?>?controls=0"
+        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>        
+      </iframe>
+    
+    <!--
       <a onClick='openYoutubeVideoIFrame(this);' data-vars='{ "id" : "<?=$course["youtube"]?>" }' title="<?=nau_trans("See video")?>">
         <img src="https://i.ytimg.com/vi_webp/<?=$course["youtube"]?>/default.webp">
       </a> 
-    </div>
+    -->
+    </div>    
 
     <ul class="course-related-links">
         <?php
@@ -165,7 +181,6 @@ div#home-slider #slider-objects h1 {
             list($id, $label, $action) = explode("|", $linha);
             
             $cnt = preg_match("/{([a-z_A-Z0-9]*)}/", $label, $matches);
-            
             
             if ($cnt == 1) {
                 
@@ -185,20 +200,24 @@ div#home-slider #slider-objects h1 {
                   $li_html .= "<li id='$id' class='course-details x-material-icons'><i class='material-icons aside-icons'>$icon</i><span>$label</span></li>";
                 else
                   $li_html .= "<li id='$id' class='course-details material-right-arrow x-material-icons'><a href='$action' target='_self'><i class='material-icons aside-icons'>$icon</i><span>$label</span></a></li>";
-            } else
-            if ($id == "contact-telephone") {
-                $li_html .= "<li id='$id' class='$id course-details right-arrow'><a href='tel:$action' target='_self'>$label</a></li>";
-            } else 
-            if ($id =="contact-email") {
-                $li_html .= "<li id='$id' class='$id course-details right-arrow'><a class='no-capitalize' href='mailto:$action' target='_self'>$label</a></li>";
-            } else 
-            if ($id == "contact-website") {
-                $li_html .= "<li id='$id' class='$id course-details right-arrow'><a class='no-capitalize' href='$action' target='_blank'>$label</a></li>";
             } else {
-                if ($action != "") {
-                  $li_html .= "<li class='$id course-details right-arrow'><a href='$action' target='_blank'>$label</a></li>";
+                if ($id == "contact-telephone") {
+                    if ($action == "") $action = $label;
+                    $li_html .= "<li id='$id' class='$id course-details right-arrow'><a href='tel:$action' target='_self'>$label</a></li>";
+                } else 
+                if ($id == "contact-email") {
+                    if ($action == "") $action = $label;
+                    $li_html .= "<li id='$id' class='$id course-details right-arrow'><a class='no-capitalize' href='mailto:$action' target='_self'>$label</a></li>";
+                } else 
+                if ($id == "contact-website") {
+                    if ($action == "") $action = $label;
+                    $li_html .= "<li id='$id' class='$id course-details right-arrow'><a class='no-capitalize' href='$action' target='_blank'>$label</a></li>";
                 } else {
-                  $li_html .= "<li id='$id' class='$id course-details no-capitalize'>$label</li>";
+                    if ($action != "") {
+                      $li_html .= "<li class='$id course-details right-arrow'><a href='$action' target='_blank'>$label</a></li>";
+                    } else {
+                      $li_html .= "<li id='$id' class='$id course-details no-capitalize'>$label</li>";
+                    }
                 }
             }
           }

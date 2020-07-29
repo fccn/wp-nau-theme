@@ -89,10 +89,23 @@ class NAU_Walker_Footer_Nav_Menu extends Walker_Nav_Menu {
   if (current_user_can('administrator') && (NAU_THEME_DEBUG == true)) {
       ?>
       <div class="debug_messages">
+          <b>Course</b>
           <pre>
           <? global $course; print_r($course); ?>
+          </pre>
+          <hr>
+          <b>Entity</b>
+          <pre>
+          <? global $entity; print_r($entity); ?>
+          </pre>
+          <hr>
+          <b>Server</b>
+          <pre>
+          <? print_r($_SERVER) ?>
           </pre>
       </div>
       <?
   }
 ?>
+
+

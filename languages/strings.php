@@ -78,3 +78,6 @@ nau_trans("Search");
 nau_trans("Content type:");
 nau_trans("Show courses that are:");
 nau_trans("Temáticas");
+nau_trans("Scheduled to start");
+nau_trans("Finished");
+nau_trans("Running");

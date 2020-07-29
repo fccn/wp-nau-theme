@@ -1,12 +1,15 @@
 <?php
 
-/* Ativar para Fazer Debug aos Campos */
-add_filter('acf/settings/remove_wp_meta_box', '__return_false');
+if (NAU_THEME_DEBUG == true) {
 
-/*
+  /* Ativar para Fazer Debug aos Campos */
+  add_filter('acf/settings/remove_wp_meta_box', '__return_false');
+
+}
+
+if( function_exists('acf_add_local_field_group') && (get_option('nau_environment') == "prod")):
+
 // copiar de "Custom-Fields, Tools, Generate PHP" e colocar aqui.
-
-if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
 	'key' => 'group_5e8762b7eab59',
@@ -129,6 +132,22 @@ acf_add_local_field_group(array(
 			'ui_off_text' => '',
 		),
 		array(
+			'key' => 'field_5f21f52f561f3',
+			'label' => 'Confluence URL',
+			'name' => 'confluence_url',
+			'type' => 'url',
+			'instructions' => 'Endereço Confluence',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+		),
+		array(
 			'key' => 'field_5e934607a2ddc',
 			'label' => 'Visualização',
 			'name' => '',
@@ -158,6 +177,61 @@ acf_add_local_field_group(array(
 				'id' => '',
 			),
 			'default_value' => '#2010AA',
+		),
+		array(
+			'key' => 'field_5eb5f68727bb9',
+			'label' => 'Largura do Cartão',
+			'name' => 'card_width',
+			'type' => 'select',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'single' => 'Uma unidade',
+				'double' => 'Duas unidades',
+			),
+			'default_value' => array(
+				0 => 'single',
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'ui' => 0,
+			'return_format' => 'value',
+			'ajax' => 0,
+			'placeholder' => '',
+		),
+		array(
+			'key' => 'field_5eb62092cd5b1',
+			'label' => 'Disposição da Imagem no Cartão',
+			'name' => 'image_fit',
+			'type' => 'select',
+			'instructions' => 'Expande - ajusta o tamanho da imagem para ocupar todo o espaço referente à image, pode tornar parte da imagem invisivel
+Contém - ajusta o tamanho da imagem para o tamanho máximo, apresentando toda a imagem',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'cover' => 'Expande',
+				'contain' => 'Contém',
+			),
+			'default_value' => array(
+				0 => 'contain',
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'ui' => 0,
+			'return_format' => 'value',
+			'ajax' => 0,
+			'placeholder' => '',
 		),
 		array(
 			'key' => 'field_5ea0fb75a7af8',
@@ -241,6 +315,25 @@ acf_add_local_field_group(array(
 			'maxlength' => '',
 		),
 		array(
+			'key' => 'field_5ea8927037222',
+			'label' => 'Tagline',
+			'name' => 'tagline',
+			'type' => 'text',
+			'instructions' => 'Linha de texto adicional que acompanha o título.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
+		array(
 			'key' => 'field_5e8762d9ae310',
 			'label' => 'Meta',
 			'name' => 'meta',
@@ -258,6 +351,36 @@ acf_add_local_field_group(array(
 			'maxlength' => '',
 			'rows' => '',
 			'new_lines' => '',
+		),
+		array(
+			'key' => 'field_5eaeead29d989',
+			'label' => 'Tipo de Certificado',
+			'name' => 'certificate_type',
+			'type' => 'select',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'hidden' => 'escondido',
+				'none' => 'Nenhum',
+				'bronze' => 'Bronze',
+				'silver' => 'Prata',
+				'gold' => 'Ouro',
+			),
+			'default_value' => array(
+				0 => 'hidden',
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'ui' => 0,
+			'return_format' => 'value',
+			'ajax' => 0,
+			'placeholder' => '',
 		),
 		array(
 			'key' => 'field_5e9344dc2f5b7',
@@ -278,7 +401,7 @@ acf_add_local_field_group(array(
 		array(
 			'key' => 'field_5e99d5bccb4d4',
 			'label' => 'Inicio',
-			'name' => 'nau_lms_course_start',
+			'name' => 'nau_course_enrollment_course_start',
 			'type' => 'date_time_picker',
 			'instructions' => '',
 			'required' => 0,
@@ -295,7 +418,7 @@ acf_add_local_field_group(array(
 		array(
 			'key' => 'field_5e99d5f8cb4d5',
 			'label' => 'Fim',
-			'name' => 'nau_lms_course_end',
+			'name' => 'nau_course_enrollment_course_end',
 			'type' => 'date_time_picker',
 			'instructions' => '',
 			'required' => 0,
@@ -346,6 +469,111 @@ acf_add_local_field_group(array(
 			'prepend' => '',
 			'append' => '',
 			'maxlength' => '',
+		),
+		array(
+			'key' => 'field_5ea88f0074213',
+			'label' => 'Visibilidade',
+			'name' => 'nau_lms_course_catalog_visibility',
+			'type' => 'select',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'none' => 'a página é privada, não é apresentada em nenhuma situação',
+				'about' => 'a página é apresentada de forma independente, mas não nas listagens',
+				'both' => 'a página é apresentada de forma independente e surge nas listagens',
+			),
+			'default_value' => array(
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'ui' => 0,
+			'return_format' => 'value',
+			'ajax' => 0,
+			'placeholder' => '',
+		),
+		array(
+			'key' => 'field_5ea88f3b74214',
+			'label' => 'Pace Mode',
+			'name' => 'nau_lms_course_self_paced',
+			'type' => 'select',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				0 => 'Instructor Paced',
+				1 => 'Self Paced',
+			),
+			'default_value' => array(
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'ui' => 0,
+			'return_format' => 'value',
+			'ajax' => 0,
+			'placeholder' => '',
+		),
+		array(
+			'key' => 'field_5ea88f7674215',
+			'label' => 'Apenas por convite',
+			'name' => 'nau_lms_course_invitation_only',
+			'type' => 'select',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				0 => 'Não',
+				1 => 'Sim',
+			),
+			'default_value' => array(
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'ui' => 0,
+			'return_format' => 'value',
+			'ajax' => 0,
+			'placeholder' => '',
+		),
+		array(
+			'key' => 'field_5ea88fa974216',
+			'label' => 'Apenas para Staff',
+			'name' => 'nau_lms_course_visible_to_staff_only',
+			'type' => 'select',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				0 => 'Não',
+				1 => 'Sim',
+			),
+			'default_value' => array(
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'ui' => 0,
+			'return_format' => 'value',
+			'ajax' => 0,
+			'placeholder' => '',
 		),
 		array(
 			'key' => 'field_5e99d673398f5',
@@ -618,6 +846,22 @@ acf_add_local_field_group(array(
 			'maxlength' => '',
 			'rows' => '',
 			'new_lines' => '',
+		),
+		array(
+			'key' => 'field_5f21f4e270372',
+			'label' => 'Confluence URL',
+			'name' => 'confluence_url',
+			'type' => 'url',
+			'instructions' => 'Endereço da entidade no Confluence',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
 		),
 	),
 	'location' => array(
@@ -1166,6 +1410,7 @@ acf_add_local_field_group(array(
 					'choices' => array(
 						'off' => 'Desligado',
 						'link' => 'Destaque',
+						'video' => 'Video',
 						'search' => 'Pesquisa',
 						'news' => 'Noticia',
 						'course' => 'Curso',
@@ -1176,8 +1421,8 @@ acf_add_local_field_group(array(
 					'allow_null' => 0,
 					'multiple' => 0,
 					'ui' => 0,
-					'ajax' => 0,
 					'return_format' => 'value',
+					'ajax' => 0,
 					'placeholder' => '',
 				),
 				array(
@@ -1440,7 +1685,7 @@ acf_add_local_field_group(array(
 					'conditional_logic' => array(
 						array(
 							array(
-								'field' => 'field_5e8a0d8803b88',
+								'field' => 'field_5e8a25c7d1ae3',
 								'operator' => '==',
 								'value' => 'video',
 							),
@@ -1490,6 +1735,7 @@ acf_add_local_field_group(array(
 					'choices' => array(
 						'off' => 'Desligado',
 						'link' => 'Destaque',
+						'video' => 'Video',
 						'search' => 'Pesquisa',
 						'news' => 'Noticia',
 						'course' => 'Curso',
@@ -1500,8 +1746,8 @@ acf_add_local_field_group(array(
 					'allow_null' => 0,
 					'multiple' => 0,
 					'ui' => 0,
-					'ajax' => 0,
 					'return_format' => 'value',
+					'ajax' => 0,
 					'placeholder' => '',
 				),
 				array(
@@ -1764,7 +2010,7 @@ acf_add_local_field_group(array(
 					'conditional_logic' => array(
 						array(
 							array(
-								'field' => 'field_5e8a0d8803b88',
+								'field' => 'field_5e8a25ccd1aee',
 								'operator' => '==',
 								'value' => 'video',
 							),
@@ -1814,6 +2060,7 @@ acf_add_local_field_group(array(
 					'choices' => array(
 						'off' => 'Desligado',
 						'link' => 'Destaque',
+						'video' => 'Video',
 						'search' => 'Pesquisa',
 						'news' => 'Noticia',
 						'course' => 'Curso',
@@ -1824,8 +2071,8 @@ acf_add_local_field_group(array(
 					'allow_null' => 0,
 					'multiple' => 0,
 					'ui' => 0,
-					'ajax' => 0,
 					'return_format' => 'value',
+					'ajax' => 0,
 					'placeholder' => '',
 				),
 				array(
@@ -2078,6 +2325,33 @@ acf_add_local_field_group(array(
 					'prepend' => '',
 					'append' => '',
 				),
+				array(
+					'key' => 'field_5eaabc4df4fe0',
+					'label' => 'Video',
+					'name' => 'video',
+					'type' => 'file',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_5e8a25d0d1af9',
+								'operator' => '==',
+								'value' => 'video',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'array',
+					'library' => 'all',
+					'min_size' => '',
+					'max_size' => '',
+					'mime_types' => 'mp4',
+				),
 			),
 		),
 		array(
@@ -2111,6 +2385,7 @@ acf_add_local_field_group(array(
 					'choices' => array(
 						'off' => 'Desligado',
 						'link' => 'Destaque',
+						'video' => 'Video',
 						'search' => 'Pesquisa',
 						'news' => 'Noticia',
 						'course' => 'Curso',
@@ -2121,8 +2396,8 @@ acf_add_local_field_group(array(
 					'allow_null' => 0,
 					'multiple' => 0,
 					'ui' => 0,
-					'ajax' => 0,
 					'return_format' => 'value',
+					'ajax' => 0,
 					'placeholder' => '',
 				),
 				array(
@@ -2375,6 +2650,33 @@ acf_add_local_field_group(array(
 					'prepend' => '',
 					'append' => '',
 				),
+				array(
+					'key' => 'field_5eaabccbf4fe1',
+					'label' => 'Video',
+					'name' => 'video',
+					'type' => 'file',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_5e8a25dae04ce',
+								'operator' => '==',
+								'value' => 'video',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'array',
+					'library' => 'all',
+					'min_size' => '',
+					'max_size' => '',
+					'mime_types' => 'mp4',
+				),
 			),
 		),
 		array(
@@ -2408,6 +2710,7 @@ acf_add_local_field_group(array(
 					'choices' => array(
 						'off' => 'Desligado',
 						'link' => 'Destaque',
+						'video' => 'Video',
 						'search' => 'Pesquisa',
 						'news' => 'Noticia',
 						'course' => 'Curso',
@@ -2418,8 +2721,8 @@ acf_add_local_field_group(array(
 					'allow_null' => 0,
 					'multiple' => 0,
 					'ui' => 0,
-					'ajax' => 0,
 					'return_format' => 'value',
+					'ajax' => 0,
 					'placeholder' => '',
 				),
 				array(
@@ -2672,6 +2975,33 @@ acf_add_local_field_group(array(
 					'prepend' => '',
 					'append' => '',
 				),
+				array(
+					'key' => 'field_5eaabd0bf4fe2',
+					'label' => 'Video',
+					'name' => 'video',
+					'type' => 'file',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_5e8a25e1e04d9',
+								'operator' => '==',
+								'value' => 'video',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'array',
+					'library' => 'all',
+					'min_size' => '',
+					'max_size' => '',
+					'mime_types' => 'mp4',
+				),
 			),
 		),
 		array(
@@ -2705,6 +3035,7 @@ acf_add_local_field_group(array(
 					'choices' => array(
 						'off' => 'Desligado',
 						'link' => 'Destaque',
+						'video' => 'Video',
 						'search' => 'Pesquisa',
 						'news' => 'Noticia',
 						'course' => 'Curso',
@@ -2715,8 +3046,8 @@ acf_add_local_field_group(array(
 					'allow_null' => 0,
 					'multiple' => 0,
 					'ui' => 0,
-					'ajax' => 0,
 					'return_format' => 'value',
+					'ajax' => 0,
 					'placeholder' => '',
 				),
 				array(
@@ -2969,6 +3300,33 @@ acf_add_local_field_group(array(
 					'prepend' => '',
 					'append' => '',
 				),
+				array(
+					'key' => 'field_5eaabd17f4fe3',
+					'label' => 'Video',
+					'name' => 'video',
+					'type' => 'file',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_5e8a25e6e04e4',
+								'operator' => '==',
+								'value' => 'video',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'array',
+					'library' => 'all',
+					'min_size' => '',
+					'max_size' => '',
+					'mime_types' => 'mp4',
+				),
 			),
 		),
 		array(
@@ -3002,6 +3360,7 @@ acf_add_local_field_group(array(
 					'choices' => array(
 						'off' => 'Desligado',
 						'link' => 'Destaque',
+						'video' => 'Video',
 						'search' => 'Pesquisa',
 						'news' => 'Noticia',
 						'course' => 'Curso',
@@ -3012,8 +3371,8 @@ acf_add_local_field_group(array(
 					'allow_null' => 0,
 					'multiple' => 0,
 					'ui' => 0,
-					'ajax' => 0,
 					'return_format' => 'value',
+					'ajax' => 0,
 					'placeholder' => '',
 				),
 				array(
@@ -3266,6 +3625,33 @@ acf_add_local_field_group(array(
 					'prepend' => '',
 					'append' => '',
 				),
+				array(
+					'key' => 'field_5eaabd1cf4fe4',
+					'label' => 'Video',
+					'name' => 'video',
+					'type' => 'file',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_5e8a296af307b',
+								'operator' => '==',
+								'value' => 'video',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'array',
+					'library' => 'all',
+					'min_size' => '',
+					'max_size' => '',
+					'mime_types' => 'mp4',
+				),
 			),
 		),
 		array(
@@ -3408,8 +3794,8 @@ acf_add_local_field_group(array(
 			),
 			'choices' => array(
 				'null' => 'sem banner',
-				'nau' => 'NAU Banner (grayscale)',
-				'nau-op' => 'NAU Banner (opacidade)',
+				'nau' => 'NAU Banner',
+				'nau-black' => 'NAU Black Banner',
 				'un' => 'Nações Unidas',
 			),
 			'default_value' => array(
@@ -3451,7 +3837,27 @@ acf_add_local_field_group(array(
 				'id' => '',
 			),
 			'default_value' => '0.9',
-			'min' => 0,
+			'min' => '0.4',
+			'max' => 1,
+			'step' => '0.05',
+			'prepend' => '',
+			'append' => '',
+		),
+		array(
+			'key' => 'field_5eaab657bb125',
+			'label' => 'Grayscale',
+			'name' => 'grayscale',
+			'type' => 'range',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 0,
+			'min' => '',
 			'max' => 1,
 			'step' => '0.1',
 			'prepend' => '',
