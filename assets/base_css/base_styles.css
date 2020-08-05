@@ -1800,7 +1800,8 @@ ul#menu_login_register span, ul#menu_languages span {
   display: flex;
   padding: 0 4px;
 }
-ul#menu_login_register span, ul#menu_login_register li:first-child a {
+ul#menu_login_register span, 
+ul#menu_login_register li:first-child a {
   background: transparent url("../img/lang-divider.svg") no-repeat center right;
   padding: 0;
   height: auto;
@@ -1808,6 +1809,13 @@ ul#menu_login_register span, ul#menu_login_register li:first-child a {
   margin-right: 5px;
   color: #000;
 }
+
+ul#menu_login_register li:first-child a.login_or_dash_openedx {
+  background-image: none; 
+  padding-right: 0px;
+}
+
+
 ul#menu_languages li {
   background: transparent url("../img/lang-divider.svg") no-repeat center right;
   height: auto;
@@ -5997,7 +6005,7 @@ ul#menu_login_register li:first-child {
     list-style-type: none;
     margin-right: 8px;
     padding-right: 0px;
-    background: transparent url(../img/lang-divider.svg) no-repeat right 18px;                
+    background: transparent url(../img/lang-divider.svg) no-repeat right 6px;                
 }
 
 div#branding-top-nav a#open-menu-arrow {
@@ -6132,6 +6140,10 @@ div#branding-top-nav a#open-menu-arrow {
     color: #ccc;
     display: flex;
     padding: 0 4px;
+  }
+
+  ul#menu_login_register li:first-child {
+      background-position: right 16px;
   }
     
 }
