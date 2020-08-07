@@ -185,12 +185,15 @@ div#home-slider #slider-objects h1 {
             if ($cnt == 1) {
                 
                 # Tries course already loaded data
-                $v = $course[$matches[1]];                
-                if (!$v) {
+                
+                $v = "";
+                if (isset($course[$matches[1]])) {
+                    $v = $course[$matches[1]];
+                } else {
                     # No data prepared, try post field
                     $v = get_field($matches[1], $post->ID);
                 }
-                
+
                 $label = str_replace("{" . $matches[1] . "}", $v, $label);
             }
             
