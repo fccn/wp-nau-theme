@@ -329,7 +329,7 @@ msgstr "Apresenta cursos que:"
 
 #: global-footer.php:57 languages/strings.php:10
 msgid "Social Media"
-msgstr "Redes Sociais"
+msgstr "Siga-nos"
 
 #: search.php:14
 msgid "Started"
