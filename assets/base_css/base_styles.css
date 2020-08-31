@@ -1802,10 +1802,8 @@ ul#menu_login_register span, ul#menu_languages span {
 }
 ul#menu_login_register span, 
 ul#menu_login_register li:first-child a {
-  background: transparent url("../img/lang-divider.svg") no-repeat center right;
   padding: 0;
   height: auto;
-  padding-right: 5px;
   margin-right: 5px;
   color: #000;
 }
@@ -5994,11 +5992,7 @@ ul#menu_languages li a:hover {
 }
 
 ul#menu_login_register li:first-child a {
-    padding-right: 15px;    
     margin-right: 8px;
-    background-position: right center;
-    background: transparent url(../img/arrow-dropdown.svg) no-repeat right 5.5px;
-    background-size: 12px;
 }
 
 ul#menu_login_register li:first-child {
@@ -6006,6 +6000,13 @@ ul#menu_login_register li:first-child {
     margin-right: 8px;
     padding-right: 0px;
     background: transparent url(../img/lang-divider.svg) no-repeat right 6px;                
+}
+
+ul#menu_login_register li.menu-item-has-children a {
+    padding-right: 15px;  
+    background: transparent url(../img/arrow-dropdown.svg) no-repeat right 5.5px;
+    background-position: right center;
+    background-size: 12px;
 }
 
 div#branding-top-nav a#open-menu-arrow {
