@@ -12,7 +12,15 @@
   
   <!-- starts highlighted courses -->
   <section id="highlighted-courses" class="main-gallery">   
-   <h2><?=$title[0]?> <span class="normal-font-weight"><?=$title[1]?></span></h2>       
+    <h2>
+      <?=$title[0]?> <span class="normal-font-weight"><?=$title[1]?></span>
+      <span class="heading-blue-bar">|</span>
+      <a href="<?=$all_courses_url?>" title="Explorar todos os cursos">
+        <span class="normal-font-weight explore-all-courses-font"><?=nau_trans("Explore all courses")?></span>
+        <span class="explore-other-courses">
+      </a>
+    </h2>
+
     <div class="courses-wrap">    
     
     <? foreach ($courses as $coursePage) { 

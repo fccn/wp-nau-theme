@@ -10,7 +10,7 @@
   
 <!-- starts rolling courses -->
 <section id="rolling-courses">
-    <h2 class="explore-all-courses"><?=nau_trans("Running Courses")?><span class="heading-blue-bar">|</span><a href="<?=$all_courses_url?>" title="Explorar todos os cursos"><span class="normal-font-weight explore-all-courses-font"><?=nau_trans("Explore all courses")?></span><span class="explore-other-courses"></a></a></h2>
+    <h2 class="explore-all-courses"><?=nau_trans("Running Courses")?><span class="heading-blue-bar">|</span><a href="<?=$all_courses_url?>" title="Explorar todos os cursos"><span class="normal-font-weight explore-all-courses-font"><?=nau_trans("Explore all courses")?></span><span class="explore-other-courses"></a></h2>
     <!-- starts curso a decorrer #1 -->
     <div class="courses-wrap">
     
