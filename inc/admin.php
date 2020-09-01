@@ -96,6 +96,17 @@ function nau_display_extra_js(){ ?>
 
 <?php }
 
+
+// Show menu languages
+function nau_display_menu_languages(){ ?>
+
+    <select name="nau_menu_languages" placeholder="NAU Menu Languages">
+      <option value="1" <? if (get_option('nau_menu_languages', 1) == "1") echo "selected"; ?>>Show</option>
+      <option value="0" <? if (get_option('nau_menu_languages', 1) == "0") echo "selected"; ?>>Hide</option>
+    </select>
+
+<?php }
+
 /**
  *
  * Here you tell WP what to enqueue into the <form> area. You need:
@@ -118,6 +129,8 @@ function nau_display_custom_info_fields(){
     add_settings_field("nau_facebook_pixel", "Facebook Pixel ID", "nau_display_facebook_pixel", "theme-options", "section");
     add_settings_field("nau_confluence_widget_key", "Confluence Widget Key", "nau_display_confluence_widget_key", "theme-options", "section");
     add_settings_field("nau_extra_js", "Extra JS Code", "nau_display_extra_js", "theme-options", "section");
+    add_settings_field("nau_menu_languages", "Menu languages", "nau_display_menu_languages", "theme-options", "section");
+    
     
     
 
@@ -129,6 +142,7 @@ function nau_display_custom_info_fields(){
     register_setting("section", "nau_facebook_pixel");
     register_setting("section", "nau_confluence_widget_key");
     register_setting("section", "nau_extra_js");
+    register_setting("section", "nau_menu_languages");
     
 }
 

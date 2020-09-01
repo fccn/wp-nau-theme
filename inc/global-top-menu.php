@@ -140,6 +140,10 @@ class NAU_Walker_Access_Menu extends Walker_Nav_Menu {
       }
 
       ?>
+      
+      <? $nau_menu_languages = get_option('nau_menu_languages', 1) ?>
+      <? if ($nau_menu_languages == 1) { ?>
+
       <div id="languages-actions-container">
         <ul id="menu_languages">
           <?php 
@@ -154,6 +158,7 @@ class NAU_Walker_Access_Menu extends Walker_Nav_Menu {
           ?>
          </ul>
       </div>
+      <? } ?>
         
         <!-- starts login and register -->      
         <?php 
