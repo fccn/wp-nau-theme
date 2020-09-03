@@ -547,11 +547,11 @@ function load_course($coursePage) {
   }
                       
   //$image = get_field("nau_lms_course_media_course_image", $coursePage->ID);
-  $image = get_field("nau_lms_course_media_image_raw", $coursePage->ID);  
-  if ($image == "") {
-    $image = get_the_post_thumbnail_url( $coursePage->ID, 'full' );
-  }
-  
+  //$image = get_field("nau_lms_course_media_image_raw", $coursePage->ID);  
+  //if ($image == "") {
+  //  $image = get_the_post_thumbnail_url( $coursePage->ID, 'full' );
+  //}
+  $image = get_the_post_thumbnail_url( $coursePage->ID, 'full' );
   
   $youtube = get_field("youtube", $coursePage->ID);
   if ($youtube == "") {          
