@@ -40,9 +40,9 @@ body#institution div#home-slider {
 <section id="flexible-content-area">
   <div id="home-slider">        
     <div id="slider-objects">      
-      <a class="link-logo" href="<?=$entity["website"]?>"><img class="secondary-course-logo" src="<?=$entity["square_logo"] ?>" alt="<?=$entity["sigla"]?>"></a>
+      <img class="secondary-course-logo" src="<?=$entity["square_logo"] ?>" alt="<?=$entity["sigla"]?>">
       <h1><?=$entity["name"]?></h1> 
-      <div class="slider-sigla"><a href="<?=$entity["website"]?>"><?=$entity["sigla"]?></a></div>
+      <div class="slider-sigla"><?=$entity["sigla"]?></div>
     </div>
     <? if ($header == "nau") { ?>
     <img src="assets/img/banner-shape-long-blue.svg" class="slider-mask">  
