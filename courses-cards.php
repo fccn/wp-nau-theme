@@ -7,6 +7,7 @@
     }
     
     $title = explode("|", $course_list_title);
+    $all_courses_url = get_field("all-courses");
     
   ?>   
   
