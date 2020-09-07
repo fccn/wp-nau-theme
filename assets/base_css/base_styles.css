@@ -1876,8 +1876,8 @@ form#search-form {
   /*width: 73%;*/
   position: relative;
 }
-body.secondary-pages form#search-form {
-  margin-right: 25px;
+div#actions_container form#search-form { 
+ margin-right: 25px;
 }
 form#search-form input[type="search"] {
 background-color: transparent;
@@ -1895,9 +1895,6 @@ background-color: transparent;
     z-index: 2;
     position: relative;
 
-}
-body#homepage form#search-form input[type="search"], body#homepage form#search-form input[type="submit"] {
-  display: none;
 }
 form#banner-search-form {
   position: relative;
