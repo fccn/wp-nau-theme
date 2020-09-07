@@ -6267,6 +6267,11 @@ header.page-header h2 {
     padding-left: 0;
 }
 
-
-
-
+a#login_image { color: #074ce1 !important; }
+a#login_image:hover, a#login_image:active { color: #000 !important; }
+form#banner-search-form input[type="search"] { padding: 2em; font-size: 1.25em; color: #074ce1 !important; font-weight: bold; }
+form#banner-search-form input[type="submit"] { background-position: right 1.2em; margin: 0.4em 1em 0 0; }
+.explore-all-courses-font { color: #074ce1; }
+.explore-all-courses-font:hover, .explore-all-courses-font:active { color: #000; }
+.explore-other-courses { display: none; }
+#homepage-all-courses-section { margin-bottom: 3em !important; }
