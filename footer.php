@@ -3,10 +3,13 @@
 /*
 https://www.blogcyberini.com/2018/05/botao-para-compartilhamento-de-conteudo-facebook.html
 */
-//Constrói a URL depois que o DOM estiver pronto
+// Load lazilly the DOM
 document.addEventListener("DOMContentLoaded", function() {            
-    //altera a URL do botão
-    document.getElementById("facebook-share-btt").href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(window.location.href);
+    // change botton URL
+    const facebookShareButton = document.getElementById("facebook-share-btt");
+    if (facebookShareButton != null) {
+    	facebookShareButton.href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(window.location.href);
+    }
 }, false);
 </script>
 <? include "inc/cookie-bar.php"; ?>
