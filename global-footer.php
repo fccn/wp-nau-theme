@@ -3,10 +3,32 @@
 class NAU_Walker_Footer_Nav_Menu extends Walker_Nav_Menu {      
 
     function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+        $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+        $classes[] = 'menu-item-' . $item->ID;
+        $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
+        $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+
+        $atts = array();
+        $atts['title']  = empty( $item->attr_title ) ? '': esc_attr($item->attr_title);
+        $atts['target'] = empty( $item->target )     ? '': esc_attr($item->target);
+        $atts['rel']    = empty( $item->xfn )        ? '': esc_attr($item->xfn);
+        $atts['href']   = empty( $item->url )        ? '': esc_url($item->url);
+        
+        $atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );
+
+        $attributes = '';
+        foreach ( $atts as $attr => $value ) {
+            if ( ! empty( $value ) ) {
+                $attributes .= ' ' . $attr . '="' . $value . '"';
+            }
+        }
+
+        $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+ 
         if ($depth == 0) 
             $output .= "\n<li class='footer-links-structure'>\n<h5>" . $item->title . "</h5>";
         else
-            $output .= "<li><a href='" . $item->url . "'>" . $item->title . "</a></li>";
+            $output .= "<li><a " . $attributes . $class_names . "'>" . $item->title . "</a></li>";
     }    
     
     function end_el( &$output, $item, $depth = 0, $args = array() ) {
