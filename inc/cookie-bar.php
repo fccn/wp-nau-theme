@@ -5,9 +5,13 @@
   if ($cookie_message == "") {
       $cookie_message = nau_trans("This site uses cookies (update this message on NAU Theme Options)!");
   }
-      
+
+  $nau_cookie_message_visible = get_option('nau_cookie_message_visible', 1)
 ?>      
-<div id="cookie-notification" class="cookie-wrapper cookie hidden">    
-    <p><?=$cookie_message?></p>
-    <a id="closeCookie" class="btn"><?=nau_trans("Accept")?></a>    
-</div>
+
+<? if ($nau_cookie_message_visible == 1) { ?>
+  <div id="cookie-notification" class="cookie-wrapper cookie">    
+      <p><?=$cookie_message?></p>
+      <a id="closeCookie" class="btn"><?=nau_trans("Accept")?></a>    
+  </div>
+<? } ?>
