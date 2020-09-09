@@ -158,7 +158,7 @@ div#home-slider #slider-objects h1 {
     <? if (! empty($course["youtube"])) { ?>  
       <div id="course-video-thumbnail">
         <iframe width="100%" height="220"
-          src="https://www.youtube.com/embed/<?=$course["youtube"]?>?controls=0"
+          src="https://www.youtube.com/embed/<?=$course["youtube"]?>"
           frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>        
         </iframe>
       </div>    
