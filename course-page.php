@@ -55,7 +55,6 @@ div#home-slider #slider-objects h1 {
         <img id="secondary-course-logo" src="<?=$entity["square_logo"]?>" alt="<?=$entity["sigla"]?>">
       </a>
       <h1><?=$course["name"]?></h1>      
-      <a href="<?=$entity["url"]?>" class="banner-entity" title="<?=nau_trans("Know more about this entity")?>"><?=$entity["sigla"]?></a>        
       
       <ul class="course-quick-meta">      
         <li class="date-status-label"><?=$course["date_status_label"]?></li>
@@ -131,9 +130,6 @@ div#home-slider #slider-objects h1 {
   <!-- starts aside course info -->
   <aside>        
     <h3><span class="blue-vertical-line">| </span><?=$course["name"]?></h3>
-    <ul class="aside-price-and-certificate-options">
-      <li class="top-aside-institution"><a href="<?=$entity["url"]?>"><?=$entity["sigla"]?></a></li>
-    </ul>
     <!---
     <ul>
       <li class="price-and-certificate-options"><span class="aside-course-price"><?=$course["price"]?></span><? certificate($course); ?></li>
