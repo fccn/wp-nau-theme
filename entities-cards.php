@@ -48,14 +48,8 @@
           </div>      
           <div class="card-content"> 
             <h3 class="entity-long-name"><?=$entity["name"]?></h3>
-            <div class="entity-short-name"><a href="<?=$entity["url"]?>"><?=$entity["sigla"]?></a></div> 
           </div>
           <div class="card-action"> 
-            <? if ($entity["video"] || 1) { ?>
-            <a class="see-video-icon" onClick='openYoutubeVideoIFrame(this);' data-vars='{ "id" : "<?=$entity["video"]?>" }' title="<?=nau_trans("See video")?>">
-              <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-white.svg" alt="<?=nau_trans("See a video about this entity")?>">           
-            </a>
-            <? } ?>
             <a class="know-more-icon" href="<?=$entity["url"]?>" title="<?=nau_trans("Learn more about this entity")?>"><?=nau_trans("+Info")?></a>         
           </div>  
       </div>
