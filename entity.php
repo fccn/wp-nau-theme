@@ -42,7 +42,6 @@ body#institution div#home-slider {
     <div id="slider-objects">      
       <img class="secondary-course-logo" src="<?=$entity["square_logo"] ?>" alt="<?=$entity["sigla"]?>">
       <h1><?=$entity["name"]?></h1> 
-      <div class="slider-sigla"><?=$entity["sigla"]?></div>
     </div>
     <? if ($header == "nau") { ?>
     <img src="assets/img/banner-shape-long-blue.svg" class="slider-mask">  

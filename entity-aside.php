@@ -5,12 +5,8 @@
   <aside>
   
     <h3><span class="blue-vertical-line">|</span> <?=$entity["name"]?></h3>  
-    <ul class="aside-price-and-certificate-options">
-      <li class="top-aside-institution"><a href="<?=$entity["url"]?>"><?=$entity["sigla"]?></a></li>      
-    </ul>
     
     <div id="course-video-thumbnail">
-    
       <iframe width="100%" height="220" 
         src="https://www.youtube.com/embed/<?=$entity["video"]?>?controls=0" 
         frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>

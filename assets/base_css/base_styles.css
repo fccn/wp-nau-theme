@@ -2116,13 +2116,6 @@ aside .un-icons {
   float: right;
   padding-bottom: 24px;
 }
-aside ul.aside-price-and-certificate-options {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
 aside li {
   font-size: 13px;
 }
@@ -3086,15 +3079,6 @@ body.secondary-pages #home-content {
 
 }
 	
-	body.entity .top-aside-institution a {
-
-    padding-left: 0px;
-    font-size: 14px;
-    width: 100%;
-    display: block;
-
-}
-	
 	#home-content aside iframe {    
     height: 300px !important;;
     margin-bottom: 0px;
@@ -3464,16 +3448,6 @@ body#homepage div#home-content section#highlighted-courses div.courses-wrap ul.c
 	top: 45px;
 	left: 50px !important;
 	width: 100%;
-	z-index: 50;		
-}
-
-#home-slider #slider-objects .slider-sigla {
-	position: absolute;
-	margin: 0px;
-	padding: 0px;
-	top: 120px;
-	left: 170px;
-	font-weight: bold;
 	z-index: 50;		
 }
 
@@ -3924,15 +3898,6 @@ td.page_state_private {
     top: 46px;
     left: 50px !important;
     width: 100%;
-    z-index: 50;
-}
-#home-slider #slider-objects .slider-sigla {
-    position: absolute;
-    margin: 0px;
-    padding: 0px;
-    top: 121px;
-    left: 167px;
-    font-weight: bold;
     z-index: 50;
 }
 
@@ -4620,16 +4585,6 @@ font-size: 0.8em;
 .card-image {
 	background-color: #F9F9F9;	
 	height: 280px;	
-}
-
-body.entity .top-aside-institution a {
-	padding-left: 0px;
-	font-size: 14px;
-}
-
-.top-aside-institution a {
-	padding-left: /*11px*/0;
-	font-size: 14px;
 }
 
 aside {
