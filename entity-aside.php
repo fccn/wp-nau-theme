@@ -16,7 +16,6 @@
     <? } ?>
     
     <ul class="course-related-links">
-        <li id="explore-all-courses" class="course-details right-arrow"><a href="/<?=get_option("nau_slug_courses_page")?>" target="_self"><?=nau_trans("Explore all courses")?></a></li>
 
         <?php
         echo nau_generate_custom_value_meta_html(get_custom_value("meta"), $entity);
