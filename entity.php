@@ -40,7 +40,7 @@ body#institution div#home-slider {
 <section id="flexible-content-area">
   <div id="home-slider">        
     <div id="slider-objects">      
-      <img class="secondary-course-logo" src="<?=$entity["square_logo"] ?>" alt="<?=$entity["sigla"]?>">
+      <img class="secondary-course-logo" src="<?=$entity["square_logo"]?>" alt="<?=$entity["sigla"]?>" title="<?=$entity["name"]?>">
       <h1><?=$entity["name"]?></h1> 
     </div>
     <? if ($header == "nau") { ?>
