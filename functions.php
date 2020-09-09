@@ -801,7 +801,7 @@ function nau_generate_custom_value_meta_html($meta_value, $object) {
           $label = str_replace("{" . $matches[1] . "}", $v, $label);
       }
 
-      $target = $target ? : '_self';
+      $target = $target ? : '_blank';
       
       if (substr($id, 0, 10) == "materials-") {
           $icon = substr($id, 10);                
