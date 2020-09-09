@@ -67,10 +67,12 @@ div#home-slider #slider-objects h1 {
       <!-- starts video and know more icons, rating and certficate status -->
       <div class="video-know-more-icons">        
         
-        <!-- starts video icon -->         
-        <a class="see-video-icon" onClick='openYoutubeVideoIFrame(this);' data-vars='{ "id" : "<?=$course["youtube"]?>" }' title="<?=nau_trans("See video")?>">
-          <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-white.svg">
-        </a> 
+        <? if (! empty($course["youtube"])) { ?>  
+          <!-- starts video icon -->
+          <a class="see-video-icon" onClick='openYoutubeVideoIFrame(this);' data-vars='{ "id" : "<?=$course["youtube"]?>" }' title="<?=nau_trans("See video")?>">
+            <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-white.svg">
+          </a> 
+        <? } ?>
         <!-- starts know more icon, rating and certficate status -->         
         <?php          
           print (do_shortcode('[edunext_enroll_button course_id="' . $course["course-id"] . '"]'));
@@ -152,19 +154,15 @@ div#home-slider #slider-objects h1 {
   <?=nau_list_tags(null, True)?>
   </span>
   -->
-  
-    <div id="course-video-thumbnail">
-      <iframe width="100%" height="220"
-        src="https://www.youtube.com/embed/<?=$course["youtube"]?>?controls=0"
-        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>        
-      </iframe>
-    
-    <!--
-      <a onClick='openYoutubeVideoIFrame(this);' data-vars='{ "id" : "<?=$course["youtube"]?>" }' title="<?=nau_trans("See video")?>">
-        <img src="https://i.ytimg.com/vi_webp/<?=$course["youtube"]?>/default.webp">
-      </a> 
-    -->
-    </div>    
+
+    <? if (! empty($course["youtube"])) { ?>  
+      <div id="course-video-thumbnail">
+        <iframe width="100%" height="220"
+          src="https://www.youtube.com/embed/<?=$course["youtube"]?>?controls=0"
+          frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>        
+        </iframe>
+      </div>    
+    <? } ?>
 
     <ul class="course-related-links">
         <?php
