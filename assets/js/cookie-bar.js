@@ -54,14 +54,11 @@ start_cookie_bar = function(){
             now = new Date()
             total_days_since_accept = (nau_cookie_notification.date.getTime() - now.getTime()) / (1000 * 60 * 60 * 24);
 
-            if ((nau_cookie_notification.status == 'show') || (total_days_since_accept > 7)) {
-                console.log("SHOW Cookie Bar! " + (nau_cookie_notification.status == 'show') + "|" + (total_days_since_accept > 7));
-                document.getElementById("cookie-notification").style.display = "block";
-                // document.getElementById("cookie-notification").style.bottom = null;
-            } else {
-                console.log("HIDE Cookie Bar! " + (nau_cookie_notification.status == 'show') + "|" + (total_days_since_accept > 7));
-                document.getElementById("cookie-notification").style.display = "none";
-                // document.getElementById("cookie-notification").style.bottom = '-500px';                
+            const ele = document.getElementById("cookie-notification");
+            const visible = (nau_cookie_notification.status == 'show') || (total_days_since_accept > 7);
+            const styleDisplay = visible ? "block" : "none";
+            if (ele != null) {
+                ele.style.display = styleDisplay;
             }
             
             updateMessage();
