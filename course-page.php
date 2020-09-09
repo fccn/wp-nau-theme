@@ -166,62 +166,7 @@ div#home-slider #slider-objects h1 {
 
     <ul class="course-related-links">
         <?php
-        
-        $li_html = "";
-        
-        $linhas = explode("\n", get_custom_value("meta"));
-        foreach ($linhas  as $linha ) {        
-          if ($linha <> "") {
-            list($id, $label, $action) = explode("|", $linha);
-            
-            $cnt = preg_match("/{([a-z_A-Z0-9]*)}/", $label, $matches);
-            
-            if ($cnt == 1) {
-                
-                # Tries course already loaded data
-                
-                $v = "";
-                if (isset($course[$matches[1]])) {
-                    $v = $course[$matches[1]];
-                } else {
-                    # No data prepared, try post field
-                    $v = get_field($matches[1], $post->ID);
-                }
-
-                $label = str_replace("{" . $matches[1] . "}", $v, $label);
-            }
-            
-            if (substr($id, 0, 10) == "materials-") {
-                $icon = substr($id, 10);                
-                if ($action == "")
-                  $li_html .= "<li id='$id' class='course-details x-material-icons'><i class='material-icons aside-icons'>$icon</i><span>$label</span></li>";
-                else
-                  $li_html .= "<li id='$id' class='course-details material-right-arrow x-material-icons'><a href='$action' target='_self'><i class='material-icons aside-icons'>$icon</i><span>$label</span></a></li>";
-            } else {
-                if ($id == "contact-telephone") {
-                    if ($action == "") $action = $label;
-                    $li_html .= "<li id='$id' class='$id course-details right-arrow'><a href='tel:$action' target='_self'>$label</a></li>";
-                } else 
-                if ($id == "contact-email") {
-                    if ($action == "") $action = $label;
-                    $li_html .= "<li id='$id' class='$id course-details right-arrow'><a class='no-capitalize' href='mailto:$action' target='_self'>$label</a></li>";
-                } else 
-                if ($id == "contact-website") {
-                    if ($action == "") $action = $label;
-                    $li_html .= "<li id='$id' class='$id course-details right-arrow'><a class='no-capitalize' href='$action' target='_blank'>$label</a></li>";
-                } else {
-                    if ($action != "") {
-                      $li_html .= "<li class='$id course-details right-arrow'><a href='$action' target='_blank'>$label</a></li>";
-                    } else {
-                      $li_html .= "<li id='$id' class='$id course-details no-capitalize'>$label</li>";
-                    }
-                }
-            }
-          }
-        }
-        
-        echo $li_html;        
-            
+        echo nau_generate_custom_value_meta_html(get_custom_value("meta"), $course);
         ?>
 
       <li class="share-and-start-course">

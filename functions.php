@@ -778,3 +778,58 @@ function certificate($course) {
 function IXR_Date2Date($el) {
   return($el);
 }
+
+function nau_generate_custom_value_meta_html($meta_value, $object) {
+  $linhas = explode("\n", $meta_value);
+  foreach ($linhas  as $linha ) {        
+    if ($linha <> "") {
+      list($id, $label, $action, $target) = explode("|", $linha);
+      
+      $cnt = preg_match("/{([a-z_A-Z0-9]*)}/", $label, $matches);
+      
+      if ($cnt == 1) {
+          
+          # Tries course already loaded data
+          $v = "";
+          if (isset($object[$matches[1]])) {
+              $v = $object[$matches[1]];
+          } else {
+              # No data prepared, try post field
+              $v = get_field($matches[1], $post->ID);
+          }
+
+          $label = str_replace("{" . $matches[1] . "}", $v, $label);
+      }
+
+      $target = $target ? : '_self';
+      
+      if (substr($id, 0, 10) == "materials-") {
+          $icon = substr($id, 10);                
+          if ($action == "")
+            $li_html .= "<li id='$id' class='course-details x-material-icons'><i class='material-icons aside-icons'>$icon</i><span>$label</span></li>";
+          else
+            $li_html .= "<li id='$id' class='course-details material-right-arrow x-material-icons'><a href='$action' target='$target'><i class='material-icons aside-icons'>$icon</i><span>$label</span></a></li>";
+      } else {
+          if ($id == "contact-telephone") {
+              if ($action == "") $action = $label;
+              $li_html .= "<li id='$id' class='$id course-details right-arrow'><a href='tel:$action' target='_self'>$label</a></li>";
+          } else 
+          if ($id == "contact-email") {
+              if ($action == "") $action = $label;
+              $li_html .= "<li id='$id' class='$id course-details right-arrow'><a class='no-capitalize' href='mailto:$action' target='_self'>$label</a></li>";
+          } else 
+          if ($id == "contact-website") {
+              if ($action == "") $action = $label;
+              $li_html .= "<li id='$id' class='$id course-details right-arrow'><a class='no-capitalize' href='$action' target='_blank'>$label</a></li>";
+          } else {
+              if ($action != "") {
+                $li_html .= "<li class='$id course-details right-arrow'><a href='$action' target='_blank'>$label</a></li>";
+              } else {
+                $li_html .= "<li id='$id' class='$id course-details no-capitalize'>$label</li>";
+              }
+          }
+      }
+    }
+  }
+  return $li_html;
+}
