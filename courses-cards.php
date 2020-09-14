@@ -34,9 +34,7 @@
           <a href="<?=$course["course_about_url"]?>" class="image">
             <img class="course-image <?=$course["card_image_fit"]?>" src="<?=$course["image"]?>" alt="<?=$course["name"]?>">
           </a>
-          <a href="<?=$course["entity"]["url"]?>" title="<?=$entity->post_title?>" class="logo">
-            <img class="square-logo" src="<?=$course["entity"]["square_logo"]?>" alt="<?=$entity->post_title?>">
-          </a>
+          <img class="square-logo" src="<?=$course["entity"]["square_logo"]?>" alt="<?=$entity->post_title?>">
         </div>
         <div class="card-content">
           <h3><?=$course["name"]?><br>
