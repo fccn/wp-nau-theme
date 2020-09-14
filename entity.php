@@ -64,10 +64,10 @@ body#institution div#home-slider {
 
     <!-- starts all institution courses -->
     <section id="entity-description">        
-        <div class="description">
-        <?= do_shortcode(get_post_field('post_content')) ?>    
-        </div>
-        <div class="courses">
+      <div class="description">
+        <?= do_shortcode(get_post_field('post_content')) ?>
+      </div>
+      <div class="courses">
         <?
           $slug = $entity["slug"];
           if ($slug == "") {
@@ -77,11 +77,10 @@ body#institution div#home-slider {
             $course_list_title = nau_trans("Courses|running");
             $courses = nau_entity_courses($post);
             get_template_part( "courses", "cards" );
-            
           }
         ?>
-        </div>        
-        </section>
+      </div>        
+    </section>
         <?
           include("entity-aside.php");
         ?>
