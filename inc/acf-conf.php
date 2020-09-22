@@ -98,8 +98,8 @@ acf_add_local_field_group(array(
 			'label' => 'Atualizar Synopse do Curso',
 			'name' => 'update-overview',
 			'type' => 'true_false',
-			'instructions' => 'Se verdadeiro, a página é atualizada com os dados provindos de "stage"',
-			'required' => 1,
+			'instructions' => 'Se verdadeiro, a página é atualizada com os dados provindos do STUDIO.',
+			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
@@ -118,7 +118,7 @@ acf_add_local_field_group(array(
 			'name' => 'block-auto-updates',
 			'type' => 'true_false',
 			'instructions' => 'Se verdadeiro, a página nunca é atualizada, nem conteúdo, nem metadados!',
-			'required' => 1,
+			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
