@@ -106,7 +106,7 @@ msgstr "Entidades"
 
 #: home.php:46 languages/strings.php:33
 msgid "Entity|Founders"
-msgstr "Entidades|Fundadores"
+msgstr "Entidades|Fundadoras"
 
 #: languages/strings.php:25
 msgid "Everyone"
