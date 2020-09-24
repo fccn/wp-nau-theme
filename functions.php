@@ -593,13 +593,13 @@ function load_course($coursePage) {
     
     "course_number" => get_field("nau_lms_course_number", $coursePage->ID),
               
-    
-    "enrollment_start" => IXR_Date2Date(get_field("nau_course_enrollment_enrollment_start", $coursePage->ID)), # - data hora -> data
-    "enrollment_end" => IXR_Date2Date(get_field("nau_course_enrollment_enrollment_end", $coursePage->ID)), # - data hora -> data
+    "enrollment_start" => substr(get_field("nau_lms_course_enrollment_start", $coursePage->ID), 0, 10), # - data hora -> data
+    "enrollment_end" => substr(get_field("nau_lms_course_enrollment_end", $coursePage->ID), 0, 10), # - data hora -> data
 
-    "start_date" => substr(get_field("nau_course_enrollment_course_start", $coursePage->ID), 0, 10), # - data hora -> data
-    "end_date" => substr(get_field("nau_course_enrollment_course_end", $coursePage->ID), 0, 10), # - data hora -> data
+    "start_date" => substr(get_field("nau_lms_course_start", $coursePage->ID), 0, 10), # - data hora -> data
+    "end_date" => substr(get_field("nau_lms_course_end", $coursePage->ID), 0, 10), # - data hora -> data
 
+    # in use ?
     "start_type" => get_field("nau_lms_course_start_type", $coursePage->ID), # - timestamp/?
     # "pacing" => get_field("nau_lms_course_pacing", $coursePage->ID), # - self/?
     

@@ -401,7 +401,7 @@ Contém - ajusta o tamanho da imagem para o tamanho máximo, apresentando toda a
 		array(
 			'key' => 'field_5e99d5bccb4d4',
 			'label' => 'Inicio',
-			'name' => 'nau_course_enrollment_course_start',
+			'name' => 'nau_lms_course_start',
 			'type' => 'date_time_picker',
 			'instructions' => '',
 			'required' => 0,
@@ -418,7 +418,7 @@ Contém - ajusta o tamanho da imagem para o tamanho máximo, apresentando toda a
 		array(
 			'key' => 'field_5e99d5f8cb4d5',
 			'label' => 'Fim',
-			'name' => 'nau_course_enrollment_course_end',
+			'name' => 'nau_lms_course_end',
 			'type' => 'date_time_picker',
 			'instructions' => '',
 			'required' => 0,
