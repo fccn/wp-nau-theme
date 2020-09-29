@@ -41,12 +41,10 @@
             <span class="aside-institution"><a href="<?=$course["entity_url"]?>" class="banner-entity"><?=$course["sigla"]?></a></span>
           </h3>
           <div class="certificate float-right">
-            <span><?=$course["price"]?></span> | <?=nau_trans("Certificate")?>
+            <span><?=$course["price"]?></span>
             <div class="certificate-badge <?=$course["certificate_type"]?>"></div>            
           </div>
           <div class="date-status-label float-left <?=$course["date_status_class"]?>"><?=$course["date_status_label"]?></div>
-          <div class="date-status-date float-left"><?=$course["date_status_date"]?></div>
-          <div class="end-date float-right"><?=$course["end_date"]?></div>
           <div class="pace-mode float-right"><?=$course["self_paced_label"]?></div>
           <div class="invitation-mode float-right"><?=$course["invitation_only_label"]?></div>
           <div class="number-of-participants float-right"><?=$course["participants"]?> <?=nau_trans("Participants")?></div>
