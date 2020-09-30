@@ -253,7 +253,7 @@ msgstr "Cursos Disponíveis"
 
 #: functions.php:590
 msgid "Scheduled to start"
-msgstr "Agendado para começar"
+msgstr "Brevemente"
 
 #: search.php:172
 msgid "Search"
