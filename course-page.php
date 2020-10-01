@@ -126,9 +126,16 @@ div#home-slider #slider-objects h1 {
         
         ?>
 
+    <!-- starts course enrolment button -->
+    <?php          
+      print (do_shortcode('[edunext_enroll_button course_id="' . $course["course-id"] . '"]'));
+    ?>
+    <!-- ends course enrolment button -->
+
   </article>
   <!-- ends article --> 
-  
+
+
   <!-- starts aside course info -->
   <aside>        
     <h3><span class="blue-vertical-line">| </span><?=$course["name"]?></h3>
