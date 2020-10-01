@@ -180,7 +180,7 @@ msgstr "Proteger a vida terrestre"
 #. $nauBodyClass = "class='secondary-pages'";
 #: inc/news-list.php:4 search.php:8
 msgid "News"
-msgstr "Artigos"
+msgstr "Notícias"
 
 #: inc/galeria_un.php:7 languages/strings.php:38
 msgid "No goal"
