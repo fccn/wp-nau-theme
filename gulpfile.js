@@ -1,21 +1,21 @@
 'use strict';
 
-const gulp = require('gulp');
+const { src, dest, series,  watch} = require('gulp');
 const sass = require('gulp-sass');
 
 sass.compiler = require('node-sass');
 
-// Test Gulp is working
-gulp.task('test', () => {
-    console.log("Gulp is working")
-});
+const sourceDir = './assets/scss/';
+const destDir = './assets/base_css/';
 
-gulp.task('sass', () => {
-    return gulp.src('./assets/scss/styles.scss')
+function sassCompile() {
+    return src(sourceDir + 'layout.scss')
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(gulp.dest('./assets/css/'))
-});
+        .pipe(dest(destDir));
+}
 
-gulp.task('sass:watch', () => {
-    gulp.watch('./assets/scss/*.scss', ['sass']);
-});
+function sassWatch(){
+    watch('./assets/scss/*.scss', series(sassCompile));
+}
+
+exports.default = sassWatch

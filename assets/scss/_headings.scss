@@ -1,0 +1,339 @@
+/* default headings */
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-stack;
+    text-align: left;
+}
+h1 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+h2 {
+    font-weight: 500;
+    font-size: 1.7rem;
+    font: normal !important;
+    letter-spacing: 0.3px;
+    color: $text-color;
+}
+h3 {
+    font-weight: 500;
+    font-size: 1.46rem;
+    font: normal !important;
+    letter-spacing: -0.22px;
+    color: $text-color;
+    padding: 0px 0px 0px 0px;
+    height: 55px;
+}
+h4 {
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+/* sectional headers */
+aside h3 {
+    height: 46px;
+}
+section h3 {
+    padding: 20px 0px 0px 0px;
+    line-height: normal;
+    width: 100%;
+}
+
+/* Additional Styles */
+.secondary-pages h1 {
+    font-size: 1.2em;
+    font-family: $font-stack;
+    margin-bottom: 0em;
+}
+
+#homepage h2 {
+    text-align: left;
+    font-size: 1.7rem;
+    font-weight: 500;
+    letter-spacing: -0.22px;
+    margin-bottom: 0px;
+    padding-bottom: 6px;
+}
+
+h2 span.heading-blue-bar,
+span.heading-blue-ba {
+    color: $header-bar-color;
+    padding-right: 4px;
+    padding-left: 4px;
+}
+
+#body-content article h2,
+#home-content article h2 {
+    padding: 0px !important;
+    color: $text-color;
+}
+
+h2 span.normal-font-weight,
+span.normal-font-weight {
+    font-weight: normal !important;
+}
+
+#body-content article h2,
+#home-content article h2 {
+    padding: 0px 0 20px 0;
+}
+#body-content article h3 {
+    padding: 0px 0 27px 0;
+}
+
+#body-content .entities-wrap h3 {
+    padding: 25px 0 27px 0;
+}
+
+#highlighted-courses ul h3 {
+    font-size: 17px;
+}
+
+#home-slider h1 {
+    text-align: left;
+    font: Bold 55px/48px Roboto;
+    letter-spacing: -1.1px;
+    color: #fff;
+    text-transform: uppercase;
+    padding-top: 76px;
+    line-height: inherit;
+}
+
+div#home-slider h1 {
+    text-align: left;
+    font: Bold 55px/48px Roboto;
+    letter-spacing: -1.1px;
+    color: #fff;
+    text-transform: uppercase;
+    padding-top: 76px;
+    line-height: inherit;
+}
+
+body.secondary-pages div#home-slider h1 {
+    position: relative;
+    z-index: 3;
+    text-align: left;
+    font: Bold 55px/48px Roboto;
+    letter-spacing: -1.1px;
+    color: #fff;
+    text-transform: uppercase;
+    padding-top: 76px;
+    padding-left: 170px;
+    line-height: inherit;
+}
+
+body.secondary-pages div#home-slider h1 {
+    text-align: left;
+    font: 500 29px/48px Roboto;
+    letter-spacing: -1.1px;
+    padding-top: 45px;
+    line-height: 1.1em;
+    color: /*white*/ #000;
+    width: /*46%*/ 512px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+body#institution div#home-slider h1,
+body#news div#home-slider h1 {
+    text-align: left;
+    padding-top: 58px;
+    font: Medium 41px /*/47px*/ Roboto;
+    letter-spacing: 0.41px;
+    color: #000000;
+    font-size: /*38px*/ 30px;
+    font-weight: 500;
+    width: 660px;
+    text-transform: capitalize;
+    line-height: 1.15em;
+    display: flex;
+    padding-left: 29px;
+}
+
+body#news div#home-slider h1 {
+    padding-top: 0px;
+    padding-left: 0px;
+}
+div#home-slider h1 span {
+    font-weight: 100;
+}
+
+h2.search-tool {
+    margin-bottom: 1em;
+}
+
+#home-slider #slider-objects h1 {
+    position: absolute;
+    margin: 0px !important;
+    padding: 0px !important;
+    top: 56px;
+    left: 50px !important;
+    width: 100%;
+    z-index: 50;
+}
+
+#home-slider #slider-objects h1 {
+    position: absolute;
+    margin: 0px !important;
+    padding: 0px !important;
+    top: 46px;
+    left: 50px !important;
+    width: 100%;
+    z-index: 50;
+}
+
+body.nacoes-unidas .un-course-list .un-course-item h2 {
+    font-size: 17px !important;
+    padding-left: 10px !important;
+    padding-top: 2px !important;
+    font-weight: 400 !important;
+    margin-left: 5px;
+}
+
+body.nacoes-unidas article h2:before {
+    content: "| ";
+    color: blue;
+    padding-left: 5px !important;
+    font-size: 15px !important;
+    padding-right: 5px !important;
+}
+
+#home-slider h1 {
+    text-transform: none !important;
+}
+
+body.secondary-pages h1 {
+    font-weight: 500;
+    padding-bottom: 20px;
+    font-size: 29px;
+}
+
+#body-content article h2,
+#home-content h2 {
+    padding: 0px 0 20px 0 !important;
+    list-style-type: disc;
+    list-style-position: inside;
+    line-height: normal;
+    width: 100%;
+}
+
+#body-content article h2,
+#home-content h2::before,
+h2::before {
+    /*content: "| ";*/
+    color: #0958fe;
+    font-weight: 400;
+    font-size: /*19px*/ 18px;
+}
+
+body#homepage div#home-slider .homepage-slide-item .nau-slider-label h1 {
+    text-align: left;
+    font: Bold 55px/48px Roboto;
+    letter-spacing: -1.1px;
+    color: #fff;
+    text-transform: uppercase;
+    padding-top: 76px;
+    line-height: inherit;
+}
+
+body#homepage div#home-slider .homepage-slide-item .nau-slider-label h1 span {
+    font-weight: 100;
+}
+
+body.text-page article h2:before,
+h4:before {
+    content: "| ";
+    color: blue;
+    padding-left: 10px;
+    position: relative;
+    top: -2.25px;
+}
+
+body.text-page article h2,
+h4 {
+    /* position: relative; */
+    padding: 0px;
+    left: -10px;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: 500 !important;
+    font-size: 1.4em !important;
+}
+
+body.text-page article h3 {
+    position: relative;
+    padding: 0px;
+    left: 0px;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: 500 !important;
+}
+
+body.course article h3 {
+    font-weight: 400 !important;
+    padding-bottom: 10px !important;
+    padding-top: 10px !important;
+}
+
+h2.search-tool {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+h2.search-title {
+    padding: 0px 0 60px 0 !important;
+    list-style-type: disc;
+    list-style-position: inside;
+    line-height: normal;
+    width: 100%;
+}
+
+aside h3 {
+    text-align: left;
+    font-family: Roboto;
+    font-size: 0.9em;
+    line-height: normal;
+    letter-spacing: 0.36px;
+    opacity: 1;
+    padding-bottom: 17px;
+}
+
+.course h1 {
+    font-size: 1.4em !important;
+}
+
+.course #body-content article h2,
+#home-content h2 {
+    padding: 0px 0 20px 0 !important;
+    list-style-type: disc;
+    list-style-position: inside;
+    line-height: normal;
+    width: 100%;
+}
+
+#body-content .entities-wrap h3 {
+    font-size: 1.45em;
+}
+.entities-wrap .card .card-content h3.entity-long-name {
+    padding: 37px 0px 4px 0px !important;
+    margin: 0px;
+    height: auto;
+}
+
+.course h3 {
+    height: inherit;
+    padding-bottom: 22px !important;
+    float: left;
+    width: 100%;
+}
+
+h2:before {
+    content: "| ";
+    color: #074ce1;
+    padding-left: 5px !important;
+    font-size: 1.1em !important;
+    font-weight: bold !important;
+    top: 0px !important;
+}

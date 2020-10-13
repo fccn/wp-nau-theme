@@ -1,0 +1,213 @@
+body.secondary-pages div#home-slider {
+  position: relative;
+  width: 100%;
+  /*height: auto;*/
+  /*background: transparent url(../img/banner-01.jpg) no-repeat center left;*/
+}
+
+div#home-slider {
+  position: relative;
+  width: 100%;
+  height: auto;
+  /*background: transparent url(../img/banner-01.jpg) no-repeat center left;*/
+}
+
+body.secondary-pages div#home-slider {
+  position: relative;
+  width: 100%;
+  background: none;
+  z-index: 0;
+}
+
+ul.banner-changing-slider {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100% !important;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  align-items: center;
+  padding: 20px 0 !important;
+}
+
+body#homepage ul.banner-changing-slider img,
+ul.banner-changing-slider img {
+  padding: 0px 7px !important;
+}
+
+body#homepage #main-container #home-slider div.homepage-slide-item div.nau-slide-content {
+  width: 100%;
+}
+
+body#homepage #main-container #home-slider div.homepage-slide-item.news h2 {
+  color: white;
+}
+
+body#homepage #main-container #home-slider div.homepage-slide-item.news p {
+  color: white;
+}
+
+#home-slider {
+  height: 180px !important;
+  position: absolute;
+  margin: 0px;
+  padding: 0px;
+  z-index: 1;
+  overflow: hidden;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: 50% 50% !important;
+}
+
+#home-slider .slider-mask {
+  position: absolute;
+  left: 0;
+  overflow: crop;
+  height: 100%;
+  z-index: 0;
+}
+
+#home-slide #slider-objects {
+  z-index: 20;
+}
+
+#home-slider #slider-objects .secondary-course-logo {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top: 50px;
+  left: 50px;
+  margin: 0px;
+  -webkit-border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  border-radius: 5px;
+  box-shadow: 0px 3px 6px rgba(50, 50, 50, 0.3);
+  object-fit: contain;
+  background-color: white;
+  padding: 8px;
+  z-index: 20;
+}
+
+#home-slider #slider-objects h1 {
+  position: absolute;
+  margin: 0px !important;
+  padding: 0px !important;
+  top: 45px;
+  left: 50px !important;
+  width: 100%;
+  z-index: 50;
+}
+
+body#homepage div#home-slider .homepage-slide-item div.nau-slider-label {
+  margin-top: 0px;
+  margin-left: 120px;
+  width: 620px;
+  /* border: solid red 1px;  */
+  line-height: 4.2em;
+}
+
+body#homepage div#home-slider .homepage-slide-item .nau-slider-label h1 {
+  text-align: left;
+  font: Bold 55px/48px Roboto;
+  letter-spacing: -1.1px;
+  color: #fff;
+  text-transform: uppercase;
+  padding-top: 77px;
+  line-height: inherit;
+  margin-bottom: 10px;
+  text-shadow: 0px 1px 3px #555;
+}
+
+body#homepage div#home-slider .homepage-slide-item .nau-slider-label h2 {
+  text-shadow: 2px 2px 4px #000000;
+}
+
+body#homepage div#home-slider .homepage-slide-item .nau-slider-label p {
+  margin-top: 10px;
+  font-size: 25px;
+  text-shadow: 1px 1px 2px #aeabab;
+}
+
+body#homepage div#home-slider .homepage-slide-item .nau-slide-content {
+  height: 500px !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* jssor slider loading skin spin css */
+
+.jssorl-spin img {
+  animation-name: jssorl-spin;
+  animation-duration: 1.6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes jssorl-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* slider nav bullets */
+
+.jssorb132 {
+  position: absolute;
+}
+.jssorb132 .i {
+  position: absolute;
+  cursor: pointer;
+}
+.jssorb132 .i .b {
+  fill: #fff;
+  fill-opacity: 0.8;
+  stroke: #000;
+  stroke-width: 1600;
+  stroke-miterlimit: 10;
+  stroke-opacity: 0.7;
+}
+.jssorb132 .i:hover .b {
+  fill: #000;
+  fill-opacity: 0.7;
+  stroke: #fff;
+  stroke-width: 2000;
+  stroke-opacity: 0.8;
+}
+.jssorb132 .iav .b {
+  fill: #000;
+  stroke: #fff;
+  stroke-width: 2400;
+  fill-opacity: 0.8;
+  stroke-opacity: 1;
+}
+.jssorb132 .i.idn {
+  opacity: 0.3;
+}
+
+/* slider arrows */
+.jssora051 {
+  display: block;
+  position: absolute;
+  cursor: pointer;
+}
+.jssora051 .a {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1360;
+  stroke-miterlimit: 10;
+}
+.jssora051:hover {
+  opacity: 1;
+}
+/*
+.jssora051.jssora051dn {opacity:.5;}
+.jssora051.jssora051ds {opacity:.3;pointer-events:none;}
+*/
+
+.jssora051 {	
+	filter: drop-shadow(0px 0px 3px black);
+}

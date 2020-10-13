@@ -18,6 +18,7 @@ body.secondary-pages h1 {
     font-family: Roboto;
     margin-bottom: 0em;
 }
+
 /* home */
 body#homepage h2 {
   text-align: left;
@@ -41,6 +42,7 @@ h2 span.heading-blue-bar, span.heading-blue-ba {
     width: 100%;
     color: black !important;
 }
+
 h2 span.normal-font-weight, span.normal-font-weight {
   font-weight: normal !important;
 }
@@ -78,6 +80,8 @@ h4 {
 }
 h5 {}
 h6 {}
+
+
 article {
   padding: 50px;  
 }
@@ -122,6 +126,7 @@ q:before, q:after {
 q:after {
   content: "”";
 }
+
 /* Making specicif elements float left */
 img, ul, li, form {
   float: left;
@@ -187,17 +192,13 @@ table td {
   padding: 20px 10px;
   border: 1px solid #999;
 }
+
 #body-content article h2, #home-content article h2 {
   padding: 0px 0 20px 0;
   list-style-type: disc;
   list-style-position: inside;
   line-height: normal;
-} {
-  padding: 0px 0 20px 0;
-  list-style-type: disc;
-  list-style-position: inside;
-  line-height: normal;
-}
+} 
 #body-content article h3 {
   padding: 0px 0 27px 0;
 }
@@ -497,6 +498,7 @@ div#home-content section ul {
   */
 }
 
+
 #body-content section ul {
   position: relative;
   margin-right: /*20px*/ 12px;
@@ -573,9 +575,6 @@ section#highlighted-courses ul h3 {
 }
 
 
-/*.card + div {
-    border: 1px solid #99999933;
-}*/
 
 .card {
   overflow: hidden;
@@ -637,6 +636,7 @@ ul#entities-nau-logos img {
   width: 15%;
   max-width: 215px
 }
+
 section#highlighted-courses {
   /*max-width: 100%;*/
   /*height: 527px;*/
@@ -1033,6 +1033,7 @@ section#highlighted-courses ul.card li img.clear-other-video-icon-style {
   width: fit-content;
   font-size: 12px
 }
+
 div#branding-top-nav {
   position: relative /*fixed*/;
   top:0;
@@ -1225,6 +1226,7 @@ body.secondary-pages div#home-slider {
   z-index: 0;
 }
 
+
 div#nau-shape {
   background: transparent url(../img/banner-nau-shape.svg) no-repeat 0 0;
   height: 458px;
@@ -1349,6 +1351,7 @@ body#homepage .explore-all-courses-font, .explore-all-courses-font {
 body#homepage ul.banner-changing-slider img, ul.banner-changing-slider img  {
   padding: 0px 7px !important;
 }
+
 body.secondary-pages /*div#home-slider*/ .aside-rating-star {
   display: flex;
   flex-wrap: wrap;
@@ -1692,6 +1695,7 @@ ul.rolling-courses-card li:nth-child(1) p.course-level span {
 ul.rolling-courses-card .aside-institution a.banner-entity:hover {
   color: #074CE1 !important;
 }
+
 body#news div#home-slider h1 {
   padding-top: 0px;
   padding-left: 0px;
@@ -1718,6 +1722,7 @@ div#menu-container {
 div#menu-container a {
  font-size:13px !important
 }
+
 /* Menu overlay */
 div#menu-overlay {
   position: absolute;
@@ -1745,6 +1750,7 @@ div#menu-container ul#about-categories-entities {
 div#actions_container {
   margin-right: 50px;
 }
+
 /* Languages and actions container */
 div#languages-actions-container {
   width: auto;
@@ -1753,14 +1759,7 @@ div#languages-actions-container {
   flex-direction: row;
   justify-content: flex-end;
 }
-div#body-content {
- /* display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  position: relative; 
-  z-index: 2;*/
-}
-article {}
+
 div#actions_container {
   display: flex;
   flex-direction: row;
@@ -1871,7 +1870,6 @@ ul#menu_actions li:nth-child(1) a {
   display: flex;
 }
 /* search form */
-form {}
 form#search-form {
   /*width: 73%;*/
   position: relative;
@@ -2060,9 +2058,8 @@ body#homepage #rolling-course-d {
 }*/
 
 .entities-wrap {
- 
   display: contents;
-  width: 100%	
+  width: 100%	;
   display: block;
   /* background-color: green;   /* RR - REMOVE */
   max-width: 100%;
@@ -2978,6 +2975,7 @@ div#home-content {
     max-width: 100% !important;
 }
 }
+
 @media screen and (min-width: 481px) and (max-width: 798px) {
 	.entity div#home-content {
     padding: 50px 50px 50px 50px;
@@ -3090,8 +3088,7 @@ body.secondary-pages #home-content {
     padding-bottom: 20px;
 
 }
-	
-}	
+	}	
 
 
 @media screen and (min-width: 798px) {
@@ -3232,12 +3229,11 @@ img.square-logo {
 #body-content .teacher h4 {	
 	/* border: solid red 1px; */
 	font-size: 20px;
-	margin-left: 150px
+	margin-left: 150px;
 	display: block;
 }
 
 #body-content .teacher p {
-	/* background-color: #a1a12a; */
 	font-size: 15px;	
 	margin-left: 150px
   display: block;	
@@ -3322,9 +3318,9 @@ div.nau_disabled a {
 	font-size:11px
 }
 
-body#secondary article !.highlighted-courses ul {
+body#secondary article .highlighted-courses ul {
 position: relative;
-    margin-right: /*20px*/ 12px;
+    margin-right: 12px;
     width: 100%;
     min-width:  none;;
     height: auto;
@@ -3450,6 +3446,7 @@ body#homepage div#home-content section#highlighted-courses div.courses-wrap ul.c
 	width: 100%;
 	z-index: 50;		
 }
+
 
 td.page_state_private {
 	background-color: #f25757;
@@ -4823,8 +4820,7 @@ ul.course-related-links li.course-details.material-right-arrow {
 
 
 .sustainability-onu-color-1 {
-	background-color: #da062d;
-	
+	background-color: #da062d;	
 }
 
 .sustainability-onu-color-2 {
@@ -5364,13 +5360,14 @@ article .news_article h2 a {
 	color: #074ce1;
 }
 
-.video-know-more-icons .ednx-enroll-button-js .nau_button {
-	padding: 0px 20px 0px 20px;
-}
 
 #body-content article {
-	margin-top: 0px;
+  margin-top: 0px;
 }
+
+.video-know-more-icons .ednx-enroll-button-js .nau_button {
+  padding: 0px 20px 0px 20px;
+ }
 
 .private-info .date_status_about_to_start {
     background: yellow;
@@ -5412,6 +5409,7 @@ a img:hover {
 	filter: contrast(1.3);
 	/* transform: scale(1.02); */
 }
+
 
 .card .card-image {	  
   background-color: #F9F9F9;
@@ -5901,10 +5899,6 @@ article .news_article h2 a {
 
 
 /**** ****/
-
-
-
-
 #menu-container ul li a:hover {
     color: #0857FF;
 }
