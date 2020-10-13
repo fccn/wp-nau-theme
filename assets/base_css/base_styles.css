@@ -3328,7 +3328,7 @@ body.nacoes-unidas .un-course-list .un-course-item h2 {
 }
 
 body.nacoes-unidas article h2:before {
-  content: "| ";
+  /* content: "| "; */
   color: blue;
   padding-left: 5px !important;
   font-size: 15px !important;
@@ -3949,7 +3949,7 @@ aside {
 }
 
 .course-synopse h2:before {
-  content: "| ";
+  /* content: "| "; */
   padding-top: 0;
   position: relative;
   top: -1px;
@@ -4019,7 +4019,7 @@ body.text-page article {
 
 body.text-page article h2:before,
 h4:before {
-  content: "| ";
+  /* content: "| "; */
   color: blue;
   padding-left: 10px;
   position: relative;
@@ -4646,7 +4646,7 @@ ul#entities-nau-logos {
 }
 
 h2:before {
-  content: "| ";
+  /* content: "| "; */
   color: #074ce1;
   padding-left: 5px !important;
   font-size: 1.1em !important;
@@ -5151,7 +5151,7 @@ ul#entities-nau-logos {
 }
 
 h2:before {
-  content: "| ";
+  /* content: "| "; */
   color: #074ce1;
   padding-left: 5px !important;
   font-size: 1.1em !important;
