@@ -37,8 +37,6 @@ span.heading-blue-ba {
 #body-content article h2,
 #home-content article h2 {
   padding: 0px !important;
-  list-style-type: disc;
-  list-style-position: inside;
   line-height: normal;
   width: 100%;
   color: black !important;
@@ -194,8 +192,6 @@ table td {
 #body-content article h2,
 #home-content article h2 {
   padding: 0px 0 20px 0;
-  list-style-type: disc;
-  list-style-position: inside;
   line-height: normal;
 }
 #body-content article h3 {
@@ -791,7 +787,6 @@ div#branding-top-nav a:nth-child(2) {
   padding-top: 32px !important;
   background-color: rgba(255, 255, 255, 1) !important;
   border-radius: 5px !important;
-  margin-top: -4px !important;
   padding: 30px 20px 37px 30px !important;
   font-weight: 100 !important;
   -webkit-box-shadow: 0px 21px 18px -5px rgba(0, 0, 0, 0.45);
@@ -3328,8 +3323,6 @@ body.nacoes-unidas .un-course-list .un-course-item h2 {
 }
 
 body.nacoes-unidas article h2:before {
-  /* content: "| "; */
-  color: blue;
   padding-left: 5px !important;
   font-size: 15px !important;
   padding-right: 5px !important;
@@ -3552,8 +3545,6 @@ body.secondary-pages h1 {
 #body-content article h2,
 #home-content h2 {
   padding: 0px 0 20px 0 !important;
-  list-style-type: disc;
-  list-style-position: inside;
   line-height: normal;
   width: 100%;
 }
@@ -3561,7 +3552,6 @@ body.secondary-pages h1 {
 #body-content article h2,
 #home-content h2::before,
 h2::before {
-  color: #0958fe;
   font-weight: 400;
   font-size: /*19px*/ 18px;
 }
@@ -3949,7 +3939,6 @@ aside {
 }
 
 .course-synopse h2:before {
-  /* content: "| "; */
   padding-top: 0;
   position: relative;
   top: -1px;
@@ -3959,7 +3948,6 @@ aside {
 .course-synopse h2 {
   position: relative;
   padding: 0px;
-  left: -10px;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
   font-weight: 500 !important;
@@ -4019,8 +4007,6 @@ body.text-page article {
 
 body.text-page article h2:before,
 h4:before {
-  /* content: "| "; */
-  color: blue;
   padding-left: 10px;
   position: relative;
   top: -2.25px;
@@ -4511,8 +4497,6 @@ div#filter span.top-label {
 .course #body-content article h2,
 #home-content h2 {
   padding: 0px 0 20px 0 !important;
-  list-style-type: disc;
-  list-style-position: inside;
   line-height: normal;
   width: 100%;
 }
@@ -4646,8 +4630,6 @@ ul#entities-nau-logos {
 }
 
 h2:before {
-  /* content: "| "; */
-  color: #074ce1;
   padding-left: 5px !important;
   font-size: 1.1em !important;
   font-weight: bold !important;
@@ -5011,8 +4993,6 @@ div#filter span.top-label {
 #body-content article h2,
 #home-content h2 {
   padding: 0px 0 20px 0 !important;
-  list-style-type: disc;
-  list-style-position: inside;
   line-height: normal;
   width: 100%;
   font-weight: 500;
@@ -5151,8 +5131,6 @@ ul#entities-nau-logos {
 }
 
 h2:before {
-  /* content: "| "; */
-  color: #074ce1;
   padding-left: 5px !important;
   font-size: 1.1em !important;
   font-weight: bold !important;
