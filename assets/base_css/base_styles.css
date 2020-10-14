@@ -13,7 +13,7 @@ body {
   font-size: 13px;
 }
 body.secondary-pages h1 {
-  font-size: 1.2em;
+  font-size: 1.2rem;
   font-family: "Roboto", sans-serif;
   margin-bottom: 0em;
 }
@@ -777,7 +777,7 @@ div#branding-top-nav a:nth-child(2) {
 #branding-top-nav li {
   list-style-type: none;
   margin-right: 25px;
-  background: transparent url("../img/arrow-dropdown.svg") no-repeat right 5.5px;
+  background: transparent url("../img/arrow-dropdown.svg") no-repeat right 2.5px;
   background-size: 12px;
   letter-spacing: 0.5px;
 }
@@ -1774,8 +1774,7 @@ aside .course-related-links {
 }
 aside .course-details {
   width: 100%;
-  /* text-align: left;
-  font-size: 13px; */
+  text-align: left;
   font-weight: bold;
   letter-spacing: 0.13px;
   color: #000000;
@@ -1786,11 +1785,12 @@ aside .price-and-certificate-options {
   text-align: right;
 }
 aside .share-course {
-  background: transparent url(../img/share-plus.svg) no-repeat 55px center;
-  padding: 5px 30px 5px 0;
+  background: transparent url(../img/share-plus.svg) no-repeat center left;
+  text-align: left;
+  padding: 5px 30px 5px 0px !important;
 }
 aside .share-course:hover {
-  background: transparent url(../img/share-plus-hover.svg) no-repeat 55px center;
+  background: transparent url(../img/share-plus-hover.svg) no-repeat center left;
 }
 aside .aside-course-price,
 .aside-course-price {
@@ -1908,11 +1908,12 @@ aside .share-and-start-course ul,
   align-items: baseline;
   padding-left: 0px !important;
 }
-aside .share-and-start-course ul li,
+
+/*aside .share-and-start-course ul li,
 .share-and-start-course ul li,
 aside .share-and-start-course ul li a {
   padding-left: 0 !important;
-}
+}*/
 
 footer {
   background-color: #d8d8d8 !important;
@@ -1936,7 +1937,7 @@ footer #footer-links #social-media {
 }
 footer #footer-links #social-media li {
   padding-left: /*28px*/ 7%;
-  float: left;
+  /*float: left;*/
 }
 footer #footer-links #social-media li h5 {
   margin-bottom: -55px;
@@ -2052,7 +2053,9 @@ footer #footer-links #social-media h5 {
   padding-bottom: 10px;
 }
 footer #footer-links #social-media #openedx-logo {
-  margin-top: 35px;
+  margin-top: 10px;
+  display: block;
+  padding-left: 0;
 }
 footer #entities-quick-links ul {
   background-color: white;
@@ -2078,20 +2081,6 @@ footer #entities-quick-links img {
 }
 footer section h3 {
   text-indent: -99999px;
-}
-
-footer span#copyright {
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 10px;
-  letter-spacing: -0.18px;
-  color: #5e5959;
-  opacity: 1;
-  font-size: 0.7em;
-  margin-left: 30px;
-  margin-top: 26px;
-  display: block;
 }
 
 body#homepage section.main-gallery {
@@ -2140,18 +2129,6 @@ body#institution div#home-slider div#nau-shape {
     margin-bottom: 30px;
   }
 
-  footer span#copyright {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-size: 10px;
-    letter-spacing: -0.18px;
-    color: #5e5959;
-    opacity: 1;
-    font-size: 0.7em;
-    margin-left: 50px;
-    margin-top: 26px;
-    display: initial;
-  }
   div#home-content section#highlighted-courses ul.card,
   div#body-content section#highlighted-courses ul.card,
   body#homepage section#rolling-courses ul.card {
@@ -2465,8 +2442,8 @@ body#homepage .video-know-more-icons .know-more-icon {
   aside {
     margin-left: 0px !important;
     width: 100%;
-    float: left;
-    display: grid;
+    /*float: left;
+    display: grid;*/
     padding: 0;
     background: none !important;
   }
@@ -2802,7 +2779,7 @@ body#secondary div#body-content section#highlighted-courses div.courses-wrap ul.
   position: absolute;
   margin: 0px !important;
   padding: 0px !important;
-  top: 45px;
+  top: 55px;
   left: 50px !important;
   width: 100%;
   z-index: 50;
@@ -3212,6 +3189,8 @@ td.page_state_publish {
 td.page_state_private {
   background-color: #f8cccc;
 }
+
+/* REPEAT
 #home-slider #slider-objects h1 {
   position: absolute;
   margin: 0px !important;
@@ -3221,16 +3200,7 @@ td.page_state_private {
   width: 100%;
   z-index: 50;
 }
-
-#home-slider #slider-objects h1 {
-  position: absolute;
-  margin: 0px !important;
-  padding: 0px !important;
-  top: 46px;
-  left: 50px !important;
-  width: 100%;
-  z-index: 50;
-}
+}*/
 
 .wp-block-table .has-fixed-layout {
   display: table !important;
@@ -3253,7 +3223,7 @@ body#homepage div#home-slider .homepage-slide-item .nau-slider-label h1 {
   color: #fff;
   text-transform: uppercase;
   padding-top: 77px;
-  line-height: inherit;
+  line-height: 1.2;
   margin-bottom: 10px;
   text-shadow: 0px 1px 3px #555;
 }
@@ -3700,7 +3670,7 @@ body#homepage div#home-slider .homepage-slide-item .nau-slider-label h1 {
   color: #fff;
   text-transform: uppercase;
   padding-top: 76px;
-  line-height: inherit;
+  line-height: 1.2;
 }
 
 body#homepage div#home-slider .homepage-slide-item .nau-slider-label h1 span {
@@ -4479,8 +4449,8 @@ div#categories span.top-label {
 
 aside h3 {
   text-align: left;
-  font-family: Roboto;
-  font-size: 0.9em;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
   line-height: normal;
   letter-spacing: 0.36px;
   opacity: 1;
@@ -4491,7 +4461,7 @@ div#filter span.top-label {
   font-size: 0.9em;
 }
 .course h1 {
-  font-size: 1.4em !important;
+  font-size: 1.8em !important;
 }
 
 .course #body-content article h2,
@@ -4558,13 +4528,11 @@ footer span#copyright {
   text-align: center;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 10px;
-  letter-spacing: -0.18px;
   color: #5e5959;
   opacity: 1;
-  font-size: 0.65em;
+  font-size: 0.8rem;
   margin-left: 49px;
-  margin-top: 38px;
+  margin-top: 16px;
   display: block;
 }
 
@@ -4976,7 +4944,6 @@ div#categories span.top-label {
 aside h3 {
   text-align: left;
   font-family: "Roboto", sans-serif;
-  font-size: 0.9em;
   line-height: normal;
   letter-spacing: 0.36px;
   opacity: 1;
@@ -4985,9 +4952,6 @@ aside h3 {
 div#filter span.top-label {
   margin-bottom: 1.6em;
   font-size: 0.9em;
-}
-.course h1 {
-  font-size: 1.4em !important;
 }
 
 #body-content article h2,
@@ -5049,20 +5013,6 @@ footer #footer-links #social-media {
 
 footer #footer-links #social-media li h5 {
   margin-bottom: -39px;
-}
-
-footer span#copyright {
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 10px;
-  letter-spacing: -0.18px;
-  color: #5e5959;
-  opacity: 1;
-  font-size: 0.65em;
-  margin-left: 49px;
-  margin-top: 38px;
-  display: block;
 }
 
 footer #entities-quick-links li:nth-child(1) a img {
@@ -5217,7 +5167,7 @@ ul#menu_login_register li:first-child {
   list-style-type: none;
   margin-right: 8px;
   padding-right: 0px;
-  background: transparent url(../img/lang-divider.svg) no-repeat right 6px;
+  background: transparent url(../img/lang-divider.svg) no-repeat right 2px;
 }
 
 ul#menu_login_register li.menu-item-has-children a {
@@ -5490,7 +5440,7 @@ a#login_image:active {
 }
 form#banner-search-form input[type="search"] {
   padding: 2em;
-  font-size: 1.25em;
+  font-size: 1.25rem;
   color: #074ce1 !important;
   font-weight: bold;
 }
