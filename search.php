@@ -126,7 +126,7 @@
 
   $args = array(
     'p'         => intval(get_option('nau_news_page')), // ID of a page, post, or custom type
-    'post_type' => 'any'
+    'post_type' => 'any',
   );
   $wp_query = new WP_Query($args);
 

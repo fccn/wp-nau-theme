@@ -1939,13 +1939,10 @@ footer #footer-links #social-media li {
   padding-left: /*28px*/ 7%;
   /*float: left;*/
 }
-footer #footer-links #social-media li h5 {
-  margin-bottom: -55px;
-}
+
 footer #footer-links #social-media li:nth-child(1),
 footer #footer-links #social-media li:nth-child(2) {
   padding-left: 0px;
-  height: 21px;
   float: none;
 }
 footer #footer-links #social-media li:nth-child(7) {
@@ -2010,7 +2007,6 @@ footer #footer-links ul li:first-child {
 }
 footer #footer-links ul li {
   line-height: 1.6em;
-  display: inline;
   text-align: left;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -2019,6 +2015,7 @@ footer #footer-links ul li {
   color: #707070;
   opacity: 1;
 }
+footer #footer-links li span.footer-title,
 footer #footer-links li h5 {
   font-weight: bold;
   font-size: 15px;
@@ -4520,10 +4517,6 @@ footer #footer-links #social-media {
   display: block;
 }
 
-footer #footer-links #social-media li h5 {
-  margin-bottom: -39px;
-}
-
 footer span#copyright {
   text-align: center;
   font-family: "Roboto", sans-serif;
@@ -5009,10 +5002,6 @@ footer #footer-links ul li {
 
 footer #footer-links #social-media {
   display: block;
-}
-
-footer #footer-links #social-media li h5 {
-  margin-bottom: -39px;
 }
 
 footer #entities-quick-links li:nth-child(1) a img {

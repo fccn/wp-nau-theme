@@ -59,7 +59,7 @@ class NAU_Walker_Footer_Nav_Menu extends Walker_Nav_Menu {
         wp_nav_menu(array(
                 "theme_location" => "footer",
                 "depth" => 2,        
-                "menu_id" => "footer",
+                "menu_id" => "footer-menu",
                 "container" => "ul",
                 "container_id" => "footer",
                 "walker" => new NAU_Walker_Footer_Nav_Menu()
@@ -75,7 +75,7 @@ class NAU_Walker_Footer_Nav_Menu extends Walker_Nav_Menu {
         <ul>
         <li class="footer-links-structure">
         <ul id="social-media">      
-          <li><h5><?=nau_trans("Social Media")?></h5><br><br></li>      
+          <li><h5><?=nau_trans("Social Media")?></h5></li>      
 <?php /*          <li><a href="<?=$social_media["twitter_site"]?>"><img src="assets/img/twitter.svg" alt="twitter logo" title="<?=nau_trans("Share on Twitter")?>"></a></li> */ ?>
 <?php /*          <li><a href="<?=$social_media["linkedin_url"]?>"><img src="assets/img/linkedin.svg" alt="Linkedin logo" title="<?=nau_trans("Share on Linkedin")?>"></a></li> */ ?>
           <li><a href="<?=$social_media["facebook_site"]?>" id="facebook-link" rel="nofollow" target="_blank" title="<?=nau_trans("Share on Facebook")?>" class=""><img src="assets/img/facebook.svg" alt="Facebook logo" title="Share on Facebook"></a></li>
