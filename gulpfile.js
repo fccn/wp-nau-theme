@@ -5,8 +5,8 @@ const sass = require('gulp-sass');
 
 sass.compiler = require('node-sass');
 
-const sourceDir = './assets/scss/';
-const destDir = './assets/base_css/';
+const sourceDir = './src/scss/';
+const destDir = './src/base_css/';
 
 function sassCompile() {
     return src(sourceDir + 'layout.scss')
@@ -15,7 +15,7 @@ function sassCompile() {
 }
 
 function sassWatch(){
-    watch('./assets/scss/*.scss', series(sassCompile));
+    watch(sourceDir + '*.scss', series(sassCompile));
 }
 
 exports.default = sassWatch

@@ -43,9 +43,15 @@ div#home-slider.course .slider-mask {
   -webkit-filter: hue-rotate(<?=$hue?>deg) opacity(<?=$opacity?>) grayscale(<?=$grayscale?>);
 }
 
+<?php
+if($color):
+?>
 div#home-slider #slider-objects h1 {
       color: <?=$color?>; 
 }
+<?php
+endif;
+?>
 
 </style>
 
@@ -53,7 +59,7 @@ div#home-slider #slider-objects h1 {
 <section id="flexible-content-area"> 
   
   <!-- starts carrousel of banners -->
-  <div id="home-slider" class="course">    
+  <div id="home-slider" class="course">
     <div id="slider-objects">
       <a href="<?=$entity["url"]?>">
         <img id="secondary-course-logo" src="<?=$entity["square_logo"]?>" alt="<?=$entity["sigla"]?>" title="<?=$entity["name"]?>">
@@ -69,6 +75,10 @@ div#home-slider #slider-objects h1 {
       </ul>
         
       <!-- starts video and know more icons, rating and certficate status -->
+      <?php
+      /* 
+      * DEPRECATED
+      *
       <div class="video-know-more-icons">        
         
         <? if (! empty($course["youtube"])) { ?>  
@@ -83,6 +93,8 @@ div#home-slider #slider-objects h1 {
         ?>        
         <!-- ends video and know more icons --> 
       </div>
+      */
+      ?>
     </div>
     <img src="assets/img/banner-shape-long-blue.svg" class="slider-mask">
 
@@ -142,7 +154,7 @@ div#home-slider #slider-objects h1 {
 
   <!-- starts aside course info -->
   <aside>        
-    <h3><span class="blue-vertical-line">| </span><?=$course["name"]?></h3>
+    <?php /*<h3><span class="blue-vertical-line">| </span><?=$course["name"]?></h3>*/ ?>
     <!---
     <ul>
       <li class="price-and-certificate-options"><span class="aside-course-price"><?=$course["price"]?></span><? certificate($course); ?></li>

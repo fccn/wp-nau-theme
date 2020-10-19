@@ -84,8 +84,8 @@ article {
 }
 p {
   text-align: left;
-  font: Regular 14px/24px "Roboto";
-  letter-spacing: -0.16px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
   color: #000000;
   padding: 0px 0px 0px 0px;
   line-height: 1.5em;
@@ -126,8 +126,6 @@ q:after {
 }
 
 /* Making specicif elements float left */
-ul,
-li,
 form {
   float: left;
   display: block;
@@ -203,20 +201,14 @@ table td {
 }
 article ul {
   display: block;
-  width: 100%;
   line-height: 1.6em;
-  padding: 0px 0 20px 20px;
+  padding: 0px 0 20px 0;
   list-style-type: disc;
   list-style-position: inherit;
 }
 
 body.plataforma-nau iframe {
   margin-top: 15px;
-}
-
-body#secondary article ul {
-  display: grid;
-  margin-top: -10px;
 }
 
 body#institution #body-content article ul {
@@ -434,7 +426,6 @@ div#home-content section ul {
 #body-content section ul {
   position: relative;
   margin-right: /*20px*/ 12px;
-  width: 100%;
   min-width: 273px;
   height: auto;
   background: none;
@@ -1265,11 +1256,8 @@ body.secondary-pages div#home-slider h1 {
   font-weight: bold;
   line-height: 48px;
   font-size: 55px;
-  letter-spacing: -1.1px;
   color: #fff;
   text-transform: uppercase;
-  padding-top: 76px;
-  padding-left: 170px;
   line-height: inherit;
 }
 
@@ -1283,7 +1271,7 @@ body.secondary-pages div#home-slider h1 {
   padding-top: 45px;
   line-height: 1.1em;
   color: /*white*/ #000;
-  width: /*46%*/ 512px;
+  max-width: 512px;
   text-transform: capitalize;
   font-weight: 500;
 }
@@ -1392,6 +1380,11 @@ div#home-slider p {
 /* Menu container */
 div#menu-container {
   height: auto;
+}
+
+div#menu-container ul,
+div#menu-container ul li {
+  float: left;
 }
 
 div#menu-container a {
@@ -2284,6 +2277,11 @@ body#homepage .video-know-more-icons .know-more-icon {
     flex-direction:  column;
   }
 
+  aside {
+    margin: 0;
+    padding:0;
+  }
+
   .card,
   .single-card-width {
     min-width: 100% !important;
@@ -2590,11 +2588,6 @@ body#secondary div#home-slider {
   background-position: middle;
 }
 
-#secondary-course-logo {
-  position: absolute;
-  left: 50px;
-}
-
 #course-id {
   position: absolute;
   left: 250px;
@@ -2752,6 +2745,7 @@ body#secondary div#body-content section#highlighted-courses div.courses-wrap ul.
   z-index: 20;
 }
 
+/*
 #home-slider #slider-objects .secondary-course-logo {
   position: absolute;
   width: 70px;
@@ -2767,17 +2761,7 @@ body#secondary div#body-content section#highlighted-courses div.courses-wrap ul.
   background-color: white;
   padding: 8px;
   z-index: 20;
-}
-
-#home-slider #slider-objects h1 {
-  position: absolute;
-  margin: 0px !important;
-  padding: 0px !important;
-  top: 55px;
-  left: 50px !important;
-  width: 100%;
-  z-index: 50;
-}
+}*/
 
 td.page_state_private {
   background-color: #f25757;
@@ -2945,9 +2929,8 @@ body#secondary #home-slider.course #slider-objects .video-know-more-icons {
 }
 
 body#secondary #home-slider.course #slider-objects h1 {
-  position: absolute;
-  top: 50px;
-  left: 190px !important;
+  display: inline-block;
+  padding:  30px 0 0 20px;
 }
 
 body#secondary #home-slider.course #slider-objects #course-id {
@@ -3077,7 +3060,6 @@ article.news_article .news_date {
 }
 
 #body-content article {
-  width: 100%;
   display: block;
 }
 
@@ -3503,6 +3485,8 @@ body.secondary-pages h1 {
   width: 100px;
   height: 100px;
   object-fit: contain;
+  margin-left: 50px;
+  display: inline-block;
 }
 
 #body-content article h2,
@@ -3861,10 +3845,6 @@ body#homepage div#home-slider .homepage-slide-actions .video-know-more-icons {
   height: 280px;
 }
 
-aside {
-  margin-left: 20px;
-}
-
 .course-quick-meta {
   position: absolute;
   display: flex;
@@ -3918,6 +3898,11 @@ aside {
 
 .course-synopse ul {
   margin-left: 20px;
+  clear:left;
+}
+
+.course-synopse li {
+  clear: left;
 }
 
 .term {
@@ -5052,10 +5037,6 @@ div.nau_disabled {
   border: 1px solid #074ce1;
 }
 
-div#main-container {
-  margin-top: 0.5em;
-  box-shadow: 0 1em 1.5em rgba(0, 0, 0, 0.3);
-}
 div.action-know-more {
   left: 100px;
 }
@@ -5185,7 +5166,7 @@ div#branding-top-nav a#open-menu-arrow {
   }
 
   div#menu-container ul#about-categories-entities {
-    margin-left: 0%;
+    margin-left: 0;
   }
 
   div#menu-container ul,
