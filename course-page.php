@@ -1,5 +1,9 @@
-<?php /* Template Name: Course About Page */ ?>
 <?php 
+/* 
+Template Name: Course About Page 
+*/
+
+
   $nauPageID = "secondary";
   $nauBodyClass = "class='secondary-pages course'";
     

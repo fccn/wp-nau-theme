@@ -896,13 +896,6 @@ body#institution div#home-slider div#nau-shape {
   padding-left: 50px;
   background-size: contain;
 }
-#secondary-course-logo {
-  margin-left: 0px;
-  margin-top: 45px;
-  font-size: 41px;
-  font-weight: 500;
-  margin-right: 14px;
-}
 
 body.secondary-pages div#home-slider {
   position: relative;
@@ -2287,6 +2280,10 @@ body#homepage .video-know-more-icons .know-more-icon {
     padding-right: 1%;
   }
 
+  .secondary-pages div#body-content {
+    flex-direction:  column;
+  }
+
   .card,
   .single-card-width {
     min-width: 100% !important;
@@ -3498,12 +3495,11 @@ body.secondary-pages h1 {
 }
 
 #secondary-course-logo {
+  margin-top: 45px;
   background: white;
   padding: 9px;
   border-radius: 3px;
   -moz-border-radius: 3px;
-  max-width: 100px;
-  max-height: 100px;
   width: 100px;
   height: 100px;
   object-fit: contain;
