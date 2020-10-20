@@ -1,3 +1,4 @@
+// gulp file configuration used to compile sass files to css.
 'use strict';
 
 const { src, dest, series,  watch} = require('gulp');
@@ -18,4 +19,9 @@ function sassWatch(){
     watch('./assets/scss/*.scss', series(sassCompile));
 }
 
-exports.default = sassWatch
+// Exports 2 tasks.
+// a single compilation for deploy with ansible.
+exports.build = series(sassCompile);
+
+// a compilation with a watcher so every time a change is performanced on a file it's performed a compilation.
+exports.default = sassWatch; 
