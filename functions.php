@@ -44,6 +44,13 @@ function nau_trans($message)
     return __($message, "nau-theme");
 }
 
+function version_id() { 
+  if ( WP_DEBUG )
+    return time();
+  if ( WP_NAU_THEME_VERSION != 'WP_NAU_THEME_VERSION' )
+    return WP_NAU_THEME_VERSION;
+  return '1.0.0';
+}
 
 function nau_theme_enqueue_styles() {
     wp_enqueue_script( 'jquery-ui-widget' );
@@ -52,13 +59,13 @@ function nau_theme_enqueue_styles() {
     wp_enqueue_script( 'jquery-ui-autocomplete' );
     wp_enqueue_script( 'jquery-ui-slider' );
 
-    wp_enqueue_style('reset-style', get_template_directory_uri() . '/assets/base_css/reset.css', array(), '1.0.0', 'all');
-    wp_enqueue_style('styles-style', get_template_directory_uri() . '/assets/base_css/base_styles.css', array(), '1.0.0', 'all');
+    wp_enqueue_style('reset-style', get_template_directory_uri() . '/assets/base_css/reset.css', array(), version_id(), 'all');
+    wp_enqueue_style('styles-style', get_template_directory_uri() . '/assets/base_css/base_styles.css', array(), version_id(), 'all');
     
-    wp_enqueue_style('style-style', get_template_directory_uri() . '/style.css', array(), '1.0.0', 'all');
-    wp_enqueue_script('script_functions', get_template_directory_uri() . '/assets/js/functions.js', array(), '1.0.0', true);
-    wp_enqueue_script('menu_slider', get_template_directory_uri() . '/assets/js/menu_slider_and_other_operations.js', array(), '1.0.0', true);
-    wp_enqueue_script('cookie_bar', get_template_directory_uri() . '/assets/js/cookie-bar.js', array('jquery', 'jquery-ui-core'), '1.0.0', true);
+    wp_enqueue_style('style-style', get_template_directory_uri() . '/style.css', array(), version_id(), 'all');
+    wp_enqueue_script('script_functions', get_template_directory_uri() . '/assets/js/functions.js', array(), version_id(), true);
+    wp_enqueue_script('menu_slider', get_template_directory_uri() . '/assets/js/menu_slider_and_other_operations.js', array(), version_id(), true);
+    wp_enqueue_script('cookie_bar', get_template_directory_uri() . '/assets/js/cookie-bar.js', array('jquery', 'jquery-ui-core'), version_id(), true);
     wp_enqueue_style('material-icons', '//fonts.googleapis.com/icon?family=Material+Icons' );
 }
 
