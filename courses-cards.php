@@ -31,7 +31,7 @@
     ?>
       <div class="card gallery-cell <?=$course["card_width"]?>-card-width">
         <div class="card-image"> 
-          <a href="<?=$course["course_about_url"]?>" class="image">
+          <a href="<?=$course["course_about_url"]?>">
             <img class="course-image <?=$course["card_image_fit"]?>" src="<?=$course["image"]?>" alt="<?=$course["name"]?>">
           </a>
           <img class="square-logo" src="<?=$course["entity"]["square_logo"]?>" alt="<?=$entity->post_title?>">
@@ -55,8 +55,7 @@
             <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-white.svg" alt="<?=nau_trans("See a video about this course")?>">           
           </a>
           <? } ?>
-          <a class="know-more-icon" href="<?=$course["course_about_url"]?>" title="<?=nau_trans("Learn more about this course")?>"><?=nau_trans("+Info")?></a> 
-          <?php nau_enroll_button($course); ?>
+          <a class="know-more-icon" href="<?=$course["course_about_url"]?>" title="<?=nau_trans("Learn more about this course")?>"><?=nau_trans("View course")?></a> 
         </div>
       </div>
       

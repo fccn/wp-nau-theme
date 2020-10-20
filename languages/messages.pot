@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-20 15:11+0100\n"
+"POT-Creation-Date: 2020-10-20 23:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,20 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: homepage-running-courses.php:36 languages/strings.php:27
-#: entities-cards.php:53 courses-cards.php:58
-msgid "+Info"
-msgstr ""
-
 #: languages/strings.php:69 search.php:15
 msgid "About to Start"
 msgstr ""
 
-#: languages/strings.php:71 functions.php:667 search.php:17
+#: languages/strings.php:71 functions.php:653 search.php:17
 msgid "About to end"
 msgstr ""
 
-#: languages/strings.php:36 functions.php:655
+#: languages/strings.php:36 functions.php:645
 msgid "About to start"
 msgstr ""
 
@@ -50,7 +45,7 @@ msgstr ""
 msgid "All|courses"
 msgstr ""
 
-#: languages/strings.php:85 functions.php:661
+#: languages/strings.php:85 functions.php:649
 msgid "Available"
 msgstr ""
 
@@ -62,7 +57,7 @@ msgstr ""
 msgid "Clean water and sanitation"
 msgstr ""
 
-#: languages/strings.php:57 functions.php:776
+#: languages/strings.php:57 functions.php:758
 msgid "Clear Cookie"
 msgstr ""
 
@@ -120,7 +115,7 @@ msgstr ""
 msgid "Explore all courses"
 msgstr ""
 
-#: languages/strings.php:83 functions.php:679
+#: languages/strings.php:83 functions.php:661
 msgid "Finished"
 msgstr ""
 
@@ -202,7 +197,7 @@ msgstr ""
 msgid "Not to translate"
 msgstr ""
 
-#: languages/strings.php:2 functions.php:688 inc/global-top-menu.php:92
+#: languages/strings.php:2 functions.php:670 inc/global-top-menu.php:92
 #: inc/global-top-menu.php:189 search.php:12
 msgid "Open"
 msgstr ""
@@ -246,7 +241,7 @@ msgstr ""
 msgid "Responsible consuption"
 msgstr ""
 
-#: languages/strings.php:84 functions.php:673
+#: languages/strings.php:84 functions.php:657
 msgid "Running"
 msgstr ""
 
@@ -254,7 +249,7 @@ msgstr ""
 msgid "Running Courses"
 msgstr ""
 
-#: languages/strings.php:82 functions.php:649
+#: languages/strings.php:82 functions.php:641
 msgid "Scheduled to start"
 msgstr ""
 
@@ -355,6 +350,11 @@ msgstr ""
 
 #: languages/strings.php:62 inc/cookie-bar.php:6
 msgid "This site uses cookies (update this message on NAU Theme Options)!"
+msgstr ""
+
+#: homepage-running-courses.php:36 languages/strings.php:27
+#: entities-cards.php:53 courses-cards.php:58
+msgid "View course"
 msgstr ""
 
 #: languages/strings.php:17 global-footer.php:99

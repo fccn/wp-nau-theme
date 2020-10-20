@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-20 15:11+0100\n"
+"POT-Creation-Date: 2020-10-20 23:35+0100\n"
 "PO-Revision-Date: 2020-05-12 00:49+0100\n"
 "Last-Translator: root <rui.ribeiro@fccn.pt>\n"
 "Language-Team: Portuguese\n"
@@ -18,20 +18,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.3\n"
 
-#: homepage-running-courses.php:36 languages/strings.php:27
-#: entities-cards.php:53 courses-cards.php:58
-msgid "+Info"
-msgstr "+Info"
-
 #: languages/strings.php:69 search.php:15
 msgid "About to Start"
 msgstr "Quase a começar"
 
-#: languages/strings.php:71 functions.php:667 search.php:17
+#: languages/strings.php:71 functions.php:653 search.php:17
 msgid "About to end"
 msgstr "Quase a acabar"
 
-#: languages/strings.php:36 functions.php:655
+#: languages/strings.php:36 functions.php:645
 msgid "About to start"
 msgstr "Prestes a começar"
 
@@ -51,7 +46,7 @@ msgstr "Todos os direitos reservados."
 msgid "All|courses"
 msgstr "Todos|cursos"
 
-#: languages/strings.php:85 functions.php:661
+#: languages/strings.php:85 functions.php:649
 msgid "Available"
 msgstr "Disponível"
 
@@ -63,7 +58,7 @@ msgstr "Certificado"
 msgid "Clean water and sanitation"
 msgstr "Água potável e saneamento"
 
-#: languages/strings.php:57 functions.php:776
+#: languages/strings.php:57 functions.php:758
 msgid "Clear Cookie"
 msgstr "Limpar Cookie"
 
@@ -121,7 +116,7 @@ msgstr "Todos"
 msgid "Explore all courses"
 msgstr "Explore todos os cursos"
 
-#: languages/strings.php:83 functions.php:679
+#: languages/strings.php:83 functions.php:661
 msgid "Finished"
 msgstr "Terminado"
 
@@ -203,7 +198,7 @@ msgstr "Nenhum encontrado"
 msgid "Not to translate"
 msgstr "Não traduzir"
 
-#: languages/strings.php:2 functions.php:688 inc/global-top-menu.php:92
+#: languages/strings.php:2 functions.php:670 inc/global-top-menu.php:92
 #: inc/global-top-menu.php:189 search.php:12
 msgid "Open"
 msgstr "Abrir"
@@ -247,7 +242,7 @@ msgstr "Reduzir as desigualdades"
 msgid "Responsible consuption"
 msgstr "Produção e consumo responsáveis"
 
-#: languages/strings.php:84 functions.php:673
+#: languages/strings.php:84 functions.php:657
 msgid "Running"
 msgstr "A decorrer"
 
@@ -255,7 +250,7 @@ msgstr "A decorrer"
 msgid "Running Courses"
 msgstr "Cursos Disponíveis"
 
-#: languages/strings.php:82 functions.php:649
+#: languages/strings.php:82 functions.php:641
 msgid "Scheduled to start"
 msgstr "Brevemente"
 
@@ -358,6 +353,11 @@ msgstr ""
 msgid "This site uses cookies (update this message on NAU Theme Options)!"
 msgstr ""
 "Este site usa cookies (atualize esta mensagem nas opções do Theme NAU)!"
+
+#: homepage-running-courses.php:36 languages/strings.php:27
+#: entities-cards.php:53 courses-cards.php:58
+msgid "View course"
+msgstr "Ver curso"
 
 #: languages/strings.php:17 global-footer.php:99
 msgid "Visit INcode2030 website"

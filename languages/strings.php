@@ -24,7 +24,7 @@ nau_trans("Certificate");
 nau_trans("Instructor Paced");
 nau_trans("Everyone");
 nau_trans("Learn more about this course");
-nau_trans("+Info");
+nau_trans("View course");
 nau_trans("Free");
 nau_trans("Courses|Running");
 nau_trans("Running Courses");
