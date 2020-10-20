@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-09 17:06+0100\n"
+"POT-Creation-Date: 2020-10-20 15:11+0100\n"
 "PO-Revision-Date: 2020-05-12 00:49+0100\n"
 "Last-Translator: root <rui.ribeiro@fccn.pt>\n"
 "Language-Team: Portuguese\n"
@@ -18,32 +18,32 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.3\n"
 
-#: courses-cards.php:57 entities-cards.php:59 homepage-running-courses.php:41
-#: languages/strings.php:27
+#: homepage-running-courses.php:36 languages/strings.php:27
+#: entities-cards.php:53 courses-cards.php:58
 msgid "+Info"
 msgstr "+Info"
 
-#: search.php:15
+#: languages/strings.php:69 search.php:15
 msgid "About to Start"
 msgstr "Quase a começar"
 
-#: functions.php:605 search.php:17
+#: languages/strings.php:71 functions.php:667 search.php:17
 msgid "About to end"
 msgstr "Quase a acabar"
 
-#: functions.php:595 languages/strings.php:36
+#: languages/strings.php:36 functions.php:655
 msgid "About to start"
 msgstr "Prestes a começar"
 
-#: inc/cookie-bar.php:12 languages/strings.php:18
+#: languages/strings.php:18 inc/cookie-bar.php:15
 msgid "Accept"
 msgstr "Aceitar"
 
-#: inc/galeria_un.php:14 languages/strings.php:45
+#: languages/strings.php:46 inc/galeria_un.php:14
 msgid "Affordable and clean energy"
 msgstr "Energias renováveis e acessível"
 
-#: global-footer.php:75 languages/strings.php:16
+#: languages/strings.php:16 global-footer.php:96
 msgid "All rights reserved."
 msgstr "Todos os direitos reservados."
 
@@ -51,60 +51,64 @@ msgstr "Todos os direitos reservados."
 msgid "All|courses"
 msgstr "Todos|cursos"
 
-#: courses-cards.php:32 homepage-running-courses.php:26
-#: languages/strings.php:23
+#: languages/strings.php:85 functions.php:661
+msgid "Available"
+msgstr "Disponível"
+
+#: homepage-running-courses.php:27 languages/strings.php:23
 msgid "Certificate"
 msgstr "Certificado"
 
-#: inc/galeria_un.php:13 languages/strings.php:44
+#: languages/strings.php:45 inc/galeria_un.php:13
 msgid "Clean water and sanitation"
 msgstr "Água potável e saneamento"
 
-#: functions.php:705 languages/strings.php:56
+#: languages/strings.php:57 functions.php:776
 msgid "Clear Cookie"
 msgstr "Limpar Cookie"
 
-#: inc/galeria_un.php:20 languages/strings.php:51
+#: languages/strings.php:52 inc/galeria_un.php:20
 msgid "Climate action"
 msgstr "Ação Climática"
 
-#: inc/global-top-menu.php:85 languages/strings.php:3
+#: languages/strings.php:3 inc/global-top-menu.php:99
+#: inc/global-top-menu.php:196
 msgid "Close"
 msgstr "Fechar"
 
-#: search.php:176
+#: languages/strings.php:79 search.php:176
 msgid "Content type:"
 msgstr "Tipo de conteúdo:"
 
-#: search.php:10
+#: languages/strings.php:66 search.php:10
 msgid "Courses"
 msgstr "Pesquisar Cursos"
 
-#: home.php:34 languages/strings.php:22
+#: languages/strings.php:22 home.php:34
 msgid "Courses|Highlighted"
 msgstr "Cursos|Destacados"
 
-#: home.php:40 languages/strings.php:29
+#: languages/strings.php:29 home.php:40
 msgid "Courses|Running"
 msgstr "Cursos|Disponíveis"
 
-#: entity.php:56 languages/strings.php:60
+#: languages/strings.php:61 entity.php:77
 msgid "Courses|running"
 msgstr "Cursos|disponíveis"
 
-#: inc/galeria_un.php:15 languages/strings.php:46
+#: languages/strings.php:47 inc/galeria_un.php:15
 msgid "Decent work and economic growth"
 msgstr "Trabalho digno e crescimento económico"
 
-#: search.php:16
+#: languages/strings.php:70 search.php:16
 msgid "Ended"
 msgstr "Finalizado"
 
-#: search.php:9
+#: languages/strings.php:65 search.php:9
 msgid "Entities"
 msgstr "Entidades"
 
-#: home.php:46 languages/strings.php:33
+#: languages/strings.php:33 home.php:50
 msgid "Entity|Founders"
 msgstr "Entidades|Fundadoras"
 
@@ -112,27 +116,28 @@ msgstr "Entidades|Fundadoras"
 msgid "Everyone"
 msgstr "Todos"
 
-#: entity-aside.php:19 homepage-running-courses.php:13 languages/strings.php:31
+#: homepage-all-courses-link.php:7 homepage-running-courses.php:13
+#: languages/strings.php:31 courses-cards.php:20
 msgid "Explore all courses"
 msgstr "Explore todos os cursos"
 
-#: functions.php:610
+#: languages/strings.php:83 functions.php:679
 msgid "Finished"
 msgstr "Terminado"
 
-#: functions.php:526 languages/strings.php:28
+#: languages/strings.php:28 functions.php:570
 msgid "Free"
 msgstr "Gratuito"
 
-#: inc/galeria_un.php:12 languages/strings.php:43
+#: languages/strings.php:44 inc/galeria_un.php:12
 msgid "Gender equality"
 msgstr "Igualdade de género"
 
-#: inc/galeria_un.php:10 languages/strings.php:41
+#: languages/strings.php:42 inc/galeria_un.php:10
 msgid "Good health and well-being"
 msgstr "Saúde de qualidade"
 
-#: inc/galeria_un.php:16 languages/strings.php:47
+#: languages/strings.php:48 inc/galeria_un.php:16
 msgid "Industry, innovation and infrastructure"
 msgstr "Indústria, inovação e infraestruturas"
 
@@ -140,57 +145,57 @@ msgstr "Indústria, inovação e infraestruturas"
 msgid "Instructor Paced"
 msgstr "Com Calendário Definido"
 
-#: functions.php:582 languages/strings.php:37
+#: languages/strings.php:37 functions.php:630
 msgid "Instructor paced"
 msgstr "Com calendário definido"
 
-#: search.php:13
+#: languages/strings.php:67 search.php:13
 msgid "Invitation Only"
 msgstr "Apenas por Convite"
 
-#: functions.php:583 languages/strings.php:59
+#: languages/strings.php:60 functions.php:631
 msgid "Invitation only"
 msgstr "Apenas por convite"
 
-#: inc/slider/item-course.php:64 inc/slider/item-entity.php:67
-#: languages/strings.php:20
+#: languages/strings.php:20 inc/slider/item-course.php:64
+#: inc/slider/item-entity.php:67
 msgid "Know +"
 msgstr "Saber +"
 
-#: course-page.php:60 languages/strings.php:5
+#: homepage-running-courses.php:25 languages/strings.php:5
 msgid "Know more about this entity"
 msgstr "Saber mais sobre esta entidade"
 
-#: courses-cards.php:57 languages/strings.php:26
+#: languages/strings.php:26 courses-cards.php:58
 msgid "Learn more about this course"
 msgstr "Saiba mais sobre o contorno do curso"
 
-#: entities-cards.php:59 languages/strings.php:58
+#: languages/strings.php:59 entities-cards.php:53
 msgid "Learn more about this entity"
 msgstr "Saiba mais sobre esta entidade"
 
-#: inc/galeria_un.php:21 languages/strings.php:52
+#: languages/strings.php:53 inc/galeria_un.php:21
 msgid "Life below water"
 msgstr "Proteger a vida marinha"
 
-#: inc/galeria_un.php:22 languages/strings.php:53
+#: languages/strings.php:54 inc/galeria_un.php:22
 msgid "Life on land"
 msgstr "Proteger a vida terrestre"
 
 #. $nauBodyClass = "class='secondary-pages'";
-#: inc/news-list.php:4 search.php:8
+#: languages/strings.php:64 inc/news-list.php:4 search.php:8
 msgid "News"
 msgstr "Notícias"
 
-#: inc/galeria_un.php:7 languages/strings.php:38
+#: languages/strings.php:39 inc/galeria_un.php:7
 msgid "No goal"
 msgstr "Sem objetivo"
 
-#: inc/galeria_un.php:8 languages/strings.php:39
+#: languages/strings.php:40 inc/galeria_un.php:8
 msgid "No poverty"
 msgstr "Erradicar a pobreza"
 
-#: functions.php:234
+#: functions.php:250
 msgid "None found"
 msgstr "Nenhum encontrado"
 
@@ -198,176 +203,185 @@ msgstr "Nenhum encontrado"
 msgid "Not to translate"
 msgstr "Não traduzir"
 
-#. There are Itens!
-#: inc/global-top-menu.php:78 functions.php:618 search.php:12
-#: languages/strings.php:2
+#: languages/strings.php:2 functions.php:688 inc/global-top-menu.php:92
+#: inc/global-top-menu.php:189 search.php:12
 msgid "Open"
 msgstr "Abrir"
 
-#: functions.php:583 languages/strings.php:35
+#: languages/strings.php:35 functions.php:631
 msgid "Open to everyone"
 msgstr "Aberto a todos"
 
-#: search.php:7
+#: languages/strings.php:63 search.php:7
 msgid "Pages"
 msgstr "Páginas"
 
-#: courses-cards.php:49 course-page.php:61 course-page.php:116
-#: languages/strings.php:6
+#: languages/strings.php:6 course-page.php:61 course-page.php:148
+#: courses-cards.php:50
 msgid "Participants"
 msgstr "Participantes"
 
-#: inc/galeria_un.php:24 languages/strings.php:55
+#: languages/strings.php:56 inc/galeria_un.php:24
 msgid "Partnerships for the goals"
 msgstr "Parcerias e meios de implementação dos objetivos"
 
-#: inc/galeria_un.php:23 languages/strings.php:54
+#: languages/strings.php:55 inc/galeria_un.php:23
 msgid "Peace, justice and strong institutions"
 msgstr "Paz, justiça e instituições eficazes"
 
-#: inc/galeria_un.php:11 languages/strings.php:42
+#: languages/strings.php:43 inc/galeria_un.php:11
 msgid "Quality education"
 msgstr "Educação de qualidade"
 
 #. start main loop
-#: inc/slider/item-news.php:83 inc/news-list.php:26 index.php:91
-#: languages/strings.php:21
+#: languages/strings.php:21 index.php:104 inc/news-list.php:26
+#: inc/slider/item-news.php:83
 msgid "Read More"
 msgstr "Lêr Mais"
 
-#: inc/galeria_un.php:17 languages/strings.php:48
+#: languages/strings.php:49 inc/galeria_un.php:17
 msgid "Reduced inequalities"
 msgstr "Reduzir as desigualdades"
 
-#: inc/galeria_un.php:19 languages/strings.php:50
+#: languages/strings.php:51 inc/galeria_un.php:19
 msgid "Responsible consuption"
 msgstr "Produção e consumo responsáveis"
 
-#: functions.php:600
+#: languages/strings.php:84 functions.php:673
 msgid "Running"
-msgstr "Disponível"
+msgstr "A decorrer"
 
 #: homepage-running-courses.php:13 languages/strings.php:30
 msgid "Running Courses"
 msgstr "Cursos Disponíveis"
 
-#: functions.php:590
+#: languages/strings.php:82 functions.php:649
 msgid "Scheduled to start"
 msgstr "Brevemente"
 
-#: search.php:172
+#: languages/strings.php:78 search.php:172
 msgid "Search"
 msgstr "Procurar"
 
-#: search.php:168
+#: languages/strings.php:77 search.php:168
 msgid "Search ..."
 msgstr "Procurar ..."
 
-#: inc/slider/item-search.php:37 homepage-banner.php:15
-#: languages/strings.php:19
+#: languages/strings.php:19 _____homepage-banner.php:15
+#: inc/slider/item-search.php:37
 msgid "Search Courses"
 msgstr "Pesquisar Cursos"
 
-#: inc/global-top-menu.php:102 languages/strings.php:4
+#: languages/strings.php:4 inc/global-top-menu.php:116
+#: inc/global-top-menu.php:213
 msgid "Search courses..."
 msgstr "Pesquisar Cursos..."
 
-#: search.php:166 search.php:170
+#: languages/strings.php:76 search.php:166 search.php:170
 msgid "Search for:"
 msgstr "Procurar por:"
 
-#: search.php:146
+#: languages/strings.php:74 search.php:146
 msgid "Search results"
 msgstr "Resultados de pesquisa"
 
-#: search.php:162
+#: languages/strings.php:75 search.php:162
 msgid "Search tool"
 msgstr "Ferramenta de pesquisa"
 
-#: courses-cards.php:54
+#: courses-cards.php:55
 msgid "See a video about this course"
 msgstr "Veja um vídeo sobre este curso"
 
-#: entities-cards.php:56 languages/strings.php:57
+#: languages/strings.php:58
 msgid "See a video about this entity"
 msgstr "Veja um vídeo sobre esta entidade"
 
-#: inc/slider/item-course.php:58 inc/slider/item-news.php:61
-#: inc/slider/item-entity.php:62 courses-cards.php:53 entities-cards.php:55
-#: course-page.php:70 course-page.php:131 homepage-running-courses.php:36
-#: languages/strings.php:7
+#: homepage-running-courses.php:31 languages/strings.php:7
+#: inc/slider/item-news.php:61 inc/slider/item-course.php:58
+#: inc/slider/item-entity.php:62 course-page.php:72 courses-cards.php:54
 msgid "See video"
 msgstr "Ver vídeo"
 
-#: functions.php:582 languages/strings.php:34
+#: languages/strings.php:34 functions.php:630
 msgid "Self paced"
 msgstr "Sem horário definido"
 
-#: entity-aside.php:76 course-page.php:192 languages/strings.php:9
+#: languages/strings.php:9 course-page.php:181 entity-aside.php:26
 msgid "Share"
 msgstr "Partilhar"
 
-#: global-footer.php:60 languages/strings.php:13
+#. <li><a href="<?=$social_media["twitter_site"]?>"><img src="assets/img/twitter.svg" alt="twitter logo" title="<?=nau_trans("Share on Twitter")?>"></a></li>
+#. <li><a href="<?=$social_media["linkedin_url"]?>"><img src="assets/img/linkedin.svg" alt="Linkedin logo" title="<?=nau_trans("Share on Linkedin")?>"></a></li>
+#: languages/strings.php:13 global-footer.php:81
 msgid "Share on Facebook"
 msgstr "Partilhar no Facebook"
 
-#: global-footer.php:61 languages/strings.php:14
+#: languages/strings.php:14
 msgid "Share on Instagram"
 msgstr "Partilhar no Instagram"
 
-#: global-footer.php:59 languages/strings.php:12
+#: languages/strings.php:12
 msgid "Share on Linkedin"
 msgstr "Compartilhar no Linkedin"
 
-#: global-footer.php:58 languages/strings.php:11
+#: languages/strings.php:11
 msgid "Share on Twitter"
 msgstr "Partilhar no Twitter"
 
-#: search.php:180
+#: languages/strings.php:80 search.php:180
 msgid "Show courses that are:"
 msgstr "Apresenta cursos que:"
 
-#: global-footer.php:57 languages/strings.php:10
+#. read from Yoast SEO > Social
+#: languages/strings.php:10 global-footer.php:78
 msgid "Social Media"
 msgstr "Siga-nos"
 
-#: search.php:14
+#: languages/strings.php:68 search.php:14
 msgid "Started"
 msgstr "Iníciou"
 
-#: inc/galeria_un.php:18 languages/strings.php:49
+#: languages/strings.php:50 inc/galeria_un.php:18
 msgid "Sustainable cities and communities"
 msgstr "Cidades e comunidades sustentáveis"
 
-#: course-page.php:126 languages/strings.php:8
+#: languages/strings.php:8 course-page.php:159
 msgid "Tags"
 msgstr "Etiquetas"
 
-#: inc/cookie-bar.php:6 languages/strings.php:61
-msgid "This site uses cookies (update this message on NAU Theme Options)!"
-msgstr "Este site usa cookies (atualize esta mensagem nas opções do Theme NAU)!"
+#: languages/strings.php:81 search.php:185
+msgid "Tematicas"
+msgstr ""
 
-#: global-footer.php:78 languages/strings.php:17
+#: languages/strings.php:62 inc/cookie-bar.php:6
+msgid "This site uses cookies (update this message on NAU Theme Options)!"
+msgstr ""
+"Este site usa cookies (atualize esta mensagem nas opções do Theme NAU)!"
+
+#: languages/strings.php:17 global-footer.php:99
 msgid "Visit INcode2030 website"
 msgstr "Visitar o site INcode.2030"
 
-#: global-footer.php:63 languages/strings.php:15
+#. <li><a href="<?=$social_media["instagram_url"]?>"><img src="assets/img/instagram.svg" alt="Instagram logo" title="<?=nau_trans("Share on Instagram")?>"></a></li>
+#. <li><a href="<?=$social_media["wikipedia_url"]?>"><img src="assets/img/more-share.svg" alt="Share list" title="Share list"></a></li>
+#: languages/strings.php:15 global-footer.php:84
 msgid "Visit OpenEdX website"
 msgstr "Visitar site OpenEdX"
 
-#: inc/galeria_un.php:9 languages/strings.php:40
+#: languages/strings.php:41 inc/galeria_un.php:9
 msgid "Zero hunger"
 msgstr "Erradicar a fome"
 
-#: search.php:94
+#: languages/strings.php:73 search.php:94
 msgid "for search string:"
 msgstr "para o critério de pesquisa:"
 
-#: homepage-running-courses.php:41 languages/strings.php:32
+#: homepage-running-courses.php:36 languages/strings.php:32
 msgid "know more about this course"
 msgstr "saber mais sobre este curso"
 
-#: search.php:94
+#: languages/strings.php:72 search.php:94
 msgid "results"
 msgstr "resultados"
 

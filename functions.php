@@ -633,32 +633,31 @@ function load_course($coursePage) {
   
   $days_to_start = days_to_today($course["start_date"]);
   $days_to_end = days_to_today($course["end_date"]);
-    
+
+  $days_to_enrollment_start = empty($course["enrollment_start"]) ? null : days_to_today($course["enrollment_start"]);
+  $days_to_enrollment_end =   empty($course["enrollment_end"])   ? null : days_to_today($course["enrollment_end"]);
+
   if ($days_to_start >= 7) {
       $course["date_status_label"] = nau_trans("Scheduled to start");
       $course["date_status_date"] = $course["start_date"];
       $course["date_status_class"] = "date_status_scheduled_to_start";
-  }
-  
-  if ($days_to_start < 7) {
+  } else if ($days_to_start < 7 && $days_to_start > 0) {
       $course["date_status_label"] = nau_trans("About to start");
       $course["date_status_date"] = $course["start_date"];
       $course["date_status_class"] = "date_status_about_to_start";
-  }
-  
-  if (($days_to_start < 0) && ($days_to_end > 7)) {
-      $course["date_status_label"] = nau_trans("Running");
+  } else if ($days_to_start < 0 && $days_to_end > 0 && ( is_null($days_to_enrollment_end) || $days_to_enrollment_end >= 7 ) ) {
+      $course["date_status_label"] = nau_trans("Available");
       $course["date_status_date"] = $course["start_date"];
       $course["date_status_class"] = "date_status_running";
-  }
-  
-  if (($days_to_start < 0) && ($days_to_end < 7)) {
+  } else if ( !is_null( $days_to_enrollment_start ) && $days_to_enrollment_end < 7 && $days_to_enrollment_end > 0 || is_null( $days_to_enrollment_start ) && $days_to_end < 7 && $days_to_end > 0) {
       $course["date_status_label"] = nau_trans("About to end");
       $course["date_status_date"] = $course["end_date"];
       $course["date_status_class"] = "date_status_about_to_end";
-  }
-  
-  if ($days_to_end < 0) {
+  } else if ($days_to_start < 0 && $days_to_end > 0 && !is_null($days_to_enrollment_end) && $days_to_enrollment_end < 7 ) {
+      $course["date_status_label"] = nau_trans("Running");
+      $course["date_status_date"] = $course["enrollment_end"];
+      $course["date_status_class"] = "date_status_finished";
+  } else if ($days_to_end < 0) {
       $course["date_status_label"] = nau_trans("Finished");
       $course["date_status_date"] = $course["end_date"];
       $course["date_status_class"] = "date_status_finished";

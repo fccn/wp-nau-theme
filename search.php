@@ -182,7 +182,7 @@
         </div>
     </form>
     
-    <h3><?=nau_trans("Temáticas")?></h3>
+    <h3><?=nau_trans("Tematicas")?></h3>
     <div class="search-bubbles">
         <?=nau_list_tags()?>    
         <?=nau_list_categories()?>
