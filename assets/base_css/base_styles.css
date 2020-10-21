@@ -1740,10 +1740,6 @@ aside .aside-participants {
   float: right;
   padding-left: 10px;
 }
-aside ul:nth-child(1) {
-  width: 100%;
-  float: right;
-}
 aside .course-related-links {
   padding: 8px 25px 20px 25px;
   border-radius: 0 0 20px 20px;
