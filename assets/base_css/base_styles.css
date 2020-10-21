@@ -294,7 +294,6 @@ a.know-more-icon {
   margin-right: 5px;
   color: white !important;
   cursor: pointer;
-  border: 1px solid #074ce1 !important;
   background-color: #074ce1 !important;
 }
 a.know-more-icon:hover {
@@ -4719,7 +4718,7 @@ a img:hover {
   position: absolute;
   width: 90%;
   bottom: 10px;
-  left: 14px;
+  left: 15px;
 }
 
 .card .course-actions .ednx-enroll-button-js {
