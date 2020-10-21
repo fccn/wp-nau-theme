@@ -50,7 +50,7 @@
             <h3 class="entity-long-name"><?=$entity["name"]?></h3>
           </div>
           <div class="card-action"> 
-            <a class="know-more-icon" href="<?=$entity["url"]?>" title="<?=nau_trans("Learn more about this entity")?>"><?=nau_trans("View course")?></a>         
+            <a class="know-more-icon" href="<?=$entity["url"]?>" title="<?=nau_trans("Learn more about this entity")?>"><?=nau_trans("View entity")?></a>         
           </div>  
       </div>
       

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-20 23:35+0100\n"
+"POT-Creation-Date: 2020-10-21 10:08+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -160,7 +160,7 @@ msgstr ""
 msgid "Know more about this entity"
 msgstr ""
 
-#: languages/strings.php:26 courses-cards.php:58
+#: languages/strings.php:26 courses-cards.php:57
 msgid "Learn more about this course"
 msgstr ""
 
@@ -211,7 +211,7 @@ msgid "Pages"
 msgstr ""
 
 #: languages/strings.php:6 course-page.php:61 course-page.php:148
-#: courses-cards.php:50
+#: courses-cards.php:49
 msgid "Participants"
 msgstr ""
 
@@ -283,7 +283,7 @@ msgstr ""
 msgid "Search tool"
 msgstr ""
 
-#: courses-cards.php:55
+#: courses-cards.php:54
 msgid "See a video about this course"
 msgstr ""
 
@@ -293,7 +293,7 @@ msgstr ""
 
 #: homepage-running-courses.php:31 languages/strings.php:7
 #: inc/slider/item-news.php:61 inc/slider/item-course.php:58
-#: inc/slider/item-entity.php:62 course-page.php:72 courses-cards.php:54
+#: inc/slider/item-entity.php:62 course-page.php:72 courses-cards.php:53
 msgid "See video"
 msgstr ""
 
@@ -353,8 +353,12 @@ msgid "This site uses cookies (update this message on NAU Theme Options)!"
 msgstr ""
 
 #: homepage-running-courses.php:36 languages/strings.php:27
-#: entities-cards.php:53 courses-cards.php:58
+#: courses-cards.php:57
 msgid "View course"
+msgstr ""
+
+#: entities-cards.php:53
+msgid "View entity"
 msgstr ""
 
 #: languages/strings.php:17 global-footer.php:99
