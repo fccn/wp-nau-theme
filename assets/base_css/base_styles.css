@@ -4719,7 +4719,7 @@ a img:hover {
   position: absolute;
   width: 90%;
   bottom: 10px;
-  left: 10px;
+  left: 14px;
 }
 
 .card .course-actions .ednx-enroll-button-js {
@@ -5422,7 +5422,8 @@ form#banner-search-form input[type="submit"] {
 #homepage-all-courses-section {
   margin-bottom: 3em !important;
 }
-.card:hover {
+.card:hover,
+.card:focus {
   border: 2px solid #074ce1;
 }
 

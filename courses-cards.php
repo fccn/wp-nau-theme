@@ -54,7 +54,7 @@
               <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-white.svg" alt="<?=nau_trans("See a video about this course")?>">           
             </a>
             <? } ?>
-            <a class="know-more-icon" href="<?=$course["course_about_url"]?>" title="<?=nau_trans("Learn more about this course")?>"><?=nau_trans("View course")?></a> 
+            <a class="know-more-icon" href="<?=$course["course_about_url"]?>" title="<?=nau_trans("Learn more about this course")?> <?=$course["name"]?>"><?=nau_trans("View course")?></a> 
           </div>
         </a>
       </div>
