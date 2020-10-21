@@ -802,7 +802,7 @@ ul#about-categories-entities li:hover .sub-nav {
   border-radius: 5px !important;
   margin-top: 8px !important;
   font-weight: 500 !important;
-  text-transform: capitalize !important;
+  text-transform: initial !important;
   color: #777 !important;
 }
 .sub-nav li a:hover {
@@ -2273,13 +2273,31 @@ body#homepage .video-know-more-icons .know-more-icon {
     padding-right: 1%;
   }
 
-  .secondary-pages div#body-content {
-    flex-direction:  column;
+  .secondary-pages div#body-content,
+  .entity div#home-content {
+    flex-direction: column;
+  }
+
+  footer #entities-quick-links img {
+    max-width: 260px;
   }
 
   aside {
     margin: 0;
-    padding:0;
+    padding: 0;
+  }
+
+  body#institution aside {
+    padding: 30px;
+    border-radius: 20px;
+  }
+
+  #institution .entity-branding-container {
+    max-width: 380px;
+  }
+
+  #institution .entity-branding-container h1 {
+    font-size: 18px;
   }
 
   .card,
@@ -2303,6 +2321,16 @@ body#homepage .video-know-more-icons .know-more-icon {
 
   body#homepage div#home-content section {
     padding-right: 0px;
+  }
+
+  body#institution div#home-slider h1,
+  body#news div#home-slider h1 {
+    font-size: 20px;
+  }
+
+  #secondary-course-logo, .secondary-course-logo {
+    width: 70px !important;
+    height: 70px !important;
   }
 
   div#home-content section {
@@ -2688,9 +2716,11 @@ body#institution section#entity-description .description ul li {
   list-style-type: disc;
 }
 
+/*
 body#institution div#home-slider h1 {
   padding-left: 115px !important;
 }
+*/
 
 body#homepage section#rolling-courses ul#rolling-course-b div.nau_button {
   border: solid 1px white;
@@ -2930,7 +2960,7 @@ body#secondary #home-slider.course #slider-objects .video-know-more-icons {
 
 body#secondary #home-slider.course #slider-objects h1 {
   display: inline-block;
-  padding:  30px 0 0 20px;
+  padding: 30px 0 0 20px;
 }
 
 body#secondary #home-slider.course #slider-objects #course-id {
@@ -3476,7 +3506,8 @@ body.secondary-pages h1 {
   font-size: 29px;
 }
 
-#secondary-course-logo {
+#secondary-course-logo,
+.secondary-course-logo {
   margin-top: 45px;
   background: white;
   padding: 9px;
@@ -3898,7 +3929,7 @@ body#homepage div#home-slider .homepage-slide-actions .video-know-more-icons {
 
 .course-synopse ul {
   margin-left: 20px;
-  clear:left;
+  clear: left;
 }
 
 .course-synopse li {
@@ -4427,7 +4458,7 @@ div#categories span.top-label {
 
 aside h3 {
   text-align: left;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 0.9rem;
   line-height: normal;
   letter-spacing: 0.36px;
@@ -5426,4 +5457,25 @@ form#banner-search-form input[type="submit"] {
 }
 #homepage-all-courses-section {
   margin-bottom: 3em !important;
+}
+
+/*  course detail pages */
+.entity-branding-container {
+  display: flex;
+  align-items:  center;
+}
+
+#institution .entity-branding-container {
+  position: absolute;
+  z-index: 9000;
+}
+
+#institution .entity-branding-container .secondary-course-logo {
+  margin-top: 25px;
+}
+
+div#home-slider #slider-objects>h1 {
+  display: block;
+  position: absolute;
+  margin-left: 50px;
 }

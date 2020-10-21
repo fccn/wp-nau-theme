@@ -39,9 +39,11 @@ body#institution div#home-slider {
 
 <section id="flexible-content-area">
   <div id="home-slider">        
-    <div id="slider-objects">      
+    <div id="slider-objects">
+    <div class="entity-branding-container">  
       <img class="secondary-course-logo" src="<?=$entity["square_logo"]?>" alt="<?=$entity["sigla"]?>" title="<?=$entity["name"]?>">
       <h1><?=$entity["name"]?></h1> 
+      </div>
     </div>
     <? if ($header == "nau") { ?>
     <img src="assets/img/banner-shape-long-blue.svg" class="slider-mask">  

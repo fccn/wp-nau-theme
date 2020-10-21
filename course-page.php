@@ -61,10 +61,12 @@ endif;
   <!-- starts carrousel of banners -->
   <div id="home-slider" class="course">
     <div id="slider-objects">
-      <a href="<?=$entity["url"]?>">
-        <img id="secondary-course-logo" src="<?=$entity["square_logo"]?>" alt="<?=$entity["sigla"]?>" title="<?=$entity["name"]?>">
-      </a>
-      <h1><?=$course["name"]?></h1>      
+      <div class="entity-branding-container"><?php //this was added as a way to control the way objects are rendered in the course header ?>
+        <a href="<?=$entity["url"]?>">
+          <img id="secondary-course-logo" src="<?=$entity["square_logo"]?>" alt="<?=$entity["sigla"]?>" title="<?=$entity["name"]?>">
+        </a>
+        <h1><?=$course["name"]?></h1>
+      </div>
       
       <ul class="course-quick-meta">      
         <li class="date-status-label"><?=$course["date_status_label"]?></li>
@@ -111,13 +113,16 @@ endif;
 </section>
 
 
-<? if (current_user_can('edit_posts')) { ?>
+<?php 
+/*
+if (current_user_can('edit_posts')) { ?>
    <div class="nau_management">
      <? if ($course["confluence_url"] != "") { ?>
        <a href="<?=$course["confluence_url"]?>"><span class="material-icons">info</span></a>
      <? } ?>
    </div>
 <? } ?>
+*/?>
    
 <!-- starts homepage body content -->
 <div id="body-content">  
