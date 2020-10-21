@@ -2275,6 +2275,10 @@ body#homepage .video-know-more-icons .know-more-icon {
     max-width: 260px;
   }
 
+  .card .course-actions .know-more-icon {
+    left: 20px !important;
+  }
+
   aside {
     margin: 0;
     padding: 0;
