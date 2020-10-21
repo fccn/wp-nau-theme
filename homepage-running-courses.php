@@ -33,10 +33,7 @@
           <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-blue.svg" alt="Course presentation video button"> 
         </a>
         <? } ?>
-        <a class="know-more-icon" href="<?=$course["course_about_url"]?>" title="<?=nau_trans("know more about this course")?>"><?=nau_trans("+Info")?></a> 
-        <?php          
-          print (do_shortcode('[edunext_enroll_button course_id="' . $course["course-id"] . '"]'));
-        ?>
+        <a class="know-more-icon" href="<?=$course["course_about_url"]?>" title="<?=nau_trans("know more about this course")?>"><?=nau_trans("View course")?></a> 
       </div>
     </div>
     <?php } ?>

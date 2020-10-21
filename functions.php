@@ -44,6 +44,13 @@ function nau_trans($message)
     return __($message, "nau-theme");
 }
 
+function version_id() { 
+  if ( WP_DEBUG )
+    return time();
+  if ( WP_NAU_THEME_VERSION != 'WP_NAU_THEME_VERSION' )
+    return WP_NAU_THEME_VERSION;
+  return '1.0.0';
+}
 
 function nau_theme_enqueue_styles() {
     wp_enqueue_script( 'jquery-ui-widget' );
@@ -52,13 +59,13 @@ function nau_theme_enqueue_styles() {
     wp_enqueue_script( 'jquery-ui-autocomplete' );
     wp_enqueue_script( 'jquery-ui-slider' );
 
-    wp_enqueue_style('reset-style', get_template_directory_uri() . '/assets/base_css/reset.css', array(), '1.0.0', 'all');
-    wp_enqueue_style('styles-style', get_template_directory_uri() . '/assets/base_css/base_styles.css', array(), '1.0.0', 'all');
+    wp_enqueue_style('reset-style', get_template_directory_uri() . '/assets/base_css/reset.css', array(), version_id(), 'all');
+    wp_enqueue_style('styles-style', get_template_directory_uri() . '/assets/base_css/base_styles.css', array(), version_id(), 'all');
     
-    wp_enqueue_style('style-style', get_template_directory_uri() . '/style.css', array(), '1.0.0', 'all');
-    wp_enqueue_script('script_functions', get_template_directory_uri() . '/assets/js/functions.js', array(), '1.0.0', true);
-    wp_enqueue_script('menu_slider', get_template_directory_uri() . '/assets/js/menu_slider_and_other_operations.js', array(), '1.0.0', true);
-    wp_enqueue_script('cookie_bar', get_template_directory_uri() . '/assets/js/cookie-bar.js', array('jquery', 'jquery-ui-core'), '1.0.0', true);
+    wp_enqueue_style('style-style', get_template_directory_uri() . '/style.css', array(), version_id(), 'all');
+    wp_enqueue_script('script_functions', get_template_directory_uri() . '/assets/js/functions.js', array(), version_id(), true);
+    wp_enqueue_script('menu_slider', get_template_directory_uri() . '/assets/js/menu_slider_and_other_operations.js', array(), version_id(), true);
+    wp_enqueue_script('cookie_bar', get_template_directory_uri() . '/assets/js/cookie-bar.js', array('jquery', 'jquery-ui-core'), version_id(), true);
     wp_enqueue_style('material-icons', '//fonts.googleapis.com/icon?family=Material+Icons' );
 }
 
@@ -626,32 +633,31 @@ function load_course($coursePage) {
   
   $days_to_start = days_to_today($course["start_date"]);
   $days_to_end = days_to_today($course["end_date"]);
-    
+
+  $days_to_enrollment_start = empty($course["enrollment_start"]) ? null : days_to_today($course["enrollment_start"]);
+  $days_to_enrollment_end =   empty($course["enrollment_end"])   ? null : days_to_today($course["enrollment_end"]);
+
   if ($days_to_start >= 7) {
       $course["date_status_label"] = nau_trans("Scheduled to start");
       $course["date_status_date"] = $course["start_date"];
       $course["date_status_class"] = "date_status_scheduled_to_start";
-  }
-  
-  if ($days_to_start < 7) {
+  } else if ($days_to_start < 7 && $days_to_start > 0) {
       $course["date_status_label"] = nau_trans("About to start");
       $course["date_status_date"] = $course["start_date"];
       $course["date_status_class"] = "date_status_about_to_start";
-  }
-  
-  if (($days_to_start < 0) && ($days_to_end > 7)) {
-      $course["date_status_label"] = nau_trans("Running");
+  } else if ($days_to_start < 0 && $days_to_end > 0 && ( is_null($days_to_enrollment_end) || $days_to_enrollment_end >= 7 ) ) {
+      $course["date_status_label"] = nau_trans("Available");
       $course["date_status_date"] = $course["start_date"];
       $course["date_status_class"] = "date_status_running";
-  }
-  
-  if (($days_to_start < 0) && ($days_to_end < 7)) {
+  } else if ( !is_null( $days_to_enrollment_start ) && $days_to_enrollment_end < 7 && $days_to_enrollment_end > 0 || is_null( $days_to_enrollment_start ) && $days_to_end < 7 && $days_to_end > 0) {
       $course["date_status_label"] = nau_trans("About to end");
       $course["date_status_date"] = $course["end_date"];
       $course["date_status_class"] = "date_status_about_to_end";
-  }
-  
-  if ($days_to_end < 0) {
+  } else if ($days_to_start < 0 && $days_to_end > 0 && !is_null($days_to_enrollment_end) && $days_to_enrollment_end < 7 ) {
+      $course["date_status_label"] = nau_trans("Running");
+      $course["date_status_date"] = $course["enrollment_end"];
+      $course["date_status_class"] = "date_status_finished";
+  } else if ($days_to_end < 0) {
       $course["date_status_label"] = nau_trans("Finished");
       $course["date_status_date"] = $course["end_date"];
       $course["date_status_class"] = "date_status_finished";
