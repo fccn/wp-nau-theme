@@ -1762,7 +1762,6 @@ aside .price-and-certificate-options {
 aside .share-course {
   background: transparent url(../img/share-plus.svg) no-repeat center left;
   text-align: left;
-  padding: 5px 30px 5px 0px !important;
 }
 aside .share-course:hover {
   background: transparent url(../img/share-plus-hover.svg) no-repeat center left;
@@ -5446,3 +5445,9 @@ div#home-slider #slider-objects>h1 {
   position: absolute;
   margin-left: 50px;
 }
+
+div.nau_button a {
+  padding: 0;
+}
+
+
