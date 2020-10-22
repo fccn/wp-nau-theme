@@ -197,16 +197,8 @@ if (current_user_can('edit_posts')) { ?>
         echo nau_generate_custom_value_meta_html(get_custom_value("meta"), $course);
         ?>
 
-      <li class="share-and-start-course">
-          <ul>              
-              <li class="share-course"><a href="" id="facebook-share-btt" rel="nofollow" target="_blank" class=""><?=nau_trans("Share")?>  </a></li>
-              <li class="start-course">
-              <!-- HAS TO BE REMOVED -->  
-              <div class="ednx-enroll-button-js" style="" data-course-id="course-v1:INA+RGPD-CA+2019_T2" data-settings="EdnxEnrollButton4"><div class="nau_button"><a class="" href="https://lms.nau.edu.pt/register?course_id=course-v1:INA+RGPD-CA+2019_T2&amp;enrollment_action=enroll">Inscrever</a></div></div>
-                <!--<?php nau_enroll_button($course); ?>-->
-              </li>
-          </ul>
-      </li>
+        <li class="course-details share-course"><a href="" id="facebook-share-btt" rel="nofollow" target="_blank" class=""><?=nau_trans("Share")?>  </a></li>
+        <li class="start-course"><?php nau_enroll_button($course); ?></li>
     </ul>
   </aside>
   <!-- ends aside course info --> 

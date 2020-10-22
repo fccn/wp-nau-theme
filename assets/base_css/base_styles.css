@@ -1762,7 +1762,6 @@ aside .price-and-certificate-options {
 aside .share-course {
   background: transparent url(../img/share-plus.svg) no-repeat center left;
   text-align: left;
-  padding: 5px 30px 5px 0px !important;
 }
 aside .share-course:hover {
   background: transparent url(../img/share-plus-hover.svg) no-repeat center left;
@@ -2657,20 +2656,21 @@ div.nau_disabled {
   margin-top: 20px;
   border: none;
   background: none;
-  text-align: right;
+  text-align: center;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   font-size: 12px;
   line-height: 72px;
-  letter-spacing: 0.24px;
   text-transform: uppercase;
-  line-height: 15px;
+  letter-spacing: 0.24px;
+  line-height: 34px;
 }
 
 div.nau_disabled a {
   color: black;
   pointer-events: none;
   font-size: 11px;
+  padding: 0;
 }
 
 body#secondary article .highlighted-courses ul {
@@ -3258,10 +3258,6 @@ section#highlighted-courses {
   -moz-border-radius: 99em;
   border-radius: 0;
   border: none;
-}
-
-div.nau_disabled {
-  margin-top: 0px;
 }
 
 div.nau_disabled a {
@@ -5445,3 +5441,9 @@ div#home-slider #slider-objects>h1 {
   position: absolute;
   margin-left: 50px;
 }
+
+div.nau_button a {
+  padding: 0;
+}
+
+

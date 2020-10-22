@@ -21,11 +21,7 @@
         echo nau_generate_custom_value_meta_html(get_custom_value("meta"), $entity);
         ?>
 
-      <li class="share-and-start-course">
-        <ul>
-          <li class="share-course"><a href="" id="facebook-share-btt" rel="nofollow" target="_blank" class=""><?=nau_trans("Share")?>  </a></li>                    
-        </ul>
-      </li>
+      <li class="course-details share-course"><a href="" id="facebook-share-btt" rel="nofollow" target="_blank" class=""><?=nau_trans("Share")?>  </a></li>                    
     
     </ul>
   </aside>
