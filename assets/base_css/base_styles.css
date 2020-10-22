@@ -2657,20 +2657,21 @@ div.nau_disabled {
   margin-top: 20px;
   border: none;
   background: none;
-  text-align: right;
+  text-align: center;
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   font-size: 12px;
   line-height: 72px;
-  letter-spacing: 0.24px;
   text-transform: uppercase;
-  line-height: 15px;
+  letter-spacing: 0.24px;
+  line-height: 34px;
 }
 
 div.nau_disabled a {
   color: black;
   pointer-events: none;
   font-size: 11px;
+  padding: 0;
 }
 
 body#secondary article .highlighted-courses ul {
@@ -3258,10 +3259,6 @@ section#highlighted-courses {
   -moz-border-radius: 99em;
   border-radius: 0;
   border: none;
-}
-
-div.nau_disabled {
-  margin-top: 0px;
 }
 
 div.nau_disabled a {
