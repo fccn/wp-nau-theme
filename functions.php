@@ -2,8 +2,6 @@
 
 $stage_mode = (get_option('nau_environment') == "stage"); 
 
-define("NAU_THEME_DEBUG", $stage_mode );
-
 require_once('inc/acf-conf.php');
 require_once('inc/admin.php');
 
@@ -25,7 +23,7 @@ add_action('after_setup_theme', 'nau_load_theme_textdomain' );
 
 function nau_trans($message) 
 {    
-    if (NAU_THEME_DEBUG == true) {
+    if (WP_DEBUG == true) {
         $filename = get_template_directory() . '/languages/strings.php';
         $lines = file($filename);
         $found = false;
