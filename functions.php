@@ -529,9 +529,23 @@ function days_to_today($date) {
   return $days;  
 }
 
+function load_analytics() {
+  $course_id_simple = load_course_id_simple( $page );
+  if ( $course_id_simple != null ) {
+    $course_id_parts = explode("+", $course_id_simple);
+    if (count($course_id_parts) == 3) {
+      return $course_id_parts;
+    }
+  } else  {
+    $entity = load_entity( $page );
+    if ( $entity != null ) {
+      return array ($entity['sigla'], '', '');
+    }
+  }
+  return array ("", "", "");
+}
 
-function load_course($coursePage) {
-
+function load_course_id($coursePage) {
   global $stage_mode;
 
   if (gettype($coursePage) == "array") {
@@ -544,11 +558,25 @@ function load_course($coursePage) {
   if ($course_id == "" || $stage_mode) {
       $course_id = get_field('nau_lms_course_id', $coursePage->ID);
   }
+  return $course_id;  
+}
+
+function load_course_id_simple($coursePage) {
+  $course_id = load_course_id( $coursePage );
+
   $course_id_simple = explode(":", $course_id);
   if (count($course_id_simple)>1) {
-    $course_id_simple = $course_id_simple[1];
+    return $course_id_simple[1];
+  } else {
+    return null;
   }
-                      
+}
+
+
+function load_course($coursePage) {
+  $course_id = load_course_id( $coursePage );
+  $course_id_simple = load_course_id_simple( $coursePage );
+
   //$image = get_field("nau_lms_course_media_course_image", $coursePage->ID);
   //$image = get_field("nau_lms_course_media_image_raw", $coursePage->ID);  
   //if ($image == "") {
