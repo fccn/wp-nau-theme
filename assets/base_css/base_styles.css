@@ -1,4 +1,10 @@
-@charset "utf-8";
+/*
+  breakpoint-small: 576px;  //Mobile phones
+  breakpoint-medium: 768px; //Mobilephones portrait and Tablets
+  breakpoint-large: 992px; //old resolutions and tablets
+  breakpoint-xlarge: 1200px; //PC
+*/
+
 /* CSS Document */
 * {
   margin: 0;
