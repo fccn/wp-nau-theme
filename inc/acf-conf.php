@@ -1,6 +1,6 @@
 <?php
 
-if (NAU_THEME_DEBUG == true) {
+if (WP_DEBUG == true) {
 
   /* Ativar para Fazer Debug aos Campos */
   add_filter('acf/settings/remove_wp_meta_box', '__return_false');

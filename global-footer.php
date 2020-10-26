@@ -108,7 +108,7 @@ class NAU_Walker_Footer_Nav_Menu extends Walker_Nav_Menu {
     </div>
 
 <? 
-  if (current_user_can('administrator') && (NAU_THEME_DEBUG == true)) {
+  if (current_user_can('administrator') && (WP_DEBUG == true)) {
       ?>
       <div class="debug_messages">
           <b>Course</b>

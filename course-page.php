@@ -197,12 +197,8 @@ if (current_user_can('edit_posts')) { ?>
         echo nau_generate_custom_value_meta_html(get_custom_value("meta"), $course);
         ?>
 
-      <li class="share-and-start-course">
-          <ul>              
-              <li class="share-course"><a href="" id="facebook-share-btt" rel="nofollow" target="_blank" class=""><?=nau_trans("Share")?>  </a></li>
-              <li class="start-course"><?php nau_enroll_button($course); ?></li>
-          </ul>
-      </li>
+        <li class="course-details share-course"><a href="" id="facebook-share-btt" rel="nofollow" target="_blank" class=""><?=nau_trans("Share")?>  </a></li>
+        <li class="start-course"><?php nau_enroll_button($course); ?></li>
     </ul>
   </aside>
   <!-- ends aside course info --> 

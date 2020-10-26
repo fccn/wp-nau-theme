@@ -22,6 +22,7 @@
     
     
     <? $gtag = get_option('nau_google_gtag') ?>
+    <? $analytics = load_analytics() ?>
     
     <? if ($gtag != "") {?>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -30,7 +31,10 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
+      gtag('set', {'dimension1': '<?= $analytics[0] ?>'}); 
+      gtag('set', {'dimension2': '<?= $analytics[1] ?>'}); 
+      gtag('set', {'dimension3': '<?= $analytics[2] ?>'}); 
+      gtag('set', {'dimension4': '<?= load_course_id($page) ?>'}); 
       gtag('config', '<?=$gtag?>');
     </script>
     <? } ?>

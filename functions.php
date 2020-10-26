@@ -2,8 +2,6 @@
 
 $stage_mode = (get_option('nau_environment') == "stage"); 
 
-define("NAU_THEME_DEBUG", $stage_mode );
-
 require_once('inc/acf-conf.php');
 require_once('inc/admin.php');
 
@@ -25,7 +23,7 @@ add_action('after_setup_theme', 'nau_load_theme_textdomain' );
 
 function nau_trans($message) 
 {    
-    if (NAU_THEME_DEBUG == true) {
+    if (WP_DEBUG == true) {
         $filename = get_template_directory() . '/languages/strings.php';
         $lines = file($filename);
         $found = false;
@@ -531,9 +529,23 @@ function days_to_today($date) {
   return $days;  
 }
 
+function load_analytics() {
+  $course_id_simple = load_course_id_simple( $page );
+  if ( $course_id_simple != null ) {
+    $course_id_parts = explode("+", $course_id_simple);
+    if (count($course_id_parts) == 3) {
+      return $course_id_parts;
+    }
+  } else  {
+    $entity = load_entity( $page );
+    if ( $entity != null ) {
+      return array ($entity['sigla'], '', '');
+    }
+  }
+  return array ("", "", "");
+}
 
-function load_course($coursePage) {
-
+function load_course_id($coursePage) {
   global $stage_mode;
 
   if (gettype($coursePage) == "array") {
@@ -546,11 +558,25 @@ function load_course($coursePage) {
   if ($course_id == "" || $stage_mode) {
       $course_id = get_field('nau_lms_course_id', $coursePage->ID);
   }
+  return $course_id;  
+}
+
+function load_course_id_simple($coursePage) {
+  $course_id = load_course_id( $coursePage );
+
   $course_id_simple = explode(":", $course_id);
   if (count($course_id_simple)>1) {
-    $course_id_simple = $course_id_simple[1];
+    return $course_id_simple[1];
+  } else {
+    return null;
   }
-                      
+}
+
+
+function load_course($coursePage) {
+  $course_id = load_course_id( $coursePage );
+  $course_id_simple = load_course_id_simple( $coursePage );
+
   //$image = get_field("nau_lms_course_media_course_image", $coursePage->ID);
   //$image = get_field("nau_lms_course_media_image_raw", $coursePage->ID);  
   //if ($image == "") {
