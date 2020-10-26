@@ -1,4 +1,10 @@
-@charset "utf-8";
+/*
+  breakpoint-small: 576px;  //Mobile phones
+  breakpoint-medium: 768px; //Mobilephones portrait and Tablets
+  breakpoint-large: 992px; //old resolutions and tablets
+  breakpoint-xlarge: 1200px; //PC
+*/
+
 /* CSS Document */
 * {
   margin: 0;
@@ -2254,10 +2260,29 @@ body#homepage .video-know-more-icons .know-more-icon {
   }
 }
 
-@media (max-width: 450px) {
+@media (min-width: 576px) and (max-width: 768px) {
+  .secondary-pages div#body-content,
+  .entity div#home-content {
+    flex-direction: column;
+  }
+
+  #secondary.course #main-container div#body-content {
+    padding-right: 50px !important;
+  }
+
+  .nau-waves img {
+    display: none !important;
+  }
+}
+
+@media (max-width: 576px) {
   #home-content {
     padding-left: 1%;
     padding-right: 1%;
+  }
+
+  .nau-waves img {
+    display: none !important;
   }
 
   .secondary-pages div#body-content,
@@ -2319,7 +2344,8 @@ body#homepage .video-know-more-icons .know-more-icon {
     font-size: 20px;
   }
 
-  #secondary-course-logo, .secondary-course-logo {
+  #secondary-course-logo,
+  .secondary-course-logo {
     width: 70px !important;
     height: 70px !important;
   }
@@ -5424,7 +5450,7 @@ form#banner-search-form input[type="submit"] {
 /*  course detail pages */
 .entity-branding-container {
   display: flex;
-  align-items:  center;
+  align-items: center;
 }
 
 #institution .entity-branding-container {
@@ -5436,7 +5462,7 @@ form#banner-search-form input[type="submit"] {
   margin-top: 25px;
 }
 
-div#home-slider #slider-objects>h1 {
+div#home-slider #slider-objects > h1 {
   display: block;
   position: absolute;
   margin-left: 50px;
@@ -5446,4 +5472,12 @@ div.nau_button a {
   padding: 0;
 }
 
-
+.nau-waves {
+  position: absolute;
+  top: -90px;
+  left: 0px;
+  z-index: 500;
+  pointer-events: none;
+  filter: opacity(0.6);
+  z-index: 1000;
+}

@@ -41,7 +41,7 @@
         <div 
           data-scale="0" 
           title="Mask" 
-          style="position:absolute;top:-90px;left:0px;z-index:500;pointer-events: none; filter: opacity(0.7); z-index:1000;">
+          class="nau-waves">
           <img src="assets/img/waves_all.svg" />
         </div>
         
