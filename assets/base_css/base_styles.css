@@ -2270,7 +2270,7 @@ body#homepage .video-know-more-icons .know-more-icon {
     padding-right: 50px !important;
   }
 
-  .nau-waves img{
+  .nau-waves img {
     display: none !important;
   }
 }
@@ -2279,6 +2279,10 @@ body#homepage .video-know-more-icons .know-more-icon {
   #home-content {
     padding-left: 1%;
     padding-right: 1%;
+  }
+
+  .nau-waves img {
+    display: none !important;
   }
 
   .secondary-pages div#body-content,
