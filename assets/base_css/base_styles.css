@@ -2763,7 +2763,6 @@ body#secondary div#body-content section#highlighted-courses div.courses-wrap ul.
 }
 
 body#secondary div#body-content section#highlighted-courses div.courses-wrap ul.card a.image img.course-image {
-  object-fit: cover;
   width: 100%;
   height: auto;
   display: block;
@@ -4189,7 +4188,9 @@ a img:hover {
 
 .card .card-image {
   background-color: #f9f9f9;
-  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .card .card-image .course-image {

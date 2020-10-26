@@ -31,8 +31,8 @@
     ?>
       <div class="card gallery-cell <?=$course["card_width"]?>-card-width">
         <a href="<?=$course["course_about_url"]?>">
-          <div class="card-image"> 
-            <img class="course-image <?=$course["card_image_fit"]?>" src="<?=$course["image"]?>" alt="<?=$course["name"]?>">
+          <div class="card-image" style="background-image: url(<?=$course["image"]?>)"> 
+            <?php /*<img class="course-image <?=$course["card_image_fit"]?>" src="<?=$course["image"]?>" alt="<?=$course["name"]?>"> */?>
             <img class="square-logo" src="<?=$course["entity"]["square_logo"]?>" alt="<?=$entity->post_title?>">
           </div>
           <div class="card-content">
