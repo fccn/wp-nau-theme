@@ -6,9 +6,11 @@ https://www.blogcyberini.com/2018/05/botao-para-compartilhamento-de-conteudo-fac
 // Load lazilly the DOM
 document.addEventListener("DOMContentLoaded", function() {            
     // change botton URL
-    const facebookShareButton = document.getElementById("facebook-share-btt");
-    if (facebookShareButton != null) {
-    	facebookShareButton.href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(window.location.href);
+    const shareButton = document.getElementById("share-button");
+    if (shareButton != null) {
+    	shareButton.setAttribute("rel", "nofollow");
+    	shareButton.setAttribute("target", "_blank");
+    	shareButton.href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(window.location.href);
     }
 }, false);
 </script>
