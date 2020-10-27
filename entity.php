@@ -92,7 +92,7 @@ body#institution div#home-slider {
 <!-- ends homepage body content --> 
 
 <?php
-  get_template_part( "global", "footer" );
+  get_template_part( "partials/global", "footer" );
 ?>
 
 <!-- starts homepage footer -->

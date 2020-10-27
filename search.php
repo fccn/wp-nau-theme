@@ -197,7 +197,7 @@
   
 
 <?php
-  get_template_part( "global", "footer" );
+  get_template_part( "partials/global", "footer" );
 ?>
 <?php get_footer(); ?>
 

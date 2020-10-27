@@ -211,7 +211,7 @@ if (current_user_can('edit_posts')) { ?>
 <!-- ends homepage body content --> 
 
 <?php
-  get_template_part( "global", "footer" );
+  get_template_part( "partials/global", "footer" );
 ?>
 
 <!-- starts homepage footer -->
