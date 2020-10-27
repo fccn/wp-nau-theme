@@ -11,7 +11,7 @@
 ?>
 <div id="body-content"> 
   <article>
-    <?= do_shortcode(get_post_field('post_content', $pageID)) ?>
+    <?php echo  do_shortcode(get_post_field('post_content', $pageID)) ?>
   </article>
 </div>
 

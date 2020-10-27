@@ -23,7 +23,7 @@
         $item++;
     };
       
-    if ($item > 1) {
+    if ($item > 1):
         
 ?>
 
@@ -88,6 +88,6 @@
 
 <?
 
-    } // There are Itens!
+    endif;// There are Itens!
 
 ?>

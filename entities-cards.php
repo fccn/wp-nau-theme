@@ -9,13 +9,13 @@
   <!-- starts highlighted courses -->
   <section id="highlighted-courses" class="main-gallery">   
   
-   <? if ($list_title != "") { ?>
-     <h2><?=$title[0]?> <span class="normal-font-weight"><?=$title[1]?></span></h2>   
-   <? } ?> 
+   <?php if ($list_title != ""): ?>
+     <h2><?php echo $title[0]?> <span class="normal-font-weight"><?php echo $title[1]?></span></h2>   
+   <? endif; ?> 
     
     <div class="entities-wrap">    
     
-    <? foreach ($entities as $entity) { 
+    <?php foreach ($entities as $entity):
       
       $logo = get_field('square-logo', $entity->ID);
       if ($logo == "") {
@@ -39,22 +39,22 @@
     
       <div class="card gallery-cell">
           <div class="top"> 
-            <a href="<?=$entity["url"]?>" class="image">
-              <img class="entity-image" src="<?=$entity["image"]?>" alt="<?=$entity["name"]?>">
+            <a href="<?php echo $entity["url"]?>" class="image">
+              <img class="entity-image" src="<?php echo $entity["image"]?>" alt="<?php echo $entity["name"]?>">
             </a>
-            <a href="<?=$entity["url"]?>" title="<?=$entity["name"]?>"  class="logo">
-              <img class="square-logo" src="<?=$entity["logo"]?>" alt="<?=$entity["name"]?>">
+            <a href="<?php echo $entity["url"]?>" title="<?php echo $entity["name"]?>"  class="logo">
+              <img class="square-logo" src="<?php echo $entity["logo"]?>" alt="<?php echo $entity["name"]?>">
             </a>
           </div>      
           <div class="card-content"> 
-            <h3 class="entity-long-name"><?=$entity["name"]?></h3>
+            <h3 class="entity-long-name"><?php echo $entity["name"]?></h3>
           </div>
           <div class="card-action"> 
-            <a class="know-more-icon" href="<?=$entity["url"]?>" title="<?=nau_trans("Learn more about this entity")?>"><?=nau_trans("View entity")?></a>         
+            <a class="know-more-icon" href="<?php echo $entity["url"]?>" title="<?php echo nau_trans("Learn more about this entity")?>"><?php echo nau_trans("View entity")?></a>         
           </div>  
       </div>
       
-    <? } ?>
+    <? endforeach; ?>
     
     </div>
   </section>    

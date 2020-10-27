@@ -72,48 +72,41 @@
 
 
 <div id="text-content"> 
-<? if ($excerpt != "") { ?> 
+<? if ($excerpt != ""): ?> 
   <div class="description">
 <?
   print($excerpt);
 ?>
   </div>
-<? } ?>  
+<? endif; ?>  
 
-<? if (mode=="list") { ?>
+<? if (mode=="list"):
 
-<?
   while( have_posts() ): the_post(); /* start main loop */ ?>
 
   <article class="news_article">
     <p class="tags">      
-      <?=nau_list_tags()?>
-      <?=nau_list_categories()?>
+      <?php echo nau_list_tags()?>
+      <?php echo nau_list_categories()?>
     </p>
-    <h2><a href="<?=get_permalink()?>"><?php the_title(); ?></a></h2>
-    <a class="news_image_link" href="<?=get_permalink()?>">
-      <img class="news_image" src="<?=get_the_post_thumbnail_url()?>">
+    <h2><a href="<?php echo get_permalink()?>"><?php the_title(); ?></a></h2>
+    <a class="news_image_link" href="<?php echo get_permalink()?>">
+      <img class="news_image" src="<?php echo get_the_post_thumbnail_url()?>">
     </a>
     <p class="news_date">
-      <?=get_the_date()?>
+      <?php echo get_the_date()?>
     </p>    
     <p class="news_content">
-      <?=do_shortcode(the_excerpt())?>
+      <?php echo do_shortcode(the_excerpt())?>
     </p>
-    <a class="news_image_button" href="<?=get_permalink()?>">
-      <span class="button"><?=nau_trans("Read More")?></span>
+    <a class="news_image_button" href="<?php echo get_permalink()?>">
+      <span class="button"><?php echo nau_trans("Read More")?></span>
     </a>
   </article>        
 
-<?
-        
+<?php      
   endwhile; /* End the main loop */ 
- 
-   
-?>
-
-
-<? } ?>
+   endif; ?>
 
 <? 
   if ($mode=="list_course_card_by_slug") { 

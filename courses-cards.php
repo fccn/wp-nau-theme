@@ -14,52 +14,52 @@
   <!-- starts highlighted courses -->
   <section id="highlighted-courses" class="main-gallery">   
     <h2>
-      <?=$title[0]?> <span class="normal-font-weight"><?=$title[1]?></span>
+      <?php echo $title[0]?> <span class="normal-font-weight"><?php echo $title[1]?></span>
       <span class="heading-blue-bar">|</span>
-      <a href="<?=$all_courses_url?>" title="Explorar todos os cursos">
-        <span class="normal-font-weight explore-all-courses-font"><?=nau_trans("Explore all courses")?></span>
+      <a href="<?php echo $all_courses_url?>" title="Explorar todos os cursos">
+        <span class="normal-font-weight explore-all-courses-font"><?php echo nau_trans("Explore all courses")?></span>
         <span class="explore-other-courses">
       </a>
     </h2>
 
     <div class="courses-wrap">    
     
-    <? foreach ($courses as $coursePage) { 
+    <? foreach ($courses as $coursePage):
           
       $course = load_course($coursePage);
     
     ?>
-      <div class="card gallery-cell <?=$course["card_width"]?>-card-width">
-        <a href="<?=$course["course_about_url"]?>">
+      <div class="card gallery-cell <?php echo $course["card_width"]?>-card-width">
+        <a href="<?php echo $course["course_about_url"]?>">
           <div class="card-image"> 
-            <img class="course-image <?=$course["card_image_fit"]?>" src="<?=$course["image"]?>" alt="<?=$course["name"]?>">
-            <img class="square-logo" src="<?=$course["entity"]["square_logo"]?>" alt="<?=$entity->post_title?>">
+            <img class="course-image <?php echo $course["card_image_fit"]?>" src="<?php echo $course["image"]?>" alt="<?php echo $course["name"]?>">
+            <img class="square-logo" src="<?php echo $course["entity"]["square_logo"]?>" alt="<?php echo $entity->post_title?>">
           </div>
           <div class="card-content">
-            <h3><?=$course["name"]?><br>
-              <span class="aside-institution"><?=$course["sigla"]?></span>
+            <h3><?php echo $course["name"]?><br>
+              <span class="aside-institution"><?php echo $course["sigla"]?></span>
             </h3>
             <div class="certificate float-right">
-              <span><?=$course["price"]?></span>
-              <div class="certificate-badge <?=$course["certificate_type"]?>"></div>            
+              <span><?php echo $course["price"]?></span>
+              <div class="certificate-badge <?php echo $course["certificate_type"]?>"></div>            
             </div>
-            <div class="date-status-label float-left <?=$course["date_status_class"]?>"><?=$course["date_status_label"]?></div>
-            <div class="pace-mode float-right"><?=$course["self_paced_label"]?></div>
-            <div class="invitation-mode float-right"><?=$course["invitation_only_label"]?></div>
-            <div class="number-of-participants float-right"><?=$course["participants"]?> <?=nau_trans("Participants")?></div>
+            <div class="date-status-label float-left <?php echo $course["date_status_class"]?>"><?php echo $course["date_status_label"]?></div>
+            <div class="pace-mode float-right"><?php echo $course["self_paced_label"]?></div>
+            <div class="invitation-mode float-right"><?php echo $course["invitation_only_label"]?></div>
+            <div class="number-of-participants float-right"><?php echo $course["participants"]?> <?php echo nau_trans("Participants")?></div>
           </div>
           <div class="course-actions"> 
-            <? if ($course["video"]) { ?>
-            <a class="see-video-icon" onClick='openYoutubeVideoIFrame(this);' data-vars='{ "id" : "<?=$course["video"]?>" }' title="<?=nau_trans("See video")?>">
-              <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-white.svg" alt="<?=nau_trans("See a video about this course")?>">           
+            <?php if ($course["video"]): ?>
+            <a class="see-video-icon" onClick='openYoutubeVideoIFrame(this);' data-vars='{ "id" : "<?php echo $course["video"]?>" }' title="<?php echo nau_trans("See video")?>">
+              <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-white.svg" alt="<?php echo nau_trans("See a video about this course")?>">           
             </a>
-            <? } ?>
-            <a class="know-more-icon" href="<?=$course["course_about_url"]?>" title="<?=nau_trans("Learn more about this course")?> <?=$course["name"]?>"><?=nau_trans("View course")?></a> 
+            <? endif; ?>
+            <a class="know-more-icon" href="<?php echo $course["course_about_url"]?>" title="<?php echo nau_trans("Learn more about this course")?> <?php echo $course["name"]?>"><?php echo nau_trans("View course")?></a> 
           </div>
         </a>
       </div>
       
-    <? } ?>
+            <? endforeach; ?>
     
     </div>
   </section>    

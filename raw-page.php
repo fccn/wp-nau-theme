@@ -9,7 +9,7 @@
   
   include "inc/simple_header.php";
 ?>
-<?= do_shortcode(get_post_field('post_content', $pageID)) ?>
+<?php echo  do_shortcode(get_post_field('post_content', $pageID)) ?>
 
 
 <!-- ends homepage body content --> 
