@@ -5470,6 +5470,7 @@ div#home-slider #slider-objects > h1 {
 
 div.nau_button a {
   padding: 0;
+  display: block;
 }
 
 .nau-waves {
