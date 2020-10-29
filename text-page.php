@@ -11,11 +11,11 @@
 ?>
 <div id="body-content"> 
   <article>
-    <?= do_shortcode(get_post_field('post_content', $pageID)) ?>
+    <?php echo  do_shortcode(get_post_field('post_content', $pageID)) ?>
   </article>
 </div>
 
 <?php
-  get_template_part( "global", "footer" );
+  get_template_part( "partials/global", "footer" );
   get_footer(); 
 ?>

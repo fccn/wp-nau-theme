@@ -48,7 +48,7 @@ L351.2,579.3"></path>
       if ( have_posts() ) {
          while ( have_posts() ) {
            the_post();
-           get_template_part( 'content', 'search' );
+           get_template_part( 'partial/content', 'search' );
          }
       } else {
         get_template_part( 'no-results', 'search' );
@@ -59,6 +59,6 @@ L351.2,579.3"></path>
 
 
 <?php
-  get_template_part( "global", "footer" );
+  get_template_part( "partials/global", "footer" );
 ?>
 <?php get_footer(); 

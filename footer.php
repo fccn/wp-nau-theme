@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 }, false);
 </script>
-<? include "inc/cookie-bar.php"; ?>
+<?php include "inc/cookie-bar.php"; ?>
 <?php wp_footer(); ?>
 </body>
 </html>

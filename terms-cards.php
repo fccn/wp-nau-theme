@@ -11,28 +11,28 @@
   
   <!-- starts highlighted courses -->
   <section id="highlighted-courses" class="main-gallery">   
-   <h2><?=$title[0]?> <span class="normal-font-weight"><?=$title[1]?></span></h2>       
+   <h2><?php echo $title[0]?> <span class="normal-font-weight"><?php echo $title[1]?></span></h2>       
     <div class="gallery term-gallery">
     
-    <? foreach ($terms as $termObj) { 
+    <? foreach ($terms as $termObj):
       $term = load_term($termObj);
     ?>
     
       <div class="card term">
         <div class="image"> 
-          <a href="<?=$term['url']?>" class="image image-link">
-            <img class="card-image" src="<?=$term['image']?>" alt="<?=$term['name']?>">
+          <a href="<?php echo $term['url']?>" class="image image-link">
+            <img class="card-image" src="<?php echo $term['image']?>" alt="<?php echo $term['name']?>">
           </a>          
         </div>
         <div class="title">
-          <h3><?=$term["name"]?>
+          <h3><?php echo $term["name"]?>
         </div>
         <div class="excerpt">
-          <p><?=$term["excerpt"]?>
+          <p><?php echo $term["excerpt"]?>
         </div>
       </div>
       
-    <? } ?>
+    <? endforeach; ?>
     
     </div>
   </section>    

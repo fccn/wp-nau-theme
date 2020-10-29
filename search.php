@@ -109,7 +109,7 @@
   
   function check_box($name, $text) {
       ?>
-      <label class="search-container"><?=$text?><input type="checkbox" class="search-checkbox" name="<?=$name?>" <?=form_check($name)?>><span class="checkmark"></span></label>
+      <label class="search-container"><?php echo $text?><input type="checkbox" class="search-checkbox" name="<?php echo $name?>" <?php echo form_check($name)?>><span class="checkmark"></span></label>
       <?
   }
 
@@ -143,14 +143,14 @@
 
     
     <h2 class="search-title">
-      <?=nau_trans("Search results")?>
+      <?php echo nau_trans("Search results")?>
     </h2>
 
     <div class="result-set">
     <?php    
     
       foreach($list_posts as $post) {
-        get_template_part( 'content', 'search' );
+        get_template_part( 'partial/content', 'search' );
       }
     ?>
     </div>
@@ -159,7 +159,7 @@
   <aside>
 
     <h2 class="search-tool">
-      <?=nau_trans("Search tool")?>
+      <?php echo nau_trans("Search tool")?>
     </h2>
     <form role="search" method="post" class="search-form" action="<?php echo home_url( '/' ); ?>">
         <div id="query">
@@ -182,10 +182,10 @@
         </div>
     </form>
     
-    <h3><?=nau_trans("Tematicas")?></h3>
+    <h3><?php echo nau_trans("Tematicas")?></h3>
     <div class="search-bubbles">
-        <?=nau_list_tags()?>    
-        <?=nau_list_categories()?>
+        <?php echo nau_list_tags()?>    
+        <?php echo nau_list_categories()?>
     </div>
     
   </aside>
@@ -197,7 +197,7 @@
   
 
 <?php
-  get_template_part( "global", "footer" );
+  get_template_part( "partials/global", "footer" );
 ?>
 <?php get_footer(); ?>
 
