@@ -150,7 +150,7 @@
     <?php    
     
       foreach($list_posts as $post) {
-        get_template_part( 'partial/content', 'search' );
+        get_template_part( 'partials/content', 'search' );
       }
     ?>
     </div>

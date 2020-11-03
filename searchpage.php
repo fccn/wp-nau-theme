@@ -48,7 +48,7 @@ L351.2,579.3"></path>
       if ( have_posts() ) {
          while ( have_posts() ) {
            the_post();
-           get_template_part( 'partial/content', 'search' );
+           get_template_part( 'partials/content', 'search' );
          }
       } else {
         get_template_part( 'no-results', 'search' );
