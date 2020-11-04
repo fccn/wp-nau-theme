@@ -1752,6 +1752,7 @@ aside .course-related-links {
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 6px #00000029;
   opacity: 0.8;
+  list-style-type: none;
 }
 aside .course-details {
   width: 100%;
@@ -4364,6 +4365,7 @@ ul#entities-nau-logos {
   border: 0;
   box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.1);
   border-radius: 0.5em;
+  list-style-type: none;
 }
 
 h2:before {
@@ -4803,11 +4805,6 @@ div.nau_disabled {
 
 div.action-know-more {
   left: 100px;
-}
-ul#entities-nau-logos {
-  border: 0;
-  box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.1);
-  border-radius: 0.5em;
 }
 
 h2:before {
