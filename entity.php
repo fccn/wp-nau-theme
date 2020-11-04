@@ -80,13 +80,13 @@ body#institution div#home-slider {
           if ($slug != "") {
             $course_list_title = nau_trans("Courses|running");
             $courses = nau_entity_courses($post);
-            get_template_part( "courses", "cards" );
+            get_template_part( "partials/courses", "cards" );
           }
         ?>
       </div>        
     </section>
         <?php
-          include("entity-aside.php");
+          include("partials/entity-aside.php");
         ?>
         
     

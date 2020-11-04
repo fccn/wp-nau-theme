@@ -173,7 +173,7 @@ function nau_get_un_courses($un_id) {
 function nau_un_courses_gallery($un_id) {
    global $courses;
    $courses = nau_get_un_courses($un_id);   
-   get_template_part( "courses", "cards" );
+   get_template_part( "partials/courses", "cards" );
 }
 
 
@@ -267,7 +267,7 @@ function nau_courses_gallery($atts = array()) {
    global $courses;
    $courses = nau_get_posts("curso", $atts);
    ob_start();
-   get_template_part( "courses", "cards" );
+   get_template_part( "partials/courses", "cards" );
    $value = ob_get_contents();
    ob_end_clean();
 
@@ -279,7 +279,7 @@ add_shortcode('nau_courses_gallery', 'nau_courses_gallery');
 
 function nau_theme_gallery() {       
    ob_start();
-   get_template_part( "terms", "cards" );
+   get_template_part( "partials/terms", "cards" );
    $value = ob_get_contents();
    ob_end_clean();
 
@@ -422,7 +422,7 @@ function nau_entities_gallery($atts = array()) {
    global $entities;
    $entities = nau_get_posts("entidade", $atts);
    ob_start();
-   get_template_part( "entities", "cards" );
+   get_template_part( "partials/entities", "cards" );
    $value = ob_get_contents();
    ob_end_clean();
 
