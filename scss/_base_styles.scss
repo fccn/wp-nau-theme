@@ -1894,170 +1894,6 @@ aside .share-and-start-course ul li a {
   padding-left: 0 !important;
 }*/
 
-footer {
-  background-color: #d8d8d8 !important;
-  display: flow-root;
-}
-section#footer-links h3 {
-  height: 0 !important;
-}
-footer #footer-links div {
-  padding: /*22px 0px 37px 0px*/ 40px 0;
-  background-color: #eeeeee;
-  height: auto;
-  float: left;
-  clear: both;
-  width: 100%;
-}
-footer #footer-links #social-media {
-  position: relative;
-  width: auto;
-  padding-left: 50px;
-}
-footer #footer-links #social-media li {
-  padding-left: /*28px*/ 7%;
-  /*float: left;*/
-}
-
-footer #footer-links #social-media li:nth-child(1),
-footer #footer-links #social-media li:nth-child(2) {
-  padding-left: 0px;
-  float: none;
-}
-footer #footer-links #social-media li:nth-child(7) {
-  padding-left: 0px;
-  clear: both;
-  margin-top: 41px;
-}
-footer #entities-quick-links li:nth-child(1) a img {
-  width: 192px;
-  margin-left: 50px;
-}
-footer #entities-quick-links li:nth-child(3) a {
-  padding: 0;
-}
-footer #entities-quick-links li:nth-child(3) a img {
-  float: right;
-  display: block;
-  margin-right: 50px;
-  max-width: auto;
-}
-footer #footer-links ul {
-  margin: 0 50px;
-  height: auto;
-  list-style-type: none;
-}
-footer #footer-links li.footer-links-structure {
-  list-style-type: none;
-  width: 25%;
-  float: left;
-}
-footer #footer-links ul li {
-  display: block;
-  float: none;
-  list-style-type: none;
-}
-footer #footer-links ul {
-  margin: 0 0px;
-  height: auto;
-  width: 100%;
-  float: none;
-}
-footer #footer-links li.footer-links-structure {
-  list-style-type: none;
-  width: 25%;
-  display: grid;
-}
-footer #footer-links li.footer-links-structure ul li a {
-  list-style-type: none;
-  width: max-content;
-}
-footer #entities-quick-links {
-  height: auto;
-}
-footer #footer-links ul li:first-child {
-  text-align: left;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 15px;
-  letter-spacing: 0;
-  color: #0a0a0a;
-  opacity: 1;
-}
-footer #footer-links ul li {
-  line-height: 1.6em;
-  text-align: left;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  letter-spacing: 0;
-  color: #707070;
-  opacity: 1;
-}
-footer #footer-links li span.footer-title,
-footer #footer-links li h5 {
-  font-weight: bold;
-  font-size: 15px;
-  padding-bottom: 4px;
-  float: none;
-  clear: both;
-  padding-left: 50px;
-  color: black;
-}
-footer #footer-links ul li a {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  letter-spacing: 0;
-  color: #707070;
-  opacity: 1;
-  text-transform: inherit;
-  line-height: 1.8em;
-  font-weight: normal;
-  padding: 0;
-  margin: 0;
-  padding-left: 50px;
-}
-footer #social-media li a {
-  padding-left: 0px !important;
-}
-section#footer-links h3 {
-  padding-bottom: 0px;
-}
-footer #footer-links #social-media h5 {
-  padding-left: 0 !important;
-  padding-bottom: 10px;
-}
-footer #footer-links #social-media #openedx-logo {
-  margin-top: 10px;
-  display: block;
-  padding-left: 0;
-}
-footer #entities-quick-links ul {
-  background-color: white;
-  padding: 50px 0px 50px 0px;
-  height: auto;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 0px 0px 10px 10px;
-}
-footer #entities-quick-links ul li:nth-child(1) {
-  position: relative;
-  margin-top: 13px;
-}
-footer #entities-quick-links li {
-  background-color: white;
-  float: left;
-}
-footer #entities-quick-links img {
-  max-width: 100%;
-}
-footer section h3 {
-  text-indent: -99999px;
-}
 
 body#homepage section.main-gallery {
   padding-top: 0px;
@@ -2077,34 +1913,6 @@ body#institution div#home-slider div#nau-shape {
 /*********************************/
 
 @media screen and (max-width: 798px) {
-  footer #footer-links li.footer-links-structure {
-    list-style-type: none;
-    width: 50%;
-    display: grid;
-    padding-top: 20px;
-  }
-
-  footer #entities-quick-links ul {
-    background-color: white;
-    padding: 50px 0px 50px 0px;
-    height: auto;
-    width: 100%;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  footer #entities-quick-links li:nth-child(3) a img {
-    margin-right: 0px;
-    margin-left: 31px;
-  }
-
-  footer #entities-quick-links ul li img {
-    margin-bottom: 30px;
-  }
-
   div#home-content section#highlighted-courses ul.card,
   div#body-content section#highlighted-courses ul.card,
   body#homepage section#rolling-courses ul.card {
@@ -2115,20 +1923,6 @@ body#institution div#home-slider div#nau-shape {
 @media screen and (min-width: 960px) and (min-width: 1024px) {
   menu.container {
     display: none !important;
-  }
-}
-
-@media screen and (max-width: 960px) {
-  footer #entities-quick-links ul {
-    background-color: white;
-    padding: 50px 0px 50px 0px;
-    height: auto;
-    width: 100%;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
   }
 }
 
@@ -2298,14 +2092,6 @@ body#homepage .video-know-more-icons .know-more-icon {
     flex-direction: column;
   }
 
-  footer #entities-quick-links img {
-    max-width: 260px;
-  }
-
-  .card .course-actions .know-more-icon {
-    left: 20px !important;
-  }
-
   aside {
     margin: 0;
     padding: 0;
@@ -2367,10 +2153,6 @@ body#homepage .video-know-more-icons .know-more-icon {
     margin-top: 0px;
   }
 
-  footer span#copyright {
-    display: flex;
-    width: 100%;
-  }
 }
 
 @media (max-width: 679px) {
@@ -2378,7 +2160,7 @@ body#homepage .video-know-more-icons .know-more-icon {
     padding-right: 0px;
   }
 
-  entities-wrap {
+  .entities-wrap {
     margin-right: 5px;
   }
 
@@ -4526,33 +4308,6 @@ div.result-set .result .link_image_wrapper a.link_image img.image {
   width: 100%;
 }
 
-footer #footer-links ul {
-  display: contents;
-}
-
-footer #footer-links ul li {
-  font-size: 13px;
-}
-
-footer #footer-links #social-media {
-  display: block;
-}
-
-footer span#copyright {
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  color: #5e5959;
-  opacity: 1;
-  font-size: 0.8rem;
-  margin-left: 49px;
-  margin-top: 16px;
-  display: block;
-}
-
-footer #entities-quick-links li:nth-child(1) a img {
-  width: 160px;
-}
 .card-content h3 {
   font-size: 15px;
 }
@@ -4744,6 +4499,7 @@ a img:hover {
 }
 
 .card .course-actions .know-more-icon {
+  left: 20px !important;
   position: absolute;
   width: 90%;
   bottom: 10px;
@@ -4996,21 +4752,6 @@ div.result-set .result .link_image_wrapper a.link_image img.image {
   width: 100%;
 }
 
-footer #footer-links ul {
-  display: contents;
-}
-
-footer #footer-links ul li {
-  font-size: 13px;
-}
-
-footer #footer-links #social-media {
-  display: block;
-}
-
-footer #entities-quick-links li:nth-child(1) a img {
-  width: 160px;
-}
 .card-content h3 {
   font-size: 15px;
 }
