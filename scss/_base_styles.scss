@@ -85,9 +85,6 @@ h4 {
   padding-bottom: 20px;
 }
 
-article {
-  padding: 50px;
-}
 p {
   text-align: left;
   font-family: "Roboto", sans-serif;
@@ -484,7 +481,7 @@ section#highlighted-courses ul h3 {
 }
 
 /*
-.card {
+.body.text-page article {
   overflow: hidden;
   float: left;
   display: block;
@@ -566,6 +563,8 @@ body#secondary section#highlighted-courses ul li:nth-child(2) {
   display: inline-block;
 }
 
+
+/*
 section#highlighted-courses span,
 #body-content section#rolling-courses span,
 div#home-content section#rolling-courses span {
@@ -573,6 +572,7 @@ div#home-content section#rolling-courses span {
   padding-right: 3px;
   width: 100%;
 }
+*/
 section#rolling-courses p {
   color: white !important;
   padding-bottom: 4px;
@@ -3116,11 +3116,6 @@ div.nau_disabled a {
   padding-right: 0;
 }
 
-article {
-  background-color: transparent;
-  z-index: 2;
-}
-
 /* https://www.stage.nau.fccn.pt/nacoes-unidas */
 
 body.nacoes-unidas .un-course-list .un-course-item h2 {
@@ -3369,12 +3364,6 @@ h2::before {
 
 pre {
   font-family: "Consolas", monospace;
-}
-
-article {
-  padding: 20px 0px 0 0px;
-  width: 100%;
-  background: #f5f5f5;
 }
 
 .facebook-share-button {
@@ -3815,8 +3804,8 @@ body.text-page article {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   text-align: justify;
-  padding-top: 20px !important;
-  padding-left: /*10px*/ 0;
+  /*padding-top: 20px !important;*/
+  padding-left: 0;
 }
 
 body.text-page article h2:before,
@@ -4418,10 +4407,6 @@ article .news_article h2 a {
   color: #074ce1;
 }
 
-#body-content article {
-  margin-top: 0px;
-}
-
 .video-know-more-icons .ednx-enroll-button-js .nau_button {
   padding: 0px 20px 0px 20px;
 }
@@ -4867,10 +4852,6 @@ article .news_article h2 a {
 
 .video-know-more-icons .ednx-enroll-button-js .nau_button {
   padding: 0px 20px 0px 20px;
-}
-
-#body-content article {
-  margin-top: 0px;
 }
 
 .debug_messages {

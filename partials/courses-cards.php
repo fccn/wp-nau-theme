@@ -29,6 +29,30 @@
       $course = load_course($coursePage);
     
     ?>
+
+    <article class="card">
+      <a href="<?php echo $course["course_about_url"]?>">
+            <div class="card-header" style="background-image: url(<?php echo $course["image"]?>);"></div>
+            <div class="card-content">
+                <div class="card-content--entity">
+                    <span style="background-image: url(<?php echo $course["entity"]["square_logo"]?>);" class="entity-logo"></span>
+                    <span class="card-content--price"><?php echo $course["price"]?></span>
+                </div>
+                <h3 class="card-content--title"><?php echo $course["name"]?></h3>
+                <div class="card-content--details">
+                    <span class="card-content--availability"><?php echo $course["date_status_label"]?></span>
+                    <span class="card-content--enrolled"><?php echo $course["participants"]?> <?php echo nau_trans("Participants")?></span>
+                </div>
+            </div>
+            <div class="card-actions">
+              <a href="<?php echo $course["course_about_url"]?>" title="<?php echo nau_trans("Learn more about this course")?> <?php echo $course["name"]?>" class="btn-know-more">
+                <?php echo nau_trans("View course")?>
+              </a>
+            </div>
+          </a>
+        </article>
+
+<!--
       <div class="card gallery-cell <?php echo $course["card_width"]?>-card-width">
         <a href="<?php echo $course["course_about_url"]?>">
           <div class="card-image"> 
@@ -58,30 +82,8 @@
           </div>
         </a>
       </div>
-      
+            -->
             <?php endforeach; ?>
     
     </div>
-  </section>    
-  
-<!--
-  <div class="card-container">
-        <article class="card">
-            <div class="card-header" style="background-image: url(https://via.placeholder.com/280x200);"></div>
-            <div class="card-content">
-                <div class="card-content--entity">
-                    <img src="https://via.placeholder.com/80" alt="" class="entity-logo">
-                    <span class="card-content--price">Gratuito</span>
-                </div>
-                <h2 class="card-content--title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a condimentum lectus, vel elementum velit.</h2>
-                <div class="card-content--details">
-                    <span class="card-content--availability">Disponível</span>
-                    <span class="card-content--enrolled">2450 participantes</span>
-                </div>
-            </div>
-            <div class="card-actions">
-                <a href="#" class="btn-know-more">Inscrever</a>
-            </div>
-        </article>
-    </div>
-    -->
+  </section>
