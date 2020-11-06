@@ -25,7 +25,7 @@ else {
 
   if (get_custom_value('homepage-top-slider', 0) == 1) {
       //get_template_part( "homepage", "banner" );
-      get_template_part( "homepage", "slider" );
+      get_template_part( "partials/homepage/homepage", "slider" );
   }
 
   print('<div id="home-content">');
@@ -33,23 +33,23 @@ else {
   if (get_custom_value('homepage-highlight-courses', 0) == 1) {
     $course_list_title = get_custom_value('homepage-highlight-courses-title', nau_trans("Courses|Highlighted"));
     $courses = nau_get_posts("curso", ["filter" => "highlight"]);
-    get_template_part( "courses", "cards" );
+    get_template_part( "partials/courses", "cards" );
   }
   
   if (get_custom_value('homepage-running-courses', 0) == 1) {
     $course_list_title = get_custom_value('homepage-running-courses-title', nau_trans("Courses|Running"));
     $courses = nau_get_posts("curso", ["filter" => "running-course"]);
-    get_template_part( "homepage", "running-courses" );
+    get_template_part( "partials/homepage/homepage", "running-courses" );
   }
 
   if (get_custom_value('homepage-all-courses-link', 0) == 1) {
-    get_template_part( "homepage", "all-courses-link" );
+    get_template_part( "partials/homepage/homepage", "all-courses-link" );
   }
 
   if (get_custom_value('homepage-founder-entities', 0) == 1) {
     $course_list_title = nau_trans("Entity|Founders");
     $entities = nau_get_posts("entidade", ["filter" => "fundador"]);  
-    get_template_part( "homepage", "entities" );
+    get_template_part( "partials/homepage/homepage", "entities" );
   }
 
 
