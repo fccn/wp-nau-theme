@@ -1,0 +1,91 @@
+.card-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(276px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);
+    border: 2px solid transparent;
+
+    &:hover{
+        border: 2px solid $action-btn-color;
+        transition: .2s;
+        cursor: pointer;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.35);
+    }
+
+    &:focus {
+        outline: $action-btn-color;
+    }
+
+    &-header {
+        height: $card-height;
+        border-top-left-radius: $card-border-radius;
+        border-top-right-radius: $card-border-radius;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+    }
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: $card-content-pad;
+
+        &--entity {
+            display:flex;
+            justify-content: space-between;
+
+            img.entity-logo {
+                background-color: white;
+                padding: 5px;
+                margin-top: -50px;
+                border-radius: $entity-radius;
+                box-shadow: 3px 12px 20px -10px rgba(0, 0, 0, 0.37);
+            }
+        }
+
+        &--price {
+            padding-top: 0.5rem;
+        }
+
+        &--details {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    h2 {
+        padding-top: 1rem;
+        font-size: 1.15rem;
+        line-height: 1.3;
+        font-weight: 600;
+        min-height: 5.5rem;
+    }
+
+    &-actions a{
+        display: block;
+        text-align: center;
+        padding: 10px 25px;
+        margin: 10px 15px;
+        text-decoration: none;
+        font-weight: bold;
+        color: white;
+        background-color: $action-btn-color;
+        border-radius: 25px;
+        
+
+        &:hover {
+            background-color: #0640bf;
+            transition: .15s linear;
+        }
+    }
+}

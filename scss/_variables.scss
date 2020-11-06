@@ -14,7 +14,10 @@ $border-color-light: #ffffff;
 $button-visited-color: #607D8B;
 
 /* breakpoints */
-$page-width: 1280px;
+$breakpoint-small: 576px;  //Mobile phones
+$breakpoint-medium: 768px; //Mobilephones portrait and Tablets
+$breakpoint-large: 992px; //old resolutions and tablets
+$breakpoint-xlarge: 1200px; //PC
 
 $nav-back-color: white;
 
@@ -23,3 +26,10 @@ $popup-video-height: 480px;
 
 $left-space: 50px;
 $right-space: 50px;
+
+/* Cards */
+$card-border-radius: 10px;
+$card-height: 160px;
+$entity-radius: 5px;
+$card-content-pad: 0 15px 10px;
+$action-btn-color: #074ce1;

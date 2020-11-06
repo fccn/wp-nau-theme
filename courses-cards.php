@@ -22,9 +22,9 @@
       </a>
     </h2>
 
-    <div class="courses-wrap">    
+    <div class="card-container">   <?php /* courses-wrap */ ?> 
     
-    <? foreach ($courses as $coursePage):
+    <?php foreach ($courses as $coursePage):
           
       $course = load_course($coursePage);
     
@@ -53,14 +53,35 @@
             <a class="see-video-icon" onClick='openYoutubeVideoIFrame(this);' data-vars='{ "id" : "<?php echo $course["video"]?>" }' title="<?php echo nau_trans("See video")?>">
               <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-white.svg" alt="<?php echo nau_trans("See a video about this course")?>">           
             </a>
-            <? endif; ?>
+            <?php endif; ?>
             <a class="know-more-icon" href="<?php echo $course["course_about_url"]?>" title="<?php echo nau_trans("Learn more about this course")?> <?php echo $course["name"]?>"><?php echo nau_trans("View course")?></a> 
           </div>
         </a>
       </div>
       
-            <? endforeach; ?>
+            <?php endforeach; ?>
     
     </div>
   </section>    
   
+<!--
+  <div class="card-container">
+        <article class="card">
+            <div class="card-header" style="background-image: url(https://via.placeholder.com/280x200);"></div>
+            <div class="card-content">
+                <div class="card-content--entity">
+                    <img src="https://via.placeholder.com/80" alt="" class="entity-logo">
+                    <span class="card-content--price">Gratuito</span>
+                </div>
+                <h2 class="card-content--title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a condimentum lectus, vel elementum velit.</h2>
+                <div class="card-content--details">
+                    <span class="card-content--availability">Disponível</span>
+                    <span class="card-content--enrolled">2450 participantes</span>
+                </div>
+            </div>
+            <div class="card-actions">
+                <a href="#" class="btn-know-more">Inscrever</a>
+            </div>
+        </article>
+    </div>
+    -->
