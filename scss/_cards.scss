@@ -1,9 +1,17 @@
 .card-container {
-    max-width: 1180px;
+    max-width: $breakpoint-xlarge;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, minmax(276px, 1fr));
     gap: 1rem;
+
+    @media screen and (max-width: $breakpoint-small){
+        grid-template-columns: repeat(1, minmax(276px, 1fr));
+    }
+
+    @media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-medium){
+        grid-template-columns: repeat(2, minmax(276px, 1fr));
+    }
 }
 
 .card {
@@ -48,6 +56,7 @@
         &--entity {
             display:flex;
             justify-content: space-between;
+            align-items: flex-start;
 
             span.entity-logo {
                 background-color: white;
@@ -65,8 +74,14 @@
         }
 
         &--price {
-            padding-top: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem 0.75rem;
             text-align: right;
+            color: $action-btn-color;
+            background-color: rgba(155, 227, 243, .4);
+            font-weight: 500;
+            display: block;
+            border-radius: 5px;
         }
 
         &--details {

@@ -6,11 +6,6 @@
 */
 
 /* CSS Document */
-* {
-  margin: 0;
-  padding: 0;
-  /* transition: 0.2s ease; */
-}
 body {
   font-family: "Roboto", sans-serif;
   text-rendering: optimizeLegibility;
@@ -4424,10 +4419,6 @@ article .news_article h2 a {
   background: gray;
 }
 
-#highlighted-courses span {
-  font-weight: bold;
-}
-
 article.course-synopse ul {
   float: none;
   padding-top: 15px;
@@ -4791,10 +4782,6 @@ div.result-set .result .link_image_wrapper a.link_image img.image {
 .card .card-image .square-logo {
   top: 150px;
 }*/
-
-section#highlighted-courses span {
-  font-weight: normal;
-}
 
 div.nau_disabled {
   min-width: 0px;
