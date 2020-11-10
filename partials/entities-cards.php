@@ -13,7 +13,7 @@
      <h2><?php echo $title[0]?> <span class="normal-font-weight"><?php echo $title[1]?></span></h2>   
    <? endif; ?> 
     
-    <div class="entities-wrap">    
+    <div class="card-container">    
     
     <?php foreach ($entities as $entity):
       
@@ -36,23 +36,22 @@
       ];
     
     ?>
-    
-      <div class="card gallery-cell">
-          <div class="top"> 
-            <a href="<?php echo $entity["url"]?>" class="image">
-              <img class="entity-image" src="<?php echo $entity["image"]?>" alt="<?php echo $entity["name"]?>">
-            </a>
-            <a href="<?php echo $entity["url"]?>" title="<?php echo $entity["name"]?>"  class="logo">
-              <img class="square-logo" src="<?php echo $entity["logo"]?>" alt="<?php echo $entity["name"]?>">
-            </a>
-          </div>      
-          <div class="card-content"> 
-            <h3 class="entity-long-name"><?php echo $entity["name"]?></h3>
-          </div>
-          <div class="card-action"> 
-            <a class="know-more-icon" href="<?php echo $entity["url"]?>" title="<?php echo nau_trans("Learn more about this entity")?>"><?php echo nau_trans("View entity")?></a>         
-          </div>  
-      </div>
+      <article class="card">
+        <a href="<?php echo $entity["url"]?>">
+          <div class="card-header__entity" style="background-image: url(<?php echo $entity["image"]?>);"></div>
+            <div class="card-content">
+                <div class="card-content--entity">
+                    <span style="background-image: url(<?php echo $entity["logo"]?>);" class="entity-logo"></span>
+                </div>
+                <h3 class="card-content--title"><?php echo $entity["name"]?></h3>
+            </div>
+            <div class="card-actions">
+              <a href="<?php echo $entity["url"]?>" title="<?php echo nau_trans("Learn more about this entity")?>" class="btn-know-more">
+                <?php echo nau_trans("View entity")?>
+              </a>
+            </div>
+          </a>
+        </article>
       
     <? endforeach; ?>
     

@@ -53,14 +53,6 @@ body#institution div#home-slider {
   </div>
 </section>
 
-<?php if (current_user_can('edit_posts')): ?>
-   <div class="nau_management">
-      <? if ($entity["confluence_url"] != ""): ?>
-       <a href="<?php echo $entity["confluence_url"]?>"><span class="material-icons">info</span></a>
-      <? endif; ?>
-   </div>
-      <? endif; ?>
-
 <!-- starts homepage body content -->
 <div id="home-content">  
 
@@ -80,7 +72,7 @@ body#institution div#home-slider {
           if ($slug != "") {
             $course_list_title = nau_trans("Courses|running");
             $courses = nau_entity_courses($post);
-            get_template_part( "partials/courses", "cards" );
+            get_template_part( "partials/entity", "courses" );
           }
         ?>
       </div>        

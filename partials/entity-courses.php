@@ -15,14 +15,9 @@
   <section id="highlighted-courses" class="main-gallery">   
     <h2>
       <?php echo $title[0]?> <span class="normal-font-weight"><?php echo $title[1]?></span>
-      <span class="heading-blue-bar">|</span>
-      <a href="<?php echo $all_courses_url?>" title="Explorar todos os cursos">
-        <span class="normal-font-weight explore-all-courses-font"><?php echo nau_trans("Explore all courses")?></span>
-        <span class="explore-other-courses">
-      </a>
     </h2>
 
-    <div class="card-container">   <?php /* courses-wrap */ ?> 
+    <div class="card-entity-container">   <?php /* courses-wrap */ ?> 
     
     <?php foreach ($courses as $coursePage):
           
