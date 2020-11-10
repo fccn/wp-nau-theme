@@ -14,7 +14,7 @@ $border-color-light: #ffffff;
 $button-visited-color: #607D8B;
 
 /* breakpoints */
-$breakpoint-small: 576px;  //Mobile phones
+$breakpoint-small: 539px;  //Mobile phones
 $breakpoint-medium: 768px; //Mobilephones portrait and Tablets
 $breakpoint-large: 992px; //old resolutions and tablets
 $breakpoint-xlarge: 1200px; //PC
@@ -30,6 +30,7 @@ $right-space: 50px;
 /* Cards */
 $card-border-radius: 10px;
 $card-height: 160px;
+$card-minimum-size: 200px;
 $entity-radius: 5px;
 $card-content-pad: 0 15px 10px;
 $action-btn-color: #074ce1;
