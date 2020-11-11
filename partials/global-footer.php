@@ -74,14 +74,54 @@ class NAU_Walker_Footer_Nav_Menu extends Walker_Nav_Menu {
         <!-- starts social media -->
         <ul>
         <li class="footer-links-structure">
-        <ul id="social-media">      
+        <ul id="social-media">
           <li><h5><?=nau_trans("Social Media")?></h5></li>      
-<?php /*          <li><a href="<?=$social_media["twitter_site"]?>"><img src="assets/img/twitter.svg" alt="twitter logo" title="<?=nau_trans("Share on Twitter")?>"></a></li> */ ?>
-<?php /*          <li><a href="<?=$social_media["linkedin_url"]?>"><img src="assets/img/linkedin.svg" alt="Linkedin logo" title="<?=nau_trans("Share on Linkedin")?>"></a></li> */ ?>
-          <li><a href="<?=$social_media["facebook_site"]?>" id="facebook-link" rel="nofollow" target="_blank" title="<?=nau_trans("Share on Facebook")?>" class=""><img src="assets/img/facebook.svg" alt="Facebook logo" title="Share on Facebook"></a></li>
-<?php /*          <li><a href="<?=$social_media["instagram_url"]?>"><img src="assets/img/instagram.svg" alt="Instagram logo" title="<?=nau_trans("Share on Instagram")?>"></a></li> */ ?>
-<?php /*          <li><a href="<?=$social_media["wikipedia_url"]?>"><img src="assets/img/more-share.svg" alt="Share list" title="Share list"></a></li> */ ?>
-          <li id="openedx-logo"><a href="https://open.edx.org/" target="_blank"><img src="assets/img/openedx.svg" alt="Powered by OpenEdX" title="<?=nau_trans("Visit OpenEdX website")?>"></a></li>      
+          
+          <?php if ($social_media["twitter_site"]) { ?>
+            <li class="social-media">
+              <a href="<?=$social_media["twitter_site"]?>" title="<?=nau_trans("Share on Twitter")?>">
+                <img src="assets/img/twitter.svg" alt="twitter logo" title="<?=nau_trans("Share on Twitter")?>">
+              </a>
+            </li>
+          <?php } ?>
+
+          <?php if ($social_media["linkedin_url"]) { ?>
+            <li class="social-media">
+              <a href="<?=$social_media["linkedin_url"]?>" title="<?=nau_trans("Share on Linkedin")?>">
+                <img src="assets/img/linkedin.svg" alt="Linkedin logo" title="<?=nau_trans("Share on Linkedin")?>">
+              </a>
+            </li>
+          <?php } ?>
+
+          <?php if ($social_media["facebook_site"]) { ?>
+            <li class="social-media">
+              <a href="<?=$social_media["facebook_site"]?>" id="facebook-link" rel="nofollow" target="_blank" title="<?=nau_trans("Share on Facebook")?>">
+                <img src="assets/img/facebook.svg" alt="Facebook logo" title="Share on Facebook">
+              </a>
+            </li>
+          <?php } ?>
+
+          <?php if ($social_media["instagram_url"]) { ?>
+            <li class="social-media">
+              <a href="<?=$social_media["instagram_url"]?>" title="<?=nau_trans("Share on Instagram")?>">
+                <img src="assets/img/instagram.svg" alt="Instagram logo" title="<?=nau_trans("Share on Instagram")?>">
+              </a>
+            </li>
+          <?php } ?>
+
+          <?php if ($social_media["wikipedia_url"]) { ?>
+            <li class="social-media">
+              <a href="<?=$social_media["wikipedia_url"]?>">
+                <img src="assets/img/more-share.svg" alt="Share list" title="Share list">
+              </a>
+            </li>
+          <?php } ?>
+
+          <li id="openedx-logo">
+            <a href="https://open.edx.org/" target="_blank">
+              <img src="assets/img/openedx.svg" alt="Powered by OpenEdX" title="<?=nau_trans("Visit OpenEdX website")?>">
+            </a>
+          </li>      
         </ul>
         </li>
         </ul>      
