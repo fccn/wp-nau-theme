@@ -57,33 +57,46 @@ body#institution div#home-slider {
 <div id="home-content">  
 
     <!-- starts all institution courses -->
-    <section id="entity-description">        
+    <article class="entity-description">        
       <div class="description">
         <?php echo  do_shortcode(get_post_field('post_content')) ?>
       </div>
-      <div class="courses">
-        <?php
-          $slug = $entity["slug"];
+      <?php
+        $slug = $entity["slug"];
 
-          if ($slug == "") {
-            $slug = $entity["sigla"];
-          }
+        if ($slug == "") {
+          $slug = $entity["sigla"];
+        }
 
-          if ($slug != "") {
-            $course_list_title = nau_trans("Courses|running");
-            $courses = nau_entity_courses($post);
-            get_template_part( "partials/entity", "courses" );
+        if ($slug != "") {
+          $course_list_title = nau_trans("Courses|running");
+          $courses = nau_entity_courses($post);
+
+          if (count($courses) > 0) { 
+      ?>
+            <section id="highlighted-courses" class="main-gallery">   
+              <h2>
+                <?php $title = explode("|", $course_list_title); ?>
+                <?php echo $title[0]?> <span class="normal-font-weight"><?php echo $title[1]?></span>
+              </h2>
+
+              <?php 
+                $courses = $courses;
+                get_template_part( "partials/courses", "cards" ); 
+              ?>
+            </section>
+      <?php 
           }
-        ?>
-      </div>        
-    </section>
-        <?php
-          include("partials/entity-aside.php");
-        ?>
-        
+        }
+      ?>
+    </article>
     
+    <?php include("partials/entity-aside.php"); ?>
+
 </div>
 <!-- ends homepage body content --> 
+
+    
 
 <?php
   get_template_part( "partials/global", "footer" );

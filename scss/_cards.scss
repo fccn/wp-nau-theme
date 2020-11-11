@@ -15,16 +15,14 @@
     @media screen and (min-width: $breakpoint-medium) and (max-width: $breakpoint-large) {
         grid-template-columns: repeat(3, minmax($card-minimum-size, 1fr));
     }
-}
 
-.card-entity-container {
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, minmax($card-minimum-size, 1fr));
-    gap: 2rem;
-
-    @media screen and (max-width: $breakpoint-medium) {
-        grid-template-columns: repeat(1, minmax($card-minimum-size, 1fr));
+    .entity & {
+        gap: 2rem;
+        grid-template-columns: repeat(2, minmax($card-minimum-size, 1fr));
+        
+        @media screen and (max-width: $breakpoint-medium) {
+            grid-template-columns: repeat(1, minmax($card-minimum-size, 1fr));
+        }
     }
 }
 

@@ -79,7 +79,7 @@ function nau_theme_setup() {
 
 add_action('init', 'nau_theme_setup');
 
-
+/*
 function nau_include($atts = array()) { 
  
     extract(shortcode_atts(array(
@@ -97,7 +97,7 @@ function nau_include($atts = array()) {
 }
  
 add_shortcode('nau_include', 'nau_include');
-
+*/
 
 function nau_list_child_pages($atts = array()) { 
  
@@ -863,3 +863,29 @@ function nau_generate_custom_value_meta_html($meta_value, $object) {
   }
   return $li_html;
 }
+
+function nau_template_part(string $slug, string $name = null, array $args = array()) {
+  ob_start();
+  get_template_part( $slug, $name, $args );
+  $value = ob_get_contents();
+  ob_end_clean();
+  return $value;
+}
+
+function nau_homepage_funder_entities_small_images($atts = array()) {    
+  return nau_template_part("partials/homepage/homepage", "entities");
+}
+add_shortcode('nau_homepage_funder_entities_small_images', 'nau_homepage_funder_entities_small_images');
+
+function nau_homepage_highlight_courses($atts = array()) {    
+  global $courses;
+  $courses = nau_get_posts("curso", ["filter" => "highlight"]);
+  return nau_template_part("partials/courses", "cards");
+}
+add_shortcode('nau_homepage_highlight_courses', 'nau_homepage_highlight_courses');
+
+function nau_homepage_slider($atts = array()) {    
+  return nau_template_part( "partials/homepage/homepage", "slider" );
+}
+add_shortcode('nau_homepage_slider', 'nau_homepage_slider');
+

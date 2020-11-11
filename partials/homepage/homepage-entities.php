@@ -1,13 +1,9 @@
   <?php
-    global $course_list_title;
-    global $entities;
-    
-    $title = explode("|", $course_list_title);
+    $entities = nau_get_posts("entidade", ["filter" => "fundador"]);;
   ?>   
   
   <!-- starts entidades NAU -->
   <section id="entities-nau">
-    <h2><?php echo $title[0]?> <span class="normal-font-weight"><?php echo $title[1]?></span></h2>
     <div class="entities-wrap">
     <ul id="entities-nau-logos">
       <?php 
@@ -20,6 +16,7 @@
         <?php   endforeach; ?>
     
     </ul>
+    </div>
   </section>
   <!-- ends entidades NAU --> 
 
