@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-04 23:43+0000\n"
+"POT-Creation-Date: 2020-11-11 12:18+0000\n"
 "PO-Revision-Date: 2020-05-12 00:49+0100\n"
 "Last-Translator: root <rui.ribeiro@fccn.pt>\n"
 "Language-Team: Portuguese\n"
@@ -79,15 +79,15 @@ msgstr "Tipo de conteúdo:"
 msgid "Courses"
 msgstr "Pesquisar Cursos"
 
-#: languages/strings.php:22 home.php:34
+#: languages/strings.php:22
 msgid "Courses|Highlighted"
 msgstr "Cursos|Destacados"
 
-#: languages/strings.php:29 home.php:40
+#: languages/strings.php:29
 msgid "Courses|Running"
 msgstr "Cursos|Disponíveis"
 
-#: languages/strings.php:61 entity.php:81
+#: languages/strings.php:61 entity.php:72
 msgid "Courses|running"
 msgstr "Cursos|disponíveis"
 
@@ -103,7 +103,7 @@ msgstr "Finalizado"
 msgid "Entities"
 msgstr "Entidades"
 
-#: languages/strings.php:33 home.php:50
+#: languages/strings.php:33
 msgid "Entity|Founders"
 msgstr "Entidades|Fundadoras"
 
@@ -113,7 +113,6 @@ msgstr "Todos"
 
 #: languages/strings.php:31 partials/homepage/homepage-all-courses-link.php:7
 #: partials/homepage/homepage-running-courses.php:13
-#: partials/courses-cards.php:20
 msgid "Explore all courses"
 msgstr "Explore todos os cursos"
 
@@ -162,11 +161,11 @@ msgstr "Saber +"
 msgid "Know more about this entity"
 msgstr "Saber mais sobre esta entidade"
 
-#: languages/strings.php:26 partials/courses-cards.php:57
+#: languages/strings.php:26 partials/courses-cards.php:25
 msgid "Learn more about this course"
 msgstr "Saiba mais sobre o contorno do curso"
 
-#: languages/strings.php:59 partials/entities-cards.php:53
+#: languages/strings.php:59 partials/entities-cards.php:49
 msgid "Learn more about this entity"
 msgstr "Saiba mais sobre esta entidade"
 
@@ -215,7 +214,7 @@ msgstr "Páginas"
 #. this was added as a way to control the way objects are rendered in the course header
 #. <h3><span class="blue-vertical-line">| </span><?php echo $course["name"]?></h3>
 #: languages/strings.php:6 course-page.php:73 course-page.php:169
-#: partials/courses-cards.php:49
+#: partials/courses-cards.php:21
 msgid "Participants"
 msgstr "Participantes"
 
@@ -286,10 +285,6 @@ msgstr "Resultados de pesquisa"
 msgid "Search tool"
 msgstr "Ferramenta de pesquisa"
 
-#: partials/courses-cards.php:54
-msgid "See a video about this course"
-msgstr "Veja um vídeo sobre este curso"
-
 #: languages/strings.php:58
 msgid "See a video about this entity"
 msgstr "Veja um vídeo sobre esta entidade"
@@ -298,7 +293,6 @@ msgstr "Veja um vídeo sobre esta entidade"
 #: partials/homepage/inc/slider/item-news.php:61
 #: partials/homepage/inc/slider/item-course.php:58
 #: partials/homepage/inc/slider/item-entity.php:62
-#: partials/courses-cards.php:53
 msgid "See video"
 msgstr "Ver vídeo"
 
@@ -359,11 +353,11 @@ msgstr ""
 "Este site usa cookies (atualize esta mensagem nas opções do Theme NAU)!"
 
 #: languages/strings.php:27 partials/homepage/homepage-running-courses.php:36
-#: partials/courses-cards.php:57
+#: partials/courses-cards.php:26
 msgid "View course"
 msgstr "Ver curso"
 
-#: partials/entities-cards.php:53
+#: partials/entities-cards.php:50
 msgid "View entity"
 msgstr "Ver detalhes"
 
@@ -392,6 +386,9 @@ msgstr "saber mais sobre este curso"
 #: languages/strings.php:72 search.php:94
 msgid "results"
 msgstr "resultados"
+
+#~ msgid "See a video about this course"
+#~ msgstr "Veja um vídeo sobre este curso"
 
 #~ msgid "Self Paced"
 #~ msgstr "Definido pelo próprio"

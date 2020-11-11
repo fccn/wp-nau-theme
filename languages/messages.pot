@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-04 23:43+0000\n"
+"POT-Creation-Date: 2020-11-11 12:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -78,15 +78,15 @@ msgstr ""
 msgid "Courses"
 msgstr ""
 
-#: languages/strings.php:22 home.php:34
+#: languages/strings.php:22
 msgid "Courses|Highlighted"
 msgstr ""
 
-#: languages/strings.php:29 home.php:40
+#: languages/strings.php:29
 msgid "Courses|Running"
 msgstr ""
 
-#: languages/strings.php:61 entity.php:81
+#: languages/strings.php:61 entity.php:72
 msgid "Courses|running"
 msgstr ""
 
@@ -102,7 +102,7 @@ msgstr ""
 msgid "Entities"
 msgstr ""
 
-#: languages/strings.php:33 home.php:50
+#: languages/strings.php:33
 msgid "Entity|Founders"
 msgstr ""
 
@@ -112,7 +112,6 @@ msgstr ""
 
 #: languages/strings.php:31 partials/homepage/homepage-all-courses-link.php:7
 #: partials/homepage/homepage-running-courses.php:13
-#: partials/courses-cards.php:20
 msgid "Explore all courses"
 msgstr ""
 
@@ -161,11 +160,11 @@ msgstr ""
 msgid "Know more about this entity"
 msgstr ""
 
-#: languages/strings.php:26 partials/courses-cards.php:57
+#: languages/strings.php:26 partials/courses-cards.php:25
 msgid "Learn more about this course"
 msgstr ""
 
-#: languages/strings.php:59 partials/entities-cards.php:53
+#: languages/strings.php:59 partials/entities-cards.php:49
 msgid "Learn more about this entity"
 msgstr ""
 
@@ -214,7 +213,7 @@ msgstr ""
 #. this was added as a way to control the way objects are rendered in the course header
 #. <h3><span class="blue-vertical-line">| </span><?php echo $course["name"]?></h3>
 #: languages/strings.php:6 course-page.php:73 course-page.php:169
-#: partials/courses-cards.php:49
+#: partials/courses-cards.php:21
 msgid "Participants"
 msgstr ""
 
@@ -285,10 +284,6 @@ msgstr ""
 msgid "Search tool"
 msgstr ""
 
-#: partials/courses-cards.php:54
-msgid "See a video about this course"
-msgstr ""
-
 #: languages/strings.php:58
 msgid "See a video about this entity"
 msgstr ""
@@ -297,7 +292,6 @@ msgstr ""
 #: partials/homepage/inc/slider/item-news.php:61
 #: partials/homepage/inc/slider/item-course.php:58
 #: partials/homepage/inc/slider/item-entity.php:62
-#: partials/courses-cards.php:53
 msgid "See video"
 msgstr ""
 
@@ -357,11 +351,11 @@ msgid "This site uses cookies (update this message on NAU Theme Options)!"
 msgstr ""
 
 #: languages/strings.php:27 partials/homepage/homepage-running-courses.php:36
-#: partials/courses-cards.php:57
+#: partials/courses-cards.php:26
 msgid "View course"
 msgstr ""
 
-#: partials/entities-cards.php:53
+#: partials/entities-cards.php:50
 msgid "View entity"
 msgstr ""
 
