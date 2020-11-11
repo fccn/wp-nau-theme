@@ -379,7 +379,7 @@ div#main-container {
 }
 
 div#home-content {
-  padding: 20px 20px 50px 50px;
+  padding: 20px 50px;
 }
 
 div#body-content {
@@ -389,11 +389,7 @@ div#body-content {
 div#body-content section,
 div#home-content section {
   margin-bottom: 18px;
-  padding-right: /*20px*/ 15px;
   width: -webkit-fill-available;
-}
-body#homepage div#home-content section {
-  padding-right: 20px;
 }
 
 body.cursos #highlighted-courses,
@@ -443,8 +439,7 @@ div.courses-wrap {
 }
 
 .secondary-pages div#body-content {
-  padding: 30px 40px 50px 50px;
-  display: flex;
+  padding: 30px 50px;
 }
 .secondary-pages #entities-nau {
   display: none;
@@ -1035,7 +1030,6 @@ div#home-slider h1 {
   font-weight: bold;
   line-height: 48px;
   font-size: 55px;
-  letter-spacing: -1.1px;
   color: #fff;
   text-transform: uppercase;
   padding-top: 76px;
@@ -1060,8 +1054,7 @@ body.secondary-pages div#home-slider h1 {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   line-height: 48px;
-  font-size: 29px;
-  letter-spacing: -1.1px;
+  font-size: 28px;
   padding-top: 45px;
   line-height: 1.1em;
   color: /*white*/ #000;
@@ -1072,13 +1065,9 @@ body.secondary-pages div#home-slider h1 {
 body#institution div#home-slider h1,
 body#news div#home-slider h1 {
   text-align: left;
-  padding-top: 58px;
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 41px;
-  letter-spacing: 0.41px;
   color: #000000;
-  font-size: /*38px*/ 30px;
+  font-size: 28px;
   font-weight: 500;
   width: 660px;
   text-transform: capitalize;
@@ -2673,12 +2662,13 @@ body#homepage div#home-slider .homepage-slide-item .nau-slide-content {
   text-overflow: ellipsis;
 }
 
+/*
 section#highlighted-courses {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-right: 0px;
-}
+}*/
 
 #body-content .teacher .teacher-image img {
   max-height: 220px;

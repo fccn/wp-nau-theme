@@ -1,7 +1,4 @@
   <aside>
-  
-    <h3><span class="blue-vertical-line">|</span> <?php echo $entity["name"]?></h3>  
-    
     <?php if (! empty($entity["video"])): ?>  
       <div id="course-video-thumbnail">
         <iframe width="100%" height="220" 

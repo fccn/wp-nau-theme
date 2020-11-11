@@ -54,14 +54,19 @@ body#institution div#home-slider {
 </section>
 
 <!-- starts homepage body content -->
-<div id="home-content">  
+<div class="entity-content">  
 
     <!-- starts all institution courses -->
-    <article class="entity-description">        
+    <article class="entity-description">
       <div class="description">
         <?php echo  do_shortcode(get_post_field('post_content')) ?>
       </div>
-      <?php
+    </article>
+    <?php get_template_part("partials/entity", "aside"); ?>
+
+</div>
+<div class="entity-courses">
+<?php
         $slug = $entity["slug"];
 
         if ($slug == "") {
@@ -74,7 +79,7 @@ body#institution div#home-slider {
 
           if (count($courses) > 0) { 
       ?>
-            <section id="highlighted-courses" class="main-gallery">   
+            <section id="highlighted-courses" class="course-gallery">   
               <h2>
                 <?php $title = explode("|", $course_list_title); ?>
                 <?php echo $title[0]?> <span class="normal-font-weight"><?php echo $title[1]?></span>
@@ -89,11 +94,7 @@ body#institution div#home-slider {
           }
         }
       ?>
-    </article>
-    
-    <?php include("partials/entity-aside.php"); ?>
-
-</div>
+    </div>
 <!-- ends homepage body content --> 
 
     

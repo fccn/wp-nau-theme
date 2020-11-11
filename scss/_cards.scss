@@ -16,7 +16,7 @@
         grid-template-columns: repeat(3, minmax($card-minimum-size, 1fr));
     }
 
-    .entity & {
+    .entity {
         gap: 2rem;
         grid-template-columns: repeat(2, minmax($card-minimum-size, 1fr));
         
