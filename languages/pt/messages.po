@@ -234,7 +234,7 @@ msgstr "Educação de qualidade"
 #: languages/strings.php:21 index.php:103 inc/news-list.php:26
 #: partials/homepage/inc/slider/item-news.php:83
 msgid "Read More"
-msgstr "Lêr Mais"
+msgstr "Ler mais"
 
 #: languages/strings.php:49 inc/galeria_un.php:17
 msgid "Reduced inequalities"
