@@ -77,14 +77,6 @@ class NAU_Walker_Footer_Nav_Menu extends Walker_Nav_Menu {
         <ul id="social-media">
           <li><h5><?=nau_trans("Social Media")?></h5></li>      
           
-          <?php if ($social_media["facebook_site"]) { ?>
-            <li class="social-media">
-              <a href="<?=$social_media["facebook_site"]?>" id="facebook-link" rel="nofollow" target="_blank" title="<?=nau_trans("Share on Facebook")?>">
-                <img src="assets/img/facebook.svg" alt="Facebook logo" title="Share on Facebook">
-              </a>
-            </li>
-          <?php } ?>
-
           <?php if ($social_media["twitter_site"]) { ?>
             <li class="social-media">
               <a href="<?=$social_media["twitter_site"]?>" title="<?=nau_trans("Share on Twitter")?>">
@@ -97,6 +89,14 @@ class NAU_Walker_Footer_Nav_Menu extends Walker_Nav_Menu {
             <li class="social-media">
               <a href="<?=$social_media["linkedin_url"]?>" title="<?=nau_trans("Share on Linkedin")?>">
                 <img src="assets/img/linkedin.svg" alt="Linkedin logo" title="<?=nau_trans("Share on Linkedin")?>">
+              </a>
+            </li>
+          <?php } ?>
+
+          <?php if ($social_media["facebook_site"]) { ?>
+            <li class="social-media">
+              <a href="<?=$social_media["facebook_site"]?>" id="facebook-link" rel="nofollow" target="_blank" title="<?=nau_trans("Share on Facebook")?>">
+                <img src="assets/img/facebook.svg" alt="Facebook logo" title="Share on Facebook">
               </a>
             </li>
           <?php } ?>
