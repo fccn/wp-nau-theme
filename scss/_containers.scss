@@ -13,7 +13,9 @@
     }
 
     aside {
-        padding: 0 !important;
+        @media screen and (max-width: $breakpoint-small) {
+            padding: 0 !important;
+        }
     }
 
     .entity-description {
