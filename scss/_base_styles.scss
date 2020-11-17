@@ -2193,19 +2193,6 @@ img.entity-image {
   height: 180px;
 }
 
-<<<<<<< HEAD:assets/base_css/base_styles.css
-body#secondary div#body-content section#highlighted-courses div.courses-wrap ul.card li a.image {
-  height: 200px;
-}
-
-body#secondary div#body-content section#highlighted-courses div.courses-wrap ul.card a.image img.course-image {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-=======
->>>>>>> master:scss/_base_styles.scss
 #home-slider {
   height: 180px !important;
   position: absolute;
@@ -3555,63 +3542,6 @@ a img:hover {
   filter: contrast(1.3);
 }
 
-<<<<<<< HEAD:assets/base_css/base_styles.css
-.card .card-image {
-  background-color: #f9f9f9;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.card .card-image .course-image {
-  min-height: 200px;
-  max-height: 100%;
-  width: 100%;
-  z-index: 0;
-}
-
-.card .card-content {
-  padding: 10px;
-  margin-bottom: 0px;
-  font-size: 11px;
-  height: 150px;
-}
-
-.card .card-content h3 {
-  padding-top: 30px;
-  margin-bottom: 0px;
-}
-
-.card .card-content .certificate {
-  top: 210px;
-}
-
-.card .card-content .date-status-label {
-  top: 295px;
-}
-
-.card .card-content .date-status-date {
-  top: 315px;
-}
-
-.card .card-content .end-date {
-  top: 315px;
-}
-
-.card .card-content .pace-mode {
-  top: 315px;
-}
-
-.card .card-content .invitaition-mode {
-  top: 330px;
-}
-
-.card .card-content .number-of-participants {
-  top: 295px;
-}
-
-=======
->>>>>>> master:scss/_base_styles.scss
 .float-left {
   left: 10px;
   position: absolute;
