@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	
 	// if browser supports the Web Share API
 	if (navigator.share) {
+		shareButton.setAttribute("href", "javascript:void(0)");
+		
 		// add a click event on the share button that share the canonical url of the page or the current page link
 		shareButton.addEventListener('click', async () => {
   			let url = document.location.href;
@@ -26,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 }, false);
 </script>
-<? include "inc/cookie-bar.php"; ?>
+<?php include "inc/cookie-bar.php"; ?>
 <?php wp_footer(); ?>
 </body>
 </html>

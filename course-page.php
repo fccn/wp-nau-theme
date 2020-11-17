@@ -34,20 +34,20 @@ Template Name: Course About Page
 
 <style>
 body#secondary div#home-slider {
-    background: url("<?=$banner_image?>");
+    background: url("<?php echo $banner_image; ?>");
     object-fit: cover;
 }    
 
 div#home-slider.course .slider-mask {
-  filter: hue-rotate(<?=$hue?>deg) opacity(<?=$opacity?>) grayscale(<?=$grayscale?>); 
-  -webkit-filter: hue-rotate(<?=$hue?>deg) opacity(<?=$opacity?>) grayscale(<?=$grayscale?>);
+  filter: hue-rotate(<?php echo $hue?>deg) opacity(<?php echo $opacity?>) grayscale(<?php echo $grayscale?>); 
+  -webkit-filter: hue-rotate(<?php echo $hue?>deg) opacity(<?php echo $opacity?>) grayscale(<?php echo $grayscale?>);
 }
 
 <?php
 if($color):
 ?>
 div#home-slider #slider-objects h1 {
-      color: <?=$color?>; 
+      color: <?php echo $color?>; 
 }
 <?php
 endif;
@@ -62,18 +62,18 @@ endif;
   <div id="home-slider" class="course">
     <div id="slider-objects">
       <div class="entity-branding-container"><?php //this was added as a way to control the way objects are rendered in the course header ?>
-        <a href="<?=$entity["url"]?>">
-          <img id="secondary-course-logo" src="<?=$entity["square_logo"]?>" alt="<?=$entity["sigla"]?>" title="<?=$entity["name"]?>">
+        <a href="<?php echo $entity["url"]?>">
+          <img id="secondary-course-logo" src="<?php echo $entity["square_logo"]?>" alt="<?php echo $entity["sigla"]?>" title="<?php echo $entity["name"]?>">
         </a>
-        <h1><?=$course["name"]?></h1>
+        <h1><?php echo $course["name"]?></h1>
       </div>
       
       <ul class="course-quick-meta">      
-        <li class="date-status-label"><?=$course["date_status_label"]?></li>
-        <!-- <li class="number-of-participants"><?=$course["participants"]?> <?=nau_trans("Participants")?></li> -->
-        <li class="price"><?=$course["price"]?></li> 
-        <li class="enrollment-type"><?=$course["invitation_mode_label"]?></li>
-        <li class="course-type"><?=$course["pace_mode_label"]?></li>
+        <li class="date-status-label"><?php echo $course["date_status_label"]?></li>
+        <!-- <li class="number-of-participants"><?php echo $course["participants"]?> <?php echo nau_trans("Participants")?></li> -->
+        <li class="price"><?php echo $course["price"]?></li> 
+        <li class="enrollment-type"><?php echo $course["invitation_mode_label"]?></li>
+        <li class="course-type"><?php echo $course["pace_mode_label"]?></li>
       </ul>
         
       <!-- starts video and know more icons, rating and certficate status -->
@@ -85,7 +85,7 @@ endif;
         
         <? if (! empty($course["youtube"])) { ?>  
           <!-- starts video icon -->
-          <a class="see-video-icon" onClick='openYoutubeVideoIFrame(this);' data-vars='{ "id" : "<?=$course["youtube"]?>" }' title="<?=nau_trans("See video")?>">
+          <a class="see-video-icon" onClick='openYoutubeVideoIFrame(this);' data-vars='{ "id" : "<?php echo $course["youtube"]?>" }' title="<?php echo nau_trans("See video")?>">
             <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-white.svg">
           </a> 
         <? } ?>
@@ -100,13 +100,13 @@ endif;
     </div>
     <img src="assets/img/banner-shape-long-blue.svg" class="slider-mask">
 
-    <?if (($course["un-sustentability"] != 0) && false) { /* UN Feature Disabled! */ ?> 
-      <a href="/nacoes-unidas/#<?=$course["un-sustentability"]?>">
-        <div id="un-icon" class="over-banner sustainability-onu-badge sustainability-onu-color-<?=$course["un-sustentability"]?>"> 
-           <img class="un-icons" src="assets/img/sustainability-onu-<?=$course["un-sustentability"]?>.svg" alt="">
+    <?php if (($course["un-sustentability"] != 0) && false): /* UN Feature Disabled! */ ?> 
+      <a href="/nacoes-unidas/#<?php echo $course["un-sustentability"]?>">
+        <div id="un-icon" class="over-banner sustainability-onu-badge sustainability-onu-color-<?php echo $course["un-sustentability"]?>"> 
+           <img class="un-icons" src="assets/img/sustainability-onu-<?php echo $course["un-sustentability"]?>.svg" alt="">
         </div>
       </a>
-    <? } ?>
+    <? endif; ?>
   </div>
   <!-- ends carrousel of banners --> 
 
@@ -118,7 +118,7 @@ endif;
 if (current_user_can('edit_posts')) { ?>
    <div class="nau_management">
      <? if ($course["confluence_url"] != "") { ?>
-       <a href="<?=$course["confluence_url"]?>"><span class="material-icons">info</span></a>
+       <a href="<?php echo $course["confluence_url"]?>"><span class="material-icons">info</span></a>
      <? } ?>
    </div>
 <? } ?>
@@ -159,17 +159,17 @@ if (current_user_can('edit_posts')) { ?>
 
   <!-- starts aside course info -->
   <aside>        
-    <?php /*<h3><span class="blue-vertical-line">| </span><?=$course["name"]?></h3>*/ ?>
+    <?php /*<h3><span class="blue-vertical-line">| </span><?php echo $course["name"]?></h3>*/ ?>
     <!---
     <ul>
-      <li class="price-and-certificate-options"><span class="aside-course-price"><?=$course["price"]?></span><? certificate($course); ?></li>
+      <li class="price-and-certificate-options"><span class="aside-course-price"><?php echo $course["price"]?></span><? certificate($course); ?></li>
     </ul>
     <ul class="aside-course-quick-meta">
-      <li class="date-status-label"><?=$course["date_status_label"]?></li>
-      <li class="number-of-participants"><?=$course["participants"]?> <?=nau_trans("Participants")?></li>        
-      <li class="price"><?=$course["price"]?></li> 
-      <li class="enrollment-type"><?=$course["invitation_mode_label"]?></li>
-      <li class="course-type"><?=$course["pace_mode_label"]?></li>
+      <li class="date-status-label"><?php echo $course["date_status_label"]?></li>
+      <li class="number-of-participants"><?php echo $course["participants"]?> <?php echo nau_trans("Participants")?></li>        
+      <li class="price"><?php echo $course["price"]?></li> 
+      <li class="enrollment-type"><?php echo $course["invitation_mode_label"]?></li>
+      <li class="course-type"><?php echo $course["pace_mode_label"]?></li>
     </ul>
     --->
 
@@ -177,30 +177,28 @@ if (current_user_can('edit_posts')) { ?>
     
     
   <!--  
-  <h3><span class="blue-vertical-line">| </span><?=nau_trans("Tags")?></h3>
+  <h3><span class="blue-vertical-line">| </span><?php echo nau_trans("Tags")?></h3>
   <span class="tags">
-  <?=nau_list_tags(null, True)?>
+  <?php echo nau_list_tags(null, True)?>
   </span>
   -->
 
-    <? if (! empty($course["youtube"])) { ?>  
+    <?php if (! empty($course["youtube"])): ?>  
       <div id="course-video-thumbnail">
         <iframe width="100%" height="220"
-          src="https://www.youtube.com/embed/<?=$course["youtube"]?>"
+          src="https://www.youtube.com/embed/<?php echo $course["youtube"]?>"
           frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>        
         </iframe>
       </div>    
-    <? } ?>
+    <? endif; ?>
 
     <ul class="course-related-links">
-        <?php
-        echo nau_generate_custom_value_meta_html(get_custom_value("meta"), $course);
-        ?>
+        <?php echo nau_generate_custom_value_meta_html(get_custom_value("meta"), $course); ?>
 
         <li class="course-details x-material-icons">
           <a id="share-button">
             <i class="material-icons aside-icons">share</i>
-            <?=nau_trans("Share")?>
+            <?php echo nau_trans("Share")?>
           </a>
         </li>
         <li class="start-course"><?php nau_enroll_button($course); ?></li>
@@ -211,7 +209,7 @@ if (current_user_can('edit_posts')) { ?>
 <!-- ends homepage body content --> 
 
 <?php
-  get_template_part( "global", "footer" );
+  get_template_part( "partials/global", "footer" );
 ?>
 
 <!-- starts homepage footer -->

@@ -60,6 +60,6 @@
     </div><!-- .content-area -->
   
 <?php
-  get_template_part( "global", "footer" );
+  get_template_part( "partials/global", "footer" );
   get_footer(); 
 ?>

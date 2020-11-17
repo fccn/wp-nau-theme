@@ -11,7 +11,7 @@
     <!-- starts JS and CSS links --> 
 
     <!-- starts google fonts links -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <!-- ends google fonts links --> 
 
