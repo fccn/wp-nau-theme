@@ -79,7 +79,7 @@ class NAU_Walker_Footer_Nav_Menu extends Walker_Nav_Menu {
           
           <?php if ($social_media["twitter_site"]) { ?>
             <li class="social-media">
-              <a href="https://twitter.com/<?=$social_media["twitter_site"]?>" title="<?=nau_trans("Share on Twitter")?>">
+              <a href="https://twitter.com/<?=$social_media["twitter_site"]?>" target="_blank" title="<?=nau_trans("Share on Twitter")?>">
                 <img src="assets/img/twitter.svg" alt="twitter logo" title="<?=nau_trans("Share on Twitter")?>">
               </a>
             </li>
@@ -87,7 +87,7 @@ class NAU_Walker_Footer_Nav_Menu extends Walker_Nav_Menu {
 
           <?php if ($social_media["linkedin_url"]) { ?>
             <li class="social-media">
-              <a href="<?=$social_media["linkedin_url"]?>" title="<?=nau_trans("Share on Linkedin")?>">
+              <a href="<?=$social_media["linkedin_url"]?>" target="_blank" title="<?=nau_trans("Share on Linkedin")?>">
                 <img src="assets/img/linkedin.svg" alt="Linkedin logo" title="<?=nau_trans("Share on Linkedin")?>">
               </a>
             </li>
@@ -103,7 +103,7 @@ class NAU_Walker_Footer_Nav_Menu extends Walker_Nav_Menu {
 
           <?php if ($social_media["instagram_url"]) { ?>
             <li class="social-media">
-              <a href="<?=$social_media["instagram_url"]?>" title="<?=nau_trans("Share on Instagram")?>">
+              <a href="<?=$social_media["instagram_url"]?>" target="_blank" title="<?=nau_trans("Share on Instagram")?>">
                 <img src="assets/img/instagram.svg" alt="Instagram logo" title="<?=nau_trans("Share on Instagram")?>">
               </a>
             </li>
@@ -111,7 +111,7 @@ class NAU_Walker_Footer_Nav_Menu extends Walker_Nav_Menu {
 
           <?php if ($social_media["wikipedia_url"]) { ?>
             <li class="social-media">
-              <a href="<?=$social_media["wikipedia_url"]?>">
+              <a href="<?=$social_media["wikipedia_url"]?>" target="_blank">
                 <img src="assets/img/more-share.svg" alt="Share list" title="Share list">
               </a>
             </li>
