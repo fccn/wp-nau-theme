@@ -79,7 +79,7 @@ class NAU_Walker_Footer_Nav_Menu extends Walker_Nav_Menu {
           
           <?php if ($social_media["twitter_site"]) { ?>
             <li class="social-media">
-              <a href="<?=$social_media["twitter_site"]?>" title="<?=nau_trans("Share on Twitter")?>">
+              <a href="https://twitter.com/<?=$social_media["twitter_site"]?>" title="<?=nau_trans("Share on Twitter")?>">
                 <img src="assets/img/twitter.svg" alt="twitter logo" title="<?=nau_trans("Share on Twitter")?>">
               </a>
             </li>
