@@ -67,6 +67,23 @@ class NAU_Walker_Footer_Nav_Menu extends Walker_Nav_Menu {
               
         ?>
 
+<?php if ( is_active_sidebar( 'footer_left_area' ) ) : ?>
+	<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+		<?php dynamic_sidebar( 'footer_left_area' ); ?>
+	</div>
+<?php endif; ?>
+
+<?php if ( is_active_sidebar( 'footer_center_area' ) ) : ?>
+	<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+		<?php dynamic_sidebar( 'footer_center_area' ); ?>
+	</div>
+
+<?php endif; ?><?php if ( is_active_sidebar( 'footer_right_area' ) ) : ?>
+	<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+		<?php dynamic_sidebar( 'footer_right_area' ); ?>
+	</div>
+<?php endif; ?>
+
         <?
           $social_media = get_option( 'wpseo_social' ) // read from Yoast SEO > Social
         ?>
