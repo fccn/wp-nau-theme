@@ -54,8 +54,22 @@ class NAU_Walker_Footer_Nav_Menu extends Walker_Nav_Menu {
         <!-- starts quick links -->
         
         <div id="quick-links-section">
-        
+
+
+        <?php if ( is_active_sidebar( 'footer_left_area' ) ) {
+            dynamic_sidebar( 'footer_left_area' );
+        } ?>
+
+        <?php if ( is_active_sidebar( 'footer_center_area' ) ) {
+            dynamic_sidebar( 'footer_center_area' );
+        } ?>
+
+        <?php if ( is_active_sidebar( 'footer_right_area' ) ) {
+            dynamic_sidebar( 'footer_right_area' );
+        } ?>
+
         <?php
+        /*
         wp_nav_menu(array(
                 "theme_location" => "footer",
                 "depth" => 2,        
@@ -64,36 +78,21 @@ class NAU_Walker_Footer_Nav_Menu extends Walker_Nav_Menu {
                 "container_id" => "footer",
                 "walker" => new NAU_Walker_Footer_Nav_Menu()
               )); 
-              
+        */      
         ?>
+        
 
-<?php if ( is_active_sidebar( 'footer_left_area' ) ) : ?>
-	<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
-		<?php dynamic_sidebar( 'footer_left_area' ); ?>
-	</div>
-<?php endif; ?>
 
-<?php if ( is_active_sidebar( 'footer_center_area' ) ) : ?>
-	<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
-		<?php dynamic_sidebar( 'footer_center_area' ); ?>
-	</div>
-
-<?php endif; ?><?php if ( is_active_sidebar( 'footer_right_area' ) ) : ?>
-	<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
-		<?php dynamic_sidebar( 'footer_right_area' ); ?>
-	</div>
-<?php endif; ?>
 
         <?
           $social_media = get_option( 'wpseo_social' ) // read from Yoast SEO > Social
         ?>
 
         <!-- starts social media -->
-        <ul>
-        <li class="footer-links-structure">
-        <ul id="social-media">
-          <li><h5><?=nau_trans("Social Media")?></h5></li>      
-          
+        <div class="footer-social">
+        <span class="footer-title"><?=nau_trans("Social Media")?></span>
+        <div id="social-media">
+          <ul>
           <?php if ($social_media["twitter_site"]) { ?>
             <li class="social-media">
               <a href="https://twitter.com/<?=$social_media["twitter_site"]?>" target="_blank" title="<?=nau_trans("Share on Twitter")?>">
@@ -133,19 +132,20 @@ class NAU_Walker_Footer_Nav_Menu extends Walker_Nav_Menu {
               </a>
             </li>
           <?php } ?>
+          </ul>
+          </div>
 
-          <li id="openedx-logo">
+          <div id="openedx-logo">
             <a href="https://open.edx.org/" target="_blank">
               <img src="assets/img/openedx.svg" alt="Powered by OpenEdX" title="<?=nau_trans("Visit OpenEdX website")?>">
             </a>
-          </li>      
-        </ul>
-        </li>
-        </ul>      
+          </div>    
+        </div>
         <!-- ends social media -->     
         </div>
       </section>
-      <!-- ends footer links -->   
+      <!-- ends footer links -->
+      
       <!-- starts corporate entities -->
       <section id="entities-quick-links">        
         <ul class="flex-row">
