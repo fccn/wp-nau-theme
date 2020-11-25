@@ -18,22 +18,6 @@
             dynamic_sidebar( 'footer_right_area' );
         } ?>
 
-        <?php
-        /*
-        wp_nav_menu(array(
-                "theme_location" => "footer",
-                "depth" => 2,        
-                "menu_id" => "footer-menu",
-                "container" => "ul",
-                "container_id" => "footer",
-                "walker" => new NAU_Walker_Footer_Nav_Menu()
-              )); 
-        */      
-        ?>
-        
-
-
-
         <?
           $social_media = get_option( 'wpseo_social' ) // read from Yoast SEO > Social
         ?>
