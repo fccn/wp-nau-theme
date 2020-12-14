@@ -880,8 +880,10 @@ add_shortcode('nau_homepage_funder_entities_small_images', 'nau_homepage_funder_
 function nau_homepage_highlight_courses($atts = array()) {    
   global $courses;
   $courses = nau_get_posts("curso", ["filter" => "highlight"]);
-  return nau_template_part("partials/courses", "cards");
+  $args = array('section_container' => 'highlight-courses');
+  return nau_template_part("partials/courses", "cards", $args);
 }
+
 add_shortcode('nau_homepage_highlight_courses', 'nau_homepage_highlight_courses');
 
 function nau_homepage_slider($atts = array()) {    

@@ -1,5 +1,5 @@
   
-<div class="card-container">
+<div class="card-container <?php echo $args['section_container']; ?>">
   <?php 
     global $courses;
 
