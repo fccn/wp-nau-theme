@@ -4,6 +4,33 @@
     .main-menu {
         display: flex;
         margin: 0;
-        padding-top: 7px;
+        padding-top: 5px;
+
+        li {
+            list-style-type: none;
+
+            &>a {
+                background: url("../img/arrow-dropdown.svg") no-repeat right 4px;
+                background-size: 12px;
+            }
+
+            a {
+                font-size: 0.85rem;
+                padding-right: 20px;
+                font-weight: 500;
+                text-transform: uppercase;
+                text-decoration: none;
+                color: $text-color;
+                display: block;
+
+                &:hover {
+                    color: $header-bar-color;
+                }
+            }
+        }
+
+        li ul li>a {
+            background: none;
+        } 
     }
 }

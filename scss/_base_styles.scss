@@ -638,7 +638,6 @@ ul#about-categories-entities li:hover .sub-nav {
   color: black !important;
 }
 
-ul#about-categories-entities li a,
 ul#menu_languages,
 ul#menu_login_register li a {
   font-family: "Roboto", sans-serif;
@@ -648,13 +647,13 @@ ul#menu_login_register li a {
   display: block;
   width: auto;
   cursor: pointer;
-  /*font: Bold 11px/19px Roboto;*/
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0;
   color: #000000;
   padding-right: 18px;
   opacity: 1;
 }
+
 ul#about-categories-entities li ul {
   width: auto;
   clear: both;
@@ -1161,6 +1160,7 @@ div#menu-overlay {
   z-index: 1 !important;
   cursor: w-resize;
 }
+
 div#menu-container a#open-menu-arrow {
   display: none !important; /* hide closing menu arrow when in desktop */
 }
