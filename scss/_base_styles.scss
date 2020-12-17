@@ -562,6 +562,7 @@ section#highlighted-courses ul li:nth-child(3) p {
   justify-content: flex-end;
 }
 
+/*
 div#branding-top-nav {
   position: relative;
   top: 0;
@@ -599,6 +600,7 @@ div#branding-top-nav a:nth-child(2) {
   background-size: 12px;
   letter-spacing: 0.5px;
 }
+*/
 .sub-nav {
   position: absolute !important;
   z-index: 2 !important;
@@ -1133,10 +1135,8 @@ div#home-slider p {
   line-height: normal;
   padding-top: 5px;
 }
+
 /* Menu container */
-div#menu-container {
-  height: auto;
-}
 
 div#menu-container ul,
 div#menu-container ul li {
@@ -3528,11 +3528,13 @@ body {
   background: linear-gradient(0, #444 0, #666 100%);
 }
 
+/*
 div#branding-top-nav {
   border-top: solid 0.3em #0857ff;
   border-radius: 0.3em 0.3em 0 0;
   border-bottom: 0;
 }
+*/
 
 .courses-wrap {
   flex-grow: 1;
@@ -3805,11 +3807,13 @@ body {
   background: linear-gradient(0, #444 0, #666 100%);
 }
 
+/*
 div#branding-top-nav {
   border-top: solid 0.3em #0857ff;
   border-radius: 0.3em 0.3em 0 0;
   border-bottom: 0;
 }
+*/
 
 .courses-wrap {
   flex-grow: 1;
@@ -4069,6 +4073,7 @@ article .news_article h2 a {
   right: 20px;
 }
 
+/*
 #menu-container ul li a:hover {
   color: #0857ff;
 }
@@ -4090,6 +4095,9 @@ article .news_article h2 a {
   padding-top: 0.5em !important;
 }
 
+*/
+
+/*
 .main-header div#branding-top-nav #menu-container a#close-menu-arrow {
   text-decoration: none;
   color: black;
@@ -4101,6 +4109,7 @@ article .news_article h2 a {
   text-decoration: none;
   color: blue;
 }
+*/
 
 ul#menu_languages li a:hover {
   text-decoration: none;
@@ -4124,9 +4133,11 @@ ul#menu_login_register li.menu-item-has-children a {
   background-size: 12px;
 }
 
+/*
 div#branding-top-nav a#open-menu-arrow {
   display: none !important;
 }
+*/
 
 @media screen and (max-width: 960px) {
   div#branding-top-nav a#open-menu-arrow {
@@ -4283,9 +4294,11 @@ div#branding-top-nav a#open-menu-arrow {
   min-height: 71px;
 }
 
+/*
 div#branding-top-nav {
   max-height: 70px;
 }
+*/
 
 .global-header .main-header .course-header {
   padding-top: 10px;
