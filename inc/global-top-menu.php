@@ -12,7 +12,7 @@ require('menu/menu_walker.php');
 
   <div class="branding-top-nav">
     <a id="open-menu-arrow" href="javascript:void(0)" onclick="openNav(0)" title="<?=nau_trans("Open")?>">&#9776;</a>  
-    <a href="<?=get_site_url()?>"><img class="logo" src="assets/img/nau_sempre_aprender.svg" alt="NAU logo"></a> 
+    <a href="<?=get_site_url()?>" class="logo"></a> 
 
     <!-- starts menu container -->
     <div class="menu-container">
