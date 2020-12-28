@@ -18,7 +18,7 @@
      
          $course = load_course($coursePage);
     ?>
-    
+
     <div class="rolling-courses-card card <?php echo $course["card_width"]?>-card-width" style="background-color: <?php echo $course["card-color"]?>">
       <div class="card-content">
         <h3><?php echo $course["name"]?><br>

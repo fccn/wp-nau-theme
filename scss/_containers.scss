@@ -1,3 +1,17 @@
+/*
+    Homepage headings
+*/
+
+#homepage {
+    h2 {
+        margin-top: 35px;
+    }
+}
+
+/*
+    Entity container content
+*/
+
 .entity-content {
     padding: 30px 0 50px 50px;
     display: flex;
@@ -25,4 +39,34 @@
 
 .entity-courses {
     padding: 30px 50px;
+}
+
+/*
+    Explore all courses container and button
+    To be used in the homepage
+*/
+
+.explore-courses-container {
+    text-align: center;
+    margin: 2rem;
+
+    .explore-all-courses-btn {
+        border: 2px solid $gray-smalltext-color;
+        text-align: center;
+        color: $gray-smalltext-color;
+        display: inline-block;
+        text-transform: uppercase;
+        min-width: 50%;
+        font-size: 14px;
+        font-weight: 500;
+        border-radius: 25px;
+        padding: .5rem 1rem;
+
+        &:hover, &:focus {
+            color: white;
+            border-color: $header-bar-color;
+            color: $header-bar-color;
+            transition: .3s;
+        }
+    }
 }
