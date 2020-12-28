@@ -1,16 +1,42 @@
-// JavaScript Document
+// Component declaration
+const menuContainer = document.querySelector(".menu-container");
+const openMenu = document.getElementById("open-menu-arrow");
+const closeMenu = document.getElementById("close-menu-arrow");
+const menuOverlay = document.querySelector(".menu-overlay");
+const bodyOverlay = document.getElementsByTagName("body")[0];
 
 // starts menu opening and closing button for menu: cross
 function openNav() {
-  document.getElementById("menu-container").style.cssText = "left:0px;";
-  document.getElementById("open-menu-arrow").style.cssText = "display:none;"; 
-  document.getElementById("close-menu-arrow").style.cssText = "display:block";
-  document.getElementById("menu-overlay").style.cssText = "display:block;z-index:0;background: #000; opacity:0.5;"; 
+  menuContainer.style.cssText = "display:block;";
+  //openMenu.style.cssText = "display:none;"; 
+  closeMenu.style.cssText = "display:block";
+  // enables Overlay and disables scroll on body
+  menuOverlay.style.cssText = "display:block;";
+  bodyOverlay.classList.add("enable-overlay");
 }
+
 function closeNav() {
-  document.getElementById("menu-container").style.cssText = "left:-375px";
-  document.getElementById("open-menu-arrow").style.cssText = "display:block;";
-  document.getElementById("close-menu-arrow").style.cssText = "display:none";  
-  document.getElementById("menu-overlay").style.cssText = "display:block;z-index:-1;"; 
+  menuContainer.style.cssText = "display:none;";
+  openMenu.style.cssText = "display:block;";
+  closeMenu.style.cssText = "display:none";  
+  menuOverlay.style.cssText = "display:none;";
+  bodyOverlay.classList.remove("enable-overlay");
 }
 // ends menu opening and closing button for menu: cross
+
+/* Open submenus
+const menus = document.querySelectorAll(".main-menu>li")
+
+const clearMenus = () => {
+  menus.forEach((menu) => {
+    menu.querySelector('.sub-nav').classList.remove('subnav-active')
+  })
+}
+
+menus.forEach((menu) => {
+  menu.addEventListener("click", function(e) {
+    e.preventDefault()
+    clearMenus()
+    this.querySelector('.sub-nav').classList.toggle('subnav-active')
+  })
+})*/

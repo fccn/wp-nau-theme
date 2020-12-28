@@ -38,13 +38,14 @@
             <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="assets/img/spin.svg" />
         </div>
 
+        <!--
         <div 
           data-scale="0" 
           title="Mask" 
           class="nau-waves">
           <img src="assets/img/waves_all.svg" />
         </div>
-        
+        -->
         <div data-u="slides" class="homepage-slider" style="cursor:default;position:relative;top:0px;left:0px;overflow:hidden;">
            
         <?

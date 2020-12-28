@@ -103,7 +103,7 @@ require('menu/menu_walker.php');
   <!-- ends menu container -->     
   </div>
   <!-- ends branding container -->
-  <div id="menu-overlay" onclick="closeNav(0)"></div>
+  <div class="menu-overlay" onclick="closeNav(0)"></div>
 
 <? } else { ?>
 
@@ -195,6 +195,6 @@ require('menu/menu_walker.php');
   <!-- ends menu container -->     
   </div>
   <!-- ends branding container -->
-  <div id="menu-overlay" onclick="closeNav()"></div>
+  <div class="menu-overlay" onclick="closeNav()"></div>
 
 <? } ?>
