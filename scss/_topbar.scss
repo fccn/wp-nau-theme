@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
     box-shadow: $menu-shadow;
-    padding: 15px 0 15px;
+    padding: 15px 50px 15px 0;
 
     @media screen and (max-width: $breakpoint-medium) {
         display: block;
@@ -16,17 +16,13 @@
         width: 190px;
         height: 30px;
         margin-left: 50px;
-        background: url('../img/nau_sempre_aprender.svg') no-repeat center center;
+        background: url("../img/nau_sempre_aprender.svg") no-repeat center center;
 
         @media screen and (max-width: $breakpoint-medium) {
             display: inline-block;
             width: 100px;
-            background: url('../img/logo-nau-mobile.svg') no-repeat center center;
+            background: url("../img/logo-nau-mobile.svg") no-repeat center center;
         }
-    }
-
-    ul {
-        padding-top: 9px;
     }
 
     li {
@@ -48,6 +44,17 @@
             position: absolute;
             width: 40px;
             margin-left: 10px;
+        }
+    }
+
+    #actions_container {
+        #search-input {
+            border-radius: 50px;
+            height: 33px;
+            padding-left: 15px;
+            border: 1px solid $header-bar-color;
+            font-family: "Roboto", sans-serif;
+            padding-right: 25px;
         }
     }
 }

@@ -1141,9 +1141,6 @@ div#menu-container ul#about-categories-entities {
   margin: 0;
   padding: 5px 0 0 0;
 }
-div#actions_container {
-  margin-right: 50px;
-}
 
 /* Languages and actions container */
 div#languages-actions-container {
@@ -1152,16 +1149,6 @@ div#languages-actions-container {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-}
-
-div#actions_container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  flex-wrap: nowrap;
-  align-content: center;
-  position: relative;
-  top: -2px;
 }
 
 ul#menu_languages {
@@ -1242,6 +1229,8 @@ form#search-form {
 div#actions_container form#search-form {
   margin-right: 25px;
 }
+
+/*
 form#search-form input[type="search"] {
   background-color: transparent;
   border-radius: 50px;
@@ -1258,6 +1247,8 @@ form#search-form input[type="search"] {
   z-index: 2;
   position: relative;
 }
+*/
+
 form#banner-search-form {
   position: relative;
   width: 100%;
@@ -1680,9 +1671,6 @@ body#institution div#home-slider div#nau-shape {
   form#search-form input[type="submit"] {
     top: 2px;
     right: 10px;
-  }
-  ul#menu_actions li a#login_image {
-    margin-right: 0px;
   }
   ul#menu_actions li:first-child a {
     margin-left: 0px;
@@ -4099,9 +4087,6 @@ ul#menu_languages li a:hover {
     top: 2px;
     right: 10px;
   }
-  ul#menu_actions li a#login_image {
-    margin-right: 0px;
-  }
   ul#menu_actions li:first-child a {
     margin-left: 0px;
   }
@@ -4187,13 +4172,6 @@ header.page-header h2 {
   padding-left: 0;
 }
 
-a#login_image {
-  color: #074ce1 !important;
-}
-a#login_image:hover,
-a#login_image:active {
-  color: #000 !important;
-}
 form#banner-search-form input[type="search"] {
   padding: 2em;
   font-size: 1.25rem;
