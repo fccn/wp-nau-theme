@@ -22,7 +22,7 @@ function openNav() {
 function closeNav() {
   menuContainer.style.cssText = "display:none;";
   //openMenu.style.cssText = "display:block;";
-  closeMenu.style.cssText = "display:none";  
+  closeMenu.style.cssText = "display:none";
   menuOverlay.style.cssText = "display:none;";
   bodyOverlay.classList.remove("enable-overlay");
 }

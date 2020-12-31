@@ -1,6 +1,7 @@
 // JavaScript Document
 
 // starts menu opening and closing button for top menu: hamburger
+/*
 function openNav() {
   document.getElementById("menu-container").style.cssText = "left:0px;";
   document.getElementById("open-menu-arrow").style.cssText = "display:none";
@@ -14,6 +15,7 @@ function closeNav() {
   document.getElementById("open-menu-arrow").style.cssText = "display:block;";
   document.getElementById("close-menu-arrow").style.cssText = "display:none;";
 }
+*/
 // ends menu opening and closing button for menu: hamburger
 
 // starts language pointer events
