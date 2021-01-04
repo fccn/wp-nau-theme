@@ -48,12 +48,18 @@
     }
 
     #actions_container {
+        display: flex;
+
+        #search-form {
+            margin-right: 10px;
+            position: relative;
+        }
+
         #search-input {
             border-radius: 50px;
             height: 33px;
-            padding-left: 15px;
             border: 1px solid $header-bar-color;
-            font-family: "Roboto", sans-serif;
+            padding-left: 15px;
             padding-right: 25px;
         }
     }

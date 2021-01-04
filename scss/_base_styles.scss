@@ -114,10 +114,12 @@ q:after {
 }
 
 /* Making specicif elements float left */
+/* This makes no sense whatsoever
 form {
   float: left;
   display: block;
 }
+*/
 
 #body-content article ul li {
   font-size: 14px;
@@ -224,11 +226,9 @@ body#institution #body-content article ul {
   font-size: inherit;
 }
 #body-content article ul li ul {
-  padding: 0px 0px 0px 0px;
+  padding: 0px;
 }
-#body-content article img {
-  max-width: 100%;
-}
+
 #body-content article small {
   text-align: left;
   letter-spacing: 0.12px;
@@ -1222,32 +1222,6 @@ ul#menu_actions li:nth-child(1) a {
   display: flex;
 }
 /* search form */
-form#search-form {
-  /*width: 73%;*/
-  position: relative;
-}
-div#actions_container form#search-form {
-  margin-right: 25px;
-}
-
-/*
-form#search-form input[type="search"] {
-  background-color: transparent;
-  border-radius: 50px;
-  height: 33px;
-  text-align: left;
-  padding-left: 15px;
-  border: 1px solid #9e9e9e;
-  outline: none;
-  font-family: "Roboto", sans-serif;
-  margin-top: -2px;
-  padding-right: 25px;
-  width: 100%;
-  margin: 0 auto;
-  z-index: 2;
-  position: relative;
-}
-*/
 
 form#banner-search-form {
   position: relative;
@@ -1306,7 +1280,6 @@ form#banner-search-form input[type="search"] {
   border: 1px solid transparent;
   outline: none;
   font-family: "Roboto", sans-serif;
-  margin-top: -2px;
   padding-right: 47px;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 5px #00000059;
@@ -1322,7 +1295,6 @@ form#banner-search-form input[type="search"] {
 
 form#search-form input[type="submit"] {
   position: absolute;
-  z-index: 1;
   top: 3.5px;
   right: 8px;
   background: transparent url(../img/magnifier.svg) no-repeat right center;
@@ -1658,16 +1630,7 @@ body#institution div#home-slider div#nau-shape {
     z-index: 1;
     max-width: none;
   }
-  form#search-form {
-    width: 238px;
-    max-width: none;
-    margin: 30px 0;
-  }
-  form#search-form input[type="search"] {
-    width: 238px;
-    max-width: none;
-    margin-bottom: -20px;
-  }
+  
   form#search-form input[type="submit"] {
     top: 2px;
     right: 10px;
@@ -2152,16 +2115,16 @@ div#text-content {
   padding: 50px;
 }
 
-div.result-set {
-  width: 100%;
-}
-
 div.result-set .result {
   min-height: 240px;
+  display: flex;
+}
+
+.result-set .result-details {
+  flex-grow: 1;
 }
 
 div.result-set .result .title {
-  padding-left: 190px;
   font-size: 1.3em;
   margin-bottom: 0.4em;
   line-height: 1.4;
@@ -2174,7 +2137,6 @@ div.result-set .result .title a {
 div.result-set .result .excerpt {
   line-height: 1.6em;
   min-height: 220px;
-  padding-left: 190px;
   margin-bottom: 40px;
 }
 
@@ -2184,6 +2146,7 @@ div.result-set .result .tags {
 }
 
 div.result-set .result .link_image_wrapper a.link_image img.image {
+  display: block;
   margin-right: 30px;
   margin-bottom: 30px;
   margin-top: 6px;
@@ -3517,7 +3480,6 @@ a img:hover {
 div.result-set .result .excerpt {
   line-height: 1.6em;
   min-height: 220px;
-  padding-left: 190px;
   margin-bottom: 40px;
   border-bottom: 1px solid #ccc;
   padding-bottom: 30px;
@@ -3637,12 +3599,6 @@ div#filter span.top-label {
 
 div.result-set .result .excerpt {
   min-height: 172px;
-}
-div.result-set .result .title {
-  padding-left: 173px;
-}
-div.result-set .result .excerpt {
-  padding-left: 173px;
 }
 
 div.result-set .result .link_image_wrapper a.link_image img.image {
@@ -3797,7 +3753,6 @@ a img:hover {
 div.result-set .result .excerpt {
   line-height: 1.6em;
   min-height: 220px;
-  padding-left: 190px;
   margin-bottom: 40px;
   border-bottom: 1px solid #ccc;
   padding-bottom: 30px;
@@ -3914,12 +3869,6 @@ div#filter span.top-label {
 
 div.result-set .result .excerpt {
   min-height: 172px;
-}
-div.result-set .result .title {
-  padding-left: 173px;
-}
-div.result-set .result .excerpt {
-  padding-left: 173px;
 }
 
 div.result-set .result .link_image_wrapper a.link_image img.image {
