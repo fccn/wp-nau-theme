@@ -50,6 +50,10 @@
     #actions_container {
         display: flex;
 
+        @media screen and (max-width: $breakpoint-medium) {
+            justify-content: center;
+        }
+
         #search-form {
             margin-right: 10px;
             position: relative;

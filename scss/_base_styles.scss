@@ -1610,10 +1610,6 @@ body#institution div#home-slider div#nau-shape {
     padding: 10px;
     display: none; /* hide closing menu arrow when in tablet and mobile versions and show only when user click close button */
   }
-  div#actions_container {
-    display: block;
-    padding-top: 20px;
-  }
   ul#menu_actions span,
   ul#menu_languages span {
     display: none;
@@ -1628,7 +1624,6 @@ body#institution div#home-slider div#nau-shape {
   form {
     position: relative;
     z-index: 1;
-    max-width: none;
   }
   
   form#search-form input[type="submit"] {
@@ -2696,9 +2691,6 @@ div#filter span.top-label {
   margin-bottom: 12px;
   cursor: pointer;
   font-size: 14px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -4023,14 +4015,7 @@ ul#menu_languages li a:hover {
     max-width: none;
   }
   form#search-form {
-    width: 238px;
-    max-width: none;
     margin: 30px 0;
-  }
-  form#search-form input[type="search"] {
-    width: 238px;
-    max-width: none;
-    margin-bottom: -20px;
   }
   form#search-form input[type="submit"] {
     top: 2px;
@@ -4093,12 +4078,6 @@ ul#menu_languages li a:hover {
   min-height: 71px;
 }
 
-/*
-div#branding-top-nav {
-  max-height: 70px;
-}
-*/
-
 .global-header .main-header .course-header {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -4131,6 +4110,8 @@ form#banner-search-form input[type="submit"] {
   background-position: right 1.2em;
   margin: 0.4em 1em 0 0;
 }
+
+/*
 .explore-all-courses-font {
   color: #074ce1;
 }
@@ -4138,6 +4119,8 @@ form#banner-search-form input[type="submit"] {
 .explore-all-courses-font:active {
   color: #000;
 }
+*/
+
 .explore-other-courses {
   display: none;
 }
