@@ -4,6 +4,9 @@ const openMenu = document.getElementById("open-menu-arrow");
 const closeMenu = document.getElementById("close-menu-arrow");
 const menuOverlay = document.querySelector(".menu-overlay");
 const bodyOverlay = document.getElementsByTagName("body")[0];
+const helpWidget = document.getElementsByTagName('iframe');
+
+console.log(helpWidget)
 
 /* Menu functions to open and close on mobile.
    They also take care of the overlay activation
