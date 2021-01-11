@@ -23,13 +23,13 @@
         li {
             list-style-type: none;
 
-            & > a {
+            &.menu-item-has-children > a {
                 background: url("../img/arrow-dropdown.svg") no-repeat right 4px;
                 background-size: 12px;
             }
 
-            & > a.nosub {
-                background: none;
+            &.current-menu-item a {
+                color: $header-bar-color !important;
             }
 
             a {
@@ -81,8 +81,12 @@
                 text-transform: initial !important;
                 color: #777 !important;
 
+                &:hover {
+                    color: $header-bar-color !important;
+                }
+
                 @media screen and (max-width: $breakpoint-medium) {
-                    font-size:0.85rem;
+                    font-size: 0.85rem;
                 }
             }
         }
@@ -110,7 +114,7 @@
             }
 
             &:last-child {
-                margin:0;
+                margin: 0;
 
                 a {
                     color: white;

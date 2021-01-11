@@ -7,7 +7,7 @@ require('menu/menu_walker.php');
 
 ?>
 
-
+<?php // remove this if in the future ?>
 <? if (1) { ?>
 
   <div class="branding-top-nav">

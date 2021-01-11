@@ -105,13 +105,6 @@ q {
   font-family: georgia;
   line-height: normal;
 }
-q:before,
-q:after {
-  content: "“";
-}
-q:after {
-  content: "”";
-}
 
 #body-content article ul li {
   font-size: 14px;
@@ -131,7 +124,6 @@ table {
   background: #ebe9e966 0% 0% no-repeat padding-box;
   border: 1px solid #999 !important;
   font-size: 13px;
-  opacity: 1;
 }
 
 body .table {
@@ -145,9 +137,6 @@ body .table {
   border-collapse: inherit;
 }
 
-.wp-block-table .has-fixed-layout {
-  display: flex !important;
-}
 table th {
   padding: 20px 10px;
   background: #d9d9d9b3 0% 0% no-repeat padding-box;
@@ -358,10 +347,6 @@ div#main-container {
   margin: 0 auto 50px auto;
   display: flow-root;
   border-radius: 10px;
-}
-
-div#home-content {
-  padding: 20px 50px;
 }
 
 div#body-content {
@@ -1682,10 +1667,6 @@ body#homepage .video-know-more-icons .know-more-icon {
 }
 
 @media (max-width: 576px) {
-  #home-content {
-    padding-left: 1%;
-    padding-right: 1%;
-  }
 
   .nau-waves img {
     display: none !important;
@@ -1718,10 +1699,6 @@ body#homepage .video-know-more-icons .know-more-icon {
     font-size: 18px;
   }
 
-  div#home-content {
-    padding: 20px 10px 50px 22px;
-  }
-
   body#homepage div#home-content section {
     padding-right: 0px;
   }
@@ -1751,10 +1728,6 @@ body#homepage .video-know-more-icons .know-more-icon {
     margin-right: 5px;
   }
 
-  div#home-content {
-    padding: 20px 08px 50px 13px !important;
-  }
-
 }
 
 @media screen and (min-width: 481px) and (max-width: 798px) {
@@ -1766,10 +1739,6 @@ body#homepage .video-know-more-icons .know-more-icon {
   body.secondary-pages p {
     padding: 0px 0px 16px 0px;
     font-size: 14px;
-  }
-
-  #home-content {
-    padding-left: 50px !important;
   }
 
   body#institution div#home-slider h1,
