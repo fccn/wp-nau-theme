@@ -41,6 +41,10 @@
                 color: $text-color;
                 display: block;
 
+                @media screen and (max-width: $breakpoint-medium) {
+                    margin-bottom: 20px;
+                }
+
                 &:hover {
                     color: $header-bar-color;
                 }
@@ -71,7 +75,7 @@
                 margin-left: 0;
                 box-shadow: none;
                 border-radius: 0;
-                padding: 10px 10px 20px;
+                padding: 0px 10px 20px;
             }
 
             li a {
