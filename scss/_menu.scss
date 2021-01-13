@@ -23,9 +23,14 @@
         li {
             list-style-type: none;
 
+            &:not(.menu-item-has-children) > a {
+                padding-right: 5px;
+            }
+
             &.menu-item-has-children > a {
                 background: url("../img/arrow-dropdown.svg") no-repeat right 4px;
                 background-size: 12px;
+                padding-right: 20px;
             }
 
             &.current-menu-item a {
@@ -34,7 +39,6 @@
 
             a {
                 font-size: 0.85rem;
-                padding-right: 20px;
                 font-weight: 500;
                 text-transform: uppercase;
                 text-decoration: none;
