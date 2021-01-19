@@ -106,6 +106,10 @@
         margin: 0;
 
         li {
+            &:hover .sub-nav {
+                display: block;
+            }
+
             a {
                 font-size: 0.85rem;
                 font-weight: 500;
