@@ -57,7 +57,7 @@ function nau_theme_enqueue_styles() {
     wp_enqueue_script( 'jquery-ui-autocomplete' );
     wp_enqueue_script( 'jquery-ui-slider' );
 
-    wp_enqueue_style('reset-style', get_template_directory_uri() . '/assets/base_css/reset.css', array(), version_id(), 'all');
+    wp_enqueue_style('reset-style', get_template_directory_uri() . '/assets/css/reset.css', array(), version_id(), 'all');
     wp_enqueue_style('styles-style', get_template_directory_uri() . '/assets/css/layout.css', array(), version_id(), 'all');
     
     wp_enqueue_style('style-style', get_template_directory_uri() . '/style.css', array(), version_id(), 'all');
@@ -699,21 +699,23 @@ function load_course($coursePage) {
   $course["invitation_mode_label"] = ($course["invitation_only"]=="1"?nau_trans("Invitation only"):nau_trans("Open to everyone"));
   $course["status_label"] = nau_trans($course["status"]);
   
-  $days_to_start = days_to_today($course["start_date"]);
-  $days_to_end = days_to_today($course["end_date"]);
+  $days_to_start = days_to_today(get_field("nau_lms_course_start", $coursePage->ID));
+  $days_to_end = days_to_today(get_field("nau_lms_course_end", $coursePage->ID));
 
   $days_to_enrollment_start = empty($course["enrollment_start"]) ? null : days_to_today($course["enrollment_start"]);
   $days_to_enrollment_end =   empty($course["enrollment_end"])   ? null : days_to_today($course["enrollment_end"]);
+
+  $course_started = strtotime(get_field("nau_lms_course_start", $coursePage->ID)) <= strtotime('now');
 
   if ($days_to_start >= 7) {
       $course["date_status_label"] = nau_trans("Scheduled to start");
       $course["date_status_date"] = $course["start_date"];
       $course["date_status_class"] = "date_status_scheduled_to_start";
-  } else if ($days_to_start < 7 && $days_to_start > 0) {
+  } else if ($days_to_start < 7 && $days_to_start >= 0 && !$course_started) {
       $course["date_status_label"] = nau_trans("About to start");
       $course["date_status_date"] = $course["start_date"];
       $course["date_status_class"] = "date_status_about_to_start";
-  } else if ($days_to_start < 0 && $days_to_end > 0 && ( is_null($days_to_enrollment_end) || $days_to_enrollment_end >= 7 ) ) {
+  } else if ($days_to_start <= 0 && $days_to_end > 0 && ( is_null($days_to_enrollment_end) || $days_to_enrollment_end >= 7 ) && $course_started) {
       $course["date_status_label"] = nau_trans("Available");
       $course["date_status_date"] = $course["start_date"];
       $course["date_status_class"] = "date_status_running";
