@@ -114,11 +114,19 @@
                 }
             }
 
+            .sub-nav {
+                @media screen and (max-width: $breakpoint-medium) {
+                    display: none;
+                }
+            }
+
             ul.sub-nav li:last-child a {
-                background-color: none;
+                background-color: transparent;
+                padding: 0;
+                margin: 0.5rem;
 
                 &:hover, &:focus {
-                    background-color: none;
+                    background-color: transparent;
                 }
             }
 

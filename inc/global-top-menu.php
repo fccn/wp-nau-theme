@@ -84,7 +84,7 @@ require('menu/menu_walker.php');
       <? } ?>
         
         <!-- starts login and register -->      
-        <?php 
+        <?php
         wp_nav_menu(array(
             "theme_location" => "access",
             "depth" => 2,
@@ -93,8 +93,7 @@ require('menu/menu_walker.php');
             "menu_class" => "login_menu",
             "walker" => new NAU_Walker_Access_Menu()
          )); 
-
-        ?>  
+        ?>
         
         <!-- ends login and register -->     
         </div>  
