@@ -108,6 +108,18 @@
         li {
             &:hover .sub-nav {
                 display: block;
+
+                @media screen and (max-width: $breakpoint-medium) {
+                    display: none;
+                }
+            }
+
+            & .sub-nav li:last-child a {
+                background-color: none;
+
+                &:hover, &:focus {
+                    background-color: none;
+                }
             }
 
             a {
@@ -140,12 +152,6 @@
                         background-color: $action-btn-color;
                     }
                 }
-            }
-        }
-
-        .sub-nav {
-            @media screen and (max-width: $breakpoint-medium) {
-                display: none;
             }
         }
     }
