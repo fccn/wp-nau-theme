@@ -81,7 +81,7 @@ require('menu/menu_walker.php');
         
         <!-- starts login and register -->      
         <?php
-        /*
+        
         wp_nav_menu(array(
             "theme_location" => "access",
             "depth" => 2,
@@ -89,31 +89,8 @@ require('menu/menu_walker.php');
             "menu_id" => "menu_login_register",
             "menu_class" => "login_menu",
             "walker" => new NAU_Walker_Access_Menu()
-         )); */ 
+         ));
         ?>
-
-<ul id="menu_login_register" class="login_menu"><li id="menu-item-4403" class="menu-item menu-item-type-custom menu-item-object-custom open-edx-link login_or_menu_openedx menu-item-type-wp-edunext-marketing-site menu-item-object-menu_openedx menu-item-has-children menu-item-4403">
-<a href="https://lms.nau.edu.pt/dashboard" id="register">sandrocosta</a>
-
-<ul class="sub-nav access-menu menu-depth-0">
-<li id="menu-item-5158" class="menu-item menu-item-type-custom menu-item-object-custom open-edx-link resume_openedx menu-item-type-wp-edunext-marketing-site menu-item-object-resume_openedx menu-item-5158">
-<a href="https://lms.nau.edu.pt/courses/course-v1:SSI+PMS+2021_T1/jump_to/block-v1:SSI+PMS+2021_T1+type@html+block@1064ac63e9a44b9d8b92428f2f664452" id="login_image">Continuar curso</a>
-</li>
-<li id="menu-item-5174" class="menu-item menu-item-type-custom menu-item-object-custom open-edx-link dashboard_openedx menu-item-type-wp-edunext-marketing-site menu-item-object-dashboard_openedx menu-item-5174">
-<a href="https://lms.nau.edu.pt/dashboard" id="login_image">Meus cursos</a>
-</li>
-<li id="menu-item-4311" class="menu-item menu-item-type-custom menu-item-object-custom open-edx-link account_openedx menu-item-type-wp-edunext-marketing-site menu-item-object-account_openedx menu-item-4311">
-<a href="https://lms.nau.edu.pt/account/settings" id="login_image">Conta</a>
-</li>
-<li id="menu-item-4310" class="menu-item menu-item-type-custom menu-item-object-custom open-edx-link profile_openedx menu-item-type-wp-edunext-marketing-site menu-item-object-profile_openedx menu-item-4310">
-<a href="https://lms.nau.edu.pt/u/sandrocosta" id="login_image">Perfil</a>
-</li>
-</ul>
-</li>
-<li id="menu-item-1719" class="menu-item menu-item-type-custom menu-item-object-custom open-edx-link signout_openedx menu-item-type-wp-edunext-marketing-site menu-item-object-signout_openedx menu-item-1719">
-<a href="https://lms.nau.edu.pt/logout" id="login_image">Sair</a>
-</li>
-</ul>
         
         <!-- ends login and register -->     
         </div>  
