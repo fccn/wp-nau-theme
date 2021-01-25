@@ -110,6 +110,12 @@
                 background: url("../img/arrow-dropdown.svg") no-repeat right 4px;
                 background-size: 12px;
                 padding-right: 20px;
+
+                @media screen and (max-width: $breakpoint-medium) {
+                    background:none;
+                    background-size: inherit;
+                    padding-right: inherit;
+                }
             }
 
             &:hover .sub-nav {
