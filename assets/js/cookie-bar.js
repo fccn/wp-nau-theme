@@ -6,112 +6,69 @@ function addEvent(element, eventName, fn) {
         element.attachEvent('on' + eventName, fn);
 }
 
+/* extracted from ez-consent.js */
+const consentCookies = (() => {
+    const consentCookieName = "nau-cookie-consent";
+    const getCookie = () => {
+        const value = "; " + document.cookie;
+        const parts = value.split("; " + consentCookieName + "=");
+        if (parts.length === 2) {
+            return parts.pop().split(";").shift();
+        }
+    }
+    const setCookie = () => {
+        const cookieParts = [];
+        cookieParts.push(consentCookieName + "=accepted");
+        const date = new Date();
+        date.setFullYear(date.getFullYear() + 10);
+        cookieParts.push("expires=" + date.toUTCString());
+        cookieParts.push("path=/");
+        cookieParts.push("domain=" + location.hostname.replace(/^www\./i, ""));
+        const cookie = cookieParts.join('; ') + ';';
+        document.cookie = cookie;
+    }
+    return { 
+        getCookie: getCookie,
+        setCookie: setCookie
+    }
+})();
 
-start_cookie_bar = function(){     
-
-    var nau_cookie_notification = {};
+start_cookie_bar = function() {     
 
     if (window.jQuery) {  
 
-        console.log("JQuery loaded!");
-
-        updateMessage = function() {
-            console.log("Updating up nau_cookie_date_set!");
-            nau_cookie_date_set_span = document.getElementById("nau_cookie_date_set");
-            if (nau_cookie_date_set_span) {
-                console.log("Found nau_cookie_date_set_span!");
-                date_html = nau_cookie_notification.date.toLocaleString();
-                console.log(date_html);
-                if (nau_cookie_notification.status != "show") 
-                    nau_cookie_date_set_span.innerHTML = date_html;
-                else
-                    nau_cookie_date_set_span.innerHTML = "nunca";
-            } else {
-                console.log("Not found nau_cookie_date_set! Thats ok!");
-            }
-        }
-
-
         updateCookieInformation = function() {
-            
-            if (localstorage_status = localStorage.getItem('NAUCookieNotification.status')) {
-                console.log("LocalStorage.status" + localstorage_status);
-            } else {
-                console.log("LocalStorage.status not found! " + localstorage_status);
-            }
-            
-            if (localstorage_date = localStorage.getItem('NAUCookieNotification.date')) {
-                console.log("LocalStorage.date " + localstorage_date.toLocaleString());
-            } else {
-                console.log("LocalStorage.date not found! " + localstorage_date);
-            }
-            
-            nau_cookie_notification = {
-                "date": new Date(localStorage.getItem('NAUCookieNotification.date')),
-                "status": localStorage.getItem('NAUCookieNotification.status')
-            }
-
-            now = new Date()
-            total_days_since_accept = (nau_cookie_notification.date.getTime() - now.getTime()) / (1000 * 60 * 60 * 24);
 
             const ele = document.getElementById("cookie-notification");
-            const visible = (nau_cookie_notification.status == 'show') || (total_days_since_accept > 7);
-            const styleDisplay = visible ? "block" : "none";
-            if (ele != null) {
+            
+            const cookieInfo = consentCookies.getCookie();
+
+            const styleDisplay = cookieInfo === undefined ? "block" : "none";
+
+            if (ele !== undefined) {
                 ele.style.display = styleDisplay;
             }
-            
-            updateMessage();
-        }
-
-        resetNauNotificationCookie = function() {
-            nau_cookie_notification = { "date" : new Date(), "status": "show" };
-            localStorage.setItem('NAUCookieNotification.date', nau_cookie_notification.date);
-            localStorage.setItem('NAUCookieNotification.status', nau_cookie_notification.status);
-            return nau_cookie_notification;
         }
 
         acknoledgeNauNotificationCookie = function() {
-            nau_cookie_notification = { "date" : new Date(), "status": "acknowledged" };
-            localStorage.setItem('NAUCookieNotification.date', nau_cookie_notification.date);
-            localStorage.setItem('NAUCookieNotification.status', nau_cookie_notification.status);
-            return nau_cookie_notification;
-        }
-
-
-        clearCookie = function() {
-            console.log("Clear Cookie Bar!");
-            resetNauNotificationCookie();
-            updateCookieInformation();
+            consentCookies.setCookie();
         }
     
         closeCookie = function() {
-            console.log("Close Cookie Bar!");
             acknoledgeNauNotificationCookie();
             updateCookieInformation();
         }
-        
-        console.log("Functions ok!!");
     
-        // Bind the buttons
-        
-        clearCookie_btn = document.getElementById ("clearCookie");
-        if (clearCookie_btn)
-            clearCookie_btn.addEventListener ("click", clearCookie, false);
+        updateCookieInformation();        
         
         closeCookie_btn = document.getElementById ("closeCookie");
         if (closeCookie_btn)
             closeCookie_btn.addEventListener ("click", closeCookie, false);
-        
-        console.log("EventListner ok!");
 
-        updateCookieInformation();        
         
-   } else {
-        console.log("JQuery not loaded!");
+   } else { 
         setTimeout(start_cookie_bar, 1000);
     }
 };
-
 
 addEvent(window, 'load', start_cookie_bar);

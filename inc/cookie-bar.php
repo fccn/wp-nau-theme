@@ -10,8 +10,10 @@
 ?>      
 
 <? if ($nau_cookie_message_visible == 1) { ?>
-  <div id="cookie-notification" class="cookie-wrapper cookie">    
+  <div id="cookie-notification" class="cookie-wrapper cookie" style="display: none;">    
+    <div class="cookie-consent">
       <p><?=$cookie_message?></p>
       <a id="closeCookie" class="btn"><?=nau_trans("Accept")?></a>    
+    </div>
   </div>
 <? } ?>
