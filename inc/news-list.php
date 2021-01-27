@@ -11,27 +11,29 @@
 <?
   while( have_posts() ): the_post(); /* start main loop */ ?>
 
-  <article class="news_article">
-    <h2><a href="<?=get_permalink()?>"><?php the_title(); ?></a></h2>
-    <a class="news_image_link" href="<?=get_permalink()?>">
-      <img class="news_image" src="<?=get_the_post_thumbnail_url()?>">
+  <article class="news-article">
+    <a class="news-article__link" href="<?php echo get_permalink(); ?>">
+      <div class="news-article__header">
+        <img class="news-article__image" src="<?php the_post_thumbnail_url('thumbnail'); ?>">
+      </div>
+      
+      <div class="news-article__description">
+        <h2><?php the_title(); ?></h2>
+        <p class="news-article__description-date"><?php echo get_the_date( 'l, j F Y' );?></p>
+        <p class="news-article__description-excerpt"><?php echo do_shortcode(the_excerpt()); ?></p>
+      </div>
+      <!--<a class="news_articleimage_button" href="<?php echo get_permalink(); ?>">
+        <?php echo nau_trans("Read More"); ?>
+      </a>-->
     </a>
-    <p class="news_date">
-      <?=get_the_date()?>
-    </p>
-    <p class="news_content">
-      <?=do_shortcode(the_excerpt())?>
-    </p>
-    <a class="news_image_button" href="<?=get_permalink()?>">
-      <span class="button"><?=nau_trans("Read More")?></span>
-    </a>
-  </article>        
+</article>
+
+<div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
+
+<div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
 
 <?
-   
-
    endwhile; /* End the main loop */ 
-   
 ?>
 </div>
 <?
