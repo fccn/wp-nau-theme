@@ -1,6 +1,6 @@
 # Docker file with node and gulp js to compile sass files to css.
 # This docker container is used by the wordpress devstack and the ansible deployment.
-FROM node:14.14.0-stretch
+FROM node:14.15.4-buster
 
 WORKDIR /usr/src/app
 
