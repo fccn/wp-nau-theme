@@ -1260,14 +1260,14 @@ form#banner-search-form input[type="search"] {
 
 form#search-form input[type="submit"] {
   position: absolute;
-  top: 3.5px;
-  right: 8px;
+  top: 4px;
+  right: 15px;
   background: transparent url(../img/magnifier.svg) no-repeat right center;
   width: 25px;
   border: none;
   outline: none;
   text-indent: -9999px;
-  background-size: 16px;
+  background-size: 20px;
   height: 25px;
   cursor: pointer;
   z-index: 7;
@@ -1591,10 +1591,6 @@ body#institution div#home-slider div#nau-shape {
     z-index: 1;
   }
   
-  form#search-form input[type="submit"] {
-    top: 2px;
-    right: 10px;
-  }
   ul#menu_actions li:first-child a {
     margin-left: 0px;
   }
@@ -3780,13 +3776,6 @@ ul#menu_languages li a:hover {
     position: relative;
     z-index: 1;
     max-width: none;
-  }
-  form#search-form {
-    margin: 30px 0;
-  }
-  form#search-form input[type="submit"] {
-    top: 2px;
-    right: 10px;
   }
   ul#menu_actions li:first-child a {
     margin-left: 0px;

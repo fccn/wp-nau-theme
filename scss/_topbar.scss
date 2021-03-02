@@ -6,6 +6,7 @@
     justify-content: space-between;
     box-shadow: $menu-shadow;
     padding: 20px 50px 20px 0;
+    line-height: 1.3rem;
 
     @media screen and (max-width: $breakpoint-medium) {
         display: block;
@@ -61,10 +62,11 @@
 
         #search-input {
             border-radius: 50px;
-            height: 33px;
+            height: 36px;
             border: 1px solid $header-bar-color;
             padding-left: 15px;
             padding-right: 25px;
+            min-width: 240px;
         }
     }
 }
