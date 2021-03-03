@@ -71,7 +71,7 @@
 
           <div id="openedx-logo">
             <a href="https://open.edx.org/" target="_blank">
-              <img src="assets/img/openedx.svg" alt="Powered by OpenEdX" title="<?=nau_trans("Visit OpenEdX website")?>">
+              <img src="assets/img/edx-openedx-logo.png" alt="Powered by OpenEdX" title="<?=nau_trans("Visit OpenEdX website")?>">
             </a>
           </div>    
         </div>
