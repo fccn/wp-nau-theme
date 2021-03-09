@@ -118,6 +118,17 @@ function register_footer_widgets() {
       'after_title' => '</span>',
     )
   );
+  register_sidebar( 
+    array(
+      'name' => esc_html__( 'Footer entity logos', 'nau_theme' ),
+      'id' => 'footer_entity_logos',
+      'description' => esc_html__( 'Add a menu to the bottom area of the footer', 'nau_theme' ),
+      'before_widget' => '<div id="%1s" class="footer-bottom-area %2s">',
+      'after_widget' => '</div>',
+      'before_title' => '<span class="footer-title">',
+      'after_title' => '</span>',
+    )
+  );
 }
 add_action( 'widgets_init', 'register_footer_widgets' );
 

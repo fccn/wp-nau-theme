@@ -81,14 +81,23 @@
       <!-- ends footer links -->
       
       <!-- starts corporate entities -->
-      <section id="entities-quick-links">        
+      <section id="entities-quick-links">
+      <!--
         <ul class="flex-row">
           <li><a href="https://nau.edu.pt"><img id="logo-nau" src="assets/img/nau_sempre_aprender.svg" alt="Logo NAU" title="NAU - Sempre a Aprender"></a>
-          <span id="copyright" >&copy; <?php echo date("Y")?> - FCT|FCCN. <?=nau_trans("All rights reserved.")?></span>
           </li>
           <li><a id="logo-compete" href="https://www.fccn.pt/financiamento-projeto-nau/"><img src="<?=get_template_directory_uri()?>/assets/img/co-financed.png" alt="Logos: Compete, Portugal 2020 e União Europeia - Fundo Europeu de Desenvolvimento Regional"  title="Compete 2020, Portugal 2020 e União Europeia - Fundo Europeu de Desenvolvimento Regional"></a></li>
           <li><a id="logo-incode2030" href="https://www.incode2030.gov.pt/" target="_blank"><img src="assets/img/incode.png" alt="Portugal - INcode2030" title="<?=nau_trans("Visit INcode2030 website")?>"></a></li>  
         </ul>
+-->
+        <?php if ( is_active_sidebar( 'footer_entity_logos' ) ) {
+            dynamic_sidebar( 'footer_entity_logos' );
+        } ?>
+      </section>
+      <section class="site-copyright">
+        <div class="site-copyright--nau">
+        <span>&copy; <?php echo date("Y");?> - FCT|FCCN<br>Todos os direitos reservados.</span>
+        </div>
       </section>
       <!-- ends corporate entities --> 
     </footer>
