@@ -116,6 +116,7 @@ footer {
             background-repeat: no-repeat;
             background-position: top left;
             padding-left: 150px;
+            color: #4e4e4e;
 
             @media screen and (max-width: $breakpoint-small) {
                 padding-left: 0;
@@ -123,7 +124,7 @@ footer {
             }
 
             span {
-                font-size: 0.7125rem;
+                font-size: 0.7rem;
             }
         }
     }
