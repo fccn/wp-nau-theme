@@ -1,13 +1,14 @@
 footer {
-    ul, ol {
+    ul,
+    ol {
         padding: 0;
-        list-style: none; 
+        list-style: none;
     }
 
     #quick-links-section {
         padding: 40px 50px;
         background-color: $footer-bg-color;
-        display:flex;
+        display: flex;
 
         div:nth-last-child(2) {
             max-width: none !important;
@@ -39,7 +40,7 @@ footer {
             text-transform: inherit;
             line-height: 1.7em;
 
-            &:hover  {
+            &:hover {
                 text-decoration: underline;
             }
         }
@@ -72,20 +73,35 @@ footer {
 
     section#entities-quick-links {
         background-color: white;
-        display:flex;
+        display: flex;
         justify-content: space-between;
         padding: 40px 50px;
+        flex-wrap: wrap;
 
         @media screen and (max-width: $breakpoint-medium) {
             flex-direction: column;
         }
 
-        &>div {
-            flex: 1 0 auto;
+        & > div {
             text-align: center;
+            flex-shrink: 1;
+            padding-bottom: 10px;
+
+            .wp-caption-text {
+                border: 0;
+                clip: rect(1px, 1px, 1px, 1px);
+                clip-path: inset(50%);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+                word-wrap: normal !important;
+            }
 
             @media screen and (max-width: $breakpoint-medium) {
-                padding:10px;
+                padding: 10px 10px 0 10px;
             }
 
             &:first-child {
