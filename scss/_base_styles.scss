@@ -1875,16 +1875,9 @@ body#homepage #main-container #home-slider div.homepage-slide-item.news p {
 }
 
 #body-content .teacher .teacher-image img {
-  max-height: 220px;
+  max-height: 160px;
   display: block;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  -webkit-border-radius: 99em;
-  -moz-border-radius: 99em;
-  border-radius: 0.8em;
-  border: 5px solid #eee;
-  box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.6);
+  border-radius: 1.5rem;
 }
 
 #body-content .teacher h4 {
@@ -2433,25 +2426,6 @@ body#homepage div#home-slider .homepage-slide-item .nau-slide-content {
   height: 500px !important;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-/*
-section#highlighted-courses {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-right: 0px;
-}*/
-
-#body-content .teacher .teacher-image img {
-  max-height: 220px;
-  display: block;
-  background-repeat: no-repeat;
-  background-position: center center;
-  -webkit-border-radius: 99em;
-  -moz-border-radius: 99em;
-  border-radius: 0;
-  border: none;
 }
 
 div.nau_disabled a {
