@@ -1,13 +1,5 @@
-<?php
-       
-  use lloc\Msls\MslsBlogCollection;
-
-  $blog = MslsBlogCollection::instance()->get_current_blog();
-  $language = $blog->get_language();
-  
-?>
 <!doctype html>
-<html lang="<?php echo $language?>">
+<html <?php language_attributes(); ?>>
 <?php
   require get_template_directory() . '/inc/global-head.php';
 ?>

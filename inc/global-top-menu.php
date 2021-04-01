@@ -1,8 +1,5 @@
 <?php
 
-use lloc\Msls\MslsBlogCollection;
-use lloc\Msls\MslsOptions;
-
 require('menu/menu_walker.php');
 
 ?>
@@ -36,49 +33,7 @@ require('menu/menu_walker.php');
             <input name="submit-search" type="submit">
           </form>
           <!-- ends top nav search bar -->
-      
-      <!-- starts menu languages --> 
-      
-      <?php 
-      
-      $blogs  = MslsBlogCollection::instance();
-      $mydata = MslsOptions::create();      
-      $language_menu_item = [];
-      
-      foreach ( $blogs->get_objects() as $blog ) {
-          $language = $blog->get_language();
-          $url = $mydata->get_current_link();
-          $current  = ( $blog->userblog_id == MslsBlogCollection::instance()->get_current_blog_id() );
-          $language_menu_item[] = array(
-              "this_blog" => $current,
-              "url" => $blog->siteurl,
-              "language" => $language,
-              "description" => $blog->get_description(),
-              "lang_id" => $blog->get_alpha2()
-          );
-      }
-
-      ?>
-      
-      <? $nau_menu_languages = get_option('nau_menu_languages', 1) ?>
-      <? if ($nau_menu_languages == 1) { ?>
-
-      <div id="languages-actions-container">
-        <ul id="menu_languages">
-          <?php 
-          
-            foreach($language_menu_item as $menu_item) {                
-                if ($menu_item["this_blog"]) {
-                    print("<li class=\"current_language\">" . $menu_item["lang_id"] . "</li>");
-                } else {
-                    print("<li><a href=\"" . $menu_item["url"] . "\" title=\"" . $menu_item["description"] . "\">" . $menu_item["lang_id"] . "</a></li>");
-                }
-            }
-          ?>
-         </ul>
-      </div>
-      <? } ?>
-        
+              
         <!-- starts login and register -->      
         <?php
         

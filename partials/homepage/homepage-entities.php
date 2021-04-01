@@ -1,5 +1,5 @@
   <?php
-    $entities = nau_get_posts("entidade", ["filter" => "fundador"]);;
+    $entities = nau_get_entities( ["filter" => "fundador"]);;
   ?>   
   
   <!-- starts entidades NAU -->

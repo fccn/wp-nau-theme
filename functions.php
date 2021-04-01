@@ -217,10 +217,8 @@ function _nau_get_pages($category = "", $atts = array()) {
   */
 }
 
-
-
 function nau_get_un_courses($un_id) {
-    return nau_get_posts("curso", array(), array('un-sustentability'=>$un_id));
+    return nau_get_courses( array(), array('un-sustentability'=>$un_id));
 }
 
 function nau_un_courses_gallery($un_id) {
@@ -229,9 +227,24 @@ function nau_un_courses_gallery($un_id) {
    get_template_part( "partials/courses", "cards" );
 }
 
-
 function nau_entity_courses($entityPage) {
-    return nau_get_posts("curso", array(), array('nau-organization'=>$entityPage->ID));
+    return nau_get_courses( array(), array('nau-organization'=>$entityPage->ID));
+}
+
+function nau_get_entities($atts = array(), $fields = array(), $showall = 0) {
+  return nau_get_posts("entidade", $atts, $fields, $showall);
+}
+
+function nau_get_courses($atts = array(), $fields = array(), $showall = 0) {
+  return nau_get_posts("curso", $atts, $fields, $showall);
+}
+
+function nau_get_category_id_by_slug($category_slug) {
+  $idObj = get_category_by_slug( $category_slug );
+  if ( $idObj instanceof WP_Term ) {
+    $id = $idObj->term_id;
+  }
+  return $id;
 }
 
 function nau_get_posts($category = "", $atts = array(), $fields = array(), $showall = 0) { 
@@ -245,10 +258,15 @@ function nau_get_posts($category = "", $atts = array(), $fields = array(), $show
     'filter' => ''
     ), $atts));
 
+  #$category_in_array = array(nau_get_category_id_by_slug($category), nau_get_category_id_by_slug('course'));
+  #print("category_in_array --> " . print_r(nau_get_category_id_by_slug($category) ) );
+
   $args = array(
+    #'lang' => 'pt,en',
     'post_type' => 'page', 
     'posts_per_page' => -1, 
     'category_name' => $category,
+    #'category__in' => $category_in_array,
     'orderby' => 'menu_order',
     'order' => 'ASC'
   );
@@ -304,13 +322,13 @@ function make_link_list($array_of_pages) {
 }
 
 function nau_entities_list($atts = array()) {   
-   return make_link_list(nau_get_posts("entidade", $atts));
+   return make_link_list(nau_get_entities( $atts));
 } 
 
 add_shortcode('nau_entities_list', 'nau_entities_list');
 
 function nau_courses_list($atts = array()) {    
-   return make_link_list(nau_get_posts("curso", $atts));
+   return make_link_list(nau_get_courses( $atts));
 }
 
 add_shortcode('nau_courses_list', 'nau_courses_list');
@@ -318,7 +336,7 @@ add_shortcode('nau_courses_list', 'nau_courses_list');
 
 function nau_courses_gallery($atts = array()) { 
    global $courses;
-   $courses = nau_get_posts("curso", $atts);
+   $courses = nau_get_courses( $atts);
    ob_start();
    get_template_part( "partials/courses", "cards" );
    $value = ob_get_contents();
@@ -437,7 +455,7 @@ function html_list_courses($courses, $fields, $extra_fields, $keys) {
 
 function nau_list_courses_extended($atts = array()) { 
    global $courses;
-   $courses = nau_get_posts("curso", $atts, null, True);
+   $courses = nau_get_courses( $atts, null, True);
 
    $value = "<h3>Lista de Cursos</h3>";
    $value .= html_list_courses($courses, 
@@ -473,7 +491,7 @@ add_shortcode('nau_list_courses_extended', 'nau_list_courses_extended');
 
 function nau_entities_gallery($atts = array()) { 
    global $entities;
-   $entities = nau_get_posts("entidade", $atts);
+   $entities = nau_get_entities( $atts);
    ob_start();
    get_template_part( "partials/entities", "cards" );
    $value = ob_get_contents();
@@ -934,7 +952,7 @@ add_shortcode('nau_homepage_funder_entities_small_images', 'nau_homepage_funder_
 
 function nau_homepage_highlight_courses($atts = array()) {    
   global $courses;
-  $courses = nau_get_posts("curso", ["filter" => "highlight"]);
+  $courses = nau_get_courses( ["filter" => "highlight"]);
   $args = array('section_container' => 'highlight-courses');
   return nau_template_part("partials/courses", "cards", $args);
 }
@@ -945,4 +963,3 @@ function nau_homepage_slider($atts = array()) {
   return nau_template_part( "partials/homepage/homepage", "slider" );
 }
 add_shortcode('nau_homepage_slider', 'nau_homepage_slider');
-
