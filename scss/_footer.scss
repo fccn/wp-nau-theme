@@ -67,6 +67,14 @@ footer {
 
             li {
                 padding-right: 0.55rem;
+                a {
+                    img {
+                        width: 25px;
+                    }
+                    i.material-icons{
+                        font-size: 30px;
+                    }
+                }
             }
         }
     }

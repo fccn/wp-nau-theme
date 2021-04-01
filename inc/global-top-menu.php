@@ -37,28 +37,6 @@ require('menu/menu_walker.php');
           </form>
           <!-- ends top nav search bar -->
       
-      <!-- starts menu languages --> 
-      
-      <?php 
-      
-      $blogs  = MslsBlogCollection::instance();
-      $mydata = MslsOptions::create();      
-      $language_menu_item = [];
-      
-      foreach ( $blogs->get_objects() as $blog ) {
-          $language = $blog->get_language();
-          $url = $mydata->get_current_link();
-          $current  = ( $blog->userblog_id == MslsBlogCollection::instance()->get_current_blog_id() );
-          $language_menu_item[] = array(
-              "this_blog" => $current,
-              "url" => $blog->siteurl,
-              "language" => $language,
-              "description" => $blog->get_description(),
-              "lang_id" => $blog->get_alpha2()
-          );
-      }
-
-      ?>
       
       <? $nau_menu_languages = get_option('nau_menu_languages', 1) ?>
       <? if ($nau_menu_languages == 1) { ?>

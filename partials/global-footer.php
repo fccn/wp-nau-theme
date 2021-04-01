@@ -27,45 +27,54 @@
         <span class="footer-title"><?=nau_trans("Social Media")?></span>
         <div id="social-media">
           <ul>
-          <?php if ($social_media["twitter_site"]) { ?>
-            <li class="social-media">
-              <a href="https://twitter.com/<?=$social_media["twitter_site"]?>" target="_blank" title="<?=nau_trans("Share on Twitter")?>">
-                <img src="assets/img/twitter.svg" alt="twitter logo" title="<?=nau_trans("Share on Twitter")?>">
-              </a>
-            </li>
-          <?php } ?>
+            
+            <?php if (get_option('nau_subscribe_newsletter_link')) { ?>
+              <li class="social-media">
+                <a href="<?=get_option('nau_subscribe_newsletter_link')?>" title="<?=nau_trans("Subscribe newsletter")?>">
+                  <i class="material-icons">email</i>
+                </a>
+              </li>
+            <?php } ?>
 
-          <?php if ($social_media["linkedin_url"]) { ?>
-            <li class="social-media">
-              <a href="<?=$social_media["linkedin_url"]?>" target="_blank" title="<?=nau_trans("Share on Linkedin")?>">
-                <img src="assets/img/linkedin.svg" alt="Linkedin logo" title="<?=nau_trans("Share on Linkedin")?>">
-              </a>
-            </li>
-          <?php } ?>
+            <?php if ($social_media["facebook_site"]) { ?>
+              <li class="social-media">
+                <a href="<?=$social_media["facebook_site"]?>" id="facebook-link" rel="nofollow" target="_blank" title="<?=nau_trans("Share on Facebook")?>">
+                  <img src="assets/img/facebook.svg" alt="Facebook logo" title="Share on Facebook">
+                </a>
+              </li>
+            <?php } ?>
+            
+            <?php if ($social_media["twitter_site"]) { ?>
+              <li class="social-media">
+                <a href="https://twitter.com/<?=$social_media["twitter_site"]?>" target="_blank" title="<?=nau_trans("Share on Twitter")?>">
+                  <img src="assets/img/twitter.svg" alt="twitter logo" title="<?=nau_trans("Share on Twitter")?>">
+                </a>
+              </li>
+            <?php } ?>
 
-          <?php if ($social_media["facebook_site"]) { ?>
-            <li class="social-media">
-              <a href="<?=$social_media["facebook_site"]?>" id="facebook-link" rel="nofollow" target="_blank" title="<?=nau_trans("Share on Facebook")?>">
-                <img src="assets/img/facebook.svg" alt="Facebook logo" title="Share on Facebook">
-              </a>
-            </li>
-          <?php } ?>
+            <?php if ($social_media["linkedin_url"]) { ?>
+              <li class="social-media">
+                <a href="<?=$social_media["linkedin_url"]?>" target="_blank" title="<?=nau_trans("Share on Linkedin")?>">
+                  <img src="assets/img/linkedin.svg" alt="Linkedin logo" title="<?=nau_trans("Share on Linkedin")?>">
+                </a>
+              </li>
+            <?php } ?>
 
-          <?php if ($social_media["instagram_url"]) { ?>
-            <li class="social-media">
-              <a href="<?=$social_media["instagram_url"]?>" target="_blank" title="<?=nau_trans("Share on Instagram")?>">
-                <img src="assets/img/instagram.svg" alt="Instagram logo" title="<?=nau_trans("Share on Instagram")?>">
-              </a>
-            </li>
-          <?php } ?>
+            <?php if ($social_media["instagram_url"]) { ?>
+              <li class="social-media">
+                <a href="<?=$social_media["instagram_url"]?>" target="_blank" title="<?=nau_trans("Share on Instagram")?>">
+                  <img src="assets/img/instagram.svg" alt="Instagram logo" title="<?=nau_trans("Share on Instagram")?>">
+                </a>
+              </li>
+            <?php } ?>
 
-          <?php if ($social_media["wikipedia_url"]) { ?>
-            <li class="social-media">
-              <a href="<?=$social_media["wikipedia_url"]?>" target="_blank">
-                <img src="assets/img/more-share.svg" alt="Share list" title="Share list">
-              </a>
-            </li>
-          <?php } ?>
+            <?php if ($social_media["wikipedia_url"]) { ?>
+              <li class="social-media">
+                <a href="<?=$social_media["wikipedia_url"]?>" target="_blank">
+                  <img src="assets/img/more-share.svg" alt="Share list" title="Share list">
+                </a>
+              </li>
+            <?php } ?>
           </ul>
           </div>
 
