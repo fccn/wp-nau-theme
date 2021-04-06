@@ -323,7 +323,7 @@ function nau_courses_gallery($atts = array()) {
     $nau_lms_course_end = get_field("nau_lms_course_end", $coursePage->ID);
     $date = is_null($nau_lms_course_enrollment_end) ? $nau_lms_course_end : $nau_lms_course_enrollment_end;
     $days_to_end = days_to_today ( $date );
-    return $days_to_end > 0;
+    return $days_to_end >= 0;
   });
   ob_start();
   get_template_part( "partials/courses", "cards" );
