@@ -317,14 +317,20 @@ add_shortcode('nau_courses_list', 'nau_courses_list');
 
 
 function nau_courses_gallery($atts = array()) { 
-   global $courses;
-   $courses = nau_get_posts("curso", $atts);
-   ob_start();
-   get_template_part( "partials/courses", "cards" );
-   $value = ob_get_contents();
-   ob_end_clean();
+  global $courses;
+  $courses = array_filter(nau_get_posts("curso", $atts), function($coursePage){
+    $nau_lms_course_enrollment_end = get_field("nau_lms_course_enrollment_end", $coursePage->ID);
+    $nau_lms_course_end = get_field("nau_lms_course_end", $coursePage->ID);
+    $date = is_null($nau_lms_course_enrollment_end) ? $nau_lms_course_end : $nau_lms_course_enrollment_end;
+    $days_to_end = days_to_today ( $date );
+    return $days_to_end > 0;
+  });
+  ob_start();
+  get_template_part( "partials/courses", "cards" );
+  $value = ob_get_contents();
+  ob_end_clean();
 
-   return $value;
+  return $value;
 }
 
 add_shortcode('nau_courses_gallery', 'nau_courses_gallery');
