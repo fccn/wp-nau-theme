@@ -31,10 +31,23 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('set', {'dimension1': '<?= $analytics[0] ?>'}); 
-      gtag('set', {'dimension2': '<?= $analytics[1] ?>'}); 
-      gtag('set', {'dimension3': '<?= $analytics[2] ?>'}); 
-      gtag('set', {'dimension4': '<?= load_course_id($page) ?>'}); 
+      <? if (!empty($analytics[0])) {?>
+        gtag('set', {'dimension1': '<?= $analytics[0] ?>'}); 
+      <? } ?>
+      <? if (!empty($analytics[1])) {?>
+        gtag('set', {'dimension2': '<?= $analytics[1] ?>'}); 
+      <? } ?>
+      <? if (!empty($analytics[2])) {?>
+        gtag('set', {'dimension3': '<?= $analytics[2] ?>'}); 
+      <? } ?>
+      <?= $course_id = load_course_id($page) ?>
+      <? if (!empty($course_id)) {?>
+        gtag('set', {'dimension4': '<?= $course_id ?>'}); 
+      <? } ?>
+      <?= $course_name = get_course_name($page) ?>
+      <? if (!empty($course_name)) {?>
+        gtag('set', {'dimension5': '<?= $course_name ?>'}); 
+      <? } ?>
       gtag('config', '<?=$gtag?>');
     </script>
     <? } ?>

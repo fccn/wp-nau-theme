@@ -631,6 +631,13 @@ function load_course_id_simple($coursePage) {
   }
 }
 
+function get_course_name($coursePage) {
+  $course_id = load_course_id($coursePage);
+  if ($course_id != null) {
+    return get_the_title( $coursePage );
+  }
+  return "";
+}
 
 function load_course($coursePage) {
   $course_id = load_course_id( $coursePage );
