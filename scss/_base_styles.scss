@@ -401,7 +401,15 @@ div.courses-wrap {
 }
 
 .secondary-pages div#body-content {
-  padding: 30px 50px;
+  padding: 30px 0px 30px 50px;
+
+  @media screen and (max-width: 500px) {
+    padding: 30px 10px;
+  }
+
+  @media screen and (min-width: 1250px) {
+    padding: 30px 50px 30px 50px;
+  }
 }
 .secondary-pages #entities-nau {
   display: none;
@@ -1335,6 +1343,21 @@ aside {
   background: transparent linear-gradient(180deg, #eeeeee 0%, #f5f5f5 100%) 0% 0% no-repeat padding-box;
   border-radius: 20px 0px 0px 20px;
   opacity: 1;
+  order: 1;
+  @media screen and (max-width: 798px) {
+    & {
+      margin-left: 0px !important;
+      width: 96%;
+      padding: 0;
+      background: none !important;
+      order: unset;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    & {
+      padding: 50px 5px;
+    }
+  }
 }
 aside h3 {
   text-align: left;
@@ -1672,11 +1695,6 @@ body#homepage .video-know-more-icons .know-more-icon {
     flex-direction: column;
   }
 
-  aside {
-    margin: 0;
-    padding: 0;
-  }
-
   body#institution aside {
     padding: 30px;
     border-radius: 20px;
@@ -1785,13 +1803,6 @@ body#homepage .video-know-more-icons .know-more-icon {
     padding-right: 0px;
   }
 
-  aside {
-    margin-left: 0px !important;
-    width: 100%;
-    padding: 0;
-    background: none !important;
-  }
-
   aside h3 {
     padding-top: 35px;
     border-top: 1px solid #ccc;
@@ -1871,7 +1882,7 @@ body#homepage #main-container #home-slider div.homepage-slide-item.news p {
       padding-right: 25px;
       min-height: 150px;
 
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 900px) {
         & {
           width: 100%;
         }
@@ -2624,13 +2635,13 @@ div#filter span.top-label {
   transform: rotate(45deg);
 }
 
-#secondary.course #main-container div#body-content {
-  padding-right: 0px;
-}
+// #secondary.course #main-container div#body-content {
+//   padding-right: 0px;
+// }
 
-#secondary.entity #main-container div#body-content {
-  padding-right: 0px;
-}
+// #secondary.entity #main-container div#body-content {
+//   padding-right: 0px;
+// }
 
 .aside-icons {
   margin-right: 0.3em;

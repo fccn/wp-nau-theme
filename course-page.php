@@ -127,6 +127,52 @@ if (current_user_can('edit_posts')) { ?>
 <!-- starts homepage body content -->
 <div id="body-content">  
  
+  <!-- starts aside course info -->
+  <aside>        
+    <?php /*<h3><span class="blue-vertical-line">| </span><?php echo $course["name"]?></h3>*/ ?>
+    <!---
+    <ul>
+      <li class="price-and-certificate-options"><span class="aside-course-price"><?php echo $course["price"]?></span><? certificate($course); ?></li>
+    </ul>
+    <ul class="aside-course-quick-meta">
+      <li class="date-status-label"><?php echo $course["date_status_label"]?></li>
+      <li class="number-of-participants"><?php echo $course["participants"]?> <?php echo nau_trans("Participants")?></li>        
+      <li class="price"><?php echo $course["price"]?></li> 
+      <li class="enrollment-type"><?php echo $course["invitation_mode_label"]?></li>
+      <li class="course-type"><?php echo $course["pace_mode_label"]?></li>
+    </ul>
+    --->
+  
+    <!--  
+    <h3><span class="blue-vertical-line">| </span><?php echo nau_trans("Tags")?></h3>
+    <span class="tags">
+    <?php echo nau_list_tags(null, True)?>
+    </span>
+    -->
+  
+    <?php if (! empty($course["youtube"])): ?>  
+      <div id="course-video-thumbnail">
+        <iframe width="100%" height="220"
+          src="https://www.youtube.com/embed/<?php echo $course["youtube"]?>"
+          frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>        
+        </iframe>
+      </div>    
+    <? endif; ?>
+  
+    <ul class="course-related-links">
+        <?php echo nau_generate_custom_value_meta_html(get_custom_value("meta"), $course); ?>
+  
+        <li class="course-details x-material-icons">
+          <a id="share-button">
+            <i class="material-icons aside-icons">share</i>
+            <?php echo nau_trans("Share")?>
+          </a>
+        </li>
+        <li class="start-course"><?php nau_enroll_button($course); ?></li>
+    </ul>
+  </aside>
+  <!-- ends aside course info --> 
+
   <!-- starts article -->
   <article class="course-synopse">
     <?php
@@ -157,54 +203,6 @@ if (current_user_can('edit_posts')) { ?>
   <!-- ends article --> 
 
 
-  <!-- starts aside course info -->
-  <aside>        
-    <?php /*<h3><span class="blue-vertical-line">| </span><?php echo $course["name"]?></h3>*/ ?>
-    <!---
-    <ul>
-      <li class="price-and-certificate-options"><span class="aside-course-price"><?php echo $course["price"]?></span><? certificate($course); ?></li>
-    </ul>
-    <ul class="aside-course-quick-meta">
-      <li class="date-status-label"><?php echo $course["date_status_label"]?></li>
-      <li class="number-of-participants"><?php echo $course["participants"]?> <?php echo nau_trans("Participants")?></li>        
-      <li class="price"><?php echo $course["price"]?></li> 
-      <li class="enrollment-type"><?php echo $course["invitation_mode_label"]?></li>
-      <li class="course-type"><?php echo $course["pace_mode_label"]?></li>
-    </ul>
-    --->
-
-        
-    
-    
-  <!--  
-  <h3><span class="blue-vertical-line">| </span><?php echo nau_trans("Tags")?></h3>
-  <span class="tags">
-  <?php echo nau_list_tags(null, True)?>
-  </span>
-  -->
-
-    <?php if (! empty($course["youtube"])): ?>  
-      <div id="course-video-thumbnail">
-        <iframe width="100%" height="220"
-          src="https://www.youtube.com/embed/<?php echo $course["youtube"]?>"
-          frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>        
-        </iframe>
-      </div>    
-    <? endif; ?>
-
-    <ul class="course-related-links">
-        <?php echo nau_generate_custom_value_meta_html(get_custom_value("meta"), $course); ?>
-
-        <li class="course-details x-material-icons">
-          <a id="share-button">
-            <i class="material-icons aside-icons">share</i>
-            <?php echo nau_trans("Share")?>
-          </a>
-        </li>
-        <li class="start-course"><?php nau_enroll_button($course); ?></li>
-    </ul>
-  </aside>
-  <!-- ends aside course info --> 
 </div>  
 <!-- ends homepage body content --> 
 
