@@ -40,11 +40,11 @@
       <? if (!empty($analytics[2])) {?>
         gtag('set', {'dimension3': '<?= $analytics[2] ?>'}); 
       <? } ?>
-      <?= $course_id = load_course_id($page) ?>
+      <? $course_id = load_course_id($page) ?>
       <? if (!empty($course_id)) {?>
         gtag('set', {'dimension4': '<?= $course_id ?>'}); 
       <? } ?>
-      <?= $course_name = get_course_name($page) ?>
+      <? $course_name = get_course_name($page) ?>
       <? if (!empty($course_name)) {?>
         gtag('set', {'dimension5': '<?= $course_name ?>'}); 
       <? } ?>
