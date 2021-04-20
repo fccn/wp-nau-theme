@@ -321,7 +321,7 @@ function nau_courses_gallery($atts = array()) {
   $courses = array_filter(nau_get_posts("curso", $atts), function($coursePage){
     $nau_lms_course_enrollment_end = get_field("nau_lms_course_enrollment_end", $coursePage->ID);
     $nau_lms_course_end = get_field("nau_lms_course_end", $coursePage->ID);
-    $date = is_null($nau_lms_course_enrollment_end) ? $nau_lms_course_end : $nau_lms_course_enrollment_end;
+    $date = is_null($nau_lms_course_enrollment_end) || empty($nau_lms_course_enrollment_end)  ? $nau_lms_course_end : $nau_lms_course_enrollment_end;
     $days_to_end = days_to_today ( $date );
     return $days_to_end >= 0;
   });
