@@ -1858,38 +1858,47 @@ body#homepage #main-container #home-slider div.homepage-slide-item.news p {
   color: white;
 }
 
-#body-content .teacher {
-  /* border: solid green 1px;	*/
-  display: block;
-  width: 730px;
-  min-height: 220px;
-  margin-top: 20px;
-}
+#body-content {
 
-#body-content .teacher .teacher-image {
-  /* border: solid blue 1px;		*/
-  float: left;
-  width: 160px;
-  padding-right: 25px;
-  min-height: 150px;
-}
+  .teacher {
+    display: block;
+    min-height: 220px;
+    margin-top: 20px;
 
-#body-content .teacher .teacher-image img {
-  max-height: 160px;
-  display: block;
-  border-radius: 1.5rem;
-}
+    .teacher-image {
+      float: left;
+      width: 160px;
+      padding-right: 25px;
+      min-height: 150px;
 
-#body-content .teacher h4 {
-  font-size: 20px;
-  margin-left: 150px;
-  display: block;
-}
+      @media screen and (max-width: 600px) {
+        & {
+          width: 100%;
+        }
+      }
+    }
 
-#body-content .teacher p {
-  font-size: 15px;
-  margin-left: 150px;
-  display: block;
+    .teacher-image img {
+      max-height: 160px;
+      display: block;
+      border-radius: 1.5rem;
+    }
+
+    h4 {
+      font-size: 20px;
+      display: block;
+    }
+
+    p {
+      font-size: 15px;
+      display: block;
+      @media screen and (min-width: 960px) {
+        & {
+          margin-left: 150px;
+        }
+      }
+    }
+  }
 }
 
 body#secondary div#home-slider {
