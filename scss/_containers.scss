@@ -15,34 +15,6 @@
         padding: 20px 20px 50px;
     }
 }
-/*
-    Entity container content
-*/
-
-.entity-content {
-    padding: 30px 0 50px 50px;
-    display: flex;
-
-    @media screen and (max-width: $breakpoint-small) {
-        flex-direction: column;
-        padding: 15px 30px;
-    }
-
-    @media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-medium) {
-        padding: 15px 30px;
-        flex-direction: column;
-    }
-
-    aside {
-        @media screen and (max-width: $breakpoint-small) {
-            padding: 0 !important;
-        }
-    }
-
-    .entity-description {
-        padding-right: 30px;
-    }
-}
 
 .entity-courses {
     padding: 30px 50px;

@@ -54,7 +54,7 @@ body#institution div#home-slider {
 </section>
 
 <!-- starts homepage body content -->
-<div class="entity-content">  
+<div id="body-content">  
 
     <!-- starts all institution courses -->
     <article class="entity-description">

@@ -1323,45 +1323,40 @@ body#homepage section#rolling-courses h3 {
   margin-right: 10px;
 }
 
-body#institution aside {
-  width: 25% !important;
-  min-width: 312px;
-  margin-top: 0px;
-  padding: 50px;
-  background: transparent linear-gradient(180deg, #eeeeee 0%, #f5f5f5 100%) 0% 0% no-repeat padding-box;
-  border-radius: 20px 0px 0px 20px;
-  opacity: 1;
-}
-
 aside {
   width: 25%;
   min-width: 312px;
   margin-left: 20px;
-  padding: 50px;
   background: transparent linear-gradient(180deg, #eeeeee 0%, #f5f5f5 100%) 0% 0% no-repeat padding-box;
   border-radius: 20px;
   opacity: 1;
   order: 1;
+  
+  padding-top: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  padding-left: 50px;
   @media screen and (max-width: $breakpoint-medium) {
-    & {
-      margin-left: 0px;
-      width: 96%;
-      padding: 0;
-      background: none;
-      order: unset;
-    }
+    margin-left: 0px;
+    width: 100%;
+    background: none;
+    order: unset;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
   }
   @media screen and (max-width: $breakpoint-large) {
-    & {
-      padding: 50px 5px;
-    }
-  }
-  @media screen and (max-width: $breakpoint-medium) {
-    & {
-      padding: 0;
-    }
+    padding-top: 50px;
+    padding-right: 5px;
+    padding-bottom: 50px;
+    padding-left: 5px;
   }
 }
+body#institution aside .course-related-links {
+  border-radius: 20px;
+}
+
 aside h3 {
   text-align: left;
   font-family: "Roboto", sans-serif;
@@ -1398,6 +1393,10 @@ aside .course-related-links {
   box-shadow: 0px 3px 6px #00000029;
   opacity: 0.8;
   list-style-type: none;
+  @media (max-width: $breakpoint-small) {
+    box-shadow: unset;
+    padding: 0;
+  }
 }
 aside .course-details {
   width: 100%;
@@ -1698,11 +1697,6 @@ body#homepage .video-know-more-icons .know-more-icon {
     flex-direction: column;
   }
 
-  body#institution aside {
-    padding: 30px;
-    border-radius: 20px;
-  }
-
   #institution .entity-branding-container {
     max-width: 380px;
   }
@@ -1776,24 +1770,6 @@ body#homepage .video-know-more-icons .know-more-icon {
   body#institution section#entity-description .description ul,
   body#secondary section#body-content ul {
     float: inherit;
-  }
-
-  body#institution aside {
-    margin-top: 0px;
-    /*padding: 50px;*/
-    background: transparent linear-gradient(180deg, #eeeeee 0%, #f5f5f5 100%) 0% 0% no-repeat padding-box;
-    border-radius: 20px 0px 0px 20px;
-    opacity: 1;
-  }
-
-  body#institution aside {
-    width: 100% !important;
-    min-width: 312px;
-    margin-top: 0px;
-    padding: 0px;
-    background: transparent linear-gradient(180deg, #eeeeee 0%, #f5f5f5 100%) 0% 0% no-repeat padding-box;
-    border-radius: 20px 0px 0px 20px;
-    opacity: 1;
   }
 
   #home-content aside ul.course-related-links {
@@ -3879,6 +3855,8 @@ div.nau_button a {
   z-index: 1000;
 }
 
-.course #body-content {
-  display: flex;
+.course, .entity  {
+  #body-content {
+    display: flex;
+  }
 }
