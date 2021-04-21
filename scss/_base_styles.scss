@@ -400,13 +400,13 @@ div.courses-wrap {
 }
 
 .secondary-pages div#body-content {
-  padding: 30px 0px 30px 50px;
+  padding: 30px 30px 30px 50px;
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: $breakpoint-small) {
     padding: 30px 10px;
   }
 
-  @media screen and (min-width: 1250px) {
+  @media screen and (min-width: $breakpoint-xlarge) {
     padding: 30px 50px 30px 50px;
   }
 }
@@ -1342,7 +1342,7 @@ aside {
   border-radius: 20px;
   opacity: 1;
   order: 1;
-  @media screen and (max-width: 798px) {
+  @media screen and (max-width: $breakpoint-medium) {
     & {
       margin-left: 0px;
       width: 96%;
@@ -1351,12 +1351,12 @@ aside {
       order: unset;
     }
   }
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: $breakpoint-large) {
     & {
       padding: 50px 5px;
     }
   }
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: $breakpoint-medium) {
     & {
       padding: 0;
     }
@@ -1552,13 +1552,13 @@ body#institution div#home-slider div#nau-shape {
 /********* MEDIA QUERIES *********/
 /*********************************/
 
-@media screen and (min-width: 960px) and (min-width: 1024px) {
+@media screen and (min-width: $breakpoint-large) and (min-width: $breakpoint-xlarge) {
   menu.container {
     display: none !important;
   }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: $breakpoint-large) {
   div#menu-container {
     position: absolute;
     z-index: 2;
@@ -1658,13 +1658,13 @@ body#homepage .video-know-more-icons .know-more-icon {
   display: none;
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: $breakpoint-large) {
   #open-menu-arrow {
     display: none !important;
   }
 }
 
-@media (min-width: 576px) and (max-width: 768px) {
+@media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-medium) {
   .secondary-pages div#body-content,
   .entity div#home-content {
     flex-direction: column;
@@ -1683,7 +1683,7 @@ body#homepage .video-know-more-icons .know-more-icon {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: $breakpoint-small) {
 
   .nau-waves img {
     display: none !important;
@@ -3859,6 +3859,9 @@ div#home-slider #slider-objects > h1 {
   display: block;
   position: absolute;
   margin-left: 50px;
+  @media screen and (max-width: $breakpoint-small) {
+    margin-left: 10px;
+  }
 }
 
 div.nau_button a {

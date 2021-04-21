@@ -6,7 +6,10 @@ footer {
     }
 
     #quick-links-section {
-        padding: 40px 50px;
+        padding-top: 40px;
+        padding-right: 50px;
+        padding-bottom: 20px;
+        padding-left: 50px;
         background-color: $footer-bg-color;
         display: flex;
 
@@ -17,6 +20,8 @@ footer {
         @media screen and (max-width: $breakpoint-small) {
             flex-wrap: wrap;
             justify-content: space-between;
+            padding-right: 10px;
+            padding-left: 10px;
         }
     }
 
@@ -30,7 +35,7 @@ footer {
 
     .footer-widget,
     .footer-social {
-        padding: 0 0.55rem;
+        padding: 0 0.55rem 20px 0;
         min-width: 20%;
         max-width: 25%;
         flex-grow: 1;
@@ -96,9 +101,7 @@ footer {
             text-align: center;
             padding-top: 10px;
             padding-right: 5px;
-            padding-left: 5px;
-            margin-left: auto;
-            margin-right: auto;
+            padding-left: 5px;            
 
             .wp-caption-text {
                 border: 0;
@@ -114,7 +117,12 @@ footer {
             }
 
             @media screen and (max-width: $breakpoint-medium) {
-                padding: 10px 10px 0 10px;
+                padding-top: 10px;
+                padding-right: 10px;
+                padding-bottom: 0;
+                padding-left: 10px;
+                margin-left: auto;
+                margin-right: auto;
             }
 
             &:first-child {
@@ -139,7 +147,10 @@ footer {
 
     .site-copyright {
         background-color: white;
-        padding: 0 50px 25px;
+        padding-top: 0px;
+        padding-right: 50px;
+        padding-bottom: 25px;
+        padding-left: 50px;    
         border-radius: 0px 0px 10px 10px;
 
         &--nau {
@@ -157,6 +168,10 @@ footer {
             span {
                 font-size: 0.7rem;
             }
+        }
+
+        @media screen and (max-width: $breakpoint-small) {
+            padding-left: 10px;    
         }
     }
 }
