@@ -61,6 +61,10 @@
             position: relative;
         }
 
+        label {
+            display: none;
+        }
+
         #search-input {
             border-radius: 50px;
             height: 36px;

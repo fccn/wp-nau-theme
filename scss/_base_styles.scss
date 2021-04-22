@@ -3797,6 +3797,11 @@ form#banner-search-form input[type="search"] {
 form#banner-search-form input[type="submit"] {
   background-position: right 1.2em;
   margin: 0.4em 1em 0 0;
+  display: none;
+}
+
+form#banner-search-form label {
+  display: none;
 }
 
 /*
