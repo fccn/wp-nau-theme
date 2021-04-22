@@ -30,9 +30,9 @@
     margin: 2rem;
 
     .explore-all-courses-btn {
-        border: 2px solid $gray-smalltext-color;
+        background-color: $action-btn-color;
         text-align: center;
-        color: $gray-smalltext-color;
+        color: white;
         display: inline-block;
         text-transform: uppercase;
         min-width: 50%;
@@ -47,9 +47,7 @@
 
         &:hover,
         &:focus {
-            color: white;
-            border-color: $header-bar-color;
-            color: $header-bar-color;
+            background-color: #0640bf;
             transition: 0.3s;
         }
     }
