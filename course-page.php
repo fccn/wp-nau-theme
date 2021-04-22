@@ -152,9 +152,14 @@ if (current_user_can('edit_posts')) { ?>
   
     <?php if (! empty($course["youtube"])): ?>  
       <div id="course-video-thumbnail">
-        <iframe width="100%" height="220" title="<?php echo nau_trans("Course Youtube video")?>"
+        <iframe 
+          width="100%" height="220" 
+          loading="lazy"
+          title="<?php echo nau_trans("Course Youtube video")?>"
           src="https://www.youtube.com/embed/<?php echo $course["youtube"]?>"
-          frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>        
+          frameborder="0" 
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>        
         </iframe>
       </div>    
     <? endif; ?>
