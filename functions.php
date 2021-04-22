@@ -962,3 +962,31 @@ add_theme_support( "post-thumbnails" );
 // Register the image thumbnail format, a specific format for course and entity cards
 add_image_size( 'nau-card-thumbnail', 279, 160, FALSE );
 
+/*
+// Load some of the JavaScript asynchronous. The scriptArr variable has the scripts to be loaded async
+function add_custom_attr( $tag, $handle, $src ) {
+  $scriptArr = array('script_functions','menu_slider','cookie_bar','slider_lib','home_slider');
+  if (in_array($handle, $scriptArr)) {
+    // $tag = str_replace( 'src=', 'sync="false" src=', $tag );
+    //$tag = str_replace( ' src', ' defer src', $tag ); // defer the script
+    //$tag = str_replace( ' src', ' async src', $tag ); // OR async the script
+    $tag = str_replace( ' src', ' async defer src', $tag ); // OR do both!
+  }
+  return $tag;
+}
+add_filter( 'script_loader_tag', 'add_custom_attr', 10, 3 );
+
+// Load CSS asynchronous
+function add_rel_preload($html, $handle, $href, $media) {
+  $scriptArr = array('wp-block-library', 'wp-edunext-marketing-site-frontend','reset-style','material-icons','google-fonts');
+  if (!is_admin() && in_array($handle, $scriptArr)) {
+    $html = <<<EOT
+    <link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" id='$handle' href='$href' type='text/css' media='all' />
+
+    EOT;
+    return $html;
+  }
+  return $html;
+}
+add_filter( 'style_loader_tag', 'add_rel_preload', 10, 4 );
+*/
