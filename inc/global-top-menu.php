@@ -33,8 +33,8 @@ require('menu/menu_walker.php');
           <!-- starts top nav search bar -->          
           <form id="search-form" action="<?php echo home_url(); ?>" role="search" method="get">
             <label id="search-form-label" for="search-input"><?=nau_trans("Search Courses")?></label>
-            <input id="search-input" name="s" type="search" placeholder="<?=nau_trans("Search courses...")?>" value="<?=get_search_query()?>" aria-labelledBy="search-form-label">
-            <input name="submit-search" type="submit">
+            <input id="search-input" name="s" type="search" placeholder="<?=nau_trans("Search courses...")?>" value="<?=get_search_query()?>" aria-labelledBy="search-form-label" />
+            <input name="submit-search" type="submit" value="<?=nau_trans("Search Courses")?>">
           </form>
           <!-- ends top nav search bar -->
       
