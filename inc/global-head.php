@@ -8,19 +8,6 @@
 
     <base href="<?=get_template_directory_uri()?>/">
 
-    <!-- starts JS and CSS links --> 
-
-    <!-- starts google fonts links -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-    <!-- ends google fonts links --> 
-
-    <!-- starts JS funtions --> 
-    <!-- see functions.php -->    
-    <!-- ends JS funtions --> 
-    <!-- ends JS and CSS links -->
-    
-    
     <? $gtag = get_option('nau_google_gtag') ?>
     <? $analytics = load_analytics() ?>
     
