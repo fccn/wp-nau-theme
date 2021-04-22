@@ -51,12 +51,6 @@ function version_id() {
 }
 
 function nau_theme_enqueue_styles() {
-    wp_enqueue_script( 'jquery-ui-widget' );
-    wp_enqueue_script( 'jquery-ui-mouse' );
-    wp_enqueue_script( 'jquery-ui-accordion' );
-    wp_enqueue_script( 'jquery-ui-autocomplete' );
-    wp_enqueue_script( 'jquery-ui-slider' );
-
     wp_enqueue_style('reset-style', get_template_directory_uri() . '/assets/css/reset.css', array(), version_id(), 'all');
     wp_enqueue_style('styles-style', get_template_directory_uri() . '/assets/css/layout.css', array(), version_id(), 'all');
     
