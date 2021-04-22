@@ -20,7 +20,7 @@
             $logo = get_field('logo', $entity->ID);
         }
         
-        $image = get_the_post_thumbnail_url( $entity->ID, 'full' );
+        $image = get_the_post_thumbnail_url( $entity->ID, 'nau-card-thumbnail' );
         
         $youtube = get_field("youtube", $entity->ID);
 

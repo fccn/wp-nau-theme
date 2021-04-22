@@ -9,7 +9,7 @@
 
     <article class="card">
       <a href="<?php echo $course["course_about_url"]?>">
-        <div class="card-header" style="background-image: url(<?php echo $course["image"]?>);"></div>
+        <div class="card-header" style="background-image: url(<?php echo $course["image_card"]?>);"></div>
         <div class="card-content">
           <div class="card-content--entity">
             <span style="background-image: url(<?php echo $course["entity"]["square_logo"]?>);" class="entity-logo"></span>

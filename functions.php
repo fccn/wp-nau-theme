@@ -648,7 +648,8 @@ function load_course($coursePage) {
   //if ($image == "") {
   //  $image = get_the_post_thumbnail_url( $coursePage->ID, 'full' );
   //}
-  $image = get_the_post_thumbnail_url( $coursePage->ID, 'full' );
+  $image_full = get_the_post_thumbnail_url( $coursePage->ID, 'full' ); 
+  $image_card = get_the_post_thumbnail_url( $coursePage->ID, 'nau-card-thumbnail' );
   
   $youtube = get_field("youtube", $coursePage->ID);
   if ($youtube == "") {          
@@ -675,7 +676,8 @@ function load_course($coursePage) {
     "course_enroll_url" => get_permalink($coursePage->ID),
     "tagline" => get_field('tagline', $coursePage->ID),
     "effort" => get_field("nau_course_extra_about_effort", $coursePage->ID),
-    "image" => $image,    
+    "image_full" => $image_full,
+    "image_card" => $image_card,
     "stars" => get_field("stars", $coursePage->ID), 
     "price" => $cost,    
     "participants" => get_field("nau_lms_course_enrollments", $coursePage->ID),
@@ -958,4 +960,10 @@ function nau_homepage_slider($atts = array()) {
   return nau_template_part( "partials/homepage/homepage", "slider" );
 }
 add_shortcode('nau_homepage_slider', 'nau_homepage_slider');
+
+// This theme has a custom image thumnail format
+add_theme_support( "post-thumbnails" );
+
+// Register the image thumbnail format, a specific format for course and entity cards
+add_image_size( 'nau-card-thumbnail', 279, 160, FALSE );
 
