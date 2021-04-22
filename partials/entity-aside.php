@@ -1,7 +1,7 @@
   <aside>
     <?php if (! empty($entity["video"])): ?>  
       <div id="course-video-thumbnail">
-        <iframe width="100%" height="220" 
+        <iframe width="100%" height="220" title="<?php echo nau_trans("Entity Youtube video")?>"
           src="https://www.youtube.com/embed/<?php echo $entity["video"]?>" 
           frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
         </iframe>

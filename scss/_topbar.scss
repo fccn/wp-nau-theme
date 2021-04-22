@@ -18,6 +18,11 @@
         margin-left: 50px;
         background: url("../img/nau_sempre_aprender.svg") no-repeat center center;
 
+        // hide the text that is not visible for accessibility reasons
+        line-height: 0; 
+        font-size: 0;
+        color: transparent; 
+
         @media screen and (max-width: $breakpoint-medium) {
             display: inline-block;
             width: 100px;

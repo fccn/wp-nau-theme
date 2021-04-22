@@ -77,6 +77,26 @@
     <? $jira_widget_key = get_option('nau_confluence_widget_key') ?>
     <? if ($jira_widget_key != "") {?>
       <script data-jsd-embedded data-key="<?=$jira_widget_key?>" data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
+
+      <script>
+        window.addEventListener("load", function(event) {
+
+          function sleep(milliseconds) {
+            const start = Date.now();
+            while (Date.now() - start < milliseconds);
+          }
+
+          while(true) {
+            let widgetElement = document.getElementById('jsd-widget');
+            if (widgetElement) {
+              widgetElement.setAttribute('title', 'Preciso de Ajuda');
+              break;
+            }
+            sleep(50);
+            console.log("AA");
+          }
+        });
+      </script>
     <? } ?>
     
     <? $nau_extra_js = get_option('nau_extra_js') ?>

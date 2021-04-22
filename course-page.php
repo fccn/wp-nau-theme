@@ -98,7 +98,7 @@ endif;
       */
       ?>
     </div>
-    <img src="assets/img/banner-shape-long-blue.svg" class="slider-mask">
+    <img src="assets/img/banner-shape-long-blue.svg" class="slider-mask" alt="Banner NAU shape">
 
     <?php if (($course["un-sustentability"] != 0) && false): /* UN Feature Disabled! */ ?> 
       <a href="/nacoes-unidas/#<?php echo $course["un-sustentability"]?>">

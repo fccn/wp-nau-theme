@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-21 15:00+0100\n"
+"POT-Creation-Date: 2021-04-21 15:39+0100\n"
 "PO-Revision-Date: 2020-05-12 00:49+0100\n"
 "Last-Translator: root <rui.ribeiro@fccn.pt>\n"
 "Language-Team: Portuguese\n"
@@ -75,8 +75,7 @@ msgid "Content type:"
 msgstr "Tipo de conteúdo:"
 
 #: course-page.php:155
-#, fuzzy
-msgid "Course Youtube video ss"
+msgid "Course Youtube video"
 msgstr "Vídeo do curso no Youtube"
 
 #: languages/strings.php:66 search.php:10
@@ -107,6 +106,10 @@ msgstr "Finalizado"
 msgid "Entities"
 msgstr "Entidades"
 
+#: partials/entity-aside.php:4
+msgid "Entity Youtube video"
+msgstr "Vídeo da entidade no Youtube"
+
 #: languages/strings.php:33
 msgid "Entity|Founders"
 msgstr "Entidades|Fundadoras"
@@ -135,6 +138,10 @@ msgstr "Igualdade de género"
 #: languages/strings.php:42 inc/galeria_un.php:10
 msgid "Good health and well-being"
 msgstr "Saúde de qualidade"
+
+#: inc/global-top-menu.php:11
+msgid "Homepage"
+msgstr "Página de entrada do site da NAU"
 
 #: languages/strings.php:48 inc/galeria_un.php:16
 msgid "Industry, innovation and infrastructure"
