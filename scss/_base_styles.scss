@@ -25,14 +25,6 @@ span.heading-blue-ba {
   padding-right: 4px;
   padding-left: 4px;
 }
-#body-content article h2,
-#home-content article h2 {
-  padding: 0px !important;
-  line-height: normal;
-  width: 100%;
-  color: black !important;
-}
-
 h2 span.normal-font-weight,
 span.normal-font-weight {
   font-weight: normal !important;
@@ -42,20 +34,24 @@ h2 {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 22px;
-  font: normal !important;
+  font: normal;
   letter-spacing: 0.3px;
   color: #060606;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
 }
 h3 {
   text-align: left;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
-  font-size: /*21px*/ 19px;
-  font: normal !important;
+  font-size: 19px;
+  font: normal;
   letter-spacing: -0.22px;
   color: #000000;
   padding: 0px 0px 0px 0px;
   height: 55px;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
 }
 aside h3 {
   height: 46px;
@@ -77,11 +73,8 @@ p {
   color: #000000;
   padding: 0px 0px 0px 0px;
   line-height: 1.5em;
-}
-
-
-body.secondary-pages p {
-  padding: 0px 0px 16px 0px;
+  margin-block-end: 16px;
+  margin-block-start: 16px;
 }
 
 body.secondary-pages h3 {
@@ -145,24 +138,18 @@ table td {
   border: 1px solid #999;
 }
 
-#body-content article h2,
-#home-content article h2 {
-  padding: 0px 0 20px 0;
-  line-height: normal;
-}
-#body-content article h3 {
-  padding: 0px 0 27px 0;
-}
-
 #body-content .entities-wrap h3 {
   padding: 25px 0 27px 0;
 }
-article ul {
+
+ul {
   display: block;
-  line-height: 1.6em;
-  padding: 0px 0 20px 0;
   list-style-type: disc;
-  list-style-position: inherit;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
 }
 
 body.plataforma-nau iframe {
@@ -374,7 +361,6 @@ div#home-content section ul {
   background: none;
   box-shadow: none;
   border: none;
-  border-radius: none;
   opacity: 1;
 }
 
@@ -2658,20 +2644,6 @@ body.secondary-pages h1 {
   display: inline-block;
 }
 
-#body-content article h2,
-#home-content h2 {
-  padding: 0px 0 20px 0 !important;
-  line-height: normal;
-  width: 100%;
-}
-
-#body-content article h2,
-#home-content h2::before,
-h2::before {
-  font-weight: 400;
-  font-size: /*19px*/ 18px;
-}
-
 pre {
   font-family: "Consolas", monospace;
 }
@@ -2966,11 +2938,6 @@ body#homepage div#home-slider .homepage-slide-actions .video-know-more-icons {
   font-weight: 500 !important;
 }
 
-.course-synopse ul {
-  margin-left: 20px;
-  clear: left;
-}
-
 .course-synopse li {
   clear: left;
 }
@@ -3031,10 +2998,6 @@ body.course article h3 {
   font-weight: 400 !important;
   padding-bottom: 10px !important;
   padding-top: 10px !important;
-}
-
-body.text-page article ul {
-  margin-left: /*20px*/ 8px;
 }
 
 .wp-block-image figure img {
@@ -3331,13 +3294,6 @@ div#filter span.top-label {
   font-size: 1.8em !important;
 }
 
-.course #body-content article h2,
-#home-content h2 {
-  padding: 0px 0 20px 0 !important;
-  line-height: normal;
-  width: 100%;
-}
-
 #body-content .entities-wrap h3 {
   font-size: 1.45em;
 }
@@ -3399,12 +3355,6 @@ h2:before {
 }
 .private-info .date_status_finished {
   background: gray;
-}
-
-article.course-synopse ul {
-  float: none;
-  padding-top: 15px;
-  padding-bottom: 10px;
 }
 
 .courses-wrap {
@@ -3565,14 +3515,6 @@ aside h3 {
 div#filter span.top-label {
   margin-bottom: 1.6em;
   font-size: 0.9em;
-}
-
-#body-content article h2,
-#home-content h2 {
-  padding: 0px 0 20px 0 !important;
-  line-height: normal;
-  width: 100%;
-  font-weight: 500;
 }
 
 #body-content .entities-wrap h3 {
@@ -3864,4 +3806,14 @@ div.nau_button a {
   #body-content {
     display: flex;
   }
+}
+
+ol {
+  display: block;
+  list-style-type: decimal;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
 }
