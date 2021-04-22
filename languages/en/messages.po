@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-22 09:50+0100\n"
+"POT-Creation-Date: 2021-04-22 18:14+0100\n"
 "PO-Revision-Date: 2020-04-08 15:10+0100\n"
 "Last-Translator: root <rui.ribeiro@fccn.pt>\n"
 "Language-Team: English\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "About to Start"
 msgstr ""
 
-#: languages/strings.php:71 functions.php:747 search.php:17
+#: languages/strings.php:71 functions.php:744 search.php:17
 msgid "About to end"
 msgstr ""
 
-#: languages/strings.php:36 functions.php:739
+#: languages/strings.php:36 functions.php:736
 msgid "About to start"
 msgstr ""
 
@@ -46,7 +46,7 @@ msgstr "All rights reserved!"
 msgid "All|courses"
 msgstr ""
 
-#: languages/strings.php:85 functions.php:743
+#: languages/strings.php:85 functions.php:740
 msgid "Available"
 msgstr "Available"
 
@@ -58,7 +58,7 @@ msgstr "Certificate"
 msgid "Clean water and sanitation"
 msgstr ""
 
-#: languages/strings.php:57 functions.php:852
+#: languages/strings.php:57 functions.php:849
 msgid "Clear Cookie"
 msgstr ""
 
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Content type:"
 msgstr ""
 
-#: course-page.php:155
+#: course-page.php:158
 msgid "Course Youtube video"
 msgstr ""
 
@@ -107,7 +107,7 @@ msgstr ""
 msgid "Entities"
 msgstr ""
 
-#: partials/entity-aside.php:4
+#: partials/entity-aside.php:7
 msgid "Entity Youtube video"
 msgstr ""
 
@@ -124,11 +124,11 @@ msgstr ""
 msgid "Explore all courses"
 msgstr "Explore all courses"
 
-#: languages/strings.php:83 functions.php:755
+#: languages/strings.php:83 functions.php:752
 msgid "Finished"
 msgstr ""
 
-#: languages/strings.php:28 functions.php:662
+#: languages/strings.php:28 functions.php:658
 msgid "Free"
 msgstr ""
 
@@ -152,7 +152,7 @@ msgstr ""
 msgid "Instructor Paced"
 msgstr ""
 
-#: languages/strings.php:37 functions.php:722
+#: languages/strings.php:37 functions.php:719
 msgid "Instructor paced"
 msgstr ""
 
@@ -160,7 +160,7 @@ msgstr ""
 msgid "Invitation Only"
 msgstr ""
 
-#: languages/strings.php:60 functions.php:723
+#: languages/strings.php:60 functions.php:720
 msgid "Invitation only"
 msgstr ""
 
@@ -191,7 +191,7 @@ msgstr ""
 msgid "Life on land"
 msgstr ""
 
-#: inc/global-head.php:85
+#: inc/global-head.php:72
 msgid "Need Help"
 msgstr ""
 
@@ -208,7 +208,7 @@ msgstr ""
 msgid "No poverty"
 msgstr ""
 
-#: functions.php:301
+#: functions.php:296
 msgid "None found"
 msgstr "None found"
 
@@ -216,12 +216,12 @@ msgstr "None found"
 msgid "Not to translate"
 msgstr ""
 
-#: languages/strings.php:2 functions.php:764 inc/global-top-menu.php:10
+#: languages/strings.php:2 functions.php:761 inc/global-top-menu.php:10
 #: search.php:12
 msgid "Open"
 msgstr ""
 
-#: languages/strings.php:35 functions.php:723
+#: languages/strings.php:35 functions.php:720
 msgid "Open to everyone"
 msgstr ""
 
@@ -271,7 +271,7 @@ msgstr ""
 msgid "Responsible consuption"
 msgstr ""
 
-#: languages/strings.php:84 functions.php:751
+#: languages/strings.php:84 functions.php:748
 #, fuzzy
 msgid "Running"
 msgstr "Running Courses"
@@ -280,7 +280,7 @@ msgstr "Running Courses"
 msgid "Running Courses"
 msgstr "Running Courses"
 
-#: languages/strings.php:82 functions.php:735
+#: languages/strings.php:82 functions.php:732
 msgid "Scheduled to start"
 msgstr ""
 
@@ -293,11 +293,14 @@ msgstr "Search Courses"
 msgid "Search ..."
 msgstr ""
 
-#: languages/strings.php:19 partials/homepage/inc/slider/item-search.php:37
+#: languages/strings.php:19 inc/global-top-menu.php:35
+#: inc/global-top-menu.php:37 partials/homepage/inc/slider/item-search.php:37
+#: partials/homepage/inc/slider/item-search.php:38
+#: partials/homepage/inc/slider/item-search.php:39
 msgid "Search Courses"
 msgstr "Search Courses"
 
-#: languages/strings.php:4 inc/global-top-menu.php:35
+#: languages/strings.php:4 inc/global-top-menu.php:36
 msgid "Search courses..."
 msgstr ""
 
@@ -328,11 +331,11 @@ msgstr "See a video about this course"
 msgid "See video"
 msgstr "See video"
 
-#: languages/strings.php:34 functions.php:722
+#: languages/strings.php:34 functions.php:719
 msgid "Self paced"
 msgstr ""
 
-#: languages/strings.php:9 course-page.php:168 partials/entity-aside.php:18
+#: languages/strings.php:9 course-page.php:173 partials/entity-aside.php:21
 msgid "Share"
 msgstr "Share"
 
@@ -404,6 +407,10 @@ msgstr ""
 
 #: languages/strings.php:15 partials/global-footer.php:83
 msgid "Visit OpenEdX website"
+msgstr ""
+
+#: partials/homepage/homepage-entities.php:14
+msgid "Visit page of"
 msgstr ""
 
 #: languages/strings.php:41 inc/galeria_un.php:9

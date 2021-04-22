@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-22 09:50+0100\n"
+"POT-Creation-Date: 2021-04-22 18:14+0100\n"
 "PO-Revision-Date: 2020-05-12 00:49+0100\n"
 "Last-Translator: root <rui.ribeiro@fccn.pt>\n"
 "Language-Team: Portuguese\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "About to Start"
 msgstr "Quase a começar"
 
-#: languages/strings.php:71 functions.php:747 search.php:17
+#: languages/strings.php:71 functions.php:744 search.php:17
 msgid "About to end"
 msgstr "Quase a acabar"
 
-#: languages/strings.php:36 functions.php:739
+#: languages/strings.php:36 functions.php:736
 msgid "About to start"
 msgstr "Prestes a começar"
 
@@ -46,7 +46,7 @@ msgstr "Todos os direitos reservados."
 msgid "All|courses"
 msgstr "Todos|cursos"
 
-#: languages/strings.php:85 functions.php:743
+#: languages/strings.php:85 functions.php:740
 msgid "Available"
 msgstr "Disponível"
 
@@ -58,7 +58,7 @@ msgstr "Certificado"
 msgid "Clean water and sanitation"
 msgstr "Água potável e saneamento"
 
-#: languages/strings.php:57 functions.php:852
+#: languages/strings.php:57 functions.php:849
 msgid "Clear Cookie"
 msgstr "Limpar Cookie"
 
@@ -74,7 +74,7 @@ msgstr "Fechar"
 msgid "Content type:"
 msgstr "Tipo de conteúdo:"
 
-#: course-page.php:155
+#: course-page.php:158
 msgid "Course Youtube video"
 msgstr "Vídeo do curso no Youtube"
 
@@ -106,7 +106,7 @@ msgstr "Finalizado"
 msgid "Entities"
 msgstr "Entidades"
 
-#: partials/entity-aside.php:4
+#: partials/entity-aside.php:7
 msgid "Entity Youtube video"
 msgstr "Vídeo da entidade no Youtube"
 
@@ -123,11 +123,11 @@ msgstr "Todos"
 msgid "Explore all courses"
 msgstr "Explore todos os cursos"
 
-#: languages/strings.php:83 functions.php:755
+#: languages/strings.php:83 functions.php:752
 msgid "Finished"
 msgstr "Terminado"
 
-#: languages/strings.php:28 functions.php:662
+#: languages/strings.php:28 functions.php:658
 msgid "Free"
 msgstr "Gratuito"
 
@@ -151,7 +151,7 @@ msgstr "Indústria, inovação e infraestruturas"
 msgid "Instructor Paced"
 msgstr "Com Calendário Definido"
 
-#: languages/strings.php:37 functions.php:722
+#: languages/strings.php:37 functions.php:719
 msgid "Instructor paced"
 msgstr "Com calendário definido"
 
@@ -159,7 +159,7 @@ msgstr "Com calendário definido"
 msgid "Invitation Only"
 msgstr "Apenas por Convite"
 
-#: languages/strings.php:60 functions.php:723
+#: languages/strings.php:60 functions.php:720
 msgid "Invitation only"
 msgstr "Apenas por convite"
 
@@ -188,7 +188,7 @@ msgstr "Proteger a vida marinha"
 msgid "Life on land"
 msgstr "Proteger a vida terrestre"
 
-#: inc/global-head.php:85
+#: inc/global-head.php:72
 msgid "Need Help"
 msgstr "Preciso de Ajuda"
 
@@ -205,7 +205,7 @@ msgstr "Sem objetivo"
 msgid "No poverty"
 msgstr "Erradicar a pobreza"
 
-#: functions.php:301
+#: functions.php:296
 msgid "None found"
 msgstr "Nenhum encontrado"
 
@@ -213,12 +213,12 @@ msgstr "Nenhum encontrado"
 msgid "Not to translate"
 msgstr "Não traduzir"
 
-#: languages/strings.php:2 functions.php:764 inc/global-top-menu.php:10
+#: languages/strings.php:2 functions.php:761 inc/global-top-menu.php:10
 #: search.php:12
 msgid "Open"
 msgstr "Abrir"
 
-#: languages/strings.php:35 functions.php:723
+#: languages/strings.php:35 functions.php:720
 msgid "Open to everyone"
 msgstr "Aberto a todos"
 
@@ -268,7 +268,7 @@ msgstr "Reduzir as desigualdades"
 msgid "Responsible consuption"
 msgstr "Produção e consumo responsáveis"
 
-#: languages/strings.php:84 functions.php:751
+#: languages/strings.php:84 functions.php:748
 msgid "Running"
 msgstr "A decorrer"
 
@@ -276,7 +276,7 @@ msgstr "A decorrer"
 msgid "Running Courses"
 msgstr "Cursos Disponíveis"
 
-#: languages/strings.php:82 functions.php:735
+#: languages/strings.php:82 functions.php:732
 msgid "Scheduled to start"
 msgstr "Brevemente"
 
@@ -288,11 +288,14 @@ msgstr "Procurar"
 msgid "Search ..."
 msgstr "Procurar ..."
 
-#: languages/strings.php:19 partials/homepage/inc/slider/item-search.php:37
+#: languages/strings.php:19 inc/global-top-menu.php:35
+#: inc/global-top-menu.php:37 partials/homepage/inc/slider/item-search.php:37
+#: partials/homepage/inc/slider/item-search.php:38
+#: partials/homepage/inc/slider/item-search.php:39
 msgid "Search Courses"
 msgstr "Pesquisar Cursos"
 
-#: languages/strings.php:4 inc/global-top-menu.php:35
+#: languages/strings.php:4 inc/global-top-menu.php:36
 msgid "Search courses..."
 msgstr "Pesquisar Cursos..."
 
@@ -319,11 +322,11 @@ msgstr "Veja um vídeo sobre esta entidade"
 msgid "See video"
 msgstr "Ver vídeo"
 
-#: languages/strings.php:34 functions.php:722
+#: languages/strings.php:34 functions.php:719
 msgid "Self paced"
 msgstr "Sem horário definido"
 
-#: languages/strings.php:9 course-page.php:168 partials/entity-aside.php:18
+#: languages/strings.php:9 course-page.php:173 partials/entity-aside.php:21
 msgid "Share"
 msgstr "Partilhar"
 
@@ -396,6 +399,10 @@ msgstr "Visitar o site INcode.2030"
 #: languages/strings.php:15 partials/global-footer.php:83
 msgid "Visit OpenEdX website"
 msgstr "Visitar site OpenEdX"
+
+#: partials/homepage/homepage-entities.php:14
+msgid "Visit page of"
+msgstr "Visite a página de"
 
 #: languages/strings.php:41 inc/galeria_un.php:9
 msgid "Zero hunger"
