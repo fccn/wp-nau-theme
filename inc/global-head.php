@@ -79,21 +79,10 @@
       <script data-jsd-embedded data-key="<?=$jira_widget_key?>" data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
 
       <script>
-        window.addEventListener("load", function(event) {
-
-          function sleep(milliseconds) {
-            const start = Date.now();
-            while (Date.now() - start < milliseconds);
-          }
-
-          while(true) {
-            let widgetElement = document.getElementById('jsd-widget');
-            if (widgetElement) {
-              widgetElement.setAttribute('title', 'Preciso de Ajuda');
-              break;
-            }
-            sleep(50);
-            console.log("AA");
+        document.addEventListener("DOMContentLoaded",function(){
+          var widgetElement = document.getElementById('jsd-widget');
+          if (widgetElement) {
+            widgetElement.setAttribute('title', '<?php echo nau_trans("Need Help")?>');
           }
         });
       </script>

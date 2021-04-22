@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-21 15:39+0100\n"
+"POT-Creation-Date: 2021-04-22 09:50+0100\n"
 "PO-Revision-Date: 2020-05-12 00:49+0100\n"
 "Last-Translator: root <rui.ribeiro@fccn.pt>\n"
 "Language-Team: Portuguese\n"
@@ -176,7 +176,7 @@ msgstr "Saber mais sobre esta entidade"
 msgid "Learn more about this course"
 msgstr "Saiba mais sobre o contorno do curso"
 
-#: languages/strings.php:59 partials/entities-cards.php:49
+#: languages/strings.php:59 partials/entities-cards.php:46
 msgid "Learn more about this entity"
 msgstr "Saiba mais sobre esta entidade"
 
@@ -187,6 +187,10 @@ msgstr "Proteger a vida marinha"
 #: languages/strings.php:54 inc/galeria_un.php:22
 msgid "Life on land"
 msgstr "Proteger a vida terrestre"
+
+#: inc/global-head.php:85
+msgid "Need Help"
+msgstr "Preciso de Ajuda"
 
 #. $nauBodyClass = "class='secondary-pages'";
 #: languages/strings.php:64 inc/news-list.php:4 search.php:8
@@ -381,7 +385,7 @@ msgstr ""
 msgid "View course"
 msgstr "Ver curso"
 
-#: partials/entities-cards.php:50
+#: partials/entities-cards.php:47
 msgid "View entity"
 msgstr "Ver detalhes"
 
