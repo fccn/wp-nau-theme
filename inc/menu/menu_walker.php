@@ -51,12 +51,7 @@ class NAU_Walker_Access_Menu extends Walker_Nav_Menu {
         $atts['target'] = ! empty( $item->target )     ? $item->target     : '';
         $atts['rel']    = ! empty( $item->xfn )        ? $item->xfn        : '';
         $atts['href']   = ! empty( $item->url )        ? $item->url        : '';
-        
-        if($this->cnt < 1) {
-          $atts['id']     = 'register';
-        } else {
-          $atts['id']     = 'login_image';
-        }
+
         $this->cnt++;
 
         $atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );
