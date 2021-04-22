@@ -29,7 +29,7 @@ Array
 
         <div class="homepage-slider-search" style="background-color:<?=$back_color?>;">
           <div class="homepage-slide-item <?=$item["template"]?>">
-            <img data-u="image" data-src="<?=$back_image?>" />                
+            <img data-u="image" data-src="<?=$back_image?>" alt="<?=$headline?>" />                
             <div class="nau-logo-filter" style="filter: hue-rotate(<?=$hue_rotate?>deg) opacity(<?=$opacity?>);"></div>
             <div class="nau-slide-content">
               <div id="banner-search-form-container">
