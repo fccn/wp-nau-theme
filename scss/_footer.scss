@@ -33,20 +33,27 @@ footer {
         color: $footer-header-color;
     }
 
+    .footer-links,
     .footer-widget,
     .footer-social {
         padding: 0 0.55rem 20px 0;
         min-width: 20%;
         max-width: 25%;
         flex-grow: 1;
+        margin-bottom: 1.4rem;
 
-        a {
+        a, a:visited {
             color: $footer-link-color;
             text-transform: inherit;
             line-height: 1.7em;
+            font-size: 0.81rem;
 
             &:hover {
+                color: inherit;
                 text-decoration: underline;
+            }
+            .icon {
+                font-size: 25px;
             }
         }
 
@@ -102,6 +109,15 @@ footer {
             padding-top: 10px;
             padding-right: 5px;
             padding-left: 5px;            
+
+            img {
+                max-width: 280px;
+                max-height: 100px;
+
+                @media screen and (max-width: $breakpoint-small) {
+                    max-width: 200px;
+                }
+            }
 
             .wp-caption-text {
                 border: 0;
@@ -167,6 +183,8 @@ footer {
 
             span {
                 font-size: 0.7rem;
+                display: block;
+                line-height: 1.1;
             }
         }
 
