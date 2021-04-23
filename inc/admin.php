@@ -117,6 +117,16 @@ function nau_display_menu_languages(){ ?>
 
 <?php }
 
+
+// Show Subscribe newsletter link
+function nau_display_subscribe_newsletter_link(){ ?>
+
+  <input type="text" name="nau_subscribe_newsletter_link" placeholder="Subscribe newsletter footer link" value="<?php echo get_option('nau_subscribe_newsletter_link'); ?>" size="100">
+
+<?php }
+
+
+
 /**
  *
  * Here you tell WP what to enqueue into the <form> area. You need:
@@ -141,6 +151,7 @@ function nau_display_custom_info_fields(){
     add_settings_field("nau_confluence_widget_key", "Confluence Widget Key", "nau_display_confluence_widget_key", "theme-options", "section");
     add_settings_field("nau_extra_js", "Extra JS Code", "nau_display_extra_js", "theme-options", "section");
     add_settings_field("nau_menu_languages", "Menu languages", "nau_display_menu_languages", "theme-options", "section");
+    add_settings_field("nau_subscribe_newsletter_link", "Subscribe newsletter link", "nau_display_subscribe_newsletter_link", "theme-options", "section");
     
     
     
@@ -155,6 +166,8 @@ function nau_display_custom_info_fields(){
     register_setting("section", "nau_confluence_widget_key");
     register_setting("section", "nau_extra_js");
     register_setting("section", "nau_menu_languages");
+    register_setting("section", "nau_subscribe_newsletter_link");
+    
     
 }
 

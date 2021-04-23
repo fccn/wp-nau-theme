@@ -46,15 +46,15 @@ body#institution div#home-slider {
       </div>
     </div>
     <?php if ($header == "nau"): ?>
-    <img src="assets/img/banner-shape-long-blue.svg" class="slider-mask">  
+    <img src="assets/img/banner-shape-long-blue.svg" class="slider-mask" alt="Banner NAU shape">  
     <?php else: ?>
-    <img src="assets/img/banner-shape-long-navy-blue.svg" class="slider-mask">  
+    <img src="assets/img/banner-shape-long-navy-blue.svg" class="slider-mask" alt="Banner NAU shape">  
     <?php endif; ?>
   </div>
 </section>
 
 <!-- starts homepage body content -->
-<div class="entity-content">  
+<div id="body-content">  
 
     <!-- starts all institution courses -->
     <article class="entity-description">

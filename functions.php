@@ -51,20 +51,15 @@ function version_id() {
 }
 
 function nau_theme_enqueue_styles() {
-    wp_enqueue_script( 'jquery-ui-widget' );
-    wp_enqueue_script( 'jquery-ui-mouse' );
-    wp_enqueue_script( 'jquery-ui-accordion' );
-    wp_enqueue_script( 'jquery-ui-autocomplete' );
-    wp_enqueue_script( 'jquery-ui-slider' );
-
     wp_enqueue_style('reset-style', get_template_directory_uri() . '/assets/css/reset.css', array(), version_id(), 'all');
     wp_enqueue_style('styles-style', get_template_directory_uri() . '/assets/css/layout.css', array(), version_id(), 'all');
     
-    wp_enqueue_style('style-style', get_template_directory_uri() . '/style.css', array(), version_id(), 'all');
     wp_enqueue_script('script_functions', get_template_directory_uri() . '/assets/js/functions.js', array(), version_id(), true);
     wp_enqueue_script('menu_slider', get_template_directory_uri() . '/assets/js/menu_slider_and_other_operations.js', array(), version_id(), true);
-    wp_enqueue_script('cookie_bar', get_template_directory_uri() . '/assets/js/cookie-bar.js', array('jquery', 'jquery-ui-core'), version_id(), true);
-    wp_enqueue_style('material-icons', '//fonts.googleapis.com/icon?family=Material+Icons' );
+    wp_enqueue_script('cookie_bar', get_template_directory_uri() . '/assets/js/cookie-bar.js', array('jquery'), version_id(), true);
+
+    wp_enqueue_style('material-icons', '//fonts.googleapis.com/icon?family=Material+Icons');
+    wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 }
 
 add_action( 'wp_enqueue_scripts', 'nau_theme_enqueue_styles' );
@@ -335,14 +330,20 @@ add_shortcode('nau_courses_list', 'nau_courses_list');
 
 
 function nau_courses_gallery($atts = array()) { 
-   global $courses;
-   $courses = nau_get_courses( $atts);
-   ob_start();
-   get_template_part( "partials/courses", "cards" );
-   $value = ob_get_contents();
-   ob_end_clean();
+  global $courses;
+  $courses = array_filter(nau_get_courses("curso", $atts), function($coursePage){
+    $nau_lms_course_enrollment_end = get_field("nau_lms_course_enrollment_end", $coursePage->ID);
+    $nau_lms_course_end = get_field("nau_lms_course_end", $coursePage->ID);
+    $date = is_null($nau_lms_course_enrollment_end) || empty($nau_lms_course_enrollment_end)  ? $nau_lms_course_end : $nau_lms_course_enrollment_end;
+    $days_to_end = days_to_today ( $date );
+    return $days_to_end >= 0;
+  });
+  ob_start();
+  get_template_part( "partials/courses", "cards" );
+  $value = ob_get_contents();
+  ob_end_clean();
 
-   return $value;
+  return $value;
 }
 
 add_shortcode('nau_courses_gallery', 'nau_courses_gallery');
@@ -643,6 +644,13 @@ function load_course_id_simple($coursePage) {
   }
 }
 
+function get_course_name($coursePage) {
+  $course_id = load_course_id($coursePage);
+  if ($course_id != null) {
+    return get_the_title( $coursePage );
+  }
+  return "";
+}
 
 function load_course($coursePage) {
   $course_id = load_course_id( $coursePage );
@@ -653,7 +661,8 @@ function load_course($coursePage) {
   //if ($image == "") {
   //  $image = get_the_post_thumbnail_url( $coursePage->ID, 'full' );
   //}
-  $image = get_the_post_thumbnail_url( $coursePage->ID, 'full' );
+  $image_full = get_the_post_thumbnail_url( $coursePage->ID, 'full' ); 
+  $image_card = get_the_post_thumbnail_url( $coursePage->ID, 'nau-card-thumbnail' );
   
   $youtube = get_field("youtube", $coursePage->ID);
   if ($youtube == "") {          
@@ -680,7 +689,8 @@ function load_course($coursePage) {
     "course_enroll_url" => get_permalink($coursePage->ID),
     "tagline" => get_field('tagline', $coursePage->ID),
     "effort" => get_field("nau_course_extra_about_effort", $coursePage->ID),
-    "image" => $image,    
+    "image_full" => $image_full,
+    "image_card" => $image_card,
     "stars" => get_field("stars", $coursePage->ID), 
     "price" => $cost,    
     "participants" => get_field("nau_lms_course_enrollments", $coursePage->ID),
@@ -963,3 +973,37 @@ function nau_homepage_slider($atts = array()) {
   return nau_template_part( "partials/homepage/homepage", "slider" );
 }
 add_shortcode('nau_homepage_slider', 'nau_homepage_slider');
+// This theme has a custom image thumnail format
+add_theme_support( "post-thumbnails" );
+
+// Register the image thumbnail format, a specific format for course and entity cards
+add_image_size( 'nau-card-thumbnail', 279, 160, FALSE );
+
+/*
+// Load some of the JavaScript asynchronous. The scriptArr variable has the scripts to be loaded async
+function add_custom_attr( $tag, $handle, $src ) {
+  $scriptArr = array('script_functions','menu_slider','cookie_bar','slider_lib','home_slider');
+  if (in_array($handle, $scriptArr)) {
+    // $tag = str_replace( 'src=', 'sync="false" src=', $tag );
+    //$tag = str_replace( ' src', ' defer src', $tag ); // defer the script
+    //$tag = str_replace( ' src', ' async src', $tag ); // OR async the script
+    $tag = str_replace( ' src', ' async defer src', $tag ); // OR do both!
+  }
+  return $tag;
+}
+add_filter( 'script_loader_tag', 'add_custom_attr', 10, 3 );
+
+// Load CSS asynchronous
+function add_rel_preload($html, $handle, $href, $media) {
+  $scriptArr = array('wp-block-library', 'wp-edunext-marketing-site-frontend','reset-style','material-icons','google-fonts');
+  if (!is_admin() && in_array($handle, $scriptArr)) {
+    $html = <<<EOT
+    <link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" id='$handle' href='$href' type='text/css' media='all' />
+
+    EOT;
+    return $html;
+  }
+  return $html;
+}
+add_filter( 'style_loader_tag', 'add_rel_preload', 10, 4 );
+*/

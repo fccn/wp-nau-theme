@@ -1,6 +1,5 @@
 .branding-top-nav {
     border-top: solid 0.3em #0857ff;
-    border-radius: 0.3em 0.3em 0;
     background-color: $menu-bg-color;
     display: flex;
     justify-content: space-between;
@@ -8,16 +7,17 @@
     padding: 20px 50px 20px 0;
     line-height: 1.3rem;
 
-    @media screen and (max-width: $breakpoint-medium) {
-        display: block;
-    }
-
     .logo {
         display: inline-block;
         width: 190px;
         height: 30px;
         margin-left: 50px;
         background: url("../img/nau_sempre_aprender.svg") no-repeat center center;
+
+        // hide the text that is not visible for accessibility reasons
+        line-height: 0; 
+        font-size: 0;
+        color: transparent; 
 
         @media screen and (max-width: $breakpoint-medium) {
             display: inline-block;
@@ -59,6 +59,10 @@
         #search-form {
             margin-right: 10px;
             position: relative;
+            
+            label {
+                display: none;
+            }
         }
 
         #search-input {

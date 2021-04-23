@@ -16,10 +16,13 @@
   }
   
   $pixel_code = get_field('pixel-track-code');
-  if ($pixel_code != "") {
+  $facebook_pixel_id = get_option('nau_facebook_pixel'); 
+  if ($facebook_pixel_id != "" && $pixel_code != "") {
   ?>
     <script>
-      fbq('track', '<?=$pixel_code?>');
+      if (typeof fbq === "function") {
+        fbq('track', '<?=$pixel_code?>');
+      }
     </script>
   <? } 
 

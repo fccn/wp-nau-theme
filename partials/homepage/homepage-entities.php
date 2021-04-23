@@ -11,7 +11,7 @@
             
         $logo = get_custom_value("logo", "", $entity->ID);
       ?>        
-      <li><a href="<?php echo get_permalink($entity)?>"><img src="<?php echo $logo?>" alt="<?php echo $entity->post_title?>" title="<?php echo $entity->post_title?>"></a></li>      
+      <li><a href="<?php echo get_permalink($entity)?>"><img src="<?php echo $logo?>" alt="<?php echo $entity->post_title?>" title="<?=nau_trans("Visit page of")?> <?php echo $entity->post_title?>"></a></li>      
         
         <?php   endforeach; ?>
     

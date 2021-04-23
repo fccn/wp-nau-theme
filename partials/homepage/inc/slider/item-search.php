@@ -29,13 +29,14 @@ Array
 
         <div class="homepage-slider-search" style="background-color:<?=$back_color?>;">
           <div class="homepage-slide-item <?=$item["template"]?>">
-            <img data-u="image" data-src="<?=$back_image?>" />                
+            <img data-u="image" data-src="<?=$back_image?>" alt="<?=$headline?>" />                
             <div class="nau-logo-filter" style="filter: hue-rotate(<?=$hue_rotate?>deg) opacity(<?=$opacity?>);"></div>
             <div class="nau-slide-content">
               <div id="banner-search-form-container">
-                 <form id="banner-search-form" action="<?php echo home_url(); ?>" role="search" method="get">
-                   <input id="s" name="s" type="search" placeholder="<?=nau_trans("Search Courses")?>" value="<?=$search_query?>">
-                   <input name="submit-search" type="submit">
+                  <form id="banner-search-form" action="<?php echo home_url(); ?>" role="search" method="get">
+                    <label id="banner-search-form-label" for="s"><?=nau_trans("Search Courses")?></label>
+                    <input id="s" name="s" type="search" placeholder="<?=nau_trans("Search Courses")?>" value="<?=$search_query?>" aria-labelledBy="banner-search-form-label">
+                    <input name="submit-search" type="submit"><?=nau_trans("Search Courses")?></input>
                  </form>
               </div>
             

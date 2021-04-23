@@ -5,7 +5,7 @@ require('menu/menu_walker.php');
 ?>
   <div class="branding-top-nav">
     <a id="open-menu-arrow" href="javascript:void(0)" onclick="openNav(0)" title="<?=nau_trans("Open")?>">&#9776;</a>  
-    <a href="<?=get_site_url()?>" class="logo"></a>
+    <a href="<?=get_site_url()?>" class="logo"><?=nau_trans("Homepage")?></a>
 
     <!-- starts menu container -->
     <div class="menu-container">
@@ -29,8 +29,9 @@ require('menu/menu_walker.php');
   
           <!-- starts top nav search bar -->          
           <form id="search-form" action="<?php echo home_url(); ?>" role="search" method="get">
-            <input id="search-input" name="s" type="search" placeholder="<?=nau_trans("Search courses...")?>" value="<?=get_search_query()?>">
-            <input name="submit-search" type="submit">
+            <label id="search-form-label" for="search-input"><?=nau_trans("Search Courses")?></label>
+            <input id="search-input" name="s" type="search" placeholder="<?=nau_trans("Search courses...")?>" value="<?=get_search_query()?>" aria-labelledBy="search-form-label" />
+            <input name="submit-search" type="submit" value="<?=nau_trans("Search Courses")?>">
           </form>
           <!-- ends top nav search bar -->
               

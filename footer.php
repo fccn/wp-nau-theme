@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	} else {
 	    // change share button href
 	    if (shareButton != null) {
-	    	shareButton.setAttribute("rel", "nofollow");
+	    	shareButton.setAttribute("rel", "noopener noreferrer nofollow");
 	    	shareButton.setAttribute("target", "_blank");
 	    	shareButton.href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(window.location.href);
 	    }

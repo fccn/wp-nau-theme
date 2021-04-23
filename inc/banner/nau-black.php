@@ -22,7 +22,7 @@
     <div id="slider-objects">      
        <h1><?=$page_title?></h1>
     </div>
-    <img src="assets/img/banner-shape-long-navy-blue.svg" class="slider-mask">  
+    <img src="assets/img/banner-shape-long-navy-blue.svg" class="slider-mask" alt="Banner NAU shape">  
   </div>
 </section>
 
