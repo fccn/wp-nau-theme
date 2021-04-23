@@ -49,6 +49,7 @@ if( function_exists('acf_add_local_field_group') && (get_option('nau_environment
 				),
 				'taxonomy' => array(
 					0 => 'category:entidade',
+					1 => 'category:entity',
 				),
 				'allow_null' => 0,
 				'multiple' => 0,
@@ -425,7 +426,7 @@ if( function_exists('acf_add_local_field_group') && (get_option('nau_environment
 				'first_day' => 1,
 			),
 			array(
-				'key' => 'field_606c74c27aeba',
+				'key' => 'field_6082a11c5f3a5',
 				'label' => 'Início inscrições',
 				'name' => 'nau_lms_course_enrollment_start',
 				'type' => 'date_time_picker',
@@ -442,7 +443,7 @@ if( function_exists('acf_add_local_field_group') && (get_option('nau_environment
 				'first_day' => 1,
 			),
 			array(
-				'key' => 'field_606c71d0d3720',
+				'key' => 'field_6082a14c5f3a6',
 				'label' => 'Fim inscrição',
 				'name' => 'nau_lms_course_enrollment_end',
 				'type' => 'date_time_picker',
@@ -898,14 +899,14 @@ if( function_exists('acf_add_local_field_group') && (get_option('nau_environment
 				array(
 					'param' => 'post_category',
 					'operator' => '==',
-					'value' => 'category:entity',
+					'value' => 'category:entidade',
 				),
 			),
 			array(
 				array(
 					'param' => 'post_category',
 					'operator' => '==',
-					'value' => 'category:entidade',
+					'value' => 'category:entity',
 				),
 			),
 		),
@@ -2257,6 +2258,18 @@ if( function_exists('acf_add_local_field_group') && (get_option('nau_environment
 					'value' => 'category:noticia',
 				),
 			),
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'post',
+				),
+				array(
+					'param' => 'post_category',
+					'operator' => '==',
+					'value' => 'category:news',
+				),
+			),
 		),
 		'menu_order' => 0,
 		'position' => 'normal',
@@ -2470,13 +2483,6 @@ if( function_exists('acf_add_local_field_group') && (get_option('nau_environment
 					'param' => 'taxonomy',
 					'operator' => '==',
 					'value' => 'all',
-				),
-			),
-			array(
-				array(
-					'param' => 'post_category',
-					'operator' => '==',
-					'value' => 'category:news',
 				),
 			),
 		),

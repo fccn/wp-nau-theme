@@ -42,6 +42,11 @@ function nau_trans($message)
     return __($message, "nau-theme");
 }
 
+function nau_get_option( string $option, $default = false) {
+  $value = get_option($option);
+  return empty($value) ? $default : $value;
+}
+
 function version_id() { 
   if ( WP_DEBUG )
     return time();
@@ -226,12 +231,15 @@ function nau_entity_courses($entityPage) {
     return nau_get_courses( array(), array('nau-organization'=>$entityPage->ID));
 }
 
-function nau_get_entities($atts = array(), $fields = array(), $showall = 0) {
-  return nau_get_posts("entidade", $atts, $fields, $showall);
+function nau_get_entities($atts = array(), $fields = array()) {
+  return nau_get_posts( nau_get_option("nau_category_slug_entity", "entidade,entity"), $atts, $fields);
 }
 
-function nau_get_courses($atts = array(), $fields = array(), $showall = 0) {
-  return nau_get_posts("curso", $atts, $fields, $showall);
+function nau_get_courses($atts = array(), $fields = array(), $showall = false) {
+  if (!$showall) {
+    $fields["nau_lms_course_catalog_visibility"] = 'both';
+  }
+  return nau_get_posts( nau_get_option("nau_category_slug_course", "curso,course"), $atts, $fields);
 }
 
 function nau_get_category_id_by_slug($category_slug) {
@@ -242,32 +250,31 @@ function nau_get_category_id_by_slug($category_slug) {
   return $id;
 }
 
-function nau_get_posts($category = "", $atts = array(), $fields = array(), $showall = 0) { 
 
-  if (($category=="curso") && (!$showall)) {
-      # $fields[] = array('nau_lms_course_catalog_visibility' => 'both');
-      $fields["nau_lms_course_catalog_visibility"] = 'both';
-  }
+function nau_get_posts($category = "", $atts = array(), $fields = array()) { 
 
   extract(shortcode_atts(array(
     'filter' => ''
-    ), $atts));
-
-  #$category_in_array = array(nau_get_category_id_by_slug($category), nau_get_category_id_by_slug('course'));
-  #print("category_in_array --> " . print_r(nau_get_category_id_by_slug($category) ) );
+    ), $atts)
+  );
 
   $args = array(
-    #'lang' => 'pt,en',
+    'category_name' => $category,
     'post_type' => 'page', 
     'posts_per_page' => -1, 
-    'category_name' => $category,
-    #'category__in' => $category_in_array,
     'orderby' => 'menu_order',
     'order' => 'ASC'
   );
+
+  // Polylang custom code
+  if (function_exists("pll_languages_list")) {
+    $all_polylang_languages = pll_languages_list();
+    $language_2_letter_codes = implode(',', $all_polylang_languages);
+    $args['lang'] = $language_2_letter_codes;
+  }
         
   if ($filter != "") {
-       $args["tag_slug__in"] = explode(" ", $filter);
+    $args["tag_slug__in"] = explode(" ", $filter);
   }
 
   $query = new WP_Query($args);
@@ -295,8 +302,7 @@ function nau_get_posts($category = "", $atts = array(), $fields = array(), $show
       $list[] = $post;
     }
   }
-  
-  
+    
   return $list;
 }
 
@@ -331,13 +337,18 @@ add_shortcode('nau_courses_list', 'nau_courses_list');
 
 function nau_courses_gallery($atts = array()) { 
   global $courses;
-  $courses = array_filter(nau_get_courses("curso", $atts), function($coursePage){
+  
+  //$courses = nau_get_courses($atts);
+  //return "courses --> " . count($courses);
+  
+  $courses = array_filter(nau_get_courses($atts), function($coursePage){
     $nau_lms_course_enrollment_end = get_field("nau_lms_course_enrollment_end", $coursePage->ID);
     $nau_lms_course_end = get_field("nau_lms_course_end", $coursePage->ID);
     $date = is_null($nau_lms_course_enrollment_end) || empty($nau_lms_course_enrollment_end)  ? $nau_lms_course_end : $nau_lms_course_enrollment_end;
     $days_to_end = days_to_today ( $date );
     return $days_to_end >= 0;
   });
+  
   ob_start();
   get_template_part( "partials/courses", "cards" );
   $value = ob_get_contents();
@@ -505,7 +516,7 @@ add_shortcode('nau_entities_gallery', 'nau_entities_gallery');
 
 
 function nau_list_news($atts = array()) { 
-   return make_link_list(nau_get_posts("noticia", $atts));
+   return make_link_list(nau_get_posts( nau_get_option("nau_category_slug_news", "noticia,news"), $atts));
 }
 
 
@@ -1007,3 +1018,13 @@ function add_rel_preload($html, $handle, $href, $media) {
 }
 add_filter( 'style_loader_tag', 'add_rel_preload', 10, 4 );
 */
+
+function nau_log($log) {
+  if (true === WP_DEBUG) {
+    if (is_array($log) || is_object($log)) {
+      error_log(print_r($log, true));
+    } else {
+      error_log($log);
+    }
+  }
+}

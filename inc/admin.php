@@ -125,6 +125,27 @@ function nau_display_subscribe_newsletter_link(){ ?>
 
 <?php }
 
+// Show category slug for entities
+function nau_display_category_slug_entity(){ ?>
+
+  <input type="text" name="nau_category_slug_entity" placeholder="Entities comma separated categories slug, eg. 'entity,entidade'" value="<?php echo get_option('nau_category_slug_entity'); ?>" size="100">
+
+<?php }
+
+// Show category slug for courses
+function nau_display_category_slug_course(){ ?>
+
+  <input type="text" name="nau_category_slug_course" placeholder="Course comma separated categories slug, eg. 'course,curso'" value="<?php echo get_option('nau_category_slug_course'); ?>" size="100">
+
+<?php }
+
+// Show category slug for news
+function nau_display_category_slug_news(){ ?>
+
+  <input type="text" name="nau_category_slug_news" placeholder="News comma separated categories slug, eg. 'news,noticia'" value="<?php echo get_option('nau_category_slug_news'); ?>" size="100">
+
+<?php }
+
 
 
 /**
@@ -152,6 +173,9 @@ function nau_display_custom_info_fields(){
     add_settings_field("nau_extra_js", "Extra JS Code", "nau_display_extra_js", "theme-options", "section");
     add_settings_field("nau_menu_languages", "Menu languages", "nau_display_menu_languages", "theme-options", "section");
     add_settings_field("nau_subscribe_newsletter_link", "Subscribe newsletter link", "nau_display_subscribe_newsletter_link", "theme-options", "section");
+    add_settings_field("nau_category_slug_entity", "Entities comma separated categories slug, eg. 'entity,entidade'", "nau_display_category_slug_entity", "theme-options", "section");
+    add_settings_field("nau_category_slug_course", "Course comma separated categories slug, eg. 'course,curso'", "nau_display_category_slug_course", "theme-options", "section");
+    add_settings_field("nau_category_slug_news", "News comma separated categories slug, eg. 'news,noticia'", "nau_display_category_slug_news", "theme-options", "section");
     
     
     
@@ -167,7 +191,9 @@ function nau_display_custom_info_fields(){
     register_setting("section", "nau_extra_js");
     register_setting("section", "nau_menu_languages");
     register_setting("section", "nau_subscribe_newsletter_link");
-    
+    register_setting("section", "nau_category_slug_entity");
+    register_setting("section", "nau_category_slug_course");
+    register_setting("section", "nau_category_slug_news");
     
 }
 

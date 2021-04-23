@@ -1,3 +1,14 @@
+Polylang
+	<? 
+
+		function test() {
+			print ( "option --> " . get_option("nau_category_slug_entity", "entidade,entity") );
+		}
+		test();
+	
+	?>
+    
+
 <script>
 
 // Load lazilly the DOM
