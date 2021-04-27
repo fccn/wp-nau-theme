@@ -21,31 +21,19 @@ function nau_load_theme_textdomain() {
 add_action('after_setup_theme', 'nau_load_theme_textdomain' );
 
 
-function nau_trans($message) 
-{    
-    if (WP_DEBUG == true) {
-        $filename = get_template_directory() . '/languages/strings.php';
-        $lines = file($filename);
-        $found = false;
-        foreach($lines as $line) {
-            if (strstr(chop($line), "nau_trans(\"$message\");")) {
-              $found = true;
-              break;
-            }
-        }
-        if (!$found) {
-          $lines[] = "nau_trans(\"$message\");\n";
-          file_put_contents($filename, implode("", $lines));
-        }
-    }
-    
-    return __($message, "nau-theme");
+function nau_trans($message) {   
+  return __($message, "nau-theme");
+}
+
+function nau_get_option( string $option, $default = false) {
+  $value = get_option($option);
+  return empty($value) ? $default : $value;
 }
 
 function version_id() { 
-  if ( WP_DEBUG )
+  if ( WP_DEBUG === true )
     return time();
-  if ( WP_NAU_THEME_VERSION != 'WP_NAU_THEME_VERSION' )
+  if ( WP_NAU_THEME_VERSION != 'WP_NAU_THEME_VERSION' ) // try to change to getenv
     return WP_NAU_THEME_VERSION;
   return '1.0.0';
 }
@@ -212,10 +200,8 @@ function _nau_get_pages($category = "", $atts = array()) {
   */
 }
 
-
-
 function nau_get_un_courses($un_id) {
-    return nau_get_posts("curso", array(), array('un-sustentability'=>$un_id));
+    return nau_get_courses( array(), array('un-sustentability'=>$un_id));
 }
 
 function nau_un_courses_gallery($un_id) {
@@ -224,65 +210,164 @@ function nau_un_courses_gallery($un_id) {
    get_template_part( "partials/courses", "cards" );
 }
 
-
 function nau_entity_courses($entityPage) {
-    return nau_get_posts("curso", array(), array('nau-organization'=>$entityPage->ID));
+  $entityPageID = $entityPage->ID;
+  if (function_exists("pll_get_post_translations")) {
+    $language_code_to_post_id_array = pll_get_post_translations($entityPageID);
+    $nau_organization_field_query = array_values($language_code_to_post_id_array);
+  } else {
+    $nau_organization_field_query = $entityPageID;
+  }
+  nau_log($nau_organization_field_query);
+  return nau_get_courses( array(), array('nau-organization'=>$nau_organization_field_query), array(), "course-id-prod");
 }
 
-function nau_get_posts($category = "", $atts = array(), $fields = array(), $showall = 0) { 
+function nau_get_entities($atts = array(), $fields = array()) {
+  return nau_get_posts( nau_get_option("nau_category_slug_entity", "entidade,entity"), $atts, $fields, "nau-id");
+}
 
-  if (($category=="curso") && (!$showall)) {
-      # $fields[] = array('nau_lms_course_catalog_visibility' => 'both');
-      $fields["nau_lms_course_catalog_visibility"] = 'both';
+function nau_get_courses($atts = array(), $fields = array(), $showall = false) {
+  if (!$showall) {
+    $fields["nau_lms_course_catalog_visibility"] = 'both';
   }
+  return nau_get_posts( nau_get_option("nau_category_slug_course", "curso,course"), $atts, $fields, "course-id-prod");
+}
+
+function nau_get_category_id_by_slug($category_slug) {
+  $idObj = get_category_by_slug( $category_slug );
+  if ( $idObj instanceof WP_Term ) {
+    $id = $idObj->term_id;
+  }
+  return $id;
+}
+
+
+function nau_get_posts($category = "", $atts = array(), $fields = array(), string $field_to_deduplicate = NULL) { 
 
   extract(shortcode_atts(array(
     'filter' => ''
-    ), $atts));
+    ), $atts)
+  );
 
   $args = array(
+    'category_name' => $category,
     'post_type' => 'page', 
     'posts_per_page' => -1, 
-    'category_name' => $category,
     'orderby' => 'menu_order',
     'order' => 'ASC'
   );
+
+  // Polylang custom code
+  if (function_exists("pll_languages_list")) {
+    $all_polylang_languages = pll_languages_list();
+    $language_2_letter_codes = implode(',', $all_polylang_languages);
+    $args['lang'] = $language_2_letter_codes;
+  }
         
   if ($filter != "") {
-       $args["tag_slug__in"] = explode(" ", $filter);
+    $args["tag_slug__in"] = explode(" ", $filter);
   }
 
   $query = new WP_Query($args);
 
   $list  = [];
 
+  // filter by custom fields
   if ($fields) {
-
-      foreach($query->posts as $post) {
-        $cnt = count($fields);
-        
-        foreach($fields as $field_name => $test_value) {
-            $value = get_field($field_name, $post->ID);            
-            if ($value == $test_value) {
-                $cnt--;
-                if ($cnt == 0) {
-                      $list[] = $post;
-                      break;
-                }
-            }
+    foreach($query->posts as $post) {
+      $cnt = count($fields);
+      foreach($fields as $field_name => $test_value) {
+        $value = get_field($field_name, $post->ID);         
+        if (_value_equals_or_in($value, $test_value)) {
+          $cnt--;
+          if ($cnt == 0) {
+            $list[] = $post;
+            break;
+          }
         }
       }
+    }
   } else {
     foreach($query->posts as $post) {
       $list[] = $post;
     }
   }
   
-  
-  return $list;
+  if(is_null($field_to_deduplicate) || !function_exists("pll_languages_list")) {
+    return $list;
+  } else {
+    return filter_by_polylang($list, $field_to_deduplicate);
+  }
 }
 
+/**
+ * If the $test_value is a string, verify if the $value is equals the $test_value
+ * Or, if the $test_value is an array, test if the $value is within the array.
+ */
+function _value_equals_or_in(string $value, $test_value) {
+  if (is_array($test_value)) {
+    return in_array($value, $test_value);
+  } else {
+    return $value == $test_value;
+  }
+}
 
+function filter_by_polylang(array $posts, string $field_name_to_deduplicate) {
+  // array of course id to other array of language to post
+  // array (
+  //   "course-v1:SEC-GERAL.MEC+CVPFP+2021_T2" => array (
+  //     "pt" => post_1
+  //     "en" => post_2
+  //   )
+  //   "course-v1:CNCS+CCI101+2020_T2"  => array (
+  //     "en" => post_2
+  //   )
+  // )
+  $array_map = [];
+  foreach($posts as $post) {
+    $post_language = pll_get_post_language($post->ID);
+    if (!empty($post_language)) {
+      $field_value = get_field($field_name_to_deduplicate, $post->ID);
+      $array_map[$field_value] = array_key_exists($field_value, $array_map) ? $array_map[$field_value] : [];
+      $array_map[$field_value][$post_language] = $post->ID;
+    }
+  }
+
+  // nau_log("array map: ");
+  // nau_log($array_map);
+
+  // Remove posts to be shown
+  $current_language = pll_current_language();
+  $deduplicate_values = array_keys($array_map);
+  foreach($deduplicate_values as $deduplicate_value) {
+    if (!is_null($array_map[$deduplicate_value]) && array_key_exists($current_language, $array_map[$deduplicate_value])) {
+      // Remove current language post, so remaing to be removed from $posts variable
+      unset($array_map[$deduplicate_value][$current_language]);
+      // nau_log("Remove current language post, result:");
+      // nau_log($array_map[$deduplicate_value]);
+    } else if (count($array_map[$deduplicate_value]) >= 1) {
+      // Sort
+      ksort($array_map[$deduplicate_value]);
+      // nau_log("Sorting, result:");
+      // Removes the first post, so the remaing are going to be removed from $posts variable
+      array_shift($array_map[$deduplicate_value]);
+      // nau_log($array_map[$deduplicate_value]);
+    }
+    
+    // nau_log("Deduplicating " . $deduplicate_value);
+    // nau_log($array_map[$deduplicate_value]);
+
+    // Remove remaing from posts on $posts variable from $array_map variable that contains the post id's to be removed.
+    foreach ( array_values($array_map[$deduplicate_value]) as $postIDToBeRemovedOn) {
+      for( $i= 0 ; $i < count($posts) ; $i++ ) {
+        if ($posts[$i]->ID === $postIDToBeRemovedOn) {
+          unset($posts[$i]);
+        }
+      }
+    }
+  }
+  return $posts;
+}
 
 function make_link_list($array_of_pages) {
     $s = "";
@@ -299,13 +384,13 @@ function make_link_list($array_of_pages) {
 }
 
 function nau_entities_list($atts = array()) {   
-   return make_link_list(nau_get_posts("entidade", $atts));
+   return make_link_list(nau_get_entities( $atts));
 } 
 
 add_shortcode('nau_entities_list', 'nau_entities_list');
 
 function nau_courses_list($atts = array()) {    
-   return make_link_list(nau_get_posts("curso", $atts));
+   return make_link_list(nau_get_courses( $atts));
 }
 
 add_shortcode('nau_courses_list', 'nau_courses_list');
@@ -313,13 +398,18 @@ add_shortcode('nau_courses_list', 'nau_courses_list');
 
 function nau_courses_gallery($atts = array()) { 
   global $courses;
-  $courses = array_filter(nau_get_posts("curso", $atts), function($coursePage){
+  
+  //$courses = nau_get_courses($atts);
+  //return "courses --> " . count($courses);
+  
+  $courses = array_filter(nau_get_courses($atts), function($coursePage){
     $nau_lms_course_enrollment_end = get_field("nau_lms_course_enrollment_end", $coursePage->ID);
     $nau_lms_course_end = get_field("nau_lms_course_end", $coursePage->ID);
     $date = is_null($nau_lms_course_enrollment_end) || empty($nau_lms_course_enrollment_end)  ? $nau_lms_course_end : $nau_lms_course_enrollment_end;
     $days_to_end = days_to_today ( $date );
     return $days_to_end >= 0;
   });
+  
   ob_start();
   get_template_part( "partials/courses", "cards" );
   $value = ob_get_contents();
@@ -438,7 +528,7 @@ function html_list_courses($courses, $fields, $extra_fields, $keys) {
 
 function nau_list_courses_extended($atts = array()) { 
    global $courses;
-   $courses = nau_get_posts("curso", $atts, null, True);
+   $courses = nau_get_courses( $atts, null, True);
 
    $value = "<h3>Lista de Cursos</h3>";
    $value .= html_list_courses($courses, 
@@ -474,7 +564,7 @@ add_shortcode('nau_list_courses_extended', 'nau_list_courses_extended');
 
 function nau_entities_gallery($atts = array()) { 
    global $entities;
-   $entities = nau_get_posts("entidade", $atts);
+   $entities = nau_get_entities( $atts);
    ob_start();
    get_template_part( "partials/entities", "cards" );
    $value = ob_get_contents();
@@ -487,7 +577,7 @@ add_shortcode('nau_entities_gallery', 'nau_entities_gallery');
 
 
 function nau_list_news($atts = array()) { 
-   return make_link_list(nau_get_posts("noticia", $atts));
+   return make_link_list(nau_get_posts( nau_get_option("nau_category_slug_news", "noticia,news"), $atts));
 }
 
 
@@ -583,7 +673,7 @@ function days_to_today($date) {
   return $days;  
 }
 
-function load_analytics() {
+function load_analytics($page) {
   $course_id_simple = load_course_id_simple( $page );
   if ( $course_id_simple != null ) {
     $course_id_parts = explode("+", $course_id_simple);
@@ -650,7 +740,7 @@ function load_course($coursePage) {
   if ($youtube == "") {          
       $l = parse_url(get_field("nau_lms_course_media_course_video", $coursePage->ID), PHP_URL_QUERY);                    
       parse_str($l, $q);          
-      $youtube = $q["v"];
+      $youtube = array_key_exists("v", $q) ? $q["v"] : "";
   }
 
   $cost = get_field("cost", $coursePage->ID);
@@ -711,7 +801,7 @@ function load_course($coursePage) {
 
   ];
 
-  $course["debug"] = get_post_custom($post_id);
+  $course["debug"] = get_post_custom($coursePage->ID);
 
   $entityPage = get_page(get_field("nau-organization", $coursePage->ID));
   
@@ -875,10 +965,16 @@ function IXR_Date2Date($el) {
 }
 
 function nau_generate_custom_value_meta_html($meta_value, $object) {
+  $li_html = "";
   $linhas = explode("\n", $meta_value);
   foreach ($linhas  as $linha ) {        
     if ($linha <> "") {
-      list($id, $label, $action, $target) = explode("|", $linha);
+      $line_array = explode("|", $linha);
+      $id = array_key_exists(0, $line_array) ? $line_array[0] : "";
+      $label = array_key_exists(1, $line_array) ? $line_array[1] : "";
+      $action = array_key_exists(2, $line_array) ? $line_array[2] : "";
+      $target = array_key_exists(3, $line_array) ? $line_array[3] : "";
+      //list($id, $label, $action, $target) = explode("|", $linha);
       
       $cnt = preg_match("/{([a-z_A-Z0-9]*)}/", $label, $matches);
       
@@ -942,20 +1038,19 @@ function nau_homepage_funder_entities_small_images($atts = array()) {
 }
 add_shortcode('nau_homepage_funder_entities_small_images', 'nau_homepage_funder_entities_small_images');
 
-function nau_homepage_highlight_courses($atts = array()) {    
+function nau_courses_cards($atts = array()) {    
   global $courses;
-  $courses = nau_get_posts("curso", ["filter" => "highlight"]);
-  $args = array('section_container' => 'highlight-courses');
+  $courses = nau_get_courses( $atts ); // filter="highlight"
+  $args = array('section_container' => 'courses-cards');
   return nau_template_part("partials/courses", "cards", $args);
 }
 
-add_shortcode('nau_homepage_highlight_courses', 'nau_homepage_highlight_courses');
+add_shortcode('nau_courses_cards', 'nau_courses_cards');
 
 function nau_homepage_slider($atts = array()) {    
   return nau_template_part( "partials/homepage/homepage", "slider" );
 }
 add_shortcode('nau_homepage_slider', 'nau_homepage_slider');
-
 // This theme has a custom image thumnail format
 add_theme_support( "post-thumbnails" );
 
@@ -990,3 +1085,13 @@ function add_rel_preload($html, $handle, $href, $media) {
 }
 add_filter( 'style_loader_tag', 'add_rel_preload', 10, 4 );
 */
+
+function nau_log($log) {
+  if ( WP_DEBUG === true ) {
+    if (is_array($log) || is_object($log)) {
+      error_log(print_r($log, true));
+    } else {
+      error_log($log);
+    }
+  }
+}

@@ -1,8 +1,5 @@
 <?php
 
-use lloc\Msls\MslsBlogCollection;
-use lloc\Msls\MslsOptions;
-
 require('menu/menu_walker.php');
 
 ?>
@@ -37,27 +34,7 @@ require('menu/menu_walker.php');
             <input name="submit-search" type="submit" value="<?=nau_trans("Search Courses")?>">
           </form>
           <!-- ends top nav search bar -->
-      
-      
-      <? $nau_menu_languages = get_option('nau_menu_languages', 1) ?>
-      <? if ($nau_menu_languages == 1) { ?>
-
-      <div id="languages-actions-container">
-        <ul id="menu_languages">
-          <?php 
-          
-            foreach($language_menu_item as $menu_item) {                
-                if ($menu_item["this_blog"]) {
-                    print("<li class=\"current_language\">" . $menu_item["lang_id"] . "</li>");
-                } else {
-                    print("<li><a href=\"" . $menu_item["url"] . "\" title=\"" . $menu_item["description"] . "\">" . $menu_item["lang_id"] . "</a></li>");
-                }
-            }
-          ?>
-         </ul>
-      </div>
-      <? } ?>
-        
+              
         <!-- starts login and register -->      
         <?php
         

@@ -269,3 +269,12 @@ function closeVideo() {
       body.classList.remove("modal-open");
   }
 }
+
+function visibilityToogle(element_id) {
+  var x = document.getElementById(element_id);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}

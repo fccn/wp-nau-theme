@@ -10,9 +10,9 @@
   include "inc/simple_header.php";
 ?>
 <div id="body-content"> 
-  <section id="section-<?php echo $slug; ?>">
-    <?php echo do_shortcode(get_post_field('post_content', $pageID)) ?>
-  </section>
+  <article>
+    <?php echo do_shortcode(get_post_field('post_content', $post->ID)) ?>
+  </article>
 </div>
 
 <?php

@@ -64,11 +64,16 @@ class NAU_Walker_Access_Menu extends Walker_Nav_Menu {
             }
         }
 
-        $item_output = $args->before;
+        $before =      !empty ( $args -> before ) ?      $args->before : '';
+        $link_before = !empty ( $args -> link_before ) ? $args->link_before : '';
+        $link_after =  !empty ( $args -> link_after ) ?  $args->link_after : '';
+        $after =       !empty ( $args -> after ) ?       $args->after : '';
+
+        $item_output = $before;
         $item_output .= '<a'. $attributes .'>';
-        $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+        $item_output .= $link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $link_after;
         $item_output .= '</a>';
-        $item_output .= $args->after . "\n";
+        $item_output .= $after . "\n";
 
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
     }

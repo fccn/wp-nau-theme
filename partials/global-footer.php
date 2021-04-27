@@ -119,7 +119,8 @@
 <? 
   if (current_user_can('administrator') && (WP_DEBUG == true)) {
       ?>
-      <div class="debug_messages">
+      <a href="javascript:void(0);" onclick="visibilityToogle('footer_debug_messages');">Toogle debug info</a>
+      <div class="debug_messages" id="footer_debug_messages" style="display: none;">
           <b>Course</b>
           <pre>
           <? global $course; print_r($course); ?>

@@ -62,6 +62,7 @@ body#institution div#home-slider {
         <?php echo  do_shortcode(get_post_field('post_content')) ?>
       </div>
     </article>
+    <? set_query_var("entity", $entity); ?>
     <?php get_template_part("partials/entity", "aside"); ?>
 
 </div>
