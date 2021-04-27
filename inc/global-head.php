@@ -9,7 +9,7 @@
     <base href="<?=get_template_directory_uri()?>/">
 
     <? $gtag = get_option('nau_google_gtag') ?>
-    <? $analytics = load_analytics() ?>
+    <? $analytics = load_analytics($post) ?>
     
     <? if ($gtag != "") {?>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -27,11 +27,11 @@
       <? if (!empty($analytics[2])) {?>
         gtag('set', {'dimension3': '<?= $analytics[2] ?>'}); 
       <? } ?>
-      <? $course_id = load_course_id($page) ?>
+      <? $course_id = load_course_id($post) ?>
       <? if (!empty($course_id)) {?>
         gtag('set', {'dimension4': '<?= $course_id ?>'}); 
       <? } ?>
-      <? $course_name = get_course_name($page) ?>
+      <? $course_name = get_course_name($post) ?>
       <? if (!empty($course_name)) {?>
         gtag('set', {'dimension5': '<?= $course_name ?>'}); 
       <? } ?>

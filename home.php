@@ -24,7 +24,7 @@ else {
   // Home Page
   print('<div id="home-content">');
 
-  echo do_shortcode(get_post_field('post_content', $pageID));
+  echo do_shortcode(get_post_field('post_content', $post->ID));
 
   print('</div>');
 

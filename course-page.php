@@ -17,13 +17,13 @@ Template Name: Course About Page
   
   [$color, $opacity, $hue, $grayscale, $url, $header] = get_page_fields();  
   
-  $banner_image = $course["image"];
+  $banner_image = $course["image"] ?? NULL;
   if ($url != "") {
     $banner_image = $url;   
   }
   
   $entity = $course["entity"];
-  $link = $item["course"];
+  //$link = $item["course"];
   
   get_header(); 
 ?>

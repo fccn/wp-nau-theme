@@ -16,7 +16,7 @@
         grid-template-columns: repeat(3, minmax($card-minimum-size, 1fr));
     }
 
-    &.highlight-courses {
+    &.courses-cards {
         @media screen and (min-width: $breakpoint-medium) and (max-width: $breakpoint-large) {
             grid-template-columns: repeat(2, minmax($card-minimum-size, 1fr)) !important;
             gap: 1.5rem;

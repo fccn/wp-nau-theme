@@ -15,7 +15,7 @@
   $excerpt = "";
   
   
-  if (is_tag()) {      
+  if (function_exists("is_tag") && is_tag()) {      
       $tag = get_queried_object();      
       $page_title = $tag->name;
       $excerpt = $tag->description;
