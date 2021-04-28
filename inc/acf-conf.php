@@ -2502,11 +2502,11 @@ if( function_exists('acf_add_local_field_group') && (get_option('nau_environment
 		'fields' => array(
 			array(
 				'key' => 'field_5e8d97c5272a2',
-				'label' => 'Destino',
+				'label' => 'Página de destino',
 				'name' => 'target',
 				'type' => 'page_link',
 				'instructions' => '',
-				'required' => 1,
+				'required' => 0,
 				'conditional_logic' => 0,
 				'wrapper' => array(
 					'width' => '',
@@ -2518,6 +2518,25 @@ if( function_exists('acf_add_local_field_group') && (get_option('nau_environment
 				'allow_null' => 0,
 				'allow_archives' => 1,
 				'multiple' => 0,
+			),
+			array(
+				'key' => 'field_60898dbd6c5f5',
+				'label' => 'URL de destino',
+				'name' => 'url',
+				'type' => 'text',
+				'instructions' => 'URL de destino, ex. https://www.fccn.pt ou /pt/other-page',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '/pt/other-page',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
 			),
 		),
 		'location' => array(
@@ -2539,5 +2558,4 @@ if( function_exists('acf_add_local_field_group') && (get_option('nau_environment
 		'description' => '',
 	));
 	
-
 endif;

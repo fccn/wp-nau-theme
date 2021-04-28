@@ -1,8 +1,11 @@
 <?php /* Template Name: Redirector */ 
 
-  $new_page = get_field('target');
+  $location = get_field('target');
+  if (empty($location)) {
+    $location = get_field('url');
+  }
+  header('Location: ' . $location);
   
-  header('Location: ' . $new_page);
   
 ?> 
   
