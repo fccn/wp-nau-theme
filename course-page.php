@@ -17,15 +17,14 @@ Template Name: Course About Page
   
   [$color, $opacity, $hue, $grayscale, $url, $header] = get_page_fields();  
   
-  $banner_image = $course["image"];
+  $banner_image = $course["image_full"];
   if ($url != "") {
-    $banner_image = $url;   
+    $banner_image = $url;
   }
-  
+
   $entity = $course["entity"];
-  $link = $item["course"];
   
-  get_header(); 
+  get_header();
 ?>
 
 <!-- starts Homepage grey menu opacity overlay when user click on menu button -->
@@ -76,27 +75,6 @@ endif;
         <li class="course-type"><?php echo $course["pace_mode_label"]?></li>
       </ul>
         
-      <!-- starts video and know more icons, rating and certficate status -->
-      <?php
-      /* 
-      * DEPRECATED
-      *
-      <div class="video-know-more-icons">        
-        
-        <? if (! empty($course["youtube"])) { ?>  
-          <!-- starts video icon -->
-          <a class="see-video-icon" onClick='openYoutubeVideoIFrame(this);' data-vars='{ "id" : "<?php echo $course["youtube"]?>" }' title="<?php echo nau_trans("See video")?>">
-            <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-white.svg">
-          </a> 
-        <? } ?>
-        <!-- starts know more icon, rating and certficate status -->         
-        <?php          
-          print (do_shortcode('[edunext_enroll_button course_id="' . $course["course-id"] . '"]'));
-        ?>        
-        <!-- ends video and know more icons --> 
-      </div>
-      */
-      ?>
     </div>
     <img src="assets/img/banner-shape-long-blue.svg" class="slider-mask" alt="Banner NAU shape">
 
