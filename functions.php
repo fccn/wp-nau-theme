@@ -1086,6 +1086,11 @@ function add_rel_preload($html, $handle, $href, $media) {
 add_filter( 'style_loader_tag', 'add_rel_preload', 10, 4 );
 */
 
+/**
+ * NAU custom function to print a message log.
+ * 
+ * @param $log the string or array to print to log.
+ */
 function nau_log($log) {
   if ( WP_DEBUG === true ) {
     if (is_array($log) || is_object($log)) {
@@ -1095,3 +1100,19 @@ function nau_log($log) {
     }
   }
 }
+
+/**
+ * Make Polylang compatible with the WP-API. 
+ * Query language specific WP-API posts via a parameter and add the post language as a new REST field.
+ */
+require_once('inc/polylang-wp-api.php');
+
+/**
+ * Custom NAU version of WordPress XML-RPC server. 
+ * Extends getPosts RPC with the 'lang' filter.
+ * When activating the Polylang plugin the XML-RPC getPosts call only 
+ * retrieves the default site language pages/posts.
+ * With the new lang filter it's possible to the XML-RPC caller to 
+ * get only the pages/posts by a specific or a list of languages.
+*/
+require_once('inc/nau_wp_xmlrpc_server_class.php');
