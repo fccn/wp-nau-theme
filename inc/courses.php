@@ -4,39 +4,42 @@ function load_course_id($coursePage) {
     global $stage_mode;
   
     if (gettype($coursePage) == "array") {
-        $coursePage = get_page($coursePage["ID"]);
+        $coursePage = get_post($coursePage["ID"]);
+    } else {
+        return null;
     }
     
-  // print(var_dump(get_fields($entity->ID)));
-    
+    // should only get the fields if $coursePage is not -1
     $course_id = get_field('course-id-prod', $coursePage->ID);
   
     if ($course_id == "" || $stage_mode) {
         $course_id = get_field('nau_lms_course_id', $coursePage->ID);
     }
+
     return $course_id;  
   }
   
-  function load_course_id_simple($coursePage) {
+function load_course_id_simple($coursePage) {
     $course_id = load_course_id( $coursePage );
   
     $course_id_simple = explode(":", $course_id);
-    if (count($course_id_simple)>1) {
+
+    if (isset($course_id_simple[1])) {
       return $course_id_simple[1];
-    } else {
-      return null;
     }
-  }
+
+    return null;
+}
   
-  function get_course_name($coursePage) {
+function get_course_name($coursePage) {
     $course_id = load_course_id($coursePage);
     if ($course_id != null) {
       return get_the_title( $coursePage );
     }
     return "";
-  }
+}
   
-  function load_course($coursePage) {
+function load_course($coursePage) {
     $course_id = load_course_id( $coursePage );
     $course_id_simple = load_course_id_simple( $coursePage );
   
@@ -115,7 +118,7 @@ function load_course_id($coursePage) {
   
     // $course["debug"] = get_post_custom($post_id);
   
-    $entityPage = get_page(get_field("nau-organization", $coursePage->ID));
+    $entityPage = get_post(get_field("nau-organization", $coursePage->ID));
     
     $course["entity"] = load_entity($entityPage);
     $course["pace_mode_label"] = ($course["pace_mode"]=="1"?nau_trans("Self paced"):nau_trans("Instructor paced"));
@@ -157,13 +160,13 @@ function load_course_id($coursePage) {
     }
     
     return $course;
-  }
+}
   
-  function get_course_status($coursePage) {
-      return _("Open");
-  }
+function get_course_status($coursePage) {
+    return _("Open");
+}
 
-  function nau_list_courses_extended($atts = array()) { 
+ function nau_list_courses_extended($atts = array()) { 
     global $courses;
     $courses = nau_get_posts("curso", $atts, null, True);
  
@@ -306,12 +309,12 @@ function nau_courses_gallery($atts = array()) {
     ob_end_clean();
   
     return $value;
-  }
+}
   
-  add_shortcode('nau_courses_gallery', 'nau_courses_gallery');
+add_shortcode('nau_courses_gallery', 'nau_courses_gallery');
 
-  function nau_courses_list($atts = array()) {    
+function nau_courses_list($atts = array()) {    
     return make_link_list(nau_get_posts("curso", $atts));
- }
+}
  
- add_shortcode('nau_courses_list', 'nau_courses_list');
+add_shortcode('nau_courses_list', 'nau_courses_list');

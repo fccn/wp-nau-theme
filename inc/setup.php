@@ -8,15 +8,13 @@ function version_id() {
     return '1.0.0';
   }
 
-function nau_post_thumbnails() {
+function nau_after_theme_setup() {
     add_theme_support( 'post-thumbnails' );
-}
-add_action( 'after_setup_theme', 'nau_post_thumbnails' );
-
-function nau_load_theme_textdomain() {    
+    add_theme_support('menus');
     load_theme_textdomain('nau-theme', get_template_directory() . '/languages' );
 }
-add_action('after_setup_theme', 'nau_load_theme_textdomain' );
+add_action( 'after_setup_theme', 'nau_after_theme_setup' );
+
 
 /*
  * Enqueue theme styles and fonts
@@ -46,8 +44,6 @@ add_action( 'wp_enqueue_scripts', 'nau_theme_enqueue_scripts' );
  * Register site wide menus
 **/
 function nau_theme_setup() {
-    add_theme_support('menus');
-    
     register_nav_menu('main', 'Top Bar Menu');
     register_nav_menu('footer', 'Footer Menu');
     register_nav_menu('access', 'NAU Access Menu');

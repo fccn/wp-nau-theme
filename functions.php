@@ -285,7 +285,7 @@ function nau_list_categories($page = -1) {
     if ($page < 0) {
         $page = get_the_ID();
     }
-    
+
     $categories = get_the_category($page);
 
     if (!$categories) return "";
@@ -332,6 +332,9 @@ function days_to_today($date) {
 }
 
 function load_analytics() {
+  //initialize the page to skip the notice
+  $page = -1;
+
   $course_id_simple = load_course_id_simple( $page );
   if ( $course_id_simple != null ) {
     $course_id_parts = explode("+", $course_id_simple);
@@ -348,36 +351,39 @@ function load_analytics() {
 }
 
 function load_entity($entityPage) {
-  
+  $entityPageDetails = array();
+  $square_logo_image = "";
+  $logo_image = "";
+
   if (gettype($entityPage) == "array") {
-      $entityPage = get_page($entityPage["ID"]);
+      $entityPageDetails = get_post($entityPage["ID"]);
   }
 
   $image_url = "assets/img/banner-01.jpg";
   if( has_post_thumbnail() ) {
     $image_url = get_the_post_thumbnail_url();
-  }; 
+  };
 
-  $square_logo_image = get_field('square-logo', $entityPage->ID); 
-  $logo_image = get_field('logo', $entityPage->ID); # URL
+  if (empty($entityPageDetails)) {
+    $square_logo_image = get_field('square-logo', $entityPage); 
+    $logo_image = get_field('logo', $entityPage);
+  }
 
-  if ($square_logo_image == "") 
-      $square_logo_image = $logo_image;
+  if ($square_logo_image == "") $square_logo_image = $logo_image;
   
-  if ($logo_image == "")
-      $logo_image = $square_logo_image;
+  if ($logo_image == "") $logo_image = $square_logo_image;
     
   $entity = [
     "name" => get_the_title($entityPage),
     "logo" => $logo_image,    
     "square_logo" => $square_logo_image,
-    "sigla" => get_field("sigla", $entityPage->ID),
-    "slug" => get_field("slug", $entityPage->ID),
-    "website" => get_field("website", $entityPage->ID),
-    "video" => get_field("youtube", $entityPage->ID),
+    "sigla" => get_field("sigla", $entityPage),
+    "slug" => get_field("slug", $entityPage),
+    "website" => get_field("website", $entityPage),
+    "video" => get_field("youtube", $entityPage),
     "url_image" => $image_url,
     "url" => get_permalink($entityPage),
-    "confluence_url" => get_field("confluence_url", $entityPage->ID)
+    "confluence_url" => get_field("confluence_url", $entityPage)
   ];
 
   return $entity;
@@ -461,14 +467,30 @@ function IXR_Date2Date($el) {
 }
 
 function nau_generate_custom_value_meta_html($meta_value, $object) {
+  /* 
+   * Variables should be initialized to avoid offset issues.
+   */
+
   $linhas = explode("\n", $meta_value);
-  foreach ($linhas  as $linha ) {        
+
+  $id = null;
+  $li_html = '';
+  $label = '';
+  $action = '';
+  $target = '_blank';
+
+  foreach ($linhas  as $linha ) {
+
     if ($linha <> "") {
-      list($id, $label, $action, $target) = explode("|", $linha);
+      $lineDetails = explode("|", $linha);
+
+      if (count($lineDetails) > 2) {
+        list($id, $label, $action, $target) = $lineDetails;
+      } else {
+        list($id, $label) = $lineDetails;
+      }
       
-      $cnt = preg_match("/{([a-z_A-Z0-9]*)}/", $label, $matches);
-      
-      if ($cnt == 1) {
+      if (preg_match("/{([a-z_A-Z0-9]*)}/", $label, $matches) == 1) {
           
           # Tries course already loaded data
           $v = "";
@@ -481,8 +503,6 @@ function nau_generate_custom_value_meta_html($meta_value, $object) {
 
           $label = str_replace("{" . $matches[1] . "}", $v, $label);
       }
-
-      $target = $target ? : '_blank';
       
       if (substr($id, 0, 10) == "materials-") {
           $icon = substr($id, 10);                
