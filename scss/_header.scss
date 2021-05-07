@@ -1,3 +1,127 @@
+.global-header {
+    overflow: inherit;
+    position: relative;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+
+    @media screen and (max-width: $breakpoint-medium) {
+        overflow: inherit !important;
+    }
+}
+
+.global-header .nav-links .secondary .dropdown-user-menu {
+    z-index: 100;
+}
+
+/** Top nav menu */
+
+.branding-top-nav {
+    border-top: solid 0.2em #0857ff;
+    background-color: $menu-bg-color;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: $menu-shadow;
+    padding: 10px 40px 10px 0;
+    align-items: center;
+    
+    .logo {
+        display: inline-block;
+        max-height: 80px;
+        margin-left: 50px;
+        max-width: -webkit-calc(100% - 50px);
+        max-width:    -moz-calc(100% - 50px);
+        max-width:         calc(100% - 50px);
+    }
+
+    li {
+        list-style-type: none;
+        margin-right: 15px;
+    }
+
+    #close-menu-arrow {
+        display: none; /* hide closing menu arrow when in desktop */
+        font-size: 30px;
+        text-decoration: none;
+    }
+
+    #open-menu-arrow {
+        display: none;
+        text-decoration: none;
+
+        @media screen and (max-width: $breakpoint-medium) {
+            display: inline-block;
+            font-size: 30px;
+            position: absolute;
+            margin-left: 10px;
+        }
+    }
+
+    #actions_container {
+        display: flex;
+
+        @media screen and (max-width: $breakpoint-medium) {
+            justify-content: center;
+        }
+
+        #search-form {
+            margin-right: 10px;
+            position: relative;
+
+            @media screen and (max-width: $breakpoint-medium) {
+                display: none;
+            }
+
+            @media screen and (max-width: $breakpoint-large) {
+                display: none;
+            }
+
+            label {
+                display: none;
+            }
+        }
+
+        #search-input {
+            border-radius: 50px;
+            border: 1px solid $header-bar-color;
+            padding: 5px 25px 5px 15px;
+            line-height: 24px !important;
+
+            &::placeholder {
+                font-size: .8rem;
+            }
+        }
+
+        input[type="submit"],
+        input[type="button"],
+        button,
+        .button {
+            position: absolute;
+            padding: 0;
+            z-index: 4;
+            top: 4px;
+            right: 15px;
+            background-color: transparent;
+            background-image: $menu-search-icon;
+            background-repeat: no-repeat;
+            background-position: right center;
+            width: 28px;
+            border: none;
+            outline: none;
+            text-indent: -9999px;
+            background-size: 20px;
+            cursor: pointer;
+            box-shadow: none;
+            line-height: 1.6rem;
+        }
+    }
+
+    .nau-header-tagline {
+        @media screen and (max-width: $breakpoint-medium) {
+            display: none;
+        }
+    }
+}
+
 .menu-container {
     display: flex;
 
@@ -7,19 +131,17 @@
         z-index: 2000 !important;
         background: white;
         top: 0;
-        width: calc(100% - 30px);
-        padding: 20px 15px;
+        width: calc(100% - 20px);
+        padding: 0px 10px 35px;
     }
 
     .main-menu {
         display: flex;
         margin: 0;
         padding-top: 0.5rem;
-        padding-left: 1rem;
 
         @media screen and (max-width: $breakpoint-medium) {
             display: block;
-            padding-left: 40px;
         }
 
         li {
@@ -30,7 +152,9 @@
             }
 
             &.menu-item-has-children > a {
-                background: url("../img/arrow-dropdown.svg") no-repeat right 6px;
+                background: $menu-down-arrow;
+                background-repeat: no-repeat;
+                background-position: right 50%;
                 background-size: 12px;
                 padding-right: 20px;
             }
@@ -40,7 +164,7 @@
             }
 
             a {
-                font-size: 0.8125rem;
+                font-size: 0.80rem;
                 font-weight: 500;
                 text-transform: uppercase;
                 text-decoration: none;
@@ -71,11 +195,10 @@
         z-index: 200;
         background-color: #ffffff;
         border-radius: 5px;
-        padding: 15px 25px;
+        padding: 25px 35px;
         box-shadow: 0px 21px 18px -5px rgba(0, 0, 0, 0.45);
         display: none;
-        margin-left: -25px;
-        margin-top: 0px;
+        margin: 0 0 0 -26px;
 
         @media screen and (max-width: $breakpoint-medium) {
             display: block;
@@ -116,12 +239,14 @@
 
         li {
             &.menu-item-has-children > a {
-                background: url("../img/arrow-dropdown.svg") no-repeat right 6px;
+                background: $menu-down-arrow;
+                background-repeat: no-repeat;
+                background-position: right 50%;
                 background-size: 12px;
                 padding-right: 20px;
 
                 @media screen and (max-width: $breakpoint-medium) {
-                    background:none;
+                    background: none;
                     background-size: inherit;
                     padding-right: inherit;
                 }
@@ -136,7 +261,8 @@
                 padding: 0;
                 margin: 0.5rem;
 
-                &:hover, &:focus {
+                &:hover,
+                &:focus {
                     background-color: transparent;
                 }
             }
@@ -148,7 +274,7 @@
                 text-decoration: none;
                 color: $header-bar-color;
                 display: block;
-                margin: 0.425rem;
+                margin: 0.5rem;
 
                 &:hover,
                 &:focus {
@@ -181,7 +307,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 170vh;
+    height: 140vh;
     background: rgb(36,36,36);
     background: linear-gradient(180deg, rgba(36,36,36,0.85) 75%, rgba(255,255,255,0) 100%);
     display: none;

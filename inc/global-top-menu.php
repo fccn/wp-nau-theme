@@ -2,10 +2,23 @@
 
 require('menu/menu_walker.php');
 
+$lang = function_exists("pll_current_language") ? pll_current_language() : 'pt';
+$header_img_src_array = [ 
+  "pt" => get_stylesheet_directory_uri() . '/assets/img/nau_sempre_aprender.svg',
+  // in future uncomment this line, when we have a new english NAU logo
+  //"en" => get_stylesheet_directory_uri() . '/assets/img/nau_keep_learning.svg',
+];
+$header_img_src = @$header_img_src_array[$lang] ?: $header_img_src_array['pt'];
+
 ?>
   <div class="branding-top-nav">
     <a id="open-menu-arrow" href="javascript:void(0)" onclick="openNav(0)" title="<?=nau_trans("Open")?>">&#9776;</a>  
-    <a href="<?=get_site_url()?>" class="logo"><?=nau_trans("Homepage")?></a>
+    <a href="<?=function_exists("pll_home_url") ? pll_home_url() : get_site_url()?>">
+      <picture>
+        <source media="(max-width: 768px)" srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo-nau-mobile.svg">
+        <img class="logo" src="<?= $header_img_src ?>" alt="<?=nau_trans("Header logo alt")?>" title="<?=nau_trans("Homepage")?>" height="28px">
+      </picture>
+    </a>
 
     <!-- starts menu container -->
     <div class="menu-container">
