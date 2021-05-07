@@ -1,3 +1,4 @@
+</main>
 <script>
 
 // Load lazilly the DOM
