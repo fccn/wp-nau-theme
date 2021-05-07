@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-26 22:28+0100\n"
+"POT-Creation-Date: 2021-05-07 11:43+0100\n"
 "PO-Revision-Date: 2020-04-08 15:10+0100\n"
 "Last-Translator: root <rui.ribeiro@fccn.pt>\n"
 "Language-Team: English\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "About to Start"
 msgstr ""
 
-#: functions.php:815 search.php:17
+#: functions.php:834 search.php:17
 msgid "About to end"
 msgstr ""
 
-#: functions.php:807
+#: functions.php:826
 msgid "About to start"
 msgstr ""
 
@@ -42,7 +42,7 @@ msgstr ""
 msgid "All|courses"
 msgstr ""
 
-#: functions.php:811
+#: functions.php:830
 msgid "Available"
 msgstr "Available"
 
@@ -54,7 +54,7 @@ msgstr "Certificate"
 msgid "Clean water and sanitation"
 msgstr ""
 
-#: functions.php:920
+#: functions.php:939
 msgid "Clear Cookie"
 msgstr ""
 
@@ -62,7 +62,7 @@ msgstr ""
 msgid "Climate action"
 msgstr ""
 
-#: inc/global-top-menu.php:14
+#: inc/global-top-menu.php:19
 msgid "Close"
 msgstr ""
 
@@ -104,11 +104,11 @@ msgstr ""
 msgid "Explore all courses"
 msgstr "Explore all courses"
 
-#: functions.php:823
+#: functions.php:842
 msgid "Finished"
 msgstr ""
 
-#: functions.php:729
+#: functions.php:748
 msgid "Free"
 msgstr ""
 
@@ -120,7 +120,11 @@ msgstr ""
 msgid "Good health and well-being"
 msgstr ""
 
-#: inc/global-top-menu.php:8
+#: inc/global-top-menu.php:11
+msgid "Header logo alt"
+msgstr "NAU Keep learning"
+
+#: inc/global-top-menu.php:11
 msgid "Homepage"
 msgstr ""
 
@@ -128,7 +132,7 @@ msgstr ""
 msgid "Industry, innovation and infrastructure"
 msgstr ""
 
-#: functions.php:790
+#: functions.php:809
 msgid "Instructor paced"
 msgstr ""
 
@@ -136,7 +140,7 @@ msgstr ""
 msgid "Invitation Only"
 msgstr ""
 
-#: functions.php:791
+#: functions.php:810
 msgid "Invitation only"
 msgstr ""
 
@@ -184,15 +188,15 @@ msgstr ""
 msgid "No poverty"
 msgstr ""
 
-#: functions.php:362
+#: functions.php:381
 msgid "None found"
 msgstr "None found"
 
-#: functions.php:832 inc/global-top-menu.php:7 search.php:12
+#: functions.php:851 inc/global-top-menu.php:7 search.php:12
 msgid "Open"
 msgstr ""
 
-#: functions.php:791
+#: functions.php:810
 msgid "Open to everyone"
 msgstr ""
 
@@ -241,7 +245,7 @@ msgstr ""
 msgid "Responsible consuption"
 msgstr ""
 
-#: functions.php:819
+#: functions.php:838
 #, fuzzy
 msgid "Running"
 msgstr "Running Courses"
@@ -250,7 +254,7 @@ msgstr "Running Courses"
 msgid "Running Courses"
 msgstr "Running Courses"
 
-#: functions.php:803
+#: functions.php:822
 msgid "Scheduled to start"
 msgstr ""
 
@@ -263,14 +267,14 @@ msgstr "Search Courses"
 msgid "Search ..."
 msgstr ""
 
-#: inc/global-top-menu.php:32 inc/global-top-menu.php:34
+#: inc/global-top-menu.php:37 inc/global-top-menu.php:39
 #: partials/homepage/inc/slider/item-search.php:37
 #: partials/homepage/inc/slider/item-search.php:38
 #: partials/homepage/inc/slider/item-search.php:39
 msgid "Search Courses"
 msgstr "Search Courses"
 
-#: inc/global-top-menu.php:33
+#: inc/global-top-menu.php:38
 msgid "Search courses..."
 msgstr ""
 
@@ -296,7 +300,7 @@ msgstr "Search Courses"
 msgid "See video"
 msgstr "See video"
 
-#: functions.php:790
+#: functions.php:809
 msgid "Self paced"
 msgstr ""
 

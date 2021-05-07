@@ -34,5 +34,5 @@ update_translations: ## Update strings to be translated
 compile_translations: ## Compile .mo files into .po files
 	@cd ${ROOT_DIR}
 	@msgfmt --output-file=languages/pt_PT.mo languages/pt/messages.po
-	@msgfmt --output-file=languages/en_US.mo languages/en/messages.po
+	@msgfmt --output-file=languages/en_GB.mo languages/en/messages.po
  
