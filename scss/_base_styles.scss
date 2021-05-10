@@ -317,22 +317,6 @@ a.see-video-icon:hover {
   content: url("../img/see-video-icon-blue.svg");
   padding-right: 5px;
 }
-div#main-container {
-  margin: 0 auto;
-  display: flow-root;
-  border-radius: 10px;
-  box-shadow: 0 1em 1.5em rgba(0, 0, 0, 0.3);
-}
-
-div#body-content {
-  padding: 20px 30px 50px 50px;
-}
-
-div#body-content section,
-div#home-content section {
-  margin-bottom: 18px;
-  width: -webkit-fill-available;
-}
 
 body.cursos #highlighted-courses,
 body.administracao-publica #highlighted-courses,
@@ -1298,18 +1282,14 @@ body#homepage section#rolling-courses h3 {
 }
 
 aside {
-  width: 25%;
-  min-width: 312px;
-  margin-left: 20px;
+  min-width: 320px;
+  margin-left: 40px;
   background: transparent linear-gradient(180deg, #eeeeee 0%, #f5f5f5 100%) 0% 0% no-repeat padding-box;
-  border-radius: 20px;
+  border-radius: 10px;
   opacity: 1;
   order: 1;
+  padding: 20px 30px;
 
-  padding-top: 50px;
-  padding-right: 50px;
-  padding-bottom: 50px;
-  padding-left: 50px;
   @media screen and (max-width: $breakpoint-medium) {
     margin-left: 0px;
     width: 100%;
@@ -1367,11 +1347,15 @@ aside .course-related-links {
   box-shadow: 0px 3px 6px #00000029;
   opacity: 0.8;
   list-style-type: none;
+  margin: 0;
+
+
   @media (max-width: $breakpoint-small) {
     box-shadow: unset;
     padding: 0;
   }
 }
+
 aside .course-details {
   width: 100%;
   text-align: left;

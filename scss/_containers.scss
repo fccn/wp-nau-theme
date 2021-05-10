@@ -46,3 +46,13 @@
         }
     }
 }
+
+#main-container {
+    border-radius: 10px;
+    box-shadow: 0 1em 1.5em rgba(0, 0, 0, 0.3);
+}
+
+#home-content, #body-content {
+    margin: 0 auto;
+    max-width: 1400px;
+}
