@@ -4,6 +4,7 @@ $stage_mode = (get_option('nau_environment') == "stage");
 
 require_once('inc/acf-conf.php');
 require_once('inc/admin.php');
+require_once('inc/posttypes.php');
 
 remove_action('template_redirect', 'redirect_canonical');
 
