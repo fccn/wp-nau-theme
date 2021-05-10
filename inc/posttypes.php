@@ -18,7 +18,8 @@ function register_announcements_posttype() {
             'has_archive' => true,
             'rewrite' => array('slug' => 'announcements'),
             'exclude_from_search' => true,
-            'menu_icon' => 'dashicons-images-alt2'
+            'menu_icon' => 'dashicons-images-alt2',
+            'supports' => array('title', 'editor', 'thumbnail', 'revisions')
         )
     );
 }
