@@ -19,7 +19,7 @@ function register_announcements_posttype() {
             'rewrite' => array('slug' => 'announcements'),
             'exclude_from_search' => true,
             'menu_icon' => 'dashicons-images-alt2',
-            'supports' => array('title', 'editor', 'thumbnail', 'revisions')
+            'supports' => array('title', 'excerpt', 'thumbnail', 'revisions')
         )
     );
 }
@@ -46,6 +46,27 @@ function register_announcements_taxonomy() {
         'show_admin_column' => true,
         'query_var' => true,
         'rewrite' => array('slug' => 'type'),
+    ));
+
+    register_taxonomy('languages', 'announcements', array(
+        'hierarchical' => true,
+        'labels' => array(
+            'name' => _x( 'Languages', 'nau-theme'),
+            'singular_name' => _x( 'Language', 'nau-theme'),
+            'search_items'      => __( 'Search Languages', 'nau-theme' ),
+            'all_items'         => __( 'All Languages', 'nau-theme' ),
+            'parent_item'       => __( 'Parent Language', 'nau-theme' ),
+            'parent_item_colon' => __( 'Parent Language:', 'nau-theme' ),
+            'edit_item'         => __( 'Edit Language', 'nau-theme' ),
+            'update_item'       => __( 'Update Language', 'nau-theme' ),
+            'add_new_item'      => __( 'Add New Language', 'nau-theme' ),
+            'new_item_name'     => __( 'New Language Name', 'nau-theme' ),
+            'menu_name'         => __( 'Language', 'nau-theme' ),
+        ),
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'language'),
     ));
 }
 

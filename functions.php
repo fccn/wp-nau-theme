@@ -1052,6 +1052,12 @@ function nau_homepage_slider($atts = array()) {
   return nau_template_part( "partials/homepage/homepage", "slider" );
 }
 add_shortcode('nau_homepage_slider', 'nau_homepage_slider');
+
+function nau_homepage_announcements($atts = array()) {    
+  return nau_template_part( "partials/homepage/homepage", "announcements" );
+}
+add_shortcode('nau_homepage_announcements', 'nau_homepage_announcements');
+
 // This theme has a custom image thumnail format
 add_theme_support( "post-thumbnails" );
 

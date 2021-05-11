@@ -52,7 +52,42 @@
     box-shadow: 0 1em 1.5em rgba(0, 0, 0, 0.3);
 }
 
-#home-content, #body-content {
+#body-content,
+.section-container {
     margin: 0 auto;
     max-width: 1400px;
+}
+
+.announcements-slider {
+    position: relative;
+
+    .splide__slide {
+        height: 400px;
+        background-size: cover;
+
+        &-card {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+
+            .slide-card__title {
+                font-family: "Roboto", sans-serif;
+                font-weight: bold;
+                font-size: 45px;
+                color: #fff;
+                line-height: 1.2;
+                text-shadow: 0px 1px 3px #555;
+                display: block;
+            }
+
+            .slide-card__subtext {
+                font-family: "Roboto", sans-serif;
+                font-size: 22px;
+                color: #fff;
+                line-height: 1.2;
+                text-shadow: 0px 1px 3px #555;
+                display: block;
+            }
+        }
+    }
 }
