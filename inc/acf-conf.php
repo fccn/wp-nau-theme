@@ -7,10 +7,112 @@ if (WP_DEBUG == true) {
 
 }
 
-if( function_exists('acf_add_local_field_group') && (get_option('nau_environment') == "prod")):
+if( function_exists('acf_add_local_field_group') && ((get_option('nau_environment') == "prod") || (get_option('nau_environment') == "stage"))):
 
 // copiar de "Custom-Fields, Tools, Generate PHP" e colocar aqui.
 
+	acf_add_local_field_group(array(
+		'key' => 'group_609a86033b141',
+		'title' => 'Announcements',
+		'fields' => array(
+			array(
+				'key' => 'field_609a8611abcb5',
+				'label' => 'Action button URL',
+				'name' => 'action_button_url',
+				'type' => 'url',
+				'instructions' => 'Place the url to which the post should redirect to',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+			),
+			array(
+				'key' => 'field_609a864eabcb6',
+				'label' => 'Action target',
+				'name' => 'action_button_target',
+				'type' => 'radio',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'choices' => array(
+					'same' => 'Same window',
+					'new' => 'New window',
+				),
+				'allow_null' => 0,
+				'other_choice' => 0,
+				'default_value' => '',
+				'layout' => 'vertical',
+				'return_format' => 'value',
+				'save_other_choice' => 0,
+			),
+			array(
+				'key' => 'field_609bf2d1cd7aa',
+				'label' => 'Action button text',
+				'name' => 'action_button_text',
+				'type' => 'text',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+			),
+			array(
+				'key' => 'field_609bf30a552a6',
+				'label' => 'Video media',
+				'name' => 'video_media_url',
+				'type' => 'file',
+				'instructions' => 'Insert the video media file URL to be used. If the field is empty, the post thumbnail is used instead.',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'return_format' => 'url',
+				'library' => 'all',
+				'min_size' => '',
+				'max_size' => '',
+				'mime_types' => '',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'announcements',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
+	
 	acf_add_local_field_group(array(
 		'key' => 'group_5e8762b7eab59',
 		'title' => 'Curso',

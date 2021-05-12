@@ -45,6 +45,11 @@ $loop = new WP_Query( $args );
                 <div class="splide__slide-card">
                     <span class="slide-card__title"><?php echo get_the_title(); ?></span>
                     <span class="slide-card__subtext"><?php echo get_the_excerpt(); ?></span>
+                    
+                    <?php if(get_field('action_button_url')): ?>
+                    <a href="#" class="slide_card__action"><?php echo get_field('action_button_text'); ?></a>
+                    <?php endif; ?>
+                    
                 </div>
             </li>
         <?php endwhile; wp_reset_postdata(); ?>
@@ -53,7 +58,7 @@ $loop = new WP_Query( $args );
     </div>
 
 <script>
-	new Splide( '.splide', { autoplay: true } ).mount();
+	new Splide( '.splide', { type: 'loop', autoplay: true } ).mount();
 </script>
 
 </div>

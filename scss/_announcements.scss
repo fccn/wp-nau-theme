@@ -1,0 +1,49 @@
+.announcements-slider {
+    position: relative;
+
+    .splide__slide {
+        height: 400px;
+        background-size: cover;
+
+        &-card {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+
+            .slide-card__title {
+                font-family: "Roboto", sans-serif;
+                font-weight: bold;
+                font-size: 45px;
+                color: #fff;
+                line-height: 1.2;
+                text-shadow: 0px 1px 3px #555;
+                display: block;
+            }
+
+            .slide-card__subtext {
+                font-family: "Roboto", sans-serif;
+                font-size: 22px;
+                color: #fff;
+                line-height: 1.2;
+                text-shadow: 0px 1px 3px #555;
+                display: block;
+            }
+
+            .slide_card__action {
+                display: inline-block;
+                background-color: #FFE600;
+                color: #684B00;
+                text-align: center;
+                padding: 0.5rem 1.5rem;
+                border-radius: 25px;
+                font-weight: bold;
+                margin-top: 1.5rem;
+
+                &:hover, &:focus {
+                    background-color: #d8c302;
+                    transition: 0.5s;
+                }
+            }
+        }
+    }
+}
