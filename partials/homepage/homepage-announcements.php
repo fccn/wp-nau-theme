@@ -33,13 +33,19 @@ $loop = new WP_Query( $args );
     <div class="splide">
 	<div class="splide__track">
 		<ul class="splide__list">
-        <?php while ( $loop->have_posts() ) : $loop->the_post(); 
+        <?php while ( $loop->have_posts() ) : $loop->the_post();
+
+                // Video content has priviledge over images. If there's a video link, it'll load 
                 
-                if (has_post_thumbnail()) {
+                if (get_field('video_media_url')) {
+                    $post_thumbnail = get_field('video_media_url');
+                } else if (has_post_thumbnail()) {
                     $post_thumbnail = get_the_post_thumbnail_url();
                 } else {
                     $post_thumbnail = 'assets/img/banner-01.jpg';
                 }
+
+                $action_target = get_field('action_button_target');
             ?> 
 			<li class="splide__slide" style="background-image: url(<?php echo $post_thumbnail; ?>)">
                 <div class="splide__slide-card">
@@ -47,9 +53,11 @@ $loop = new WP_Query( $args );
                     <span class="slide-card__subtext"><?php echo get_the_excerpt(); ?></span>
                     
                     <?php if(get_field('action_button_url')): ?>
-                    <a href="#" class="slide_card__action"><?php echo get_field('action_button_text'); ?></a>
+                    <a href="<?php echo get_field('action_button_url'); ?>" <?php echo ($action_target == 'new')? 'target="_blank"' : ""; ?> class="slide_card__action">
+                        <?php echo get_field('action_button_text') ? get_field('action_button_text') : _x('Know more', 'nau-theme'); ?>
+                    </a>
                     <?php endif; ?>
-                    
+
                 </div>
             </li>
         <?php endwhile; wp_reset_postdata(); ?>
