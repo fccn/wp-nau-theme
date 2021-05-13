@@ -54,7 +54,7 @@ $loop = new WP_Query( $args );
                     
                     <?php if(get_field('action_button_url')): ?>
                     <a href="<?php echo get_field('action_button_url'); ?>" <?php echo ($action_target == 'new')? 'target="_blank"' : ""; ?> class="slide_card__action">
-                        <?php echo get_field('action_button_text') ? get_field('action_button_text') : _x('Know more', 'nau-theme'); ?>
+                        <?php echo get_field('action_button_text') ? get_field('action_button_text') : nau_trans('Know more', 'nau-theme'); ?>
                     </a>
                     <?php endif; ?>
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-07 11:43+0100\n"
+"POT-Creation-Date: 2021-05-13 10:27+0100\n"
 "PO-Revision-Date: 2020-04-08 15:10+0100\n"
 "Last-Translator: root <rui.ribeiro@fccn.pt>\n"
 "Language-Team: English\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "About to Start"
 msgstr ""
 
-#: functions.php:834 search.php:17
+#: search.php:17 functions.php:835
 msgid "About to end"
 msgstr ""
 
-#: functions.php:826
+#: functions.php:827
 msgid "About to start"
 msgstr ""
 
@@ -42,7 +42,7 @@ msgstr ""
 msgid "All|courses"
 msgstr ""
 
-#: functions.php:830
+#: functions.php:831
 msgid "Available"
 msgstr "Available"
 
@@ -54,7 +54,7 @@ msgstr "Certificate"
 msgid "Clean water and sanitation"
 msgstr ""
 
-#: functions.php:939
+#: functions.php:940
 msgid "Clear Cookie"
 msgstr ""
 
@@ -62,7 +62,7 @@ msgstr ""
 msgid "Climate action"
 msgstr ""
 
-#: inc/global-top-menu.php:19
+#: inc/global-top-menu.php:27
 msgid "Close"
 msgstr ""
 
@@ -99,16 +99,16 @@ msgstr ""
 msgid "Entity Youtube video"
 msgstr ""
 
-#: partials/homepage/homepage-all-courses-link.php:7
 #: partials/homepage/homepage-running-courses.php:13
+#: partials/homepage/homepage-all-courses-link.php:7
 msgid "Explore all courses"
 msgstr "Explore all courses"
 
-#: functions.php:842
+#: functions.php:843
 msgid "Finished"
 msgstr ""
 
-#: functions.php:748
+#: functions.php:749
 msgid "Free"
 msgstr ""
 
@@ -116,15 +116,19 @@ msgstr ""
 msgid "Gender equality"
 msgstr ""
 
+#: 404.php:22
+msgid "Go back to NAU main page"
+msgstr ""
+
 #: inc/galeria_un.php:10
 msgid "Good health and well-being"
 msgstr ""
 
-#: inc/global-top-menu.php:11
+#: inc/global-top-menu.php:19
 msgid "Header logo alt"
 msgstr "NAU Keep learning"
 
-#: inc/global-top-menu.php:11
+#: inc/global-top-menu.php:19
 msgid "Homepage"
 msgstr ""
 
@@ -132,7 +136,7 @@ msgstr ""
 msgid "Industry, innovation and infrastructure"
 msgstr ""
 
-#: functions.php:809
+#: functions.php:810
 msgid "Instructor paced"
 msgstr ""
 
@@ -140,13 +144,17 @@ msgstr ""
 msgid "Invitation Only"
 msgstr ""
 
-#: functions.php:810
+#: functions.php:811
 msgid "Invitation only"
 msgstr ""
 
-#: partials/homepage/inc/slider/item-course.php:64
 #: partials/homepage/inc/slider/item-entity.php:67
+#: partials/homepage/inc/slider/item-course.php:64
 msgid "Know +"
+msgstr ""
+
+#: partials/homepage/homepage-announcements.php:57
+msgid "Know more"
 msgstr ""
 
 #: partials/homepage/homepage-running-courses.php:25
@@ -176,7 +184,7 @@ msgid "Need Help"
 msgstr ""
 
 #. $nauBodyClass = "class='secondary-pages'";
-#: inc/news-list.php:4 search.php:8
+#: search.php:8 inc/news-list.php:4
 msgid "News"
 msgstr ""
 
@@ -188,15 +196,15 @@ msgstr ""
 msgid "No poverty"
 msgstr ""
 
-#: functions.php:381
+#: functions.php:382
 msgid "None found"
 msgstr "None found"
 
-#: functions.php:851 inc/global-top-menu.php:7 search.php:12
+#: search.php:12 inc/global-top-menu.php:15 functions.php:852
 msgid "Open"
 msgstr ""
 
-#: functions.php:810
+#: functions.php:811
 msgid "Open to everyone"
 msgstr ""
 
@@ -215,7 +223,7 @@ msgstr ""
 #. <? } ?>
 #.
 #. <h3><span class="blue-vertical-line">| </span><?php echo $course["name"]?></h3>
-#: course-page.php:73 course-page.php:139 partials/courses-cards.php:21
+#: partials/courses-cards.php:21 course-page.php:73 course-page.php:139
 msgid "Participants"
 msgstr "Participants"
 
@@ -232,8 +240,8 @@ msgid "Quality education"
 msgstr ""
 
 #. start main loop
-#: index.php:103 inc/news-list.php:26
-#: partials/homepage/inc/slider/item-news.php:83
+#: partials/homepage/inc/slider/item-news.php:83 inc/news-list.php:26
+#: index.php:103
 msgid "Read More"
 msgstr ""
 
@@ -245,7 +253,7 @@ msgstr ""
 msgid "Responsible consuption"
 msgstr ""
 
-#: functions.php:838
+#: functions.php:839
 #, fuzzy
 msgid "Running"
 msgstr "Running Courses"
@@ -254,7 +262,7 @@ msgstr "Running Courses"
 msgid "Running Courses"
 msgstr "Running Courses"
 
-#: functions.php:822
+#: functions.php:823
 msgid "Scheduled to start"
 msgstr ""
 
@@ -267,14 +275,14 @@ msgstr "Search Courses"
 msgid "Search ..."
 msgstr ""
 
-#: inc/global-top-menu.php:37 inc/global-top-menu.php:39
 #: partials/homepage/inc/slider/item-search.php:37
 #: partials/homepage/inc/slider/item-search.php:38
-#: partials/homepage/inc/slider/item-search.php:39
+#: partials/homepage/inc/slider/item-search.php:39 inc/global-top-menu.php:45
+#: inc/global-top-menu.php:47
 msgid "Search Courses"
 msgstr "Search Courses"
 
-#: inc/global-top-menu.php:38
+#: inc/global-top-menu.php:46
 msgid "Search courses..."
 msgstr ""
 
@@ -293,18 +301,18 @@ msgstr "Search Courses"
 msgid "Search tool"
 msgstr "Search Courses"
 
-#: partials/homepage/homepage-running-courses.php:31
+#: partials/homepage/inc/slider/item-entity.php:62
 #: partials/homepage/inc/slider/item-news.php:61
 #: partials/homepage/inc/slider/item-course.php:58
-#: partials/homepage/inc/slider/item-entity.php:62
+#: partials/homepage/homepage-running-courses.php:31
 msgid "See video"
 msgstr "See video"
 
-#: functions.php:809
+#: functions.php:810
 msgid "Self paced"
 msgstr ""
 
-#: course-page.php:173 partials/entity-aside.php:21
+#: partials/entity-aside.php:21 course-page.php:173
 msgid "Share"
 msgstr "Share"
 
@@ -326,6 +334,10 @@ msgstr "Share on Twitter"
 
 #: search.php:180
 msgid "Show courses that are:"
+msgstr ""
+
+#: header.php:12
+msgid "Skip to main content"
 msgstr ""
 
 #. read from Yoast SEO > Social
@@ -352,6 +364,10 @@ msgstr ""
 
 #: search.php:185
 msgid "Tematicas"
+msgstr ""
+
+#: 404.php:21
+msgid "The page you are looking for seems to be unavailable."
 msgstr ""
 
 #: inc/cookie-bar.php:6

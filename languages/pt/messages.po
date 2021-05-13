@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-07 11:43+0100\n"
-"PO-Revision-Date: 2020-05-12 00:49+0100\n"
-"Last-Translator: root <rui.ribeiro@fccn.pt>\n"
+"POT-Creation-Date: 2021-05-13 10:27+0100\n"
+"PO-Revision-Date: 2021-05-13 10:28+0100\n"
+"Last-Translator: Sandro Costa <sandro.costa@fccn.pt>\n"
 "Language-Team: Portuguese\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "About to Start"
 msgstr "Quase a começar"
 
-#: functions.php:834 search.php:17
+#: search.php:17 functions.php:835
 msgid "About to end"
 msgstr "Quase a acabar"
 
-#: functions.php:826
+#: functions.php:827
 msgid "About to start"
 msgstr "Prestes a começar"
 
@@ -42,7 +42,7 @@ msgstr "Energias renováveis e acessível"
 msgid "All|courses"
 msgstr "Todos|cursos"
 
-#: functions.php:830
+#: functions.php:831
 msgid "Available"
 msgstr "Disponível"
 
@@ -54,7 +54,7 @@ msgstr "Certificado"
 msgid "Clean water and sanitation"
 msgstr "Água potável e saneamento"
 
-#: functions.php:939
+#: functions.php:940
 msgid "Clear Cookie"
 msgstr "Limpar Cookie"
 
@@ -62,7 +62,7 @@ msgstr "Limpar Cookie"
 msgid "Climate action"
 msgstr "Ação Climática"
 
-#: inc/global-top-menu.php:19
+#: inc/global-top-menu.php:27
 msgid "Close"
 msgstr "Fechar"
 
@@ -98,16 +98,16 @@ msgstr "Entidades"
 msgid "Entity Youtube video"
 msgstr "Vídeo da entidade no Youtube"
 
-#: partials/homepage/homepage-all-courses-link.php:7
 #: partials/homepage/homepage-running-courses.php:13
+#: partials/homepage/homepage-all-courses-link.php:7
 msgid "Explore all courses"
 msgstr "Explore todos os cursos"
 
-#: functions.php:842
+#: functions.php:843
 msgid "Finished"
 msgstr "Terminado"
 
-#: functions.php:748
+#: functions.php:749
 msgid "Free"
 msgstr "Gratuito"
 
@@ -115,15 +115,19 @@ msgstr "Gratuito"
 msgid "Gender equality"
 msgstr "Igualdade de género"
 
+#: 404.php:22
+msgid "Go back to NAU main page"
+msgstr "Voltar à página principal da NAU"
+
 #: inc/galeria_un.php:10
 msgid "Good health and well-being"
 msgstr "Saúde de qualidade"
 
-#: inc/global-top-menu.php:11
+#: inc/global-top-menu.php:19
 msgid "Header logo alt"
 msgstr "NAU Sempre a aprender"
 
-#: inc/global-top-menu.php:11
+#: inc/global-top-menu.php:19
 msgid "Homepage"
 msgstr "Página de entrada do site da NAU"
 
@@ -131,7 +135,7 @@ msgstr "Página de entrada do site da NAU"
 msgid "Industry, innovation and infrastructure"
 msgstr "Indústria, inovação e infraestruturas"
 
-#: functions.php:809
+#: functions.php:810
 msgid "Instructor paced"
 msgstr "Com calendário definido"
 
@@ -139,14 +143,18 @@ msgstr "Com calendário definido"
 msgid "Invitation Only"
 msgstr "Apenas por Convite"
 
-#: functions.php:810
+#: functions.php:811
 msgid "Invitation only"
 msgstr "Apenas por convite"
 
-#: partials/homepage/inc/slider/item-course.php:64
 #: partials/homepage/inc/slider/item-entity.php:67
+#: partials/homepage/inc/slider/item-course.php:64
 msgid "Know +"
 msgstr "Saber +"
+
+#: partials/homepage/homepage-announcements.php:57
+msgid "Know more"
+msgstr "Saiba mais"
 
 #: partials/homepage/homepage-running-courses.php:25
 msgid "Know more about this entity"
@@ -173,7 +181,7 @@ msgid "Need Help"
 msgstr "Preciso de Ajuda"
 
 #. $nauBodyClass = "class='secondary-pages'";
-#: inc/news-list.php:4 search.php:8
+#: search.php:8 inc/news-list.php:4
 msgid "News"
 msgstr "Notícias"
 
@@ -185,15 +193,15 @@ msgstr "Sem objetivo"
 msgid "No poverty"
 msgstr "Erradicar a pobreza"
 
-#: functions.php:381
+#: functions.php:382
 msgid "None found"
 msgstr "Nenhum encontrado"
 
-#: functions.php:851 inc/global-top-menu.php:7 search.php:12
+#: search.php:12 inc/global-top-menu.php:15 functions.php:852
 msgid "Open"
 msgstr "Abrir"
 
-#: functions.php:810
+#: functions.php:811
 msgid "Open to everyone"
 msgstr "Aberto a todos"
 
@@ -212,7 +220,7 @@ msgstr "Páginas"
 #. <? } ?>
 #.
 #. <h3><span class="blue-vertical-line">| </span><?php echo $course["name"]?></h3>
-#: course-page.php:73 course-page.php:139 partials/courses-cards.php:21
+#: partials/courses-cards.php:21 course-page.php:73 course-page.php:139
 msgid "Participants"
 msgstr "Participantes"
 
@@ -229,8 +237,8 @@ msgid "Quality education"
 msgstr "Educação de qualidade"
 
 #. start main loop
-#: index.php:103 inc/news-list.php:26
-#: partials/homepage/inc/slider/item-news.php:83
+#: partials/homepage/inc/slider/item-news.php:83 inc/news-list.php:26
+#: index.php:103
 msgid "Read More"
 msgstr "Ler mais"
 
@@ -242,7 +250,7 @@ msgstr "Reduzir as desigualdades"
 msgid "Responsible consuption"
 msgstr "Produção e consumo responsáveis"
 
-#: functions.php:838
+#: functions.php:839
 msgid "Running"
 msgstr "A decorrer"
 
@@ -250,7 +258,7 @@ msgstr "A decorrer"
 msgid "Running Courses"
 msgstr "Cursos Disponíveis"
 
-#: functions.php:822
+#: functions.php:823
 msgid "Scheduled to start"
 msgstr "Brevemente"
 
@@ -262,14 +270,14 @@ msgstr "Procurar"
 msgid "Search ..."
 msgstr "Procurar ..."
 
-#: inc/global-top-menu.php:37 inc/global-top-menu.php:39
 #: partials/homepage/inc/slider/item-search.php:37
 #: partials/homepage/inc/slider/item-search.php:38
-#: partials/homepage/inc/slider/item-search.php:39
+#: partials/homepage/inc/slider/item-search.php:39 inc/global-top-menu.php:45
+#: inc/global-top-menu.php:47
 msgid "Search Courses"
 msgstr "Pesquisar Cursos"
 
-#: inc/global-top-menu.php:38
+#: inc/global-top-menu.php:46
 msgid "Search courses..."
 msgstr "Pesquisar Cursos..."
 
@@ -285,18 +293,18 @@ msgstr "Resultados de pesquisa"
 msgid "Search tool"
 msgstr "Ferramenta de pesquisa"
 
-#: partials/homepage/homepage-running-courses.php:31
+#: partials/homepage/inc/slider/item-entity.php:62
 #: partials/homepage/inc/slider/item-news.php:61
 #: partials/homepage/inc/slider/item-course.php:58
-#: partials/homepage/inc/slider/item-entity.php:62
+#: partials/homepage/homepage-running-courses.php:31
 msgid "See video"
 msgstr "Ver vídeo"
 
-#: functions.php:809
+#: functions.php:810
 msgid "Self paced"
 msgstr "Sem horário definido"
 
-#: course-page.php:173 partials/entity-aside.php:21
+#: partials/entity-aside.php:21 course-page.php:173
 msgid "Share"
 msgstr "Partilhar"
 
@@ -319,6 +327,10 @@ msgstr "Partilhar no Twitter"
 #: search.php:180
 msgid "Show courses that are:"
 msgstr "Apresenta cursos que:"
+
+#: header.php:12
+msgid "Skip to main content"
+msgstr "Saltar para o conteúdo"
 
 #. read from Yoast SEO > Social
 #: partials/global-footer.php:27
@@ -345,10 +357,13 @@ msgstr "Etiquetas"
 msgid "Tematicas"
 msgstr ""
 
+#: 404.php:21
+msgid "The page you are looking for seems to be unavailable."
+msgstr "A página que procura não está disponível."
+
 #: inc/cookie-bar.php:6
 msgid "This site uses cookies (update this message on NAU Theme Options)!"
-msgstr ""
-"Este site usa cookies (atualize esta mensagem nas opções do Theme NAU)!"
+msgstr "Este site usa cookies (atualize esta mensagem nas opções do Theme NAU)!"
 
 #: partials/homepage/homepage-running-courses.php:36
 #: partials/courses-cards.php:26
