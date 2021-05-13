@@ -5,30 +5,13 @@
  * Optional labels by area
  */
 
+require_once get_template_directory() . '/inc/announcements/announcements_setup.php';
 
-// get the current polylang language. If polylang is not defined, language is set to default.
-$default_language = 'pt';
-$language = function_exists('pll_current_language')? pll_current_language() : $default_language;
-
-$args = array(
-    'post_type' => 'announcements',
-    'tax_query' => array(
-        array (
-            'taxonomy' => 'languages',
-            'field' => 'slug',
-            'terms' => $language,
-        )
-    ),
-);
-
-$loop = new WP_Query( $args );
+$loop = get_announcements();
 
 ?>
-<div class="announcements-slider">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
 
-   
+<div class="announcements-slider">
 
     <div class="splide">
 	<div class="splide__track">

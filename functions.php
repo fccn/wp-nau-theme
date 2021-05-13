@@ -1123,3 +1123,5 @@ require_once('inc/polylang-wp-api.php');
  * get only the pages/posts by a specific or a list of languages.
 */
 require_once('inc/nau_wp_xmlrpc_server_class.php');
+
+require_once('inc/announcements/announcements_scripts.php');
