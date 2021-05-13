@@ -163,7 +163,7 @@
     </h2>
     <form role="search" method="post" class="search-form" action="<?php echo home_url( '/' ); ?>">
         <div id="query">
-            <span class="screen-reader-text"><?php echo nau_trans( 'Search for:' ) ?></span>
+            <label for="s" class="screen-reader-text"><?php echo nau_trans( 'Search for:' ) ?></label>
             <input type="search" class="search-field"
                 placeholder="<?php echo nau_trans( 'Search ...') ?>"
                 value="<?php echo $search_query ?>" name="s"
