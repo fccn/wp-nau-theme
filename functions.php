@@ -573,13 +573,19 @@ function nau_entities_gallery($atts = array()) {
 
    return $value;
 }
-
 add_shortcode('nau_entities_gallery', 'nau_entities_gallery');
 
+function nau_news_gallery($atts = array()) { 
+  global $news_array;
+  $news_array = get_posts($atts);
+  ob_start();
+  get_template_part( "partials/news", "gallery" );
+  $value = ob_get_contents();
+  ob_end_clean();
 
-function nau_list_news($atts = array()) { 
-   return make_link_list(nau_get_posts( nau_get_option("nau_category_slug_news", "noticia,news"), $atts));
+  return $value;
 }
+add_shortcode('nau_news_gallery', 'nau_news_gallery');
 
 
 function get_custom_value($key, $default = "", $page = -1) {
@@ -615,11 +621,13 @@ function nau_list_tags($page = -1, $only_tags = False) {
     if ($entity && !$only_tags)
       $s .= "<a class='bubble entity' href='" . get_permalink($entity) . "'>" . get_field('sigla', $entity) . "</a> ";
   
-    foreach($tags as $tag) {
-        if (($tag->slug != "highlight") && ($tag->slug != "running-course")) {
-            $s .= "<a class='bubble tag' href='" . get_term_link($tag->term_id) . "'>" . $tag->name . "</a> ";
-        }
-    }     
+    if ($tags) {
+      foreach($tags as $tag) {
+          if (($tag->slug != "highlight") && ($tag->slug != "running-course")) {
+              $s .= "<a class='bubble tag' href='" . get_term_link($tag->term_id) . "'>" . $tag->name . "</a> ";
+          }
+      }
+    } 
 
     return $s;
 }

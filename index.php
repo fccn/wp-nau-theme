@@ -80,7 +80,7 @@
   </div>
 <? endif; ?>  
 
-<? if (mode=="list"):
+<? if ($mode=="list"):
 
   while( have_posts() ): the_post(); /* start main loop */ ?>
 
