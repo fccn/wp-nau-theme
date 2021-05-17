@@ -1058,6 +1058,11 @@ function nau_homepage_announcements($atts = array()) {
 }
 add_shortcode('nau_homepage_announcements', 'nau_homepage_announcements');
 
+function nau_homepage_search($atts = array()) {    
+  return nau_template_part( "partials/homepage/homepage", "search" );
+}
+add_shortcode('nau_homepage_search', 'nau_homepage_search');
+
 // This theme has a custom image thumnail format
 add_theme_support( "post-thumbnails" );
 
