@@ -7,5 +7,41 @@
         text-indent: -9999em;
         display: block;
     }
-    
+
+    input[type="text"] {
+        background-color: transparent;
+        position: relative;
+        text-align: left;
+        padding-left: 24px;
+        border: 1px solid transparent;
+        outline: none;
+        font-family: "Roboto", sans-serif;
+        padding-right: 47px;
+        background: #ffffff 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 5px #00000059;
+        border-radius: 60px;
+        opacity: 0.95;
+        height: 58px;
+        top: 0;
+        font-size: 1.15em;
+        letter-spacing: 0;
+        color: #6a6969;
+        width: 100%;
+      }
+      
+      input[type="submit"] {
+        position: absolute;
+        top: 4px;
+        right: 15px;
+        background: transparent url(../img/magnifier.svg) no-repeat right center;
+        width: 25px;
+        border: none;
+        outline: none;
+        text-indent: -9999px;
+        background-size: 20px;
+        height: 25px;
+        cursor: pointer;
+        z-index: 7;
+      }
+
 }
