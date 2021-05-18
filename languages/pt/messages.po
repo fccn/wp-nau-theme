@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-13 10:27+0100\n"
-"PO-Revision-Date: 2021-05-13 10:28+0100\n"
+"POT-Creation-Date: 2021-05-18 10:42+0100\n"
+"PO-Revision-Date: 2021-05-18 10:43+0100\n"
 "Last-Translator: Sandro Costa <sandro.costa@fccn.pt>\n"
 "Language-Team: Portuguese\n"
 "Language: pt\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "About to Start"
 msgstr "Quase a começar"
 
-#: search.php:17 functions.php:835
+#: search.php:17 functions.php:843
 msgid "About to end"
 msgstr "Quase a acabar"
 
-#: functions.php:827
+#: functions.php:835
 msgid "About to start"
 msgstr "Prestes a começar"
 
@@ -42,7 +42,7 @@ msgstr "Energias renováveis e acessível"
 msgid "All|courses"
 msgstr "Todos|cursos"
 
-#: functions.php:831
+#: functions.php:839
 msgid "Available"
 msgstr "Disponível"
 
@@ -54,7 +54,7 @@ msgstr "Certificado"
 msgid "Clean water and sanitation"
 msgstr "Água potável e saneamento"
 
-#: functions.php:940
+#: functions.php:948
 msgid "Clear Cookie"
 msgstr "Limpar Cookie"
 
@@ -103,11 +103,11 @@ msgstr "Vídeo da entidade no Youtube"
 msgid "Explore all courses"
 msgstr "Explore todos os cursos"
 
-#: functions.php:843
+#: functions.php:851
 msgid "Finished"
 msgstr "Terminado"
 
-#: functions.php:749
+#: functions.php:757
 msgid "Free"
 msgstr "Gratuito"
 
@@ -135,7 +135,7 @@ msgstr "Página de entrada do site da NAU"
 msgid "Industry, innovation and infrastructure"
 msgstr "Indústria, inovação e infraestruturas"
 
-#: functions.php:810
+#: functions.php:818
 msgid "Instructor paced"
 msgstr "Com calendário definido"
 
@@ -143,7 +143,7 @@ msgstr "Com calendário definido"
 msgid "Invitation Only"
 msgstr "Apenas por Convite"
 
-#: functions.php:811
+#: functions.php:819
 msgid "Invitation only"
 msgstr "Apenas por convite"
 
@@ -152,7 +152,7 @@ msgstr "Apenas por convite"
 msgid "Know +"
 msgstr "Saber +"
 
-#: partials/homepage/homepage-announcements.php:57
+#: partials/homepage/homepage-announcements.php:40
 msgid "Know more"
 msgstr "Saiba mais"
 
@@ -180,8 +180,7 @@ msgstr "Proteger a vida terrestre"
 msgid "Need Help"
 msgstr "Preciso de Ajuda"
 
-#. $nauBodyClass = "class='secondary-pages'";
-#: search.php:8 inc/news-list.php:4
+#: search.php:8
 msgid "News"
 msgstr "Notícias"
 
@@ -197,11 +196,11 @@ msgstr "Erradicar a pobreza"
 msgid "None found"
 msgstr "Nenhum encontrado"
 
-#: search.php:12 inc/global-top-menu.php:15 functions.php:852
+#: search.php:12 inc/global-top-menu.php:15 functions.php:860
 msgid "Open"
 msgstr "Abrir"
 
-#: functions.php:811
+#: functions.php:819
 msgid "Open to everyone"
 msgstr "Aberto a todos"
 
@@ -237,7 +236,7 @@ msgid "Quality education"
 msgstr "Educação de qualidade"
 
 #. start main loop
-#: partials/homepage/inc/slider/item-news.php:83 inc/news-list.php:26
+#: partials/homepage/inc/slider/item-news.php:83 partials/news-gallery.php:27
 #: index.php:103
 msgid "Read More"
 msgstr "Ler mais"
@@ -250,7 +249,7 @@ msgstr "Reduzir as desigualdades"
 msgid "Responsible consuption"
 msgstr "Produção e consumo responsáveis"
 
-#: functions.php:839
+#: functions.php:847
 msgid "Running"
 msgstr "A decorrer"
 
@@ -258,11 +257,11 @@ msgstr "A decorrer"
 msgid "Running Courses"
 msgstr "Cursos Disponíveis"
 
-#: functions.php:823
+#: functions.php:831
 msgid "Scheduled to start"
 msgstr "Brevemente"
 
-#: search.php:172
+#: search.php:172 partials/homepage/homepage-search.php:12
 msgid "Search"
 msgstr "Procurar"
 
@@ -270,9 +269,14 @@ msgstr "Procurar"
 msgid "Search ..."
 msgstr "Procurar ..."
 
+#.
+#. * Homepage main search bar
+#. * shortcode: [nau_homepage_search]
+#.
 #: partials/homepage/inc/slider/item-search.php:37
 #: partials/homepage/inc/slider/item-search.php:38
-#: partials/homepage/inc/slider/item-search.php:39 inc/global-top-menu.php:45
+#: partials/homepage/inc/slider/item-search.php:39
+#: partials/homepage/homepage-search.php:10 inc/global-top-menu.php:45
 #: inc/global-top-menu.php:47
 msgid "Search Courses"
 msgstr "Pesquisar Cursos"
@@ -300,7 +304,7 @@ msgstr "Ferramenta de pesquisa"
 msgid "See video"
 msgstr "Ver vídeo"
 
-#: functions.php:810
+#: functions.php:818
 msgid "Self paced"
 msgstr "Sem horário definido"
 
@@ -337,6 +341,10 @@ msgstr "Saltar para o conteúdo"
 msgid "Social Media"
 msgstr "Siga-nos"
 
+#: partials/news-gallery.php:10
+msgid "Sorry, currently this page is only available in "
+msgstr "A página que procura só se encontra disponível em "
+
 #: search.php:14
 msgid "Started"
 msgstr "Iníciou"
@@ -355,7 +363,7 @@ msgstr "Etiquetas"
 
 #: search.php:185
 msgid "Tematicas"
-msgstr ""
+msgstr "Tematicas"
 
 #: 404.php:21
 msgid "The page you are looking for seems to be unavailable."
@@ -385,6 +393,10 @@ msgstr "Visitar site OpenEdX"
 #: partials/homepage/homepage-entities.php:14
 msgid "Visit page of"
 msgstr "Visite a página de"
+
+#: partials/homepage/homepage-search.php:11
+msgid "What do you want to learn today?"
+msgstr "O que quer aprender hoje?"
 
 #: inc/galeria_un.php:9
 msgid "Zero hunger"

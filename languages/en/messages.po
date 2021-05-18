@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-13 10:27+0100\n"
+"POT-Creation-Date: 2021-05-18 10:42+0100\n"
 "PO-Revision-Date: 2020-04-08 15:10+0100\n"
 "Last-Translator: root <rui.ribeiro@fccn.pt>\n"
 "Language-Team: English\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "About to Start"
 msgstr ""
 
-#: search.php:17 functions.php:835
+#: search.php:17 functions.php:843
 msgid "About to end"
 msgstr ""
 
-#: functions.php:827
+#: functions.php:835
 msgid "About to start"
 msgstr ""
 
@@ -42,7 +42,7 @@ msgstr ""
 msgid "All|courses"
 msgstr ""
 
-#: functions.php:831
+#: functions.php:839
 msgid "Available"
 msgstr "Available"
 
@@ -54,7 +54,7 @@ msgstr "Certificate"
 msgid "Clean water and sanitation"
 msgstr ""
 
-#: functions.php:940
+#: functions.php:948
 msgid "Clear Cookie"
 msgstr ""
 
@@ -104,11 +104,11 @@ msgstr ""
 msgid "Explore all courses"
 msgstr "Explore all courses"
 
-#: functions.php:843
+#: functions.php:851
 msgid "Finished"
 msgstr ""
 
-#: functions.php:749
+#: functions.php:757
 msgid "Free"
 msgstr ""
 
@@ -136,7 +136,7 @@ msgstr ""
 msgid "Industry, innovation and infrastructure"
 msgstr ""
 
-#: functions.php:810
+#: functions.php:818
 msgid "Instructor paced"
 msgstr ""
 
@@ -144,7 +144,7 @@ msgstr ""
 msgid "Invitation Only"
 msgstr ""
 
-#: functions.php:811
+#: functions.php:819
 msgid "Invitation only"
 msgstr ""
 
@@ -153,7 +153,7 @@ msgstr ""
 msgid "Know +"
 msgstr ""
 
-#: partials/homepage/homepage-announcements.php:57
+#: partials/homepage/homepage-announcements.php:40
 msgid "Know more"
 msgstr ""
 
@@ -183,8 +183,7 @@ msgstr ""
 msgid "Need Help"
 msgstr ""
 
-#. $nauBodyClass = "class='secondary-pages'";
-#: search.php:8 inc/news-list.php:4
+#: search.php:8
 msgid "News"
 msgstr ""
 
@@ -200,11 +199,11 @@ msgstr ""
 msgid "None found"
 msgstr "None found"
 
-#: search.php:12 inc/global-top-menu.php:15 functions.php:852
+#: search.php:12 inc/global-top-menu.php:15 functions.php:860
 msgid "Open"
 msgstr ""
 
-#: functions.php:811
+#: functions.php:819
 msgid "Open to everyone"
 msgstr ""
 
@@ -240,7 +239,7 @@ msgid "Quality education"
 msgstr ""
 
 #. start main loop
-#: partials/homepage/inc/slider/item-news.php:83 inc/news-list.php:26
+#: partials/homepage/inc/slider/item-news.php:83 partials/news-gallery.php:27
 #: index.php:103
 msgid "Read More"
 msgstr ""
@@ -253,7 +252,7 @@ msgstr ""
 msgid "Responsible consuption"
 msgstr ""
 
-#: functions.php:839
+#: functions.php:847
 #, fuzzy
 msgid "Running"
 msgstr "Running Courses"
@@ -262,11 +261,11 @@ msgstr "Running Courses"
 msgid "Running Courses"
 msgstr "Running Courses"
 
-#: functions.php:823
+#: functions.php:831
 msgid "Scheduled to start"
 msgstr ""
 
-#: search.php:172
+#: search.php:172 partials/homepage/homepage-search.php:12
 #, fuzzy
 msgid "Search"
 msgstr "Search Courses"
@@ -275,9 +274,14 @@ msgstr "Search Courses"
 msgid "Search ..."
 msgstr ""
 
+#.
+#. * Homepage main search bar
+#. * shortcode: [nau_homepage_search]
+#.
 #: partials/homepage/inc/slider/item-search.php:37
 #: partials/homepage/inc/slider/item-search.php:38
-#: partials/homepage/inc/slider/item-search.php:39 inc/global-top-menu.php:45
+#: partials/homepage/inc/slider/item-search.php:39
+#: partials/homepage/homepage-search.php:10 inc/global-top-menu.php:45
 #: inc/global-top-menu.php:47
 msgid "Search Courses"
 msgstr "Search Courses"
@@ -308,7 +312,7 @@ msgstr "Search Courses"
 msgid "See video"
 msgstr "See video"
 
-#: functions.php:810
+#: functions.php:818
 msgid "Self paced"
 msgstr ""
 
@@ -344,6 +348,10 @@ msgstr ""
 #: partials/global-footer.php:27
 msgid "Social Media"
 msgstr "Social Media"
+
+#: partials/news-gallery.php:10
+msgid "Sorry, currently this page is only available in "
+msgstr ""
 
 #: search.php:14
 #, fuzzy
@@ -393,6 +401,10 @@ msgstr ""
 
 #: partials/homepage/homepage-entities.php:14
 msgid "Visit page of"
+msgstr ""
+
+#: partials/homepage/homepage-search.php:11
+msgid "What do you want to learn today?"
 msgstr ""
 
 #: inc/galeria_un.php:9

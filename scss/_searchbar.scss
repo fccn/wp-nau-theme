@@ -1,10 +1,14 @@
 .homepage-searchbar {
 
+    position: relative;
+    margin: 4rem 1rem;
+
     label {
         font-size: 0.75em;
         font-weight: bold;
         color: #333;
         text-indent: -9999em;
+        position:absolute;
         display: block;
     }
 
@@ -17,31 +21,36 @@
         outline: none;
         font-family: "Roboto", sans-serif;
         padding-right: 47px;
-        background: #ffffff 0% 0% no-repeat padding-box;
-        box-shadow: 0px 3px 5px #00000059;
+        background:  #ECF2FF;
         border-radius: 60px;
         opacity: 0.95;
         height: 58px;
         top: 0;
         font-size: 1.15em;
         letter-spacing: 0;
-        color: #6a6969;
+        color: #003DBF;
         width: 100%;
+
+        &:focus {
+            box-shadow: 0px 1px 8px rgba(0, 61, 191, 0.2);
+            transition: 0.2s box-shadow;
+        }
       }
       
       input[type="submit"] {
         position: absolute;
-        top: 4px;
-        right: 15px;
-        background: transparent url(../img/magnifier.svg) no-repeat right center;
+        top: 16px;
+        right: 25px;
+        background-image: $menu-search-icon;
+        background-repeat: no-repeat;
         width: 25px;
         border: none;
         outline: none;
-        text-indent: -9999px;
-        background-size: 20px;
+        background-size: 25px;
         height: 25px;
         cursor: pointer;
-        z-index: 7;
+        text-indent: -9999em;
+        z-index: 100;
       }
 
 }
