@@ -33,16 +33,16 @@ Array
             <div class="nau-logo-filter" style="filter: hue-rotate(<?=$hue_rotate?>deg) opacity(<?=$opacity?>);"></div>
             <div class="nau-slide-content">
               <div id="banner-search-form-container">
-                  <form id="banner-search-form" action="<?php echo home_url(); ?>" role="search" method="get">
+                  <form id="banner-search-form" action="<?php echo home_url(); ?>" role="search" method="post">
                     <label id="banner-search-form-label" for="s"><?=nau_trans("Search Courses")?></label>
-                    <input id="s" name="s" type="search" placeholder="<?=nau_trans("Search Courses")?>" value="<?=$search_query?>" aria-labelledBy="banner-search-form-label">
+                    <input id="s" name="s" type="search" placeholder="<?=nau_trans("Search Courses")?>" value="<?=$search_query?>">
                     <input name="submit-search" type="submit"><?=nau_trans("Search Courses")?></input>
                  </form>
               </div>
             
               <div class="nau-slider-label">
-                <h1><?=$headline?></h1>
-               <p><?=$text?></p>
+                <h1><?php echo $headline; ?></h1>
+               <p><?php echo $text; ?></p>
               </div>
             </div>
           </div>

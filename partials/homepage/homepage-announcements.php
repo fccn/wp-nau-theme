@@ -49,7 +49,13 @@ $loop = get_announcements();
     </div>
 
 <script>
-	new Splide( '.splide', { type: 'loop', autoplay: true } ).mount();
+	new Splide( '.splide',
+        { 
+            type: 'loop',
+            autoplay: true,
+            slideFocus: true,
+            <?php echo $loop->found_posts<=1 ? "arrows: false" : "arrows: true"; ?>
+        } ).mount();
 </script>
 
 </div>
