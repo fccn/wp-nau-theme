@@ -1,5 +1,13 @@
 .announcements-slider {
     position: relative;
+    background-color: rgb(0, 61, 191);
+
+    .slide-overlay {
+        background-color: rgba(0, 61, 191, 0.65);
+        height: 100%;
+        width: 45vw;
+        border-bottom-right-radius: 130px;
+    }
 
     .splide__slide {
         height: 400px;
@@ -8,7 +16,8 @@
         &-card {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem 1rem;
+            padding: 2.5rem 2rem 2.5rem 1rem;
+            margin-left: 35%;
 
             .slide-card__title {
                 font-family: "Roboto", sans-serif;
@@ -16,30 +25,32 @@
                 font-size: 45px;
                 color: #fff;
                 line-height: 1.2;
-                text-shadow: 0px 1px 3px #555;
+                text-shadow: 0px 1px 3px (0, 61, 191, 0.65) 5;
                 display: block;
+                padding-bottom: .6rem;
             }
 
             .slide-card__subtext {
                 font-family: "Roboto", sans-serif;
-                font-size: 22px;
+                font-size: 20px;
                 color: #fff;
                 line-height: 1.2;
-                text-shadow: 0px 1px 3px #555;
+                text-shadow: 0px 1px 3px (0, 61, 191, 0.65);
                 display: block;
             }
 
             .slide_card__action {
                 display: inline-block;
-                background-color: #FFE600;
-                color: #684B00;
+                background-color: #ffe600;
+                color: #684b00;
                 text-align: center;
                 padding: 0.5rem 1.5rem;
                 border-radius: 25px;
                 font-weight: bold;
-                margin-top: 1.5rem;
+                margin-top: 1.75rem;
 
-                &:hover, &:focus {
+                &:hover,
+                &:focus {
                     background-color: #d8c302;
                     transition: 0.5s;
                 }
