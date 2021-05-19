@@ -17,7 +17,7 @@
           </div>
           <div class="card-content--title"><?php echo $course["name"]?></div>
           <div class="card-content--details">
-            <span class="card-content--availability"><?php echo $course["date_status_label"]?></span>
+            <span class="card-content--availability"><?php echo isset($course["date_status_label"])? $course["date_status_label"] : nau_trans("Unavailable"); ?></span>
             <span class="card-content--enrolled"><?php echo $course["participants"]?> <?php echo nau_trans("Participants")?></span>
           </div>
         </div>

@@ -31,17 +31,18 @@ $loop = get_announcements();
                 $action_target = get_field('action_button_target');
             ?> 
 			<li class="splide__slide" style="background-image: url(<?php echo $post_thumbnail; ?>)">
+            <div class="slide-overlay">
                 <div class="splide__slide-card">
-                    <span class="slide-card__title"><?php echo get_the_title(); ?></span>
-                    <span class="slide-card__subtext"><?php echo get_the_excerpt(); ?></span>
-                    
-                    <?php if(get_field('action_button_url')): ?>
-                    <a href="<?php echo get_field('action_button_url'); ?>" <?php echo ($action_target == 'new')? 'target="_blank"' : ""; ?> class="slide_card__action">
-                        <?php echo get_field('action_button_text') ? get_field('action_button_text') : nau_trans('Know more', 'nau-theme'); ?>
-                    </a>
-                    <?php endif; ?>
-
+                        <span class="slide-card__title"><?php echo get_the_title(); ?></span>
+                        <span class="slide-card__subtext"><?php echo get_the_excerpt(); ?></span>
+                        
+                        <?php if(get_field('action_button_url')): ?>
+                        <a href="<?php echo get_field('action_button_url'); ?>" <?php echo ($action_target == 'new')? 'target="_blank"' : ""; ?> class="slide_card__action">
+                            <?php echo get_field('action_button_text') ? get_field('action_button_text') : nau_trans('Know more', 'nau-theme'); ?>
+                        </a>
+                        <?php endif; ?>
                 </div>
+            </div>
             </li>
         <?php endwhile; wp_reset_postdata(); ?>
 		</ul>
@@ -49,7 +50,15 @@ $loop = get_announcements();
     </div>
 
 <script>
-	new Splide( '.splide', { type: 'loop', autoplay: true } ).mount();
+	new Splide( '.splide',
+        { 
+            type: '<?php echo $loop->found_posts<=1 ? "slide" : "loop"; ?>',
+            fade: 1,
+            perPage: 1,
+            autoplay: true,
+            slideFocus: true,
+            <?php echo $loop->found_posts<=1 ? "arrows: false" : "arrows: true"; ?>
+        } ).mount();
 </script>
 
 </div>
