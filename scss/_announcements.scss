@@ -3,10 +3,11 @@
     background-color: rgb(0, 61, 191);
 
     .slide-overlay {
-        background-color: rgba(0, 61, 191, 0.65);
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23074CE1' fill-opacity='0.8' d='M0,224L80,234.7C160,245,320,267,480,240C640,213,800,139,960,101.3C1120,64,1280,64,1360,64L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
         height: 100%;
-        width: 45vw;
-        border-bottom-right-radius: 130px;
+        background-repeat: no-repeat;
+        width: 100%;
+        background-size: cover;
     }
 
     .splide__slide {
@@ -14,10 +15,9 @@
         background-size: cover;
 
         &-card {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
             padding: 2.5rem 2rem 2.5rem 1rem;
-            margin-left: 35%;
 
             .slide-card__title {
                 font-family: "Roboto", sans-serif;
@@ -25,7 +25,7 @@
                 font-size: 45px;
                 color: #fff;
                 line-height: 1.2;
-                text-shadow: 0px 1px 3px (0, 61, 191, 0.65) 5;
+                text-shadow: 0px 1px 3px rgba(0, 61, 191, 1);
                 display: block;
                 padding-bottom: .6rem;
             }
@@ -35,7 +35,7 @@
                 font-size: 20px;
                 color: #fff;
                 line-height: 1.2;
-                text-shadow: 0px 1px 3px (0, 61, 191, 0.65);
+                text-shadow: 0px 1px 3px rgba(0, 61, 191, 1);
                 display: block;
             }
 
