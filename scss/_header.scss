@@ -1,8 +1,13 @@
-.global-header {
+/**
+ * Primary replica should be on nau-theme LMS.
+ */ 
+ .global-header {
     overflow: inherit;
     position: relative;
     border-bottom: none !important;
     padding-bottom: 0 !important;
+    margin-bottom: 5px;
+    box-shadow: $global-header-shadow !important;
 
     @media screen and (max-width: $breakpoint-medium) {
         overflow: inherit !important;
@@ -20,18 +25,32 @@
     background-color: $menu-bg-color;
     display: flex;
     justify-content: space-between;
-    box-shadow: $menu-shadow;
-    padding: 10px 40px 10px 0;
+    box-shadow: $nau-branding-top-nav-shadow;
+    padding-top: 5px;
+    padding-right: 40px;
     align-items: center;
     min-height: 90px;
-
-    .logo {
-        display: inline-block;
-        max-height: 80px;
-        margin-left: 50px;
-        max-width: -webkit-calc(100% - 50px);
-        max-width: -moz-calc(100% - 50px);
-        max-width: calc(100% - 50px);
+    //margin-bottom: 15px;
+    // @media screen and (max-width: $breakpoint-xlarge) {
+    //     margin-bottom: 0px;
+    // }
+    @media screen and (max-width: $breakpoint-medium) {
+        min-height: 70px;
+    }
+    @media screen and (max-width: $breakpoint-small) {
+        min-height: 40px;
+    }
+    
+    a.nau-header-logo-link {
+        flex-shrink: 0;
+        .logo {
+            display: inline-block;
+            max-height: 80px;
+            margin-left: 50px;
+            max-width: -webkit-calc(100% - 50px);
+            max-width:    -moz-calc(100% - 50px);
+            max-width:         calc(100% - 50px);
+        }
     }
 
     li {
@@ -70,25 +89,12 @@
             margin-right: 10px;
             position: relative;
 
-            @media screen and (max-width: $breakpoint-medium) {
-                display: none;
-            }
-
-            @media screen and (max-width: $breakpoint-large) {
+            @media screen and (max-width: $breakpoint-xlarge) {
                 display: none;
             }
 
             label {
-                border: 0;
-                clip: rect(1px, 1px, 1px, 1px);
-                clip-path: inset(50%);
-                height: 1px;
-                margin: -1px;
-                overflow: hidden;
-                padding: 0;
-                position: absolute;
-                width: 1px;
-                word-wrap: normal !important;
+                display: none;
             }
         }
 
@@ -99,7 +105,7 @@
             line-height: 24px !important;
 
             &::placeholder {
-                font-size: 0.8rem;
+                font-size: .8rem;
             }
         }
 
@@ -153,6 +159,49 @@
             display: none;
         }
     }
+
+    .nau-header-course {
+        max-height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        @media screen and (max-width: $breakpoint-large) {
+            display: none;
+        }
+
+        img {
+            max-height: 4.3rem;
+            max-width: 16rem;
+        }
+        .nau-header-course-information {
+            display: flex;
+            align-items: center;
+            .provider {
+                font-weight: bold;
+                &:after {
+                    content: ":";
+                }
+            }
+            &.with-image .course-number
+            &.with-image .provider {
+                display: none;
+            }
+            .course-name { 
+                max-width: 250px;
+            }
+            span {
+                margin-left: 1rem;
+                display: inline-block;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-size: 0.9rem;
+            }
+            @media screen and (max-width: $breakpoint-xlarge) {
+                display: none;
+            }
+        }
+    }
 }
 
 .menu-container {
@@ -164,7 +213,7 @@
         z-index: 2000 !important;
         background: white;
         top: 0;
-        width: calc(100% - 20px);
+        width: 100%;
         padding: 0px 10px 35px;
     }
 
@@ -197,7 +246,7 @@
             }
 
             a {
-                font-size: 0.8rem;
+                font-size: 0.80rem;
                 font-weight: 500;
                 text-transform: uppercase;
                 text-decoration: none;
@@ -247,7 +296,7 @@
             margin-top: 8px !important;
             font-weight: 500 !important;
             text-transform: initial !important;
-            color: #494949 !important;
+            color: #777777 !important;
 
             &:hover {
                 color: $header-bar-color !important;
@@ -340,8 +389,8 @@
     left: 0;
     width: 100%;
     height: 140vh;
-    background: rgb(36, 36, 36);
-    background: linear-gradient(180deg, rgba(36, 36, 36, 0.85) 75%, rgba(255, 255, 255, 0) 100%);
+    background: rgb(36,36,36);
+    background: linear-gradient(180deg, rgba(36,36,36,0.85) 75%, rgba(255,255,255,0) 100%);
     display: none;
     z-index: 100;
 }
