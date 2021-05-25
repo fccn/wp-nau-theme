@@ -116,26 +116,6 @@ function register_footer_widgets() {
 }
 add_action( 'widgets_init', 'register_footer_widgets' );
 
-/*
-function nau_include($atts = array()) { 
- 
-    extract(shortcode_atts(array(
-    'file' => ''
-    ), $atts));
-
-    $inc = get_template_directory() . "/inc/" . $file;
-    
-    ob_start();
-    include $inc;
-    $value = ob_get_contents();
-    ob_end_clean();
-  
-    return $value; 
-}
- 
-add_shortcode('nau_include', 'nau_include');
-*/
-
 function nau_list_child_pages($atts = array()) { 
  
   global $post; 
