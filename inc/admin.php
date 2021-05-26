@@ -41,23 +41,6 @@ function nau_display_environment(){ ?>
 
 <?php }
 
-// Show or hide cookie message
-function nau_display_cookie_message_visible(){ ?>
-
-    <select name="nau_cookie_message_visible">
-      <option value="1" <? if (get_option('nau_cookie_message_visible', 1) == "1") echo "selected"; ?>>Show</option>
-      <option value="0" <? if (get_option('nau_cookie_message_visible', 1) == "0") echo "selected"; ?>>Hide</option>
-    </select>
-
-<?php }
-
-// Cookie message
-function nau_display_cookie_message(){ ?>
-	
-	<textarea name="nau_cookie_message" placeholder="Cookie Message" rows="10" cols="150"><?php echo get_option('nau_cookie_message'); ?></textarea>
-
-<?php }
-
 
 // Courses slug page
 function nau_display_slug_courses_page(){ ?>
@@ -156,8 +139,6 @@ function nau_display_custom_info_fields(){
     add_settings_section("section", "NAU Option", null, "theme-options");
 
     add_settings_field("nau_environment", "Enviroment", "nau_display_environment", "theme-options", "section");
-    add_settings_field("nau_cookie_message_visible", "Cookie Message", "nau_display_cookie_message_visible", "theme-options", "section");
-    add_settings_field("nau_cookie_message", "Cookie Message (HTML)", "nau_display_cookie_message", "theme-options", "section");
     add_settings_field("nau_slug_courses_page", "Slug Courses Page", "nau_display_slug_courses_page", "theme-options", "section");
     add_settings_field("nau_google_gtag", "Google GTAG", "nau_display_google_gtag", "theme-options", "section");
     add_settings_field("nau_facebook_pixel", "Facebook Pixel ID", "nau_display_facebook_pixel", "theme-options", "section");
@@ -173,8 +154,6 @@ function nau_display_custom_info_fields(){
     
 
     register_setting("section", "nau_environment");
-    register_setting("section", "nau_cookie_message_visible");
-    register_setting("section", "nau_cookie_message");
     register_setting("section", "nau_slug_courses_page");
     register_setting("section", "nau_google_gtag");
     register_setting("section", "nau_facebook_pixel");
