@@ -1035,6 +1035,12 @@ function nau_courses_cards($atts = array()) {
 
 add_shortcode('nau_courses_cards', 'nau_courses_cards');
 
+// Add the excerpt on Guttenberg pages
+add_action( 'init', 'nau_course_page_excerpt' );
+function nau_course_page_excerpt() {
+    add_post_type_support( 'page', 'excerpt' );
+}
+
 function nau_homepage_slider($atts = array()) {    
   return nau_template_part( "partials/homepage/homepage", "slider" );
 }

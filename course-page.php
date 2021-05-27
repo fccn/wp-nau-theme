@@ -3,7 +3,6 @@
 Template Name: Course About Page 
 */
 
-
   $nauPageID = "secondary";
   $nauBodyClass = "class='secondary-pages course'";
     
@@ -28,107 +27,42 @@ Template Name: Course About Page
   get_header(); 
 ?>
 
-<!-- starts Homepage grey menu opacity overlay when user click on menu button -->
-<div id="menu-overlay"></div>
-<!-- ends Homepage grey menu opacity overlay when user click on menu button --> 
-
-<style>
-body#secondary div#home-slider {
-    background: url("<?php echo $banner_image; ?>");
-    object-fit: cover;
-}    
-
-div#home-slider.course .slider-mask {
-  filter: hue-rotate(<?php echo $hue?>deg) opacity(<?php echo $opacity?>) grayscale(<?php echo $grayscale?>); 
-  -webkit-filter: hue-rotate(<?php echo $hue?>deg) opacity(<?php echo $opacity?>) grayscale(<?php echo $grayscale?>);
-}
-
-<?php
-if($color):
-?>
-div#home-slider #slider-objects h1 {
-      color: <?php echo $color?>; 
-}
-<?php
-endif;
-?>
-
-</style>
-
 <!-- starts homepage header -->
-<section id="flexible-content-area"> 
-  
-  <!-- starts carrousel of banners -->
-  <div id="home-slider" class="course">
-    <div id="slider-objects">
-      <div class="entity-branding-container"><?php //this was added as a way to control the way objects are rendered in the course header ?>
-        <a href="<?php echo $entity["url"]?>">
-          <img id="secondary-course-logo" src="<?php echo $entity["square_logo"]?>" alt="<?php echo $entity["sigla"]?>" title="<?php echo $entity["name"]?>">
-        </a>
-        <h1><?php echo $course["name"]?></h1>
-      </div>
-      
-      <ul class="course-quick-meta">      
-        <li class="date-status-label"><?php echo $course["date_status_label"]?></li>
-        <!-- <li class="number-of-participants"><?php echo $course["participants"]?> <?php echo nau_trans("Participants")?></li> -->
-        <li class="price"><?php echo $course["price"]?></li> 
-        <li class="enrollment-type"><?php echo $course["invitation_mode_label"]?></li>
-        <li class="course-type"><?php echo $course["pace_mode_label"]?></li>
-      </ul>
-        
-      <!-- starts video and know more icons, rating and certficate status -->
-      <?php
-      /* 
-      * DEPRECATED
-      *
-      <div class="video-know-more-icons">        
-        
-        <? if (! empty($course["youtube"])) { ?>  
-          <!-- starts video icon -->
-          <a class="see-video-icon" onClick='openYoutubeVideoIFrame(this);' data-vars='{ "id" : "<?php echo $course["youtube"]?>" }' title="<?php echo nau_trans("See video")?>">
-            <img class="clear-other-video-icon-style" src="assets/img/see-video-icon-white.svg">
-          </a> 
-        <? } ?>
-        <!-- starts know more icon, rating and certficate status -->         
-        <?php          
-          print (do_shortcode('[edunext_enroll_button course_id="' . $course["course-id"] . '"]'));
-        ?>        
-        <!-- ends video and know more icons --> 
-      </div>
-      */
-      ?>
-    </div>
-    <img src="assets/img/banner-shape-long-blue.svg" class="slider-mask" alt="Banner NAU shape">
+<section id="course-<?php echo get_the_ID(); ?>" class="course-detail">
 
-    <?php if (($course["un-sustentability"] != 0) && false): /* UN Feature Disabled! */ ?> 
-      <a href="/nacoes-unidas/#<?php echo $course["un-sustentability"]?>">
-        <div id="un-icon" class="over-banner sustainability-onu-badge sustainability-onu-color-<?php echo $course["un-sustentability"]?>"> 
-           <img class="un-icons" src="assets/img/sustainability-onu-<?php echo $course["un-sustentability"]?>.svg" alt="">
+    <header class="course-detail-header">
+      <div class="course-detail-meta">
+        <div class="course-detail-entity">
+          <a href="<?php echo $entity["url"]?>">
+            <img src="<?php echo $entity["square_logo"]?>" alt="<?php echo $entity["sigla"]?>" title="<?php echo $entity["name"]?>" width="120" height="120">
+          </a>
         </div>
-      </a>
-    <? endif; ?>
-  </div>
-  <!-- ends carrousel of banners --> 
+
+        <h1><?php echo $course["name"]?></h1>
+        <p class="course-detail-meta-excerpt"><?php echo get_the_excerpt(); ?></p>
+        <p><?php echo $course["participants"]?> <?php echo nau_trans("Participants already enrolled")?> | <?php echo $course["date_status_label"]?></p>
+        <div class="course-detail-enroll">
+          <!-- starts course enrolment button -->
+          <?php nau_enroll_button($course); ?>
+          <!-- ends course enrolment button -->
+          
+        </div>
+      </div>
+
+      <div class="course-detail-entity-meta">
+        <div class="course-detail-image" style="background-image: url(<?php echo $banner_image; ?>);"></div>
+      </div>
+        
+    </header>
 
 </section>
-
-
-<?php 
-/*
-if (current_user_can('edit_posts')) { ?>
-   <div class="nau_management">
-     <? if ($course["confluence_url"] != "") { ?>
-       <a href="<?php echo $course["confluence_url"]?>"><span class="material-icons">info</span></a>
-     <? } ?>
-   </div>
-<? } ?>
-*/?>
    
 <!-- starts homepage body content -->
 <div id="body-content">  
  
   <!-- starts aside course info -->
-  <aside>        
+  <aside>
+    <div class="aside-course-details"> 
     <?php /*<h3><span class="blue-vertical-line">| </span><?php echo $course["name"]?></h3>*/ ?>
     <!---
     <ul>
@@ -153,7 +87,7 @@ if (current_user_can('edit_posts')) { ?>
     <?php if (! empty($course["youtube"])): ?>  
       <div id="course-video-thumbnail">
         <iframe 
-          width="100%" height="220" 
+          width="100%" height="200" 
           loading="lazy"
           title="<?php echo nau_trans("Course Youtube video")?>"
           src="https://www.youtube.com/embed/<?php echo $course["youtube"]?>"
@@ -173,8 +107,8 @@ if (current_user_can('edit_posts')) { ?>
             <?php echo nau_trans("Share")?>
           </a>
         </li>
-        <li class="start-course"><?php nau_enroll_button($course); ?></li>
     </ul>
+    </div>
   </aside>
   <!-- ends aside course info --> 
 
@@ -197,13 +131,9 @@ if (current_user_can('edit_posts')) { ?>
         endwhile;
         
         ?>
-
-    <!-- starts course enrolment button -->
-    <?php          
-      print (do_shortcode('[edunext_enroll_button course_id="' . $course["course-id"] . '"]'));
-    ?>
-    <!-- ends course enrolment button -->
-
+        <div class="course-synopse-actions">
+          <?php nau_enroll_button($course); ?>
+        </div>
   </article>
   <!-- ends article --> 
 
