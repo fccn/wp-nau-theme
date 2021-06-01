@@ -58,7 +58,7 @@ Template Name: Course About Page
 </section>
    
 <!-- starts homepage body content -->
-<div id="body-content">  
+<main id="body-content">  
  
   <!-- starts aside course info -->
   <aside>
@@ -138,7 +138,7 @@ Template Name: Course About Page
   <!-- ends article --> 
 
 
-</div>  
+</main>  
 <!-- ends homepage body content --> 
 
 <?php

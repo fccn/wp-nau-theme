@@ -137,7 +137,7 @@
 
     
 
-<div id="body-content"> 
+<main id="body-content"> 
 
   <article>
 
@@ -190,7 +190,7 @@
     
   </aside>
 
-</div>
+</main>
 <!-- ends homepage body content --> 
 
   

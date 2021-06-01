@@ -54,7 +54,7 @@ body#institution div#home-slider {
 </section>
 
 <!-- starts homepage body content -->
-<div id="body-content">  
+<main id="body-content">  
 
     <!-- starts all institution courses -->
     <article class="entity-description">
@@ -65,7 +65,7 @@ body#institution div#home-slider {
     <? set_query_var("entity", $entity); ?>
     <?php get_template_part("partials/entity", "aside"); ?>
 
-</div>
+</main>
 <div class="entity-courses">
 <?php
         $slug = $entity["slug"];

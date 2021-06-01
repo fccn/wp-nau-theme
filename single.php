@@ -16,7 +16,7 @@
   
   ?>
   <!-- SINGLE.PHP -->
-  <div id="body-content">
+  <main id="body-content">
     
         <?php
         // Start the loop.
@@ -28,7 +28,7 @@
         endwhile;
         ?>
   
-    </div><!-- .content-area -->
+  </main><!-- .content-area -->
   
 <?php
   get_template_part( "partials/global", "footer" );

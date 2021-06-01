@@ -16,13 +16,13 @@
   
   ?>
 <!-- SINGLE.PHP -->
-<div id="body-content">
+<main id="body-content">
     <section class="404-page">
         <h2 style="margin-bottom:2rem;"><?php echo nau_trans( 'The page you are looking for seems to be unavailable.', 'nau-theme')?></h2>
         <p><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo nau_trans( 'Go back to NAU main page', 'nau-theme') ?></a></p>
     </section>
  
-</div>
+</main>
 
 <?php
 get_template_part( "partials/global", "footer" );

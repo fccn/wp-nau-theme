@@ -38,7 +38,7 @@ L351.2,579.3"></path>
   <!-- ends carrousel of banners --> 
 </section>
 
-<div id="body-content">
+<main id="body-content">
   <article>
     <h1 class="search-title">
       <?php echo $wp_query->found_posts; ?> <?php _e( 'Search Results Found For', 'locale' ); ?>: "<?php the_search_query(); ?>"
@@ -55,7 +55,7 @@ L351.2,579.3"></path>
       }
     ?>
   </article>
-</div>
+</main>
 
 
 <?php
