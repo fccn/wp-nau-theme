@@ -28,4 +28,17 @@
 
   $inc = get_template_directory() . "/inc/banner/" . $header . ".php";
   
-  include $inc;
+  //include $inc;
+?>
+
+<section id="page-<?php echo get_the_ID(); ?>" class="page-detail">
+
+    <header class="page-detail-header">
+      <div class="page-detail-meta">
+        <h1><?php echo get_the_title(); ?></h1>
+        <span class="title-border"></span>
+      </div>
+    </header>
+
+</section>
+

@@ -1,12 +1,6 @@
 /* CSS Document */
 body {
   font-family: "Roboto", sans-serif;
-  text-rendering: optimizeLegibility;
-  margin: auto;
-  padding: 0px;
-  font-size: 1rem;
-}
-body.secondary-pages h1 {
   font-size: 1.2rem;
   font-family: "Roboto", sans-serif;
   margin-bottom: 0em;
@@ -2583,12 +2577,6 @@ h1 {
   margin-bottom: 1em;
 }
 
-body.secondary-pages h1 {
-  font-weight: 500;
-  padding-bottom: 20px;
-  font-size: 29px;
-}
-
 #secondary-course-logo,
 .secondary-course-logo {
   margin-top: 45px;
@@ -3205,10 +3193,6 @@ div#filter span.top-label {
   margin-bottom: 1.6em;
   font-size: 0.9em;
 }
-.course h1 {
-  font-size: 1.8em !important;
-}
-
 #body-content .entities-wrap h3 {
   font-size: 1.45em;
 }

@@ -7,7 +7,7 @@
   
   get_header(); 
   
-  // include "inc/simple_header.php";
+  include "inc/simple_header.php";
 ?>
 <main id="body-content"> 
   <article>

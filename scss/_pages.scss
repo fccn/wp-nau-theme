@@ -1,0 +1,52 @@
+.page-detail {
+    background-image: url("../img/waves_courses.svg");
+    background-position: top left;
+    background-repeat: no-repeat;
+    padding: 2rem 0 1rem;
+    background-size: 260px;
+
+    @media screen and (min-width: $breakpoint-medium) and (max-width: $breakpoint-fullhd) {
+        background-size: 80px;
+    }
+
+    @media (max-width: $breakpoint-medium) {
+        background: none;
+    }
+
+    @media (max-width: $breakpoint-medium) {
+        padding: 1rem 0 0 0;
+    }
+
+    &-header {
+        max-width: $breakpoint-fullhd;
+        margin: 0 auto;
+        display: flex;
+        padding: 30px 50px;
+        justify-content: space-between;
+
+        @media screen and (max-width: $breakpoint-small) {
+            flex-direction: column;
+            padding: 0 30px;
+        }
+
+    }
+
+    &-meta {
+
+        h1 {
+            padding-bottom: 0;
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 0;
+            line-height: 1.2;
+        }
+
+        .title-border {
+            display: inline-block;
+            width: 30px;
+            height: 6px;
+            background-color: $naublue;
+        }
+
+    }
+}
