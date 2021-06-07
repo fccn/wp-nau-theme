@@ -4,17 +4,13 @@
   $nauBodyClass = "class='secondary-pages entity'";
   
   $entity = load_entity($post);
-  //[$color, $opacity, $hue, $grayscale, $image, $header] = get_page_fields();  
   
-  $slug = $entity["slug"];
-
-  if ($slug == "") {
-    $slug = $entity["sigla"];
-  }
+  $slug = $entity["slug"] != "" ? $entity["slug"] : $entity["sigla"];
 
   if ($slug != "") {
     $courses = nau_entity_courses($post);
   }
+  
   get_header(); 
 ?>
 
@@ -43,26 +39,18 @@
     <?php get_template_part("partials/entity", "aside"); ?>
 
 </main>
+<?php if (count($courses) > 0): ?>
   <div class="entity-container">
-  <h2><?php echo nau_trans("Available courses"); ?></h2>
-<div class="entity-courses">
-<?php
-
-      if (count($courses) > 0) { 
-      ?>
-            <section id="highlighted-courses" class="course-gallery">   
-              <?php 
-                $courses = $courses;
-                get_template_part( "partials/courses", "cards" ); 
-              ?>
-            </section>
-      <?php 
-      }
-
-      ?>
-    </div>
-<!-- ends homepage body content --> 
+    <h2><?php echo nau_trans("Available courses"); ?></h2>
+      <div class="entity-courses">
+        <section id="highlighted-courses" class="course-gallery">   
+          <?php get_template_part( "partials/courses", "cards" ); 
+          ?>
+        </section>
       </div>
+<!-- ends homepage body content --> 
+    </div>
+<?php endif; ?>
     
 
 <?php
