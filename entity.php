@@ -4,53 +4,30 @@
   $nauBodyClass = "class='secondary-pages entity'";
   
   $entity = load_entity($post);
-  [$color, $opacity, $hue, $grayscale, $image, $header] = get_page_fields();  
+  //[$color, $opacity, $hue, $grayscale, $image, $header] = get_page_fields();  
   
-  if ($color == null) $color = "#000000";
-  if ($opacity == null) $opacity = 0.1;
-  if ($grayscale == null) $grayscale = 0.1;
-  if ($header == null) $header = "nau";
+  $slug = $entity["slug"];
 
+  if ($slug == "") {
+    $slug = $entity["sigla"];
+  }
+
+  if ($slug != "") {
+    $courses = nau_entity_courses($post);
+  }
   get_header(); 
 ?>
 
 <!-- starts homepage header -->
+<section id="page-<?php echo get_the_ID(); ?>" class="page-detail">
 
-<style>
-#home-slider .slider-mask {
-  filter: hue-rotate(<?php echo $hue?>deg) opacity(<?php echo $opacity?>) grayscale(<?php echo $grayscale?>); 
-  -webkit-filter: hue-rotate(<?php echo $hue?>deg) opacity(<?php echo $opacity?>) grayscale(<?php echo $grayscale?>);
-}
-
-
-
-body#institution div#home-slider h1 {
-  color: <?php echo $color?>; 
-}
-
-body#institution div#home-slider {        
-        background: url("<?php echo $image?>") no-repeat !important;
-        background-size: cover !important;
-        background-repeat: no-repeat  !important;
-        background-position: 50% 50% !important;
-    }
-    
-</style>
-
-<section id="flexible-content-area">
-  <div id="home-slider">        
-    <div id="slider-objects">
-    <div class="entity-branding-container">  
-      <img class="secondary-course-logo" src="<?php echo $entity["square_logo"]?>" alt="<?php echo $entity["sigla"]?>" title="<?php echo $entity["name"]?>">
-      <h1><?php echo $entity["name"]?></h1> 
+    <header class="page-detail-header">
+      <div class="page-detail-meta">
+        <h1><?php echo get_the_title(); ?></h1>
+        <span class="title-border"></span>
       </div>
-    </div>
-    <?php if ($header == "nau"): ?>
-    <img src="assets/img/banner-shape-long-blue.svg" class="slider-mask" alt="Banner NAU shape">  
-    <?php else: ?>
-    <img src="assets/img/banner-shape-long-navy-blue.svg" class="slider-mask" alt="Banner NAU shape">  
-    <?php endif; ?>
-  </div>
+    </header>
+
 </section>
 
 <!-- starts homepage body content -->
@@ -66,38 +43,26 @@ body#institution div#home-slider {
     <?php get_template_part("partials/entity", "aside"); ?>
 
 </main>
+  <div class="entity-container">
+  <h2><?php echo nau_trans("Available courses"); ?></h2>
 <div class="entity-courses">
 <?php
-        $slug = $entity["slug"];
 
-        if ($slug == "") {
-          $slug = $entity["sigla"];
-        }
-
-        if ($slug != "") {
-          $course_list_title = nau_trans("Courses|running");
-          $courses = nau_entity_courses($post);
-
-          if (count($courses) > 0) { 
+      if (count($courses) > 0) { 
       ?>
             <section id="highlighted-courses" class="course-gallery">   
-              <h2>
-                <?php $title = explode("|", $course_list_title); ?>
-                <?php echo $title[0]?> <span class="normal-font-weight"><?php echo $title[1]?></span>
-              </h2>
-
               <?php 
                 $courses = $courses;
                 get_template_part( "partials/courses", "cards" ); 
               ?>
             </section>
       <?php 
-          }
-        }
+      }
+
       ?>
     </div>
 <!-- ends homepage body content --> 
-
+      </div>
     
 
 <?php

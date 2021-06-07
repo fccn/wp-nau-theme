@@ -1003,9 +1003,7 @@ function nau_generate_custom_value_meta_html($meta_value, $object) {
           } else {
               if ($action != "") {
                 $li_html .= "<li class='$id course-details right-arrow'><a href='$action' target='_blank'>$label</a></li>";
-              } else {
-                $li_html .= "<li id='$id' class='$id course-details no-capitalize'>$label</li>";
-              }
+              } 
           }
       }
     }

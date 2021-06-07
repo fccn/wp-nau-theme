@@ -372,22 +372,6 @@ div.courses-wrap {
   display: none;
 }
 
-section#highlighted-courses ul {
-  position: relative;
-  min-width: 273px;
-  height: auto;
-  margin: 0 /*20px*/ 13px 17px 0;
-  background: #fffefe 0% 0% no-repeat padding-box;
-  box-shadow: 0px 3px 7px #0000001a;
-  border: 1px solid #99999933;
-  border-radius: 5px 5px 20px 20px;
-  opacity: 1;
-  list-style-type: none;
-}
-
-section#highlighted-courses ul h3 {
-  font-size: 17px;
-}
 
 ul#entities-nau-logos {
   width: 100%;
@@ -408,12 +392,6 @@ ul#entities-nau-logos img {
   max-width: 215px;
 }
 
-section#highlighted-courses {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-right: -10px;
-}
 
 body#secondary section#highlighted-courses h2 {
   display: none;
@@ -449,95 +427,6 @@ section#rolling-courses p {
   padding-bottom: 4px;
   display: inline-block;
 }
-
-section#highlighted-courses ul li:nth-child(3) {
-  width: -webkit-fill-available;
-  width: -moz-available;
-  padding: 0px 20px 0px 20px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: -webkit-fill-available;
-  justify-content: space-between;
-}
-
-body.secondary-pages section#highlighted-courses ul li:nth-child(3) {
-  width: -webkit-fill-available;
-  width: -moz-available;
-  padding: 0px 20px 0px 20px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: -webkit-fill-available;
-  justify-content: space-between;
-  height: 46px;
-  padding-bottom: 50px;
-}
-
-body.secondary-pages section#highlighted-courses ul li:nth-child(3) p {
-  font-size: 12px;
-}
-section#highlighted-courses ul li:nth-child(3) p {
-  font-size: 13px;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  display: flex;
-  display: flex;
-  flex-wrap: wrap;
-  width: 100% !important;
-  justify-content: flex-end;
-}
-
-/*
-div#branding-top-nav {
-  position: relative;
-  top: 0;
-  z-index: 3;
-  margin: 0 auto;
-  width: 100%;
-  height: 37px;
-  padding: 17px 0px 10px 0px;
-  vertical-align: middle;
-  border-bottom: 1px solid grey;
-  background-color: white;
-  display: flex;
-  justify-content: flex-end;
-  -webkit-box-shadow: 0px 10px 7px 0px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0px 10px 7px 0px rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 10px 7px 0px rgba(0, 0, 0, 0.15);
-}
-div#branding-top-nav a:nth-child(2) {
-  display: inline-grid;
-  position: absolute;
-  left: 0;
-}
-#branding-top-nav img#logo {
-  width: 190px;
-  margin-left: 50px;
-}
-#branding-top-nav ul {
-  padding-top: 9px;
-}
-#branding-top-nav li {
-  list-style-type: none;
-  margin-right: 25px;
-  background: transparent url("../img/arrow-dropdown.svg") no-repeat right 2.5px;
-  background-size: 12px;
-  letter-spacing: 0.5px;
-}
-  background-image: none !important;
-  z-index: 2 !important;
-  padding-top: 32px !important;
-  background-color: rgba(255, 255, 255, 1) !important;
-  border-radius: 5px !important;
-  padding: 30px 20px 37px 30px !important;
-  font-weight: 100 !important;
-  -webkit-box-shadow: 0px 21px 18px -5px rgba(0, 0, 0, 0.45);
-  -moz-box-shadow: 0px 21px 18px -5px rgba(0, 0, 0, 0.45);
-  box-shadow: 0px 21px 18px -5px rgba(0, 0, 0, 0.45);
-  display: none;
-}*/
 
 .sub-nav li {
   background-image: none !important;
@@ -1429,40 +1318,38 @@ aside #estimated-effort {
   background: transparent url("../img/estimated-effort.svg") no-repeat 0 14px;
 }
 aside #explore-courses {
-  background-image: url("../img/related-courses.svg"), url("../img/arrow-right.svg");
+  background-image: url("../img/related-courses.svg");
   background-color: transparent, transparent;
-  background-position: 0 17px, center right;
+  background-position: 0 17px ;
   background-repeat: no-repeat, no-repeat;
 }
 
 aside #explore-all-courses {
-  background: url("../img/arrow-right.svg"), url("../img/related-courses.svg");
+  background: url("../img/related-courses.svg");
   background-color: transparent, transparent;
-  background-position: center right, 0 17px;
+  background-position: 0 17px;
   background-repeat: no-repeat, no-repeat;
 }
 aside #contact-email {
-  background: url("../img/icon-email.svg"), url("../img/arrow-right.svg");
+  background: url("../img/icon-email.svg");
   background-color: transparent, transparent;
-  background-position: 0 20.2px, center right;
+  background-position: 0 20.2px ;
   background-repeat: no-repeat, no-repeat;
 }
 aside #contact-website {
-  background: url("../img/icon-website.svg"), url("../img/arrow-right.svg");
+  background: url("../img/icon-website.svg");
   background-color: transparent, transparent;
-  background-position: 0 18px, center right;
+  background-position: 0 18px;
   background-repeat: no-repeat, no-repeat;
 }
 aside #contact-telephone {
-  background: url("../img/arrow-right.svg"), url("../img/icon-telephone.svg");
+  background: url("../img/icon-telephone.svg");
   background-color: transparent, transparent;
-  background-position: center right, 0 18px;
+  background-position: 0 18px;
   background-repeat: no-repeat, no-repeat;
 }
 aside li.course-details a:hover {
-  background-image: url("../img/arrow-right.svg");
   background-color: transparent;
-  background-position: center right;
   background-repeat: no-repeat;
   transition: none;
   color: #074ce1;
