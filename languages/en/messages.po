@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-27 12:05+0100\n"
+"POT-Creation-Date: 2021-06-07 16:59+0100\n"
 "PO-Revision-Date: 2020-04-08 15:10+0100\n"
 "Last-Translator: root <rui.ribeiro@fccn.pt>\n"
 "Language-Team: English\n"
@@ -42,6 +42,11 @@ msgstr ""
 msgid "Available"
 msgstr "Available"
 
+#: entity.php:47
+#, fuzzy
+msgid "Available courses"
+msgstr "Available"
+
 #: partials/homepage/homepage-running-courses.php:27
 msgid "Certificate"
 msgstr "Certificate"
@@ -74,10 +79,6 @@ msgstr ""
 #, fuzzy
 msgid "Courses"
 msgstr "Search Courses"
-
-#: entity.php:78
-msgid "Courses|running"
-msgstr ""
 
 #: inc/galeria_un.php:15
 msgid "Decent work and economic growth"
@@ -219,10 +220,6 @@ msgstr ""
 #: partials/courses-cards.php:21 course-page.php:73
 msgid "Participants"
 msgstr "Participants"
-
-#: course-page.php:43
-msgid "Participants already enrolled"
-msgstr ""
 
 #: inc/galeria_un.php:24
 msgid "Partnerships for the goals"
@@ -417,6 +414,10 @@ msgstr ""
 
 #: inc/galeria_un.php:9
 msgid "Zero hunger"
+msgstr ""
+
+#: course-page.php:43
+msgid "already enrolled"
 msgstr ""
 
 #: search.php:94

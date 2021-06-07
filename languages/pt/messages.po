@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-27 12:05+0100\n"
-"PO-Revision-Date: 2021-05-27 12:06+0100\n"
+"POT-Creation-Date: 2021-06-07 16:59+0100\n"
+"PO-Revision-Date: 2021-06-07 17:01+0100\n"
 "Last-Translator: Sandro Costa <sandro.costa@fccn.pt>\n"
 "Language-Team: Portuguese\n"
 "Language: pt\n"
@@ -42,6 +42,10 @@ msgstr "Todos|cursos"
 msgid "Available"
 msgstr "Disponível"
 
+#: entity.php:47
+msgid "Available courses"
+msgstr "Cursos disponíveis"
+
 #: partials/homepage/homepage-running-courses.php:27
 msgid "Certificate"
 msgstr "Certificado"
@@ -73,10 +77,6 @@ msgstr "Vídeo do curso no Youtube"
 #: search.php:10
 msgid "Courses"
 msgstr "Pesquisar Cursos"
-
-#: entity.php:78
-msgid "Courses|running"
-msgstr "Cursos|disponíveis"
 
 #: inc/galeria_un.php:15
 msgid "Decent work and economic growth"
@@ -161,9 +161,8 @@ msgid "Know more about this entity"
 msgstr "Saber mais sobre esta entidade"
 
 #: inc/cookie-bar.php:21
-#, fuzzy
 msgid "Learn more"
-msgstr "Saber mais"
+msgstr "Saiba mais"
 
 #: partials/courses-cards.php:25
 msgid "Learn more about this course"
@@ -217,10 +216,6 @@ msgstr "Páginas"
 #: partials/courses-cards.php:21 course-page.php:73
 msgid "Participants"
 msgstr "Participantes"
-
-#: course-page.php:43
-msgid "Participants already enrolled"
-msgstr "Participantes já inscritos"
 
 #: inc/galeria_un.php:24
 msgid "Partnerships for the goals"
@@ -378,9 +373,8 @@ msgstr ""
 "navegação. Para mais informações consulte a nossa política de cookies."
 
 #: partials/courses-cards.php:20
-#, fuzzy
 msgid "Unavailable"
-msgstr "Disponível"
+msgstr "Indisponível"
 
 #: partials/homepage/homepage-running-courses.php:36
 #: partials/courses-cards.php:26
@@ -411,6 +405,10 @@ msgstr "O que quer aprender hoje?"
 msgid "Zero hunger"
 msgstr "Erradicar a fome"
 
+#: course-page.php:43
+msgid "already enrolled"
+msgstr "já inscritos"
+
 #: search.php:94
 msgid "for search string:"
 msgstr "para o critério de pesquisa:"
@@ -422,6 +420,9 @@ msgstr "saber mais sobre este curso"
 #: search.php:94
 msgid "results"
 msgstr "resultados"
+
+#~ msgid "Courses|running"
+#~ msgstr "Cursos|disponíveis"
 
 #~ msgid "Accept"
 #~ msgstr "Aceitar"
