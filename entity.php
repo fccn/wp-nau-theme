@@ -15,12 +15,15 @@
 ?>
 
 <!-- starts homepage header -->
-<section id="page-<?php echo get_the_ID(); ?>" class="page-detail">
+<section id="entity-<?php echo get_the_ID(); ?>" class="entity-page-detail">
 
-    <header class="page-detail-header">
-      <div class="page-detail-meta">
+    <header class="entity-page-detail-header">
+      <div class="entity-page-detail-meta">
         <h1><?php echo get_the_title(); ?></h1>
         <span class="title-border"></span>
+      </div>
+      <div class="entity-page-detail-logo">
+            <img src="<?php echo $entity["square_logo"]?>" alt="<?php echo $entity["sigla"]?>" title="<?php echo $entity["name"]?>">
       </div>
     </header>
 
