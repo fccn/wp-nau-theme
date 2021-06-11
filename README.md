@@ -27,6 +27,16 @@ This repository contains the WordPress NAU Theme visible on https://www.nau.edu.
 ## Custom post types
 * Announcements - Homepage slider posts. Can be used to promote new courses or events.
 
+## Custom containers
+Homepage containers are needed to center highlighted courses. Containers have a max width of 1400px, to allow for modern resolution scalling.
+
+```html
+<div class="entity-container">
+<h2>Cursos em destaque</h2>
+[shortcodes go here]
+</div>
+```
+
 ## Build
 Before you install this theme you need to build it, run it like:
 ```code
