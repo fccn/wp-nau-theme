@@ -736,6 +736,8 @@ function load_course($coursePage) {
       $cost = nau_trans("Free");
   }
 
+  $nau_lms_course_enrollments = get_field("nau_lms_course_enrollments", $coursePage->ID);
+  $participants = is_numeric($nau_lms_course_enrollments) ? number_format(intval($nau_lms_course_enrollments), 0, ",", " ") : '';
 
   $course = [
     "id" => $coursePage->ID,
@@ -753,7 +755,7 @@ function load_course($coursePage) {
     "image_card" => $image_card,
     "stars" => get_field("stars", $coursePage->ID), 
     "price" => $cost,    
-    "participants" => get_field("nau_lms_course_enrollments", $coursePage->ID),
+    "participants" => $participants,
     "certificates" => get_field("nau_lms_course_certificates", $coursePage->ID),
     "un-sustentability" => get_field("un-sustentability", $coursePage->ID),
     "small-description" => get_field("nau_lms_course_short_description", $coursePage->ID),
