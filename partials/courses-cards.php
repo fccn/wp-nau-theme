@@ -18,7 +18,10 @@
           <div class="card-content--title"><?php echo $course["name"]?></div>
           <div class="card-content--details">
             <span class="card-content--availability"><?php echo isset($course["date_status_label"])? $course["date_status_label"] : nau_trans("Unavailable"); ?></span>
-            <span class="card-content--enrolled"><?php echo $course["participants"]?> <?php echo nau_trans("Participants")?></span>
+            <span class="card-content--enrolled" 
+              title="<?php echo sprintf(nau_trans("%s enrolled on %s course runs, current with %s enrolled."), $course["participants_all_course_runs"], $course["nau_lms_course_runs_count"], $course["participants_current_course_run"] )?>">
+              <?php echo $course["participants_all_course_runs"]?> <?php echo nau_trans("Participants")?>
+            </span>
           </div>
         </div>
         <div class="card-actions">

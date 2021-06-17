@@ -506,39 +506,39 @@ function html_list_courses($courses, $fields, $extra_fields, $keys) {
     return $html;
 }
 
-function nau_list_courses_extended($atts = array()) { 
-   global $courses;
-   $courses = nau_get_courses( $atts, null, True);
+// function nau_list_courses_extended($atts = array()) { 
+//    global $courses;
+//    $courses = nau_get_courses( $atts, null, True);
 
-   $value = "<h3>Lista de Cursos</h3>";
-   $value .= html_list_courses($courses, 
-     [
-       'ID' => 'ID',
-       'post_title' => 'Título',
-       'post_status' => 'Estado Página',
-       'modified_time' => 'Ultima Atualização',              
-     ], 
-     [
-       'nau-organization' => 'Entidade', 
-       'nau_lms_course_id' => 'STAGE', 
-       'course-id-prod' => 'PROD', 
-       'confluence_url' => "info",
-       'nau_lms_course_enrollments' => 'Participantes', 
-       'nau_lms_course_certificates' => 'Certificates',
-       '_tags' => 'Tags',
-       'update-overview' => 'Auto-update',
-       'nau_lms_course_catalog_visibility' => 'Visibility'       
-     ],
-     [
-       'start_date' => 'Inicio',
-       'end_date' => 'Fim',
-       'date_status_label' => 'status',       
-     ]);
+//    $value = "<h3>Lista de Cursos</h3>";
+//    $value .= html_list_courses($courses, 
+//      [
+//        'ID' => 'ID',
+//        'post_title' => 'Título',
+//        'post_status' => 'Estado Página',
+//        'modified_time' => 'Ultima Atualização',              
+//      ], 
+//      [
+//        'nau-organization' => 'Entidade', 
+//        'nau_lms_course_id' => 'STAGE', 
+//        'course-id-prod' => 'PROD', 
+//        'confluence_url' => "info",
+//        'nau_lms_course_enrollments' => 'Participantes', 
+//        'nau_lms_course_certificates' => 'Certificates',
+//        '_tags' => 'Tags',
+//        'update-overview' => 'Auto-update',
+//        'nau_lms_course_catalog_visibility' => 'Visibility'       
+//      ],
+//      [
+//        'start_date' => 'Inicio',
+//        'end_date' => 'Fim',
+//        'date_status_label' => 'status',       
+//      ]);
 
-   return $value;
-}
+//    return $value;
+// }
 
-add_shortcode('nau_list_courses_extended', 'nau_list_courses_extended');
+// add_shortcode('nau_list_courses_extended', 'nau_list_courses_extended');
 
 
 
@@ -712,6 +712,10 @@ function get_course_name($coursePage) {
   return "";
 }
 
+function nau_number_format($number) {
+  return is_numeric($number) ? number_format(intval($number), 0, ",", " ") : '';
+}
+
 function load_course($coursePage) {
   $course_id = load_course_id( $coursePage );
   $course_id_simple = load_course_id_simple( $coursePage );
@@ -736,9 +740,6 @@ function load_course($coursePage) {
       $cost = nau_trans("Free");
   }
 
-  $nau_lms_course_enrollments = get_field("nau_lms_course_enrollments", $coursePage->ID);
-  $participants = is_numeric($nau_lms_course_enrollments) ? number_format(intval($nau_lms_course_enrollments), 0, ",", " ") : '';
-
   $course = [
     "id" => $coursePage->ID,
     "course-id" => $course_id,
@@ -755,8 +756,14 @@ function load_course($coursePage) {
     "image_card" => $image_card,
     "stars" => get_field("stars", $coursePage->ID), 
     "price" => $cost,    
-    "participants" => $participants,
-    "certificates" => get_field("nau_lms_course_certificates", $coursePage->ID),
+    "nau_lms_course_runs_count" => nau_number_format(nau_number_format(get_field("nau_lms_course_runs_count", $coursePage->ID))),
+    
+    // legacy but used within course side bar on meta
+    "participants" => nau_number_format(get_field("nau_lms_course_enrollments", $coursePage->ID)),
+    
+    "participants_all_course_runs" => nau_number_format(get_field("nau_lms_course_enrollments_all_course_runs", $coursePage->ID)),
+    "participants_current_course_run" => nau_number_format(get_field("nau_lms_course_enrollments", $coursePage->ID)),
+    "certificates" => nau_number_format(get_field("nau_lms_course_certificates", $coursePage->ID)),
     "un-sustentability" => get_field("un-sustentability", $coursePage->ID),
     "small-description" => get_field("nau_lms_course_short_description", $coursePage->ID),
     
@@ -976,7 +983,7 @@ function nau_generate_custom_value_meta_html($meta_value, $object) {
               $v = $object[$matches[1]];
           } else {
               # No data prepared, try post field
-              $v = get_field($matches[1], $post->ID);
+              //$v = get_field($matches[1], $post->ID);
           }
 
           $label = str_replace("{" . $matches[1] . "}", $v, $label);

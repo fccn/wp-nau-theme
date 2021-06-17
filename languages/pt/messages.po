@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-07 16:59+0100\n"
+"POT-Creation-Date: 2021-06-17 14:20+0100\n"
 "PO-Revision-Date: 2021-06-07 17:01+0100\n"
 "Last-Translator: Sandro Costa <sandro.costa@fccn.pt>\n"
 "Language-Team: Portuguese\n"
@@ -18,15 +18,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.3\n"
 
+#: course-page.php:44 partials/courses-cards.php:22
+#, php-format
+msgid "%s enrolled on %s course runs, current with %s enrolled."
+msgstr "%s inscritos em %s edições, a edição atual tem %s inscritos"
+
 #: search.php:15
 msgid "About to Start"
 msgstr "Quase a começar"
 
-#: search.php:17 functions.php:822
+#: functions.php:827 search.php:17
 msgid "About to end"
 msgstr "Quase a acabar"
 
-#: functions.php:814
+#: functions.php:819
 msgid "About to start"
 msgstr "Prestes a começar"
 
@@ -38,7 +43,7 @@ msgstr "Energias renováveis e acessível"
 msgid "All|courses"
 msgstr "Todos|cursos"
 
-#: functions.php:818
+#: functions.php:823
 msgid "Available"
 msgstr "Disponível"
 
@@ -54,7 +59,7 @@ msgstr "Certificado"
 msgid "Clean water and sanitation"
 msgstr "Água potável e saneamento"
 
-#: functions.php:927
+#: functions.php:932
 msgid "Clear Cookie"
 msgstr "Limpar Cookie"
 
@@ -70,7 +75,7 @@ msgstr "Fechar"
 msgid "Content type:"
 msgstr "Tipo de conteúdo:"
 
-#: course-page.php:92
+#: course-page.php:96
 msgid "Course Youtube video"
 msgstr "Vídeo do curso no Youtube"
 
@@ -94,16 +99,16 @@ msgstr "Entidades"
 msgid "Entity Youtube video"
 msgstr "Vídeo da entidade no Youtube"
 
-#: partials/homepage/homepage-running-courses.php:13
 #: partials/homepage/homepage-all-courses-link.php:7
+#: partials/homepage/homepage-running-courses.php:13
 msgid "Explore all courses"
 msgstr "Explore todos os cursos"
 
-#: functions.php:830
+#: functions.php:835
 msgid "Finished"
 msgstr "Terminado"
 
-#: functions.php:736
+#: functions.php:740
 msgid "Free"
 msgstr "Gratuito"
 
@@ -135,7 +140,7 @@ msgstr "Página de entrada do site da NAU"
 msgid "Industry, innovation and infrastructure"
 msgstr "Indústria, inovação e infraestruturas"
 
-#: functions.php:797
+#: functions.php:802
 msgid "Instructor paced"
 msgstr "Com calendário definido"
 
@@ -143,12 +148,12 @@ msgstr "Com calendário definido"
 msgid "Invitation Only"
 msgstr "Apenas por Convite"
 
-#: functions.php:798
+#: functions.php:803
 msgid "Invitation only"
 msgstr "Apenas por convite"
 
-#: partials/homepage/inc/slider/item-entity.php:67
 #: partials/homepage/inc/slider/item-course.php:64
+#: partials/homepage/inc/slider/item-entity.php:67
 msgid "Know +"
 msgstr "Saber +"
 
@@ -164,7 +169,7 @@ msgstr "Saber mais sobre esta entidade"
 msgid "Learn more"
 msgstr "Saiba mais"
 
-#: partials/courses-cards.php:25
+#: partials/courses-cards.php:28
 msgid "Learn more about this course"
 msgstr "Saiba mais sobre o contorno do curso"
 
@@ -200,11 +205,11 @@ msgstr "Erradicar a pobreza"
 msgid "None found"
 msgstr "Nenhum encontrado"
 
-#: search.php:12 inc/global-top-menu.php:15 functions.php:839
+#: functions.php:844 inc/global-top-menu.php:15 search.php:12
 msgid "Open"
 msgstr "Abrir"
 
-#: functions.php:798
+#: functions.php:803
 msgid "Open to everyone"
 msgstr "Aberto a todos"
 
@@ -213,9 +218,9 @@ msgid "Pages"
 msgstr "Páginas"
 
 #. <h3><span class="blue-vertical-line">| </span><?php echo $course["name"]?></h3>
-#: partials/courses-cards.php:21 course-page.php:73
+#: course-page.php:77 partials/courses-cards.php:23
 msgid "Participants"
-msgstr "Participantes"
+msgstr "Inscritos"
 
 #: inc/galeria_un.php:24
 msgid "Partnerships for the goals"
@@ -230,9 +235,14 @@ msgid "Quality education"
 msgstr "Educação de qualidade"
 
 #. start main loop
-#: partials/homepage/inc/slider/item-news.php:83 partials/news-gallery.php:27
-#: index.php:103
+#: index.php:103 partials/homepage/inc/slider/item-news.php:83
+#: partials/news-gallery.php:27
 msgid "Read More"
+msgstr "Ler mais"
+
+#: partials/single-post.php:2
+#, fuzzy
+msgid "Read more about"
 msgstr "Ler mais"
 
 #: inc/galeria_un.php:17
@@ -243,7 +253,7 @@ msgstr "Reduzir as desigualdades"
 msgid "Responsible consuption"
 msgstr "Produção e consumo responsáveis"
 
-#: functions.php:826
+#: functions.php:831
 msgid "Running"
 msgstr "A decorrer"
 
@@ -251,11 +261,11 @@ msgstr "A decorrer"
 msgid "Running Courses"
 msgstr "Cursos Disponíveis"
 
-#: functions.php:810
+#: functions.php:815
 msgid "Scheduled to start"
 msgstr "Brevemente"
 
-#: search.php:172 partials/homepage/homepage-search.php:12
+#: partials/homepage/homepage-search.php:12 search.php:172
 msgid "Search"
 msgstr "Procurar"
 
@@ -267,11 +277,11 @@ msgstr "Procurar ..."
 #. * Homepage main search bar
 #. * shortcode: [nau_homepage_search]
 #.
+#: inc/global-top-menu.php:45 inc/global-top-menu.php:47
+#: partials/homepage/homepage-search.php:10
 #: partials/homepage/inc/slider/item-search.php:37
 #: partials/homepage/inc/slider/item-search.php:38
 #: partials/homepage/inc/slider/item-search.php:39
-#: partials/homepage/homepage-search.php:10 inc/global-top-menu.php:45
-#: inc/global-top-menu.php:47
 msgid "Search Courses"
 msgstr "Pesquisar Cursos"
 
@@ -291,18 +301,18 @@ msgstr "Resultados de pesquisa"
 msgid "Search tool"
 msgstr "Ferramenta de pesquisa"
 
-#: partials/homepage/inc/slider/item-entity.php:62
+#: partials/homepage/homepage-running-courses.php:31
 #: partials/homepage/inc/slider/item-news.php:61
 #: partials/homepage/inc/slider/item-course.php:58
-#: partials/homepage/homepage-running-courses.php:31
+#: partials/homepage/inc/slider/item-entity.php:62
 msgid "See video"
 msgstr "Ver vídeo"
 
-#: functions.php:797
+#: functions.php:802
 msgid "Self paced"
 msgstr "Sem horário definido"
 
-#: partials/entity-aside.php:21 course-page.php:107
+#: course-page.php:111 partials/entity-aside.php:21
 msgid "Share"
 msgstr "Partilhar"
 
@@ -351,7 +361,7 @@ msgstr "Subscrever lista de email (newsletter)"
 msgid "Sustainable cities and communities"
 msgstr "Cidades e comunidades sustentáveis"
 
-#: course-page.php:81
+#: course-page.php:85
 msgid "Tags"
 msgstr "Etiquetas"
 
@@ -363,6 +373,11 @@ msgstr "Tematicas"
 msgid "The page you are looking for seems to be unavailable."
 msgstr "A página que procura não está disponível."
 
+#: blog.php:35
+msgid "There are no available articles in this language."
+msgstr ""
+
+#. include $inc;
 #: inc/cookie-bar.php:19
 msgid ""
 "This website uses cookies to ensure you get the best experience on our "
@@ -377,7 +392,7 @@ msgid "Unavailable"
 msgstr "Indisponível"
 
 #: partials/homepage/homepage-running-courses.php:36
-#: partials/courses-cards.php:26
+#: partials/courses-cards.php:29
 msgid "View course"
 msgstr "Ver curso"
 
@@ -405,7 +420,7 @@ msgstr "O que quer aprender hoje?"
 msgid "Zero hunger"
 msgstr "Erradicar a fome"
 
-#: course-page.php:43
+#: course-page.php:45
 msgid "already enrolled"
 msgstr "já inscritos"
 
@@ -420,58 +435,3 @@ msgstr "saber mais sobre este curso"
 #: search.php:94
 msgid "results"
 msgstr "resultados"
-
-#~ msgid "Courses|running"
-#~ msgstr "Cursos|disponíveis"
-
-#~ msgid "Accept"
-#~ msgstr "Aceitar"
-
-#~ msgid "This site uses cookies (update this message on NAU Theme Options)!"
-#~ msgstr ""
-#~ "Este site usa cookies (atualize esta mensagem nas opções do Theme NAU)!"
-
-#~ msgid "All rights reserved."
-#~ msgstr "Todos os direitos reservados."
-
-#~ msgid "Courses|Highlighted"
-#~ msgstr "Cursos|Destacados"
-
-#~ msgid "Courses|Running"
-#~ msgstr "Cursos|Disponíveis"
-
-#~ msgid "Entity|Founders"
-#~ msgstr "Entidades|Fundadoras"
-
-#~ msgid "Everyone"
-#~ msgstr "Todos"
-
-#~ msgid "Instructor Paced"
-#~ msgstr "Com Calendário Definido"
-
-#~ msgid "Not to translate"
-#~ msgstr "Não traduzir"
-
-#~ msgid "See a video about this entity"
-#~ msgstr "Veja um vídeo sobre esta entidade"
-
-#~ msgid "See a video about this course"
-#~ msgstr "Veja um vídeo sobre este curso"
-
-#~ msgid "Self Paced"
-#~ msgstr "Definido pelo próprio"
-
-#~ msgid "Next"
-#~ msgstr "Próximo"
-
-#~ msgid "Next post:"
-#~ msgstr "Próximo artigo:"
-
-#~ msgid "Previous"
-#~ msgstr "Anterior"
-
-#~ msgid "Previous post:"
-#~ msgstr "Artigo anterior:"
-
-#~ msgid "Start Course"
-#~ msgstr "Iniciar Curso"
