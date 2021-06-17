@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-17 14:55+0100\n"
+"POT-Creation-Date: 2021-06-17 15:22+0100\n"
 "PO-Revision-Date: 2021-06-07 17:01+0100\n"
 "Last-Translator: Sandro Costa <sandro.costa@fccn.pt>\n"
 "Language-Team: Portuguese\n"
@@ -107,6 +107,26 @@ msgstr "Explore todos os cursos"
 #: functions.php:848
 msgid "Finished"
 msgstr "Terminado"
+
+#: partials/global-footer.php:42
+msgid "Follow our Facebook"
+msgstr "Siga-nos no Facebook"
+
+#: partials/global-footer.php:66
+msgid "Follow our Instagram"
+msgstr "Siga-nos no Instagram"
+
+#: partials/global-footer.php:58
+msgid "Follow our Linkedin"
+msgstr "Siga-nos no Linkedin"
+
+#: partials/global-footer.php:50
+msgid "Follow our Twitter"
+msgstr "Siga-nos no Twitter"
+
+#: partials/global-footer.php:74
+msgid "Follow our Wikipedia"
+msgstr "Siga a nossa página da Wikipedia"
 
 #: functions.php:749
 msgid "Free"
@@ -241,7 +261,6 @@ msgid "Read More"
 msgstr "Ler mais"
 
 #: partials/single-post.php:2
-#, fuzzy
 msgid "Read more about"
 msgstr "Ler mais"
 
@@ -315,22 +334,6 @@ msgstr "Sem horário definido"
 #: course-page.php:111 partials/entity-aside.php:21
 msgid "Share"
 msgstr "Partilhar"
-
-#: partials/global-footer.php:41
-msgid "Share on Facebook"
-msgstr "Partilhar no Facebook"
-
-#: partials/global-footer.php:65 partials/global-footer.php:66
-msgid "Share on Instagram"
-msgstr "Partilhar no Instagram"
-
-#: partials/global-footer.php:57 partials/global-footer.php:58
-msgid "Share on Linkedin"
-msgstr "Compartilhar no Linkedin"
-
-#: partials/global-footer.php:49 partials/global-footer.php:50
-msgid "Share on Twitter"
-msgstr "Partilhar no Twitter"
 
 #: search.php:180
 msgid "Show courses that are:"

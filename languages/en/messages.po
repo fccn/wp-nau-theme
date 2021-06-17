@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-17 14:55+0100\n"
+"POT-Creation-Date: 2021-06-17 15:22+0100\n"
 "PO-Revision-Date: 2020-04-08 15:10+0100\n"
 "Last-Translator: root <rui.ribeiro@fccn.pt>\n"
 "Language-Team: English\n"
@@ -108,6 +108,26 @@ msgstr "Explore all courses"
 
 #: functions.php:848
 msgid "Finished"
+msgstr ""
+
+#: partials/global-footer.php:42
+msgid "Follow our Facebook"
+msgstr ""
+
+#: partials/global-footer.php:66
+msgid "Follow our Instagram"
+msgstr ""
+
+#: partials/global-footer.php:58
+msgid "Follow our Linkedin"
+msgstr ""
+
+#: partials/global-footer.php:50
+msgid "Follow our Twitter"
+msgstr ""
+
+#: partials/global-footer.php:74
+msgid "Follow our Wikipedia"
 msgstr ""
 
 #: functions.php:749
@@ -324,22 +344,6 @@ msgstr ""
 #: course-page.php:111 partials/entity-aside.php:21
 msgid "Share"
 msgstr "Share"
-
-#: partials/global-footer.php:41
-msgid "Share on Facebook"
-msgstr "Share on Facebook"
-
-#: partials/global-footer.php:65 partials/global-footer.php:66
-msgid "Share on Instagram"
-msgstr "Share on Instagram"
-
-#: partials/global-footer.php:57 partials/global-footer.php:58
-msgid "Share on Linkedin"
-msgstr "Share on Linkedin"
-
-#: partials/global-footer.php:49 partials/global-footer.php:50
-msgid "Share on Twitter"
-msgstr "Share on Twitter"
 
 #: search.php:180
 msgid "Show courses that are:"
