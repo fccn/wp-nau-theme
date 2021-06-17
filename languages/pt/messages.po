@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-17 14:20+0100\n"
+"POT-Creation-Date: 2021-06-17 14:55+0100\n"
 "PO-Revision-Date: 2021-06-07 17:01+0100\n"
 "Last-Translator: Sandro Costa <sandro.costa@fccn.pt>\n"
 "Language-Team: Portuguese\n"
@@ -27,11 +27,11 @@ msgstr "%s inscritos em %s edições, a edição atual tem %s inscritos"
 msgid "About to Start"
 msgstr "Quase a começar"
 
-#: functions.php:827 search.php:17
+#: functions.php:840 search.php:17
 msgid "About to end"
 msgstr "Quase a acabar"
 
-#: functions.php:819
+#: functions.php:832
 msgid "About to start"
 msgstr "Prestes a começar"
 
@@ -43,7 +43,7 @@ msgstr "Energias renováveis e acessível"
 msgid "All|courses"
 msgstr "Todos|cursos"
 
-#: functions.php:823
+#: functions.php:836
 msgid "Available"
 msgstr "Disponível"
 
@@ -59,7 +59,7 @@ msgstr "Certificado"
 msgid "Clean water and sanitation"
 msgstr "Água potável e saneamento"
 
-#: functions.php:932
+#: functions.php:945
 msgid "Clear Cookie"
 msgstr "Limpar Cookie"
 
@@ -104,11 +104,11 @@ msgstr "Vídeo da entidade no Youtube"
 msgid "Explore all courses"
 msgstr "Explore todos os cursos"
 
-#: functions.php:835
+#: functions.php:848
 msgid "Finished"
 msgstr "Terminado"
 
-#: functions.php:740
+#: functions.php:749
 msgid "Free"
 msgstr "Gratuito"
 
@@ -140,7 +140,7 @@ msgstr "Página de entrada do site da NAU"
 msgid "Industry, innovation and infrastructure"
 msgstr "Indústria, inovação e infraestruturas"
 
-#: functions.php:802
+#: functions.php:815
 msgid "Instructor paced"
 msgstr "Com calendário definido"
 
@@ -148,7 +148,7 @@ msgstr "Com calendário definido"
 msgid "Invitation Only"
 msgstr "Apenas por Convite"
 
-#: functions.php:803
+#: functions.php:816
 msgid "Invitation only"
 msgstr "Apenas por convite"
 
@@ -205,11 +205,11 @@ msgstr "Erradicar a pobreza"
 msgid "None found"
 msgstr "Nenhum encontrado"
 
-#: functions.php:844 inc/global-top-menu.php:15 search.php:12
+#: functions.php:857 inc/global-top-menu.php:15 search.php:12
 msgid "Open"
 msgstr "Abrir"
 
-#: functions.php:803
+#: functions.php:816
 msgid "Open to everyone"
 msgstr "Aberto a todos"
 
@@ -253,7 +253,7 @@ msgstr "Reduzir as desigualdades"
 msgid "Responsible consuption"
 msgstr "Produção e consumo responsáveis"
 
-#: functions.php:831
+#: functions.php:844
 msgid "Running"
 msgstr "A decorrer"
 
@@ -261,7 +261,7 @@ msgstr "A decorrer"
 msgid "Running Courses"
 msgstr "Cursos Disponíveis"
 
-#: functions.php:815
+#: functions.php:828
 msgid "Scheduled to start"
 msgstr "Brevemente"
 
@@ -308,7 +308,7 @@ msgstr "Ferramenta de pesquisa"
 msgid "See video"
 msgstr "Ver vídeo"
 
-#: functions.php:802
+#: functions.php:815
 msgid "Self paced"
 msgstr "Sem horário definido"
 
@@ -428,9 +428,17 @@ msgstr "já inscritos"
 msgid "for search string:"
 msgstr "para o critério de pesquisa:"
 
+#: functions.php:721
+msgid "hours"
+msgstr "horas"
+
 #: partials/homepage/homepage-running-courses.php:36
 msgid "know more about this course"
 msgstr "saber mais sobre este curso"
+
+#: functions.php:721
+msgid "minutes"
+msgstr "minutos"
 
 #: search.php:94
 msgid "results"

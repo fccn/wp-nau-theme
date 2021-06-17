@@ -712,8 +712,17 @@ function get_course_name($coursePage) {
   return "";
 }
 
-function nau_number_format($number) {
+function format_number_for_presentation($number) {
   return is_numeric($number) ? number_format(intval($number), 0, ",", " ") : '';
+}
+
+function format_effort_for_presentation($effort) {
+  if (preg_match("/([0-9]+):([0-9][0-9])/", $effort, $matches)) {
+    return intval($matches[1]) . ' ' . nau_trans('hours') . ( $matches[2] != '00' ? ' ' . $matches[2] . ' ' . nau_trans('minutes') : '' );
+  } else {
+    // effor not in standard format, then print has it is
+    return $effort;
+  }
 }
 
 function load_course($coursePage) {
@@ -751,19 +760,19 @@ function load_course($coursePage) {
     "course_about_url" => get_permalink($coursePage->ID),
     "course_enroll_url" => get_permalink($coursePage->ID),
     "tagline" => get_field('tagline', $coursePage->ID),
-    "effort" => get_field("nau_course_extra_about_effort", $coursePage->ID),
+    "effort" => format_effort_for_presentation(get_field("nau_course_extra_about_effort", $coursePage->ID)),
     "image_full" => $image_full,
     "image_card" => $image_card,
     "stars" => get_field("stars", $coursePage->ID), 
     "price" => $cost,    
-    "nau_lms_course_runs_count" => nau_number_format(nau_number_format(get_field("nau_lms_course_runs_count", $coursePage->ID))),
+    "nau_lms_course_runs_count" => format_number_for_presentation(get_field("nau_lms_course_runs_count", $coursePage->ID)),
     
     // legacy but used within course side bar on meta
-    "participants" => nau_number_format(get_field("nau_lms_course_enrollments", $coursePage->ID)),
+    "participants" => format_number_for_presentation(get_field("nau_lms_course_enrollments", $coursePage->ID)),
     
-    "participants_all_course_runs" => nau_number_format(get_field("nau_lms_course_enrollments_all_course_runs", $coursePage->ID)),
-    "participants_current_course_run" => nau_number_format(get_field("nau_lms_course_enrollments", $coursePage->ID)),
-    "certificates" => nau_number_format(get_field("nau_lms_course_certificates", $coursePage->ID)),
+    "participants_all_course_runs" => format_number_for_presentation(get_field("nau_lms_course_enrollments_all_course_runs", $coursePage->ID)),
+    "participants_current_course_run" => format_number_for_presentation(get_field("nau_lms_course_enrollments", $coursePage->ID)),
+    "certificates" => format_number_for_presentation(get_field("nau_lms_course_certificates", $coursePage->ID)),
     "un-sustentability" => get_field("un-sustentability", $coursePage->ID),
     "small-description" => get_field("nau_lms_course_short_description", $coursePage->ID),
     

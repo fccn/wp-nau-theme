@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-17 14:20+0100\n"
+"POT-Creation-Date: 2021-06-17 14:55+0100\n"
 "PO-Revision-Date: 2020-04-08 15:10+0100\n"
 "Last-Translator: root <rui.ribeiro@fccn.pt>\n"
 "Language-Team: English\n"
@@ -27,11 +27,11 @@ msgstr ""
 msgid "About to Start"
 msgstr ""
 
-#: functions.php:827 search.php:17
+#: functions.php:840 search.php:17
 msgid "About to end"
 msgstr ""
 
-#: functions.php:819
+#: functions.php:832
 msgid "About to start"
 msgstr ""
 
@@ -43,7 +43,7 @@ msgstr ""
 msgid "All|courses"
 msgstr ""
 
-#: functions.php:823
+#: functions.php:836
 msgid "Available"
 msgstr "Available"
 
@@ -60,7 +60,7 @@ msgstr "Certificate"
 msgid "Clean water and sanitation"
 msgstr ""
 
-#: functions.php:932
+#: functions.php:945
 msgid "Clear Cookie"
 msgstr ""
 
@@ -106,11 +106,11 @@ msgstr ""
 msgid "Explore all courses"
 msgstr "Explore all courses"
 
-#: functions.php:835
+#: functions.php:848
 msgid "Finished"
 msgstr ""
 
-#: functions.php:740
+#: functions.php:749
 msgid "Free"
 msgstr ""
 
@@ -142,7 +142,7 @@ msgstr ""
 msgid "Industry, innovation and infrastructure"
 msgstr ""
 
-#: functions.php:802
+#: functions.php:815
 msgid "Instructor paced"
 msgstr ""
 
@@ -150,7 +150,7 @@ msgstr ""
 msgid "Invitation Only"
 msgstr ""
 
-#: functions.php:803
+#: functions.php:816
 msgid "Invitation only"
 msgstr ""
 
@@ -209,11 +209,11 @@ msgstr ""
 msgid "None found"
 msgstr "None found"
 
-#: functions.php:844 inc/global-top-menu.php:15 search.php:12
+#: functions.php:857 inc/global-top-menu.php:15 search.php:12
 msgid "Open"
 msgstr ""
 
-#: functions.php:803
+#: functions.php:816
 msgid "Open to everyone"
 msgstr ""
 
@@ -257,7 +257,7 @@ msgstr ""
 msgid "Responsible consuption"
 msgstr ""
 
-#: functions.php:831
+#: functions.php:844
 #, fuzzy
 msgid "Running"
 msgstr "Running Courses"
@@ -266,7 +266,7 @@ msgstr "Running Courses"
 msgid "Running Courses"
 msgstr "Running Courses"
 
-#: functions.php:815
+#: functions.php:828
 msgid "Scheduled to start"
 msgstr ""
 
@@ -317,7 +317,7 @@ msgstr "Search Courses"
 msgid "See video"
 msgstr "See video"
 
-#: functions.php:802
+#: functions.php:815
 msgid "Self paced"
 msgstr ""
 
@@ -439,9 +439,18 @@ msgstr ""
 msgid "for search string:"
 msgstr ""
 
+#: functions.php:721
+#, fuzzy
+msgid "hours"
+msgstr "Search Courses"
+
 #: partials/homepage/homepage-running-courses.php:36
 msgid "know more about this course"
 msgstr "know more about this course"
+
+#: functions.php:721
+msgid "minutes"
+msgstr ""
 
 #: search.php:94
 msgid "results"
