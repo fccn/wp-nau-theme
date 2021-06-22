@@ -166,4 +166,9 @@
             }
         }
     }
+
+    img {
+        // prevent images to be too wide on mobile
+        max-width: 100%;
+    }
 }
