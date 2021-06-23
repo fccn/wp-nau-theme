@@ -374,23 +374,23 @@ div.courses-wrap {
 
 ul#entities-nau-logos {
   width: 100%;
-  padding: 2%;
+  padding: 2.75rem 1.2rem;
   justify-content: center;
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   height: auto;
   background: #fffefe 0% 0% no-repeat padding-box;
-  box-shadow: 0px 3px 7px #0000001a;
+  box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.1);
   border: 1px solid #99999933;
-  border-radius: 5px 5px 20px 20px;
-  opacity: 1;
-}
-ul#entities-nau-logos img {
-  width: 15%;
-  max-width: 215px;
-}
+  border-radius: 10px;
+  justify-content: space-between;
+  list-style: none;
 
+  @media screen and (max-width: $breakpoint-small) {
+    flex-direction: column;
+  }
+}
 
 body#secondary section#highlighted-courses h2 {
   display: none;
@@ -2512,7 +2512,11 @@ aside .share-and-start-course ul li {
 ul#entities-nau-logos img {
   max-height: 40px;
   width: auto;
-  padding: 20px 0;
+
+  @media screen and (max-width: $breakpoint-small) {
+    padding: 1rem 0;
+    max-height: 65px;
+  }
 }
 
 ul#entities-nau-logos li {
@@ -3099,12 +3103,6 @@ div.nau_disabled {
 
 div.action-know-more {
   left: 100px;
-}
-ul#entities-nau-logos {
-  border: 0;
-  box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.1);
-  border-radius: 0.5em;
-  list-style-type: none;
 }
 
 h2:before {
