@@ -15,11 +15,13 @@ Template Name: Course About Page
   }
   
   [$color, $opacity, $hue, $grayscale, $url, $header] = get_page_fields();  
-  
-  $banner_image = $course["image"] ?? NULL;
-  if ($url != "") {
-    $banner_image = $url;   
+
+  $banner_image = $course["image_full"] ?? NULL;
+
+  if ($banner_image == "" || $banner_image == NULL) {
+    $banner_image = get_the_post_thumbnail_url( get_the_ID(), 'large' );   
   }
+  
   
   $entity = $course["entity"];
   //$link = $item["course"];
