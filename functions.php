@@ -1001,11 +1001,15 @@ function nau_generate_custom_value_meta_html($meta_value, $object) {
       $target = $target ? : '_blank';
       
       if (substr($id, 0, 10) == "materials-") {
-          $icon = substr($id, 10);                
-          if ($action == "")
-            $li_html .= "<li id='$id' class='course-details x-material-icons'><i class='material-icons aside-icons'>$icon</i><span>$label</span></li>";
-          else
-            $li_html .= "<li id='$id' class='course-details material-right-arrow x-material-icons'><a href='$action' target='$target'><i class='material-icons aside-icons'>$icon</i><span>$label</span></a></li>";
+          $icon = substr($id, 10);     
+          // hack to remove the number of enrollments per edition without changing the synchronizer
+          if ($icon != "face"){
+            if ($action == "")
+              $li_html .= "<li id='$id' class='course-details x-material-icons'><i class='material-icons aside-icons'>$icon</i><span>$label</span></li>";
+            else
+              $li_html .= "<li id='$id' class='course-details material-right-arrow x-material-icons'><a href='$action' target='$target'><i class='material-icons aside-icons'>$icon</i><span>$label</span></a></li>";
+          }
+          
       } else {
           if ($id == "contact-telephone") {
               if ($action == "") $action = $label;

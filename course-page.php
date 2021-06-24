@@ -43,7 +43,7 @@ Template Name: Course About Page
         <h1><?php echo $course["name"]?></h1>
         <p class="course-detail-meta-excerpt"><?php echo get_the_excerpt(); ?></p>
         <p>
-          <span title="<?php echo sprintf(nau_trans("%s enrolled on %s course runs, current with %s enrolled."), $course["participants_all_course_runs"], $course["nau_lms_course_runs_count"], $course["participants_current_course_run"] )?>">
+          <span>
             <?php echo $course["participants_all_course_runs"]?> <?php echo nau_trans("already enrolled")?>
           </span> | <?php echo $course["date_status_label"]?>
         </p>
