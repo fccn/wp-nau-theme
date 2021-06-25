@@ -1165,6 +1165,7 @@ body#homepage section#rolling-courses h3 {
 }
 
 aside {
+  max-width: 340px;
   min-width: 340px;
   margin-left: 40px;
   order: 1;
@@ -1292,9 +1293,6 @@ aside li.number-of-participants {
 aside .course-status span,
 .course-status span {
   font-weight: bold;
-}
-aside .aside-course-details {
-  float: right;
 }
 aside li.course-status {
   float: none;
