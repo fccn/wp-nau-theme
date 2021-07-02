@@ -169,9 +169,6 @@ body#institution #body-content article ul {
   font-weight: 400;
   font-size: inherit;
 }
-#body-content article ul li ul {
-  padding: 0px;
-}
 
 #body-content article small {
   text-align: left;
@@ -322,17 +319,6 @@ body.privados #highlighted-courses {
 #body-content section ul,
 div#home-content section ul {
   position: relative;
-}
-
-#body-content section ul {
-  position: relative;
-  margin-right: /*20px*/ 12px;
-  min-width: 273px;
-  height: auto;
-  background: none;
-  box-shadow: none;
-  border: none;
-  opacity: 1;
 }
 
 div.courses-wrap {
@@ -1798,19 +1784,6 @@ body#secondary article .highlighted-courses ul {
   opacity: 1;
 }
 
-body#institution section#entity-description .description ul,
-body#secondary #body-content ul {
-  position: relative;
-  margin-right: 12px;
-  width: 100%;
-  min-width: none;
-  height: auto;
-  background: none;
-  box-shadow: none;
-  border: none;
-  border-radius: none;
-  opacity: 1;
-}
 
 body#institution section#entity-description .description ul li {
   float: none !important;

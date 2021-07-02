@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-17 15:22+0100\n"
-"PO-Revision-Date: 2021-06-07 17:01+0100\n"
+"POT-Creation-Date: 2021-07-02 11:18+0100\n"
+"PO-Revision-Date: 2021-07-02 11:20+0100\n"
 "Last-Translator: Sandro Costa <sandro.costa@fccn.pt>\n"
 "Language-Team: Portuguese\n"
 "Language: pt\n"
@@ -18,16 +18,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.3\n"
 
-#: course-page.php:44 partials/courses-cards.php:22
+#: partials/courses-cards.php:22
 #, php-format
 msgid "%s enrolled on %s course runs, current with %s enrolled."
-msgstr "%s inscritos em %s edições, a edição atual tem %s inscritos"
+msgstr "%s inscritos em %s edições, a edição atual tem %s inscritos."
 
 #: search.php:15
 msgid "About to Start"
 msgstr "Quase a começar"
 
-#: functions.php:840 search.php:17
+#: search.php:17 functions.php:840
 msgid "About to end"
 msgstr "Quase a acabar"
 
@@ -75,7 +75,7 @@ msgstr "Fechar"
 msgid "Content type:"
 msgstr "Tipo de conteúdo:"
 
-#: course-page.php:96
+#: course-page.php:98
 msgid "Course Youtube video"
 msgstr "Vídeo do curso no Youtube"
 
@@ -99,8 +99,8 @@ msgstr "Entidades"
 msgid "Entity Youtube video"
 msgstr "Vídeo da entidade no Youtube"
 
-#: partials/homepage/homepage-all-courses-link.php:7
 #: partials/homepage/homepage-running-courses.php:13
+#: partials/homepage/homepage-all-courses-link.php:7
 msgid "Explore all courses"
 msgstr "Explore todos os cursos"
 
@@ -172,8 +172,8 @@ msgstr "Apenas por Convite"
 msgid "Invitation only"
 msgstr "Apenas por convite"
 
-#: partials/homepage/inc/slider/item-course.php:64
 #: partials/homepage/inc/slider/item-entity.php:67
+#: partials/homepage/inc/slider/item-course.php:64
 msgid "Know +"
 msgstr "Saber +"
 
@@ -213,6 +213,10 @@ msgstr "Preciso de Ajuda"
 msgid "News"
 msgstr "Notícias"
 
+#: blog.php:48
+msgid "Next"
+msgstr "Próxima"
+
 #: inc/galeria_un.php:7
 msgid "No goal"
 msgstr "Sem objetivo"
@@ -225,7 +229,7 @@ msgstr "Erradicar a pobreza"
 msgid "None found"
 msgstr "Nenhum encontrado"
 
-#: functions.php:857 inc/global-top-menu.php:15 search.php:12
+#: search.php:12 inc/global-top-menu.php:15 functions.php:857
 msgid "Open"
 msgstr "Abrir"
 
@@ -238,7 +242,7 @@ msgid "Pages"
 msgstr "Páginas"
 
 #. <h3><span class="blue-vertical-line">| </span><?php echo $course["name"]?></h3>
-#: course-page.php:77 partials/courses-cards.php:23
+#: partials/courses-cards.php:23 course-page.php:79
 msgid "Participants"
 msgstr "Inscritos"
 
@@ -250,16 +254,21 @@ msgstr "Parcerias e meios de implementação dos objetivos"
 msgid "Peace, justice and strong institutions"
 msgstr "Paz, justiça e instituições eficazes"
 
+#: blog.php:47
+msgid "Previous"
+msgstr "Anterior"
+
 #: inc/galeria_un.php:11
 msgid "Quality education"
 msgstr "Educação de qualidade"
 
 #. start main loop
-#: index.php:103 partials/homepage/inc/slider/item-news.php:83
-#: partials/news-gallery.php:27
+#: partials/homepage/inc/slider/item-news.php:83 partials/news-gallery.php:27
+#: index.php:103
 msgid "Read More"
 msgstr "Ler mais"
 
+#. There are Itens!
 #: partials/single-post.php:2
 msgid "Read more about"
 msgstr "Ler mais"
@@ -284,7 +293,7 @@ msgstr "Cursos Disponíveis"
 msgid "Scheduled to start"
 msgstr "Brevemente"
 
-#: partials/homepage/homepage-search.php:12 search.php:172
+#: search.php:172 partials/homepage/homepage-search.php:12
 msgid "Search"
 msgstr "Procurar"
 
@@ -296,11 +305,11 @@ msgstr "Procurar ..."
 #. * Homepage main search bar
 #. * shortcode: [nau_homepage_search]
 #.
-#: inc/global-top-menu.php:45 inc/global-top-menu.php:47
-#: partials/homepage/homepage-search.php:10
 #: partials/homepage/inc/slider/item-search.php:37
 #: partials/homepage/inc/slider/item-search.php:38
 #: partials/homepage/inc/slider/item-search.php:39
+#: partials/homepage/homepage-search.php:10 inc/global-top-menu.php:45
+#: inc/global-top-menu.php:47
 msgid "Search Courses"
 msgstr "Pesquisar Cursos"
 
@@ -320,10 +329,10 @@ msgstr "Resultados de pesquisa"
 msgid "Search tool"
 msgstr "Ferramenta de pesquisa"
 
-#: partials/homepage/homepage-running-courses.php:31
+#: partials/homepage/inc/slider/item-entity.php:62
 #: partials/homepage/inc/slider/item-news.php:61
 #: partials/homepage/inc/slider/item-course.php:58
-#: partials/homepage/inc/slider/item-entity.php:62
+#: partials/homepage/homepage-running-courses.php:31
 msgid "See video"
 msgstr "Ver vídeo"
 
@@ -331,7 +340,7 @@ msgstr "Ver vídeo"
 msgid "Self paced"
 msgstr "Sem horário definido"
 
-#: course-page.php:111 partials/entity-aside.php:21
+#: partials/entity-aside.php:21 course-page.php:113
 msgid "Share"
 msgstr "Partilhar"
 
@@ -364,7 +373,7 @@ msgstr "Subscrever lista de email (newsletter)"
 msgid "Sustainable cities and communities"
 msgstr "Cidades e comunidades sustentáveis"
 
-#: course-page.php:85
+#: course-page.php:87
 msgid "Tags"
 msgstr "Etiquetas"
 
@@ -376,11 +385,10 @@ msgstr "Tematicas"
 msgid "The page you are looking for seems to be unavailable."
 msgstr "A página que procura não está disponível."
 
-#: blog.php:35
+#: blog.php:55
 msgid "There are no available articles in this language."
 msgstr ""
 
-#. include $inc;
 #: inc/cookie-bar.php:19
 msgid ""
 "This website uses cookies to ensure you get the best experience on our "
@@ -423,7 +431,7 @@ msgstr "O que quer aprender hoje?"
 msgid "Zero hunger"
 msgstr "Erradicar a fome"
 
-#: course-page.php:45
+#: course-page.php:47
 msgid "already enrolled"
 msgstr "já inscritos"
 
