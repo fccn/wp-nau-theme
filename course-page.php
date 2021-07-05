@@ -39,6 +39,14 @@ Template Name: Course About Page
             <img src="<?php echo $entity["square_logo"]?>" alt="<?php echo $entity["sigla"]?>" title="<?php echo $entity["name"]?>" width="120" height="120">
           </a>
         </div>
+        <?php if(has_term( '', 'knowledge_area' )): ?>
+        <div class="course-detail-breadcrumbs">
+          <ul>
+            <li><a href="<?php echo get_parent_link(get_the_ID()); ?>"><?php echo nau_trans('Courses'); ?></a></li>
+            <li><?php echo get_the_term_list( get_the_ID(), 'knowledge_area' ); ?></li>
+          </ul>
+        </div>
+        <?php endif; ?>
 
         <h1><?php echo $course["name"]?></h1>
         <p class="course-detail-meta-excerpt"><?php echo get_the_excerpt(); ?></p>
@@ -125,7 +133,10 @@ Template Name: Course About Page
         // Start the loop.
         while ( have_posts() ) : the_post();
  
-            // Include the page content template.            
+            // Include the page content template.
+            // var_dump(get_post(get_post_ancestors( get_the_ID() )[0]));
+          
+
             echo do_shortcode(get_post_field('post_content'));
  
             // If comments are open or we have at least one comment, load up the comment template.

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-02 11:18+0100\n"
-"PO-Revision-Date: 2021-07-02 11:20+0100\n"
+"POT-Creation-Date: 2021-07-05 23:44+0100\n"
+"PO-Revision-Date: 2021-07-05 23:46+0100\n"
 "Last-Translator: Sandro Costa <sandro.costa@fccn.pt>\n"
 "Language-Team: Portuguese\n"
 "Language: pt\n"
@@ -27,23 +27,31 @@ msgstr "%s inscritos em %s edições, a edição atual tem %s inscritos."
 msgid "About to Start"
 msgstr "Quase a começar"
 
-#: search.php:17 functions.php:840
+#: search.php:17 functions.php:839
 msgid "About to end"
 msgstr "Quase a acabar"
 
-#: functions.php:832
+#: functions.php:831
 msgid "About to start"
 msgstr "Prestes a começar"
+
+#: inc/knowledge-areas.php:15
+msgid "Add New Knowledge Area"
+msgstr "Adiciona nova Área de Conhecimento"
 
 #: inc/galeria_un.php:14
 msgid "Affordable and clean energy"
 msgstr "Energias renováveis e acessível"
 
+#: inc/knowledge-areas.php:10
+msgid "All Knowledge Areas"
+msgstr "Todas as Áreas de Conhecimento"
+
 #: course_list.php:12
 msgid "All|courses"
 msgstr "Todos|cursos"
 
-#: functions.php:836
+#: functions.php:835
 msgid "Available"
 msgstr "Disponível"
 
@@ -59,7 +67,7 @@ msgstr "Certificado"
 msgid "Clean water and sanitation"
 msgstr "Água potável e saneamento"
 
-#: functions.php:945
+#: functions.php:944
 msgid "Clear Cookie"
 msgstr "Limpar Cookie"
 
@@ -75,17 +83,25 @@ msgstr "Fechar"
 msgid "Content type:"
 msgstr "Tipo de conteúdo:"
 
-#: course-page.php:98
+#: course-page.php:106
 msgid "Course Youtube video"
 msgstr "Vídeo do curso no Youtube"
 
-#: search.php:10
+#: search.php:10 course-page.php:45
 msgid "Courses"
-msgstr "Pesquisar Cursos"
+msgstr "Cursos"
+
+#: inc/simple_header.php:3
+msgid "Courses on"
+msgstr "Cursos de"
 
 #: inc/galeria_un.php:15
 msgid "Decent work and economic growth"
 msgstr "Trabalho digno e crescimento económico"
+
+#: inc/knowledge-areas.php:13
+msgid "Edit Knowledge Area"
+msgstr "Editar Área de Conhecimento"
 
 #: search.php:16
 msgid "Ended"
@@ -104,7 +120,7 @@ msgstr "Vídeo da entidade no Youtube"
 msgid "Explore all courses"
 msgstr "Explore todos os cursos"
 
-#: functions.php:848
+#: functions.php:847
 msgid "Finished"
 msgstr "Terminado"
 
@@ -128,7 +144,7 @@ msgstr "Siga-nos no Twitter"
 msgid "Follow our Wikipedia"
 msgstr "Siga a nossa página da Wikipedia"
 
-#: functions.php:749
+#: functions.php:748
 msgid "Free"
 msgstr "Gratuito"
 
@@ -160,7 +176,7 @@ msgstr "Página de entrada do site da NAU"
 msgid "Industry, innovation and infrastructure"
 msgstr "Indústria, inovação e infraestruturas"
 
-#: functions.php:815
+#: functions.php:814
 msgid "Instructor paced"
 msgstr "Com calendário definido"
 
@@ -168,7 +184,7 @@ msgstr "Com calendário definido"
 msgid "Invitation Only"
 msgstr "Apenas por Convite"
 
-#: functions.php:816
+#: functions.php:815
 msgid "Invitation only"
 msgstr "Apenas por convite"
 
@@ -184,6 +200,11 @@ msgstr "Saiba mais"
 #: partials/homepage/homepage-running-courses.php:25
 msgid "Know more about this entity"
 msgstr "Saber mais sobre esta entidade"
+
+#: inc/knowledge-areas.php:7 inc/knowledge-areas.php:8
+#: inc/knowledge-areas.php:17
+msgid "Knowledge Area"
+msgstr "Áreas de Conhecimento"
 
 #: inc/cookie-bar.php:21
 msgid "Learn more"
@@ -209,6 +230,10 @@ msgstr "Proteger a vida terrestre"
 msgid "Need Help"
 msgstr "Preciso de Ajuda"
 
+#: inc/knowledge-areas.php:16
+msgid "New Knowledge Area Name"
+msgstr "Novo nome de Áreas de Conhecimento"
+
 #: search.php:8
 msgid "News"
 msgstr "Notícias"
@@ -225,15 +250,15 @@ msgstr "Sem objetivo"
 msgid "No poverty"
 msgstr "Erradicar a pobreza"
 
-#: functions.php:361
+#: functions.php:375
 msgid "None found"
 msgstr "Nenhum encontrado"
 
-#: search.php:12 inc/global-top-menu.php:15 functions.php:857
+#: search.php:12 inc/global-top-menu.php:15 functions.php:856
 msgid "Open"
 msgstr "Abrir"
 
-#: functions.php:816
+#: functions.php:815
 msgid "Open to everyone"
 msgstr "Aberto a todos"
 
@@ -241,8 +266,16 @@ msgstr "Aberto a todos"
 msgid "Pages"
 msgstr "Páginas"
 
+#: inc/knowledge-areas.php:11
+msgid "Parent Knowledge Area"
+msgstr "Área de Conhecimento Pai"
+
+#: inc/knowledge-areas.php:12
+msgid "Parent Knowledge Area:"
+msgstr "Área de Conhecimento Pai:"
+
 #. <h3><span class="blue-vertical-line">| </span><?php echo $course["name"]?></h3>
-#: partials/courses-cards.php:23 course-page.php:79
+#: partials/courses-cards.php:23 course-page.php:87
 msgid "Participants"
 msgstr "Inscritos"
 
@@ -281,7 +314,7 @@ msgstr "Reduzir as desigualdades"
 msgid "Responsible consuption"
 msgstr "Produção e consumo responsáveis"
 
-#: functions.php:844
+#: functions.php:843
 msgid "Running"
 msgstr "A decorrer"
 
@@ -289,7 +322,7 @@ msgstr "A decorrer"
 msgid "Running Courses"
 msgstr "Cursos Disponíveis"
 
-#: functions.php:828
+#: functions.php:827
 msgid "Scheduled to start"
 msgstr "Brevemente"
 
@@ -312,6 +345,10 @@ msgstr "Procurar ..."
 #: inc/global-top-menu.php:47
 msgid "Search Courses"
 msgstr "Pesquisar Cursos"
+
+#: inc/knowledge-areas.php:9
+msgid "Search Knowledge Areas"
+msgstr "Pesquisar Áreas de Conhecimento"
 
 #: inc/global-top-menu.php:46
 msgid "Search courses..."
@@ -336,11 +373,11 @@ msgstr "Ferramenta de pesquisa"
 msgid "See video"
 msgstr "Ver vídeo"
 
-#: functions.php:815
+#: functions.php:814
 msgid "Self paced"
 msgstr "Sem horário definido"
 
-#: partials/entity-aside.php:21 course-page.php:113
+#: partials/entity-aside.php:21 course-page.php:121
 msgid "Share"
 msgstr "Partilhar"
 
@@ -373,7 +410,7 @@ msgstr "Subscrever lista de email (newsletter)"
 msgid "Sustainable cities and communities"
 msgstr "Cidades e comunidades sustentáveis"
 
-#: course-page.php:87
+#: course-page.php:95
 msgid "Tags"
 msgstr "Etiquetas"
 
@@ -401,6 +438,10 @@ msgstr ""
 #: partials/courses-cards.php:20
 msgid "Unavailable"
 msgstr "Indisponível"
+
+#: inc/knowledge-areas.php:14
+msgid "Update Knowledge Area"
+msgstr "Atualizar Área de Conhecimento"
 
 #: partials/homepage/homepage-running-courses.php:36
 #: partials/courses-cards.php:29
@@ -431,7 +472,7 @@ msgstr "O que quer aprender hoje?"
 msgid "Zero hunger"
 msgstr "Erradicar a fome"
 
-#: course-page.php:47
+#: course-page.php:55
 msgid "already enrolled"
 msgstr "já inscritos"
 
@@ -439,7 +480,7 @@ msgstr "já inscritos"
 msgid "for search string:"
 msgstr "para o critério de pesquisa:"
 
-#: functions.php:721
+#: functions.php:720
 msgid "hours"
 msgstr "horas"
 
@@ -447,7 +488,7 @@ msgstr "horas"
 msgid "know more about this course"
 msgstr "saber mais sobre este curso"
 
-#: functions.php:721
+#: functions.php:720
 msgid "minutes"
 msgstr "minutos"
 

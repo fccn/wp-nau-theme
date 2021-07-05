@@ -5,6 +5,8 @@ $stage_mode = (get_option('nau_environment') == "stage");
 require_once('inc/acf-conf.php');
 require_once('inc/admin.php');
 require_once('inc/posttypes.php');
+require_once('inc/knowledge-areas.php');
+require_once('inc/utils.php');
 
 remove_action('template_redirect', 'redirect_canonical');
 
@@ -38,6 +40,8 @@ function version_id() {
     return WP_NAU_THEME_VERSION;
   return '1.0.0';
 }
+
+
 
 function nau_theme_enqueue_styles() {
     wp_enqueue_style('reset-style', get_template_directory_uri() . '/assets/css/reset.css', array(), version_id(), 'all');
@@ -199,18 +203,18 @@ function nau_entity_courses($entityPage) {
     $nau_organization_field_query = $entityPageID;
   }
   nau_log($nau_organization_field_query);
-  return nau_get_courses( array(), array('nau-organization'=>$nau_organization_field_query), array(), "course-id-prod");
+  return nau_get_courses( array(), array('nau-organization'=>$nau_organization_field_query), "course-id-prod");
 }
 
 function nau_get_entities($atts = array(), $fields = array()) {
-  return nau_get_posts( nau_get_option("nau_category_slug_entity", "entidade,entity"), $atts, $fields, "nau-id");
+  return nau_get_posts( nau_get_option("nau_category_slug_entity", "entidade,entity"), $atts, $fields, "nau-id", NULL);
 }
 
-function nau_get_courses($atts = array(), $fields = array(), $showall = false) {
+function nau_get_courses($atts = array(), $fields = array(), $showall = false, $taxonomy = NULL) {
   if (!$showall) {
     $fields["nau_lms_course_catalog_visibility"] = 'both';
   }
-  return nau_get_posts( nau_get_option("nau_category_slug_course", "curso,course"), $atts, $fields, "course-id-prod");
+  return nau_get_posts( nau_get_option("nau_category_slug_course", "curso,course"), $atts, $fields, "course-id-prod", $taxonomy);
 }
 
 function nau_get_category_id_by_slug($category_slug) {
@@ -222,7 +226,7 @@ function nau_get_category_id_by_slug($category_slug) {
 }
 
 
-function nau_get_posts($category = "", $atts = array(), $fields = array(), string $field_to_deduplicate = NULL) { 
+function nau_get_posts($category = "", $atts = array(), $fields = array(),  string $field_to_deduplicate = NULL, $taxonomy = NULL) { 
 
   extract(shortcode_atts(array(
     'filter' => ''
@@ -236,6 +240,16 @@ function nau_get_posts($category = "", $atts = array(), $fields = array(), strin
     'orderby' => 'menu_order',
     'order' => 'ASC'
   );
+
+  if(!empty($taxonomy)) {
+    $args['tax_query'] = array(
+        array (
+            'taxonomy' => 'knowledge_area',
+            'field' => 'slug',
+            'terms' => $taxonomy,
+        )
+    );
+  }
 
   // Polylang custom code
   if (function_exists("pll_languages_list")) {
@@ -400,6 +414,26 @@ function nau_courses_gallery($atts = array()) {
 
 add_shortcode('nau_courses_gallery', 'nau_courses_gallery');
 
+function nau_courses_knowledge_area($atts = [], $taxonomy = NULL) {
+  global $courses;
+  
+  $courses = array_filter(nau_get_courses($atts, [], false, $taxonomy), function($coursePage){
+    $nau_lms_course_enrollment_end = get_field("nau_lms_course_enrollment_end", $coursePage->ID);
+    $nau_lms_course_end = get_field("nau_lms_course_end", $coursePage->ID);
+    $date = is_null($nau_lms_course_enrollment_end) || empty($nau_lms_course_enrollment_end)  ? $nau_lms_course_end : $nau_lms_course_enrollment_end;
+    $days_to_end = days_to_today ( $date );
+    return $days_to_end >= 0;
+  });
+  
+  ob_start();
+  get_template_part( "partials/courses", "cards" );
+  $value = ob_get_contents();
+  ob_end_clean();
+
+  return $value;
+}
+
+add_shortcode( 'nau_courses_knowledge_area', 'nau_courses_knowledge_area'); 
 
 function nau_theme_gallery() {       
    ob_start();
@@ -505,41 +539,6 @@ function html_list_courses($courses, $fields, $extra_fields, $keys) {
     
     return $html;
 }
-
-// function nau_list_courses_extended($atts = array()) { 
-//    global $courses;
-//    $courses = nau_get_courses( $atts, null, True);
-
-//    $value = "<h3>Lista de Cursos</h3>";
-//    $value .= html_list_courses($courses, 
-//      [
-//        'ID' => 'ID',
-//        'post_title' => 'Título',
-//        'post_status' => 'Estado Página',
-//        'modified_time' => 'Ultima Atualização',              
-//      ], 
-//      [
-//        'nau-organization' => 'Entidade', 
-//        'nau_lms_course_id' => 'STAGE', 
-//        'course-id-prod' => 'PROD', 
-//        'confluence_url' => "info",
-//        'nau_lms_course_enrollments' => 'Participantes', 
-//        'nau_lms_course_certificates' => 'Certificates',
-//        '_tags' => 'Tags',
-//        'update-overview' => 'Auto-update',
-//        'nau_lms_course_catalog_visibility' => 'Visibility'       
-//      ],
-//      [
-//        'start_date' => 'Inicio',
-//        'end_date' => 'Fim',
-//        'date_status_label' => 'status',       
-//      ]);
-
-//    return $value;
-// }
-
-// add_shortcode('nau_list_courses_extended', 'nau_list_courses_extended');
-
 
 
 function nau_entities_gallery($atts = array()) { 

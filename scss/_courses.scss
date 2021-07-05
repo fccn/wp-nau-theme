@@ -66,7 +66,7 @@
     &-image {
         margin-top: 2.2rem;
         width: 340px;
-        height: 180px;
+        height: 205px;
         background-size: contain;
         background-color: white;
         background-position: center center;
@@ -77,6 +77,43 @@
 
         @media screen and (max-width: $breakpoint-medium) {
             display: none;
+        }
+    }
+
+    &-breadcrumbs {
+        margin-bottom: 2rem;
+
+        ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin:0;
+            font-size: 0.9rem;
+
+            li {
+                padding-inline-end: 0.5rem;
+
+                &::after {
+                    padding-inline-start: 0.5rem;
+                    content: '/';
+                    color: $button-visited-color;
+                }
+
+                a {
+                    color: $button-visited-color;
+
+                    &:hover, &:focus {
+                        text-decoration: underline;
+                    }
+                }
+
+                &:last-child {
+                    &::after {
+                        content: '';
+                        padding-inline-start: 0;
+                    }
+                }
+            }
         }
     }
 
