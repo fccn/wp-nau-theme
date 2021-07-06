@@ -13,8 +13,6 @@ Template Name: Course About Page
     $new_page = get_option('nau_slug_courses_page');
     header('Location: /' . $new_page);
   }
-  
-  [$color, $opacity, $hue, $grayscale, $url, $header] = get_page_fields();  
 
   $banner_image = $course["image_full"] ?? NULL;
 
@@ -24,9 +22,14 @@ Template Name: Course About Page
   
   
   $entity = $course["entity"];
-  //$link = $item["course"];
   
-  get_header(); 
+  get_header();
+
+  // used to get the knowledge area and the primary term from the list.
+  // primary terms are dependent on Yoast plugin being avaliable.
+  $taxonomy = 'knowledge_area';
+  $primary_term = get_primary_term($taxonomy);
+  
 ?>
 
 <!-- starts homepage header -->
@@ -39,11 +42,11 @@ Template Name: Course About Page
             <img src="<?php echo $entity["square_logo"]?>" alt="<?php echo $entity["sigla"]?>" title="<?php echo $entity["name"]?>" width="120" height="120">
           </a>
         </div>
-        <?php if(has_term( '', 'knowledge_area' )): ?>
+        <?php if(has_term( '', $taxonomy )): ?>
         <div class="course-detail-breadcrumbs">
           <ul>
             <li><a href="<?php echo get_parent_link(get_the_ID()); ?>"><?php echo nau_trans('Courses'); ?></a></li>
-            <li><?php echo get_the_term_list( get_the_ID(), 'knowledge_area' ); ?></li>
+            <li><?php echo $primary_term; ?></li>
           </ul>
         </div>
         <?php endif; ?>

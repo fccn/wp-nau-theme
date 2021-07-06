@@ -1032,6 +1032,22 @@ function nau_generate_custom_value_meta_html($meta_value, $object) {
   return $li_html;
 }
 
+function get_primary_term($taxonomy = "") {
+
+  if ( class_exists('WPSEO_Primary_Term') ) {
+   $primary_cat_id=get_post_meta(get_the_ID(),'_yoast_wpseo_primary_' . $taxonomy, true);
+    if($primary_cat_id){
+       $primary_cat = get_term($primary_cat_id, $taxonomy);
+       if(isset($primary_cat->name)) 
+          $primary_term = "<a href=\"" . get_term_link( $primary_cat->slug, 'knowledge_area' ) ."\">" . $primary_cat->name . "</a>";
+    }
+  } else {
+    $primary_term = get_the_term_list( get_the_ID(), 'knowledge_area', '', ', ', '' );
+  }
+  
+  return $primary_term;
+}
+
 function nau_template_part(string $slug, string $name = null, array $args = array()) {
   ob_start();
   get_template_part( $slug, $name, $args );
