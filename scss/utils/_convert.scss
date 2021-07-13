@@ -1,3 +1,6 @@
+/*
+ * Function to convert PX to REM for accessibility purposes
+ */
 @function toRem($value, $default) {
    @return $value / $default * 1rem; 
 }
