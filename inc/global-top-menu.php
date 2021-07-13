@@ -12,7 +12,8 @@ $header_img_src = @$header_img_src_array[$lang] ?: $header_img_src_array['pt'];
 
 ?>
   <div class="branding-top-nav">
-    <a id="open-menu-arrow" href="javascript:void(0)" onclick="openNav(0)" title="<?=nau_trans("Open")?>">&#9776;</a>  
+    <a id="open-menu-arrow" href="javascript:void(0)" onclick="openNav(0)" title="<?=nau_trans("Open")?>">&#9776;</a>
+    <h1 class="screen-reader-text"><?php wp_title( ); ?></h1>
     <a class="nau-header-logo-link" href="<?=function_exists("pll_home_url") ? pll_home_url() : get_site_url()?>">
       <picture>
         <source media="(max-width: 768px)" srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo-nau-mobile.svg">

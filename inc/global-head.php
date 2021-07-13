@@ -6,7 +6,7 @@
 
     <?php wp_head(); ?>
 
-    <base href="<?=get_template_directory_uri()?>/">
+    <base href="<?php echo get_template_directory_uri()?>/">
 
     <? $gtag = get_option('nau_google_gtag') ?>
     <? $analytics = load_analytics($post) ?>
