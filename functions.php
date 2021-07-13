@@ -1033,6 +1033,8 @@ function nau_generate_custom_value_meta_html($meta_value, $object) {
 }
 
 function get_primary_term($taxonomy = "") {
+  
+  $primary_term = NULL;
 
   if ( class_exists('WPSEO_Primary_Term') ) {
    $primary_cat_id=get_post_meta(get_the_ID(),'_yoast_wpseo_primary_' . $taxonomy, true);

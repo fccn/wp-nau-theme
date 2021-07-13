@@ -1,3 +1,4 @@
+@import "utils/convert";
 /**
  * Primary replica should be on nau-theme LMS.
  */ 
@@ -57,7 +58,7 @@
 
     #close-menu-arrow {
         display: none; /* hide closing menu arrow when in desktop */
-        font-size: 30px;
+        font-size: toRem(30px, $font-size);
         text-decoration: none;
     }
 
@@ -67,7 +68,7 @@
 
         @media screen and (max-width: $breakpoint-medium) {
             display: inline-block;
-            font-size: 30px;
+            font-size: toRem(30px, $font-size);
             position: absolute;
             margin-left: 10px;
         }

@@ -30,7 +30,7 @@
         display: inline-block;
         text-transform: uppercase;
         min-width: 50%;
-        font-size: 14px;
+        font-size: toRem(14px, $font-size);
         font-weight: 500;
         border-radius: 25px;
         padding: 0.5rem 1rem;

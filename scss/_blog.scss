@@ -1,3 +1,5 @@
+@import "utils/convert";
+
 .news-container {
     .news-article {
         padding-bottom: 1.5rem;
@@ -27,6 +29,7 @@
 
             h2 {
                 margin-top: 0.35rem;
+                line-height: 1.2;
             }
 
             &-date {

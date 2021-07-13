@@ -7,7 +7,7 @@
     bottom: -45px;
 }
 .cookie-wrapper {
-    font-size: 14px;
+    font-size: toRem(14px, $font-size);
     padding: 30px 50px;
     text-align: left;
     position: fixed;

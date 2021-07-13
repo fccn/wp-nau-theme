@@ -1,3 +1,5 @@
+@import "utils/convert";
+
 .announcements-slider {
     position: relative;
     background-color: rgb(0, 61, 191);
@@ -22,7 +24,7 @@
             .slide-card__title {
                 font-family: "Roboto", sans-serif;
                 font-weight: bold;
-                font-size: 45px;
+                font-size: toRem(36px, $font-size);
                 color: #fff;
                 line-height: 1.2;
                 text-shadow: 0px 1px 3px rgba(0, 61, 191, 1);
@@ -32,7 +34,7 @@
 
             .slide-card__subtext {
                 font-family: "Roboto", sans-serif;
-                font-size: 20px;
+                font-size: toRem(16px, $font-size);
                 color: #fff;
                 line-height: 1.2;
                 text-shadow: 0px 1px 3px rgba(0, 61, 191, 1);

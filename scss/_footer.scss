@@ -1,3 +1,5 @@
+@import "utils/convert";
+
 footer {
     ul,
     ol {
@@ -30,7 +32,7 @@ footer {
     .footer-title {
         font-weight: bold;
         display: block;
-        font-size: 15px;
+        font-size: toRem(15px, $font-size);
         padding-bottom: 4px;
         color: $footer-header-color;
     }
@@ -52,7 +54,7 @@ footer {
                 text-decoration: underline;
             }
             .icon {
-                font-size: 25px;
+                font-size: toRem(25px, $font-size);
             }
         }
 
@@ -83,7 +85,7 @@ footer {
                         width: 25px;
                     }
                     i.material-icons{
-                        font-size: 30px;
+                        font-size: toRem(30px, $font-size);
                     }
                 }
             }
