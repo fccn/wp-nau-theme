@@ -7,6 +7,7 @@ window.addEventListener("load", function(){
   // cookie domain stats with a domain for shared whildcard domains
   let cookiedomain = domainFirstDot > 0 ?  window.location.hostname.substring(domainFirstDot) : window.location.hostname;
   window.cookieconsent.initialise({
+    container: document.getElementById("cookie-information"),
 
     window: '<div role="dialog" tabindex="-1" id="cookiepopup" aria-label="cookieconsent" class="cc-window {{classes}}"><!--googleoff: all-->{{children}}<!--googleon: all--></div>',
 
