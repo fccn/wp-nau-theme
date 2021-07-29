@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-05 23:44+0100\n"
+"POT-Creation-Date: 2021-07-29 16:51+0100\n"
 "PO-Revision-Date: 2020-04-08 15:10+0100\n"
 "Last-Translator: root <rui.ribeiro@fccn.pt>\n"
 "Language-Team: English\n"
@@ -76,7 +76,7 @@ msgstr ""
 msgid "Climate action"
 msgstr ""
 
-#: inc/global-top-menu.php:27
+#: inc/global-top-menu.php:28
 msgid "Close"
 msgstr ""
 
@@ -84,11 +84,11 @@ msgstr ""
 msgid "Content type:"
 msgstr ""
 
-#: course-page.php:106
+#: course-page.php:109
 msgid "Course Youtube video"
 msgstr ""
 
-#: search.php:10 course-page.php:45
+#: search.php:10 course-page.php:48
 #, fuzzy
 msgid "Courses"
 msgstr "Search Courses"
@@ -163,15 +163,15 @@ msgstr ""
 msgid "Good health and well-being"
 msgstr ""
 
-#: inc/cookie-bar.php:20
+#: inc/cookie-bar.php:21
 msgid "Got it!"
 msgstr ""
 
-#: inc/global-top-menu.php:19
+#: inc/global-top-menu.php:20
 msgid "Header logo alt"
 msgstr "NAU Keep learning"
 
-#: inc/global-top-menu.php:19
+#: inc/global-top-menu.php:20
 msgid "Homepage"
 msgstr ""
 
@@ -210,7 +210,12 @@ msgstr "know more about this course"
 msgid "Knowledge Area"
 msgstr ""
 
-#: inc/cookie-bar.php:21
+#: inc/knowledge-areas.php:37
+#, fuzzy
+msgid "Knowledge Areas"
+msgstr "Search Courses"
+
+#: inc/cookie-bar.php:22
 msgid "Learn more"
 msgstr ""
 
@@ -280,7 +285,7 @@ msgid "Parent Knowledge Area:"
 msgstr ""
 
 #. <h3><span class="blue-vertical-line">| </span><?php echo $course["name"]?></h3>
-#: partials/courses-cards.php:23 course-page.php:87
+#: partials/courses-cards.php:23 course-page.php:90
 msgid "Participants"
 msgstr "Enrolled"
 
@@ -349,8 +354,8 @@ msgstr ""
 #: partials/homepage/inc/slider/item-search.php:37
 #: partials/homepage/inc/slider/item-search.php:38
 #: partials/homepage/inc/slider/item-search.php:39
-#: partials/homepage/homepage-search.php:10 inc/global-top-menu.php:45
-#: inc/global-top-menu.php:47
+#: partials/homepage/homepage-search.php:10 inc/global-top-menu.php:46
+#: inc/global-top-menu.php:48
 msgid "Search Courses"
 msgstr "Search Courses"
 
@@ -359,7 +364,7 @@ msgstr "Search Courses"
 msgid "Search Knowledge Areas"
 msgstr "Search Courses"
 
-#: inc/global-top-menu.php:46
+#: inc/global-top-menu.php:47
 msgid "Search courses..."
 msgstr ""
 
@@ -389,7 +394,7 @@ msgstr "See video"
 msgid "Self paced"
 msgstr ""
 
-#: partials/entity-aside.php:21 course-page.php:121
+#: partials/entity-aside.php:21 course-page.php:124
 msgid "Share"
 msgstr "Share"
 
@@ -397,7 +402,7 @@ msgstr "Share"
 msgid "Show courses that are:"
 msgstr ""
 
-#: header.php:12
+#: header.php:11
 msgid "Skip to main content"
 msgstr ""
 
@@ -423,7 +428,7 @@ msgstr ""
 msgid "Sustainable cities and communities"
 msgstr ""
 
-#: course-page.php:95
+#: course-page.php:98
 msgid "Tags"
 msgstr ""
 
@@ -439,7 +444,7 @@ msgstr ""
 msgid "There are no available articles in this language."
 msgstr ""
 
-#: inc/cookie-bar.php:19
+#: inc/cookie-bar.php:20
 msgid ""
 "This website uses cookies to ensure you get the best experience on our "
 "website. If you continue browsing this site, we understand that you accept "
@@ -486,7 +491,7 @@ msgstr ""
 msgid "Zero hunger"
 msgstr ""
 
-#: course-page.php:55
+#: course-page.php:58
 msgid "already enrolled"
 msgstr ""
 

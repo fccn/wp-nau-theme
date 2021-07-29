@@ -8,7 +8,7 @@
   require get_template_directory() . '/inc/global-head.php';
 ?>
 <body id="<?php echo $nauPageID?>" <?php echo $nauBodyClass?>>
-  <a href="<?php echo get_the_permalink(); ?>#main-container" class="screen-reader-text"><?php echo nau_trans('Skip to main content'); ?></a>
+  <a href="/#main-container" class="screen-reader-text"><?php echo nau_trans('Skip to main content'); ?></a>
   <!-- starts container -->
   <div id="cookie-information"></div>
   <?php require get_template_directory() . '/inc/global-top-menu.php'; ?>

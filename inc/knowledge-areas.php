@@ -24,4 +24,33 @@ function register_knowledge_areas() {
     ));
 }
 
-add_action( 'init', 'register_knowledge_areas' ); 
+add_action( 'init', 'register_knowledge_areas' );
+
+function list_knowledge_areas() {
+    
+    $terms = get_terms([
+        'taxonomy' => 'knowledge_area',
+        'hide_empty' => false,
+        'lang' => pll_current_language(),
+    ]);
+
+    echo '<h2 class="knowledge-areas-title">' . nau_trans('Knowledge Areas') . '</h2>';
+    echo '<ul class="knowledge-areas-list">';
+        foreach($terms as $term) {
+            $term_print = '<li>';
+
+            if ($term->count) {
+
+                $term_print .= '<a class="courses-available" href="'.get_term_link($term->slug, 'knowledge_area').'">' . $term->name . '</a>';
+            } else {
+                $term_print .= '<span class="courses-unavailable">' . $term->name . '</span>';
+            }
+
+            $term_print .= '</li>';
+
+            echo $term_print;
+        }
+    echo '</ul>';
+}
+
+add_shortcode( 'list_knowledge_areas', 'list_knowledge_areas');

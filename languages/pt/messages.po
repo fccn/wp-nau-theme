@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-05 23:44+0100\n"
-"PO-Revision-Date: 2021-07-05 23:46+0100\n"
+"POT-Creation-Date: 2021-07-29 16:51+0100\n"
+"PO-Revision-Date: 2021-07-29 16:53+0100\n"
 "Last-Translator: Sandro Costa <sandro.costa@fccn.pt>\n"
 "Language-Team: Portuguese\n"
 "Language: pt\n"
@@ -75,7 +75,7 @@ msgstr "Limpar Cookie"
 msgid "Climate action"
 msgstr "Ação Climática"
 
-#: inc/global-top-menu.php:27
+#: inc/global-top-menu.php:28
 msgid "Close"
 msgstr "Fechar"
 
@@ -83,11 +83,11 @@ msgstr "Fechar"
 msgid "Content type:"
 msgstr "Tipo de conteúdo:"
 
-#: course-page.php:106
+#: course-page.php:109
 msgid "Course Youtube video"
 msgstr "Vídeo do curso no Youtube"
 
-#: search.php:10 course-page.php:45
+#: search.php:10 course-page.php:48
 msgid "Courses"
 msgstr "Cursos"
 
@@ -160,15 +160,15 @@ msgstr "Voltar à página principal da NAU"
 msgid "Good health and well-being"
 msgstr "Saúde de qualidade"
 
-#: inc/cookie-bar.php:20
+#: inc/cookie-bar.php:21
 msgid "Got it!"
 msgstr "Compreendido!"
 
-#: inc/global-top-menu.php:19
+#: inc/global-top-menu.php:20
 msgid "Header logo alt"
 msgstr "NAU Sempre a aprender"
 
-#: inc/global-top-menu.php:19
+#: inc/global-top-menu.php:20
 msgid "Homepage"
 msgstr "Página de entrada do site da NAU"
 
@@ -204,9 +204,13 @@ msgstr "Saber mais sobre esta entidade"
 #: inc/knowledge-areas.php:7 inc/knowledge-areas.php:8
 #: inc/knowledge-areas.php:17
 msgid "Knowledge Area"
+msgstr "Área de Conhecimento"
+
+#: inc/knowledge-areas.php:37
+msgid "Knowledge Areas"
 msgstr "Áreas de Conhecimento"
 
-#: inc/cookie-bar.php:21
+#: inc/cookie-bar.php:22
 msgid "Learn more"
 msgstr "Saiba mais"
 
@@ -275,7 +279,7 @@ msgid "Parent Knowledge Area:"
 msgstr "Área de Conhecimento Pai:"
 
 #. <h3><span class="blue-vertical-line">| </span><?php echo $course["name"]?></h3>
-#: partials/courses-cards.php:23 course-page.php:87
+#: partials/courses-cards.php:23 course-page.php:90
 msgid "Participants"
 msgstr "Inscritos"
 
@@ -341,8 +345,8 @@ msgstr "Procurar ..."
 #: partials/homepage/inc/slider/item-search.php:37
 #: partials/homepage/inc/slider/item-search.php:38
 #: partials/homepage/inc/slider/item-search.php:39
-#: partials/homepage/homepage-search.php:10 inc/global-top-menu.php:45
-#: inc/global-top-menu.php:47
+#: partials/homepage/homepage-search.php:10 inc/global-top-menu.php:46
+#: inc/global-top-menu.php:48
 msgid "Search Courses"
 msgstr "Pesquisar Cursos"
 
@@ -350,7 +354,7 @@ msgstr "Pesquisar Cursos"
 msgid "Search Knowledge Areas"
 msgstr "Pesquisar Áreas de Conhecimento"
 
-#: inc/global-top-menu.php:46
+#: inc/global-top-menu.php:47
 msgid "Search courses..."
 msgstr "Pesquisar Cursos..."
 
@@ -377,7 +381,7 @@ msgstr "Ver vídeo"
 msgid "Self paced"
 msgstr "Sem horário definido"
 
-#: partials/entity-aside.php:21 course-page.php:121
+#: partials/entity-aside.php:21 course-page.php:124
 msgid "Share"
 msgstr "Partilhar"
 
@@ -385,7 +389,7 @@ msgstr "Partilhar"
 msgid "Show courses that are:"
 msgstr "Apresenta cursos que:"
 
-#: header.php:12
+#: header.php:11
 msgid "Skip to main content"
 msgstr "Saltar para o conteúdo"
 
@@ -410,7 +414,7 @@ msgstr "Subscrever lista de email (newsletter)"
 msgid "Sustainable cities and communities"
 msgstr "Cidades e comunidades sustentáveis"
 
-#: course-page.php:95
+#: course-page.php:98
 msgid "Tags"
 msgstr "Etiquetas"
 
@@ -424,9 +428,9 @@ msgstr "A página que procura não está disponível."
 
 #: blog.php:55
 msgid "There are no available articles in this language."
-msgstr ""
+msgstr "Não existem artigos disponíveis nesta língua."
 
-#: inc/cookie-bar.php:19
+#: inc/cookie-bar.php:20
 msgid ""
 "This website uses cookies to ensure you get the best experience on our "
 "website. If you continue browsing this site, we understand that you accept "
@@ -472,7 +476,7 @@ msgstr "O que quer aprender hoje?"
 msgid "Zero hunger"
 msgstr "Erradicar a fome"
 
-#: course-page.php:55
+#: course-page.php:58
 msgid "already enrolled"
 msgstr "já inscritos"
 
