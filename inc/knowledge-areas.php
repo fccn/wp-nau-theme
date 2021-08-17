@@ -41,7 +41,7 @@ function list_knowledge_areas() {
 
             if ($term->count) {
 
-                $term_print .= '<a class="courses-available" href="'.get_term_link($term->slug, 'knowledge_area').'">' . $term->name . '</a>';
+                $term_print .= '<a class="courses-available" href="'.get_term_link($term->slug, 'knowledge_area').'">' . $term->name . '<span class="courses-available-count" title="' . nau_trans('Number of courses available') . '">' . $term->count . '</span></a>';
             } else {
                 $term_print .= '<span class="courses-unavailable">' . $term->name . '</span>';
             }
