@@ -23,7 +23,22 @@ This repository contains the WordPress NAU Theme visible on https://www.nau.edu.
 * nau_homepage_slider - DEPRECATED
 * nau_homepage_announcements - Replaces nau_homepage_slider
 * nau_homepage_search - Search form. used in the homepage
+* nau_courses_by_state - List courses by state (see additional information below)
 
+**nau_courses_by_state shortode**
+This shortcode accepts arguments used to generate a custom course list.
+
+The argument `state` accepts the following values:
+* soon
+* available
+* finished
+
+If no `state` is provided, it shows all courses.
+
+Usage
+```html
+[nau_courses_by_state state="available"]
+```
 ## Custom post types
 * Announcements - Homepage slider posts. Can be used to promote new courses or events.
 
