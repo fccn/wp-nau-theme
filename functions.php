@@ -417,13 +417,7 @@ add_shortcode('nau_courses_gallery', 'nau_courses_gallery');
 function nau_courses_knowledge_area($atts = [], $taxonomy = NULL) {
   global $courses;
   
-  $courses = array_filter(nau_get_courses($atts, [], false, $taxonomy), function($coursePage){
-    $nau_lms_course_enrollment_end = get_field("nau_lms_course_enrollment_end", $coursePage->ID);
-    $nau_lms_course_end = get_field("nau_lms_course_end", $coursePage->ID);
-    $date = is_null($nau_lms_course_enrollment_end) || empty($nau_lms_course_enrollment_end)  ? $nau_lms_course_end : $nau_lms_course_enrollment_end;
-    $days_to_end = days_to_today ( $date );
-    return $days_to_end >= 0;
-  });
+  $courses = nau_get_courses($atts, [], false, $taxonomy);
   
   ob_start();
   get_template_part( "partials/courses", "cards" );
@@ -1160,3 +1154,5 @@ require_once('inc/polylang-wp-api.php');
 require_once('inc/nau_wp_xmlrpc_server_class.php');
 
 require_once('inc/announcements/announcements_scripts.php');
+
+require_once('inc/courses.php');
