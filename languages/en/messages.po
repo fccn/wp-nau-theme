@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-29 16:51+0100\n"
+"POT-Creation-Date: 2021-08-18 15:49+0100\n"
 "PO-Revision-Date: 2020-04-08 15:10+0100\n"
 "Last-Translator: root <rui.ribeiro@fccn.pt>\n"
 "Language-Team: English\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.3\n"
 
-#: partials/courses-cards.php:22
+#: partials/courses-cards.php:25
 #, php-format
 msgid "%s enrolled on %s course runs, current with %s enrolled."
 msgstr ""
@@ -27,11 +27,11 @@ msgstr ""
 msgid "About to Start"
 msgstr ""
 
-#: search.php:17 functions.php:839
+#: search.php:17 functions.php:833
 msgid "About to end"
 msgstr ""
 
-#: functions.php:831
+#: functions.php:825
 msgid "About to start"
 msgstr ""
 
@@ -51,7 +51,7 @@ msgstr ""
 msgid "All|courses"
 msgstr ""
 
-#: functions.php:835
+#: functions.php:829
 msgid "Available"
 msgstr "Available"
 
@@ -68,7 +68,7 @@ msgstr "Certificate"
 msgid "Clean water and sanitation"
 msgstr ""
 
-#: functions.php:944
+#: functions.php:938
 msgid "Clear Cookie"
 msgstr ""
 
@@ -123,7 +123,7 @@ msgstr ""
 msgid "Explore all courses"
 msgstr "Explore all courses"
 
-#: functions.php:847
+#: functions.php:841
 msgid "Finished"
 msgstr ""
 
@@ -147,7 +147,7 @@ msgstr ""
 msgid "Follow our Wikipedia"
 msgstr ""
 
-#: functions.php:748
+#: functions.php:742
 msgid "Free"
 msgstr ""
 
@@ -179,7 +179,7 @@ msgstr ""
 msgid "Industry, innovation and infrastructure"
 msgstr ""
 
-#: functions.php:814
+#: functions.php:808
 msgid "Instructor paced"
 msgstr ""
 
@@ -187,7 +187,7 @@ msgstr ""
 msgid "Invitation Only"
 msgstr ""
 
-#: functions.php:815
+#: functions.php:809
 msgid "Invitation only"
 msgstr ""
 
@@ -219,7 +219,7 @@ msgstr "Search Courses"
 msgid "Learn more"
 msgstr ""
 
-#: partials/courses-cards.php:28
+#: partials/courses-cards.php:31
 msgid "Learn more about this course"
 msgstr "Learn more about this course"
 
@@ -252,6 +252,10 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
+#: partials/courses-cards.php:42
+msgid "No courses available at the moment."
+msgstr ""
+
 #: inc/galeria_un.php:7
 msgid "No goal"
 msgstr ""
@@ -264,11 +268,15 @@ msgstr ""
 msgid "None found"
 msgstr "None found"
 
-#: search.php:12 inc/global-top-menu.php:15 functions.php:856
+#: inc/knowledge-areas.php:44
+msgid "Number of courses available"
+msgstr ""
+
+#: search.php:12 inc/global-top-menu.php:15 functions.php:850
 msgid "Open"
 msgstr ""
 
-#: functions.php:815
+#: functions.php:809
 msgid "Open to everyone"
 msgstr ""
 
@@ -285,7 +293,7 @@ msgid "Parent Knowledge Area:"
 msgstr ""
 
 #. <h3><span class="blue-vertical-line">| </span><?php echo $course["name"]?></h3>
-#: partials/courses-cards.php:23 course-page.php:90
+#: partials/courses-cards.php:26 course-page.php:90
 msgid "Participants"
 msgstr "Enrolled"
 
@@ -325,7 +333,7 @@ msgstr ""
 msgid "Responsible consuption"
 msgstr ""
 
-#: functions.php:843
+#: functions.php:837
 #, fuzzy
 msgid "Running"
 msgstr "Running Courses"
@@ -334,7 +342,7 @@ msgstr "Running Courses"
 msgid "Running Courses"
 msgstr "Running Courses"
 
-#: functions.php:827
+#: functions.php:821
 msgid "Scheduled to start"
 msgstr ""
 
@@ -390,7 +398,7 @@ msgstr "Search Courses"
 msgid "See video"
 msgstr "See video"
 
-#: functions.php:814
+#: functions.php:808
 msgid "Self paced"
 msgstr ""
 
@@ -444,6 +452,7 @@ msgstr ""
 msgid "There are no available articles in this language."
 msgstr ""
 
+#. END OF TESTING
 #: inc/cookie-bar.php:20
 msgid ""
 "This website uses cookies to ensure you get the best experience on our "
@@ -453,7 +462,7 @@ msgstr ""
 "NAU uses cookies to provide a better browsing experience. For more "
 "information see our cookie policy."
 
-#: partials/courses-cards.php:20
+#: partials/courses-cards.php:23
 #, fuzzy
 msgid "Unavailable"
 msgstr "Available"
@@ -463,7 +472,7 @@ msgid "Update Knowledge Area"
 msgstr ""
 
 #: partials/homepage/homepage-running-courses.php:36
-#: partials/courses-cards.php:29
+#: partials/courses-cards.php:32
 msgid "View course"
 msgstr ""
 
@@ -499,7 +508,7 @@ msgstr ""
 msgid "for search string:"
 msgstr ""
 
-#: functions.php:720
+#: functions.php:714
 #, fuzzy
 msgid "hours"
 msgstr "Search Courses"
@@ -508,7 +517,7 @@ msgstr "Search Courses"
 msgid "know more about this course"
 msgstr "know more about this course"
 
-#: functions.php:720
+#: functions.php:714
 msgid "minutes"
 msgstr ""
 

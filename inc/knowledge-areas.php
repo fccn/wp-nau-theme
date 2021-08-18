@@ -34,7 +34,7 @@ function list_knowledge_areas() {
         'lang' => pll_current_language(),
     ]);
 
-    echo '<h2 class="knowledge-areas-title">' . nau_trans('Knowledge Areas') . '</h2>';
+    echo '<h2 class="knowledge-areas-title screen-reader-text">' . nau_trans('Knowledge Areas') . '</h2>';
     echo '<ul class="knowledge-areas-list">';
         foreach($terms as $term) {
             $term_print = '<li>';

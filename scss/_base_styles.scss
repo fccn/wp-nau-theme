@@ -331,14 +331,14 @@ div.courses-wrap {
 }
 
 .secondary-pages #body-content {
-  padding: 30px 30px 30px 50px;
+  padding: 0 30px 30px 50px;
 
   @media screen and (max-width: $breakpoint-small) {
     padding: 30px;
   }
 
   @media screen and (min-width: $breakpoint-xlarge) {
-    padding: 30px 50px 30px 50px;
+    padding: 0 50px 30px 50px;
   }
 }
 .secondary-pages #entities-nau {

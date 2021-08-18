@@ -1,12 +1,15 @@
+<?php 
+  global $courses;
+
+  // it only renders the container if there are courses available in the filter
+  if ($courses):
+?>
   
 <div class="card-container <?php echo $args['section_container'] ?? ''; ?>">
-  <?php 
-    global $courses;
-
-    foreach ($courses as $coursePage):
-      $course = load_course($coursePage);
-  ?>
-
+    <?php
+      foreach ($courses as $coursePage):
+        $course = load_course($coursePage);
+    ?>
     <article class="card">
       <a href="<?php echo $course["course_about_url"]?>">
         <div class="card-header" style="background-image: url(<?php echo $course["image_card"]?>);"></div>
@@ -31,6 +34,10 @@
         </div>
       </a>
     </article>
-
-  <?php endforeach; ?>
+    
+    <?php endforeach; ?>
 </div>
+
+<?php else: ?>
+  <p><?php echo nau_trans('No courses available at the moment.'); ?></p>
+<?php endif; ?>
