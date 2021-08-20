@@ -24,6 +24,7 @@ This repository contains the WordPress NAU Theme visible on https://www.nau.edu.
 * nau_homepage_announcements - Replaces nau_homepage_slider
 * nau_homepage_search - Search form. used in the homepage
 * nau_courses_by_state - List courses by state (see additional information below)
+* list_knowledge_areas - Generate a list of knowledge areas with course counts by area
 
 **nau_courses_by_state shortode**
 This shortcode accepts arguments used to generate a custom course list.
