@@ -13,7 +13,7 @@
     
     <? if ($gtag != "") {?>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122313510-5"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<?=$gtag?>"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -40,7 +40,7 @@
     <? } ?>
     
     <? $facebook_pixel_id = get_option('nau_facebook_pixel'); ?>
-    <? if (($facebook_pixel_id != "") && 0) { ?>
+    <? if ($facebook_pixel_id != "") { ?>
         <!-- Facebook Pixel Code -->
         <script>
           !function(f,b,e,v,n,t,s)
